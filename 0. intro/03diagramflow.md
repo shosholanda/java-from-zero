@@ -216,4 +216,4 @@ Ni mucho menos los mensajes de qué valores ingresar o cuando ya se tiene el res
 
 Es parte de la resolución del problema saber qué cosas adicionales necesitamos para que nuestro programa pueda resolver el problema planteado. Una cosa es el problema, y otra el cómo resolver el problema en java. 
 
-Por ejemplo, un problema puede ser, pasar de un texto a voz. El problema es claro, qué tenemos de entrada, y qué queremos de salida. Pero en donde se imagina, desarrolla y aterriza el problema es exactamente en el código, aquí debemos encontrar un puente entre lo que queremos y lo que entiende la computadora. Esta parte es la que estaremos practicando 
+Por ejemplo, un problema puede ser, pasar de un texto a voz. El problema es claro, qué tenemos de entrada, y qué queremos de salida. Pero en donde se imagina, desarrolla y aterriza el problema es exactamente en el código, aquí debemos encontrar un puente entre lo que queremos y lo que entiende la computadoras, es decir, instrucciones paso a paso. Esta parte es la que estaremos practicando 

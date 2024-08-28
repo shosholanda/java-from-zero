@@ -92,6 +92,11 @@ Si "nolok" no es una carpeta, no se borra
 $ rm -r nolok
 ```
 
+5. Copia el archivo *A* a una ruta *B*
+```bash
+$ cp A B
+```
+
 5. Mueve el archivo *A* a una ruta *B*
 También sirve para renombrar archivos
 ```bash
@@ -121,6 +126,7 @@ $ nano linux_nuevo
 $ exit
 ```
 
+
 ## Comandos terminal
 - Copiar una selección en la terminal
 ```bash
@@ -134,4 +140,17 @@ Ctrl Shift V
 ```bash
 Ctrl C
 ```
-- 
+- Dormir un proceso en segundo plano
+```bash
+Ctrl Z
+```
+
+Para que el proceso dormido siga ejecutandose en segundo plano sobre la terminal
+bg
+
+Para volverlo a traer a la vida
+fg
+- Repetir el último comando (flecha arriba o)
+```bash
+Ctrl P
+```
