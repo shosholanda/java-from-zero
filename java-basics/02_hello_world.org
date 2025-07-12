@@ -1,0 +1,111 @@
+* Creación de programas en /Java/
+
+*TODOS* los programas y aplicaciones son escritos en texto plano
+ (abrir bloc de notas y escribir código). Hay algunas aplicaciones
+ llamadas /IDE/ que se especializan en facilitar el entorno de trabajo
+ de proyectos de cientos de miles de líneas de código.
+
+ Lo que buscamos es poder escribir código sin preocuparnos por el tipo
+ de letra o colores y preocuparnos más por el programa que sea rápido,
+ resistente a fallos y de resultados correctos. Por lo que _nunca_
+ usaremos editores de texto como /Word/ o /Bloc de Notas/ ya que estos
+ se especializan más en la presentación del texto. Normalmente se usa
+ el formato de texto =monoespaciado= que todos los caracteres ocupan
+ el mismo espacio.
+
+ En esta guía utilizaremos *emacs* como nuestro editor de texto ya que
+ es con el que se esta escribiendo esta guía.
+
+*Nota:* Es importante estar en la carpeta correcta antes y mientras se
+  cree, compile y ejecute el programa. Puedes usar el comando.
+
+#+BEGIN_SRC bash
+$ pwd  
+#+END_SRC
+
+Para saber cómo moverte de carpeta / crear carpetas *desde la
+terminal* puedes consultar la parte de [[../linux/comandos.org][comandos]]. Una vez estando en la
+carpeta deseada creamos el archivo con nombre _HolaMundo.java_.
+
+Lo podemos hacer de muchas
+formas. Como abrir nuestro editor favorito de textos y dar en =Archivo
+> Nuevo archivo= y especificamos el nombre de arriba. Si estamos en
+emacs, podemos usar ~C-x C-f~ y seguidamente escribir el nombre de
+archivo, o desde la terminal como
+
+#+BEGIN_SRC bash
+  # Crear documento
+  $ touch HolaMundo.java
+#+END_SRC
+
+#+BEGIN_SRC bash
+  # Crear y abrir el documento directamente
+  $ emacs HolaMundo.java
+#+END_SRC
+
+Abrimos este archivo con cualquier editor de texto y procederemos a
+anotar lo siguiente, con cuidado y sin que se nos vaya ningún
+símbolo. Los espacios de la izquierda son extremadamente
+importantes. No se te olvide guardar al final el archivo, en =emacs=
+es con ~C-x C-s~.
+
+#+BEGIN_SRC java
+public class HolaMundo {
+
+    public static void main (String[] args) {
+        System.out.println("Hola mundo! :)");
+    }
+}
+#+END_SRC
+
+Ya tenemos nuestro primer programa escrito en Java. Es muy /simple/,
+pero todos empezamos siempre por algo ¿no?
+
+Como mencionamos anteriormente, la computadora debe traducir este
+/idioma/ a algo que la misma computadora pueda entender. Para esto
+debemos utilizar el compilador de Java (~javac~) y nos generará un archivo
+binario, exactamente un bytecode que tiene una extensión .class.
+
+Para compilar el archivo escribimos lo siguiente en la
+terminal.
+
+#+BEGIN_SRC bash
+  $ javac HolaMundo.java
+#+END_SRC
+
+~javac~ viene de /java compiler/. Si no tenemos errores de
+"*ortografía*" (sintáxis o semántica) el compilador debería gener el
+archivo compilado, de lo contrario habría que ver en qué pudimos
+habernos equivocado a la hora de copiar el código de /Java/.
+
+Podemos ver la traducción que generó el compilador si utilizamos el
+siguiente comando
+
+#+BEGIN_SRC bash
+  $ cat HolaMundo.class
+#+END_SRC
+
+Nos aparecerá algo que no podemos encontrar ningún sentido, símbolos
+raros que solamente la computadora entiende. ~cat~ sirve para mostrar un
+archivo /tal cual es internamente/. ¿Qué pasa si hacemos ~cat~ al
+archivo =HolaMundo.java=?
+
+
+Finalmente, ejecutaremos nuestro programa utilizando el ejecutador de
+aplicaciones de java, que es con el comando:
+
+#+BEGIN_SRC bash
+  $ java HolaMundo
+#+END_SRC
+
+En la terminal debería aparecernos un mensaje de *Hola mundo* que
+escribimos anteriormente en el código; estamos /imprimiendo/ en pantalla el
+texto.
+
+Lo importante es que quede claro cómo crear, compilar y ejecutar un
+programa. El código como tal será explicado a medida que se vaya
+avanzando en la guía.
+
+
+
+

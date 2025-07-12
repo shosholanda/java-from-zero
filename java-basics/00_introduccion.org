@@ -1,0 +1,112 @@
+* Introducción a Java
+
+Antes de empezar a programar, es escencial entrar en contexto, ya que
+esta información no se volverá a repetir por el resto de la guía (o el
+resto de sus vidas).
+
+
+** ¿Qué es Java?
+Java es un *lenguaje de programación* /orientado a objetos/ reado en
+1995 por *Oracle*. Es usado por más de 3,000,000,000 de dispositivos
+como:
+
++ Teléfonos celulares (Android)
++ Aplicaciones Web (Linkedin, Aliexpress, blogspot..)
++ Aplicaciones de escritorio (Oficina, editores, navegadores web..)
++ Juegos (Minecraft JAVA edition por supuesto!)
++ Dispositivos electrónicos (impresoras, refrigeradores, pantallas..)
+
+Y mucho más!
+
+Así como del latín nació el español, /Java/ fue creado e inspirado en
+/C/, otro lenguaje de programación más antiguo; por lo que aprenderás
+2 lenguajes al mismo tiempo! Además de que es seguro, eficiente, es
+multiplataforma que quiere decir que se puede ejecutar en cualquier
+sistema operativo gracias a la *JVM* (Java Virtual Machine).
+
+
+** ¿Qué es un lenguaje de programación?
+
+Un lenguaje de programación es un /idioma/ que nos permite
+comunicarnos de una manera más fácil con la computadora; mientras más
+fácil entendamos, más alto nivel.
+
+Cualquier dispositivo electrónico, ya sea calculadora, microondas,
+lavadora, computadora, televisión etc. opera mediante señales
+eléctricas conocidas como /prendido/ y /apagado/, o =1= y =0=
+respectivamente, también llamados *bit*.
+
+Una computadora no puede leer la información como nosotros lo
+hacemos. Por ejemplo el siguiente texto de la derecha, la computadora
+lee cada cáracter como un *byte* que es una mezcla de /8 bits/. Más
+adelante profundizaremos en este tema de los *bytes*.
+
+#+BEGIN_SRC bash
+$ echo "Si lo puedes imaginar, lo puedes programar" | hexdump -C
+00000000  53 69 20 6c 6f 20 70 75  65 64 65 73 20 69 6d 61  |Si lo puedes ima|
+00000010  67 69 6e 61 72 2c 20 6c  6f 20 70 75 65 64 65 73  |ginar, lo puedes|
+00000020  20 70 72 6f 67 72 61 6d  61 72 0a                 | programar.|
+#+END_SRC
+
+
+Como humanos es más fácil leer y escribir como humanos, o sea _letras
+y símbolos_ aunque siempre hay gente mazoquista que le gusta hablar
+*bytes*. Así los lenguajes de programación nos ayudan a plasmar
+nuestras ideas y algoritmos a números raros/ /bytes/ que una computadora
+entiende y hace rápido con una gran precisión.
+
+*Nota*: Una idea errónea es que una computadora por hacer operaciones
+de manera muy rápida implica que es /inteligente/ lo cual es una obvia
+equivocación ya que las computadoras solo siguen algoritmos y no
+sienten.
+
+
+** ¿Qué es la /programación orientada a objetos/?
+
+Este es un concepto que irá quedando más claro conforme vayas
+avanzando en esta guía. Por lo mientras puedes imaginarlo como: meter
+objetos de la vida real a una computadora como un avión, un gato, un
+empleado, un carro etc.
+
+Claramente no es posible meter 100 personas dentro de una computadora
+(tal vez en los años 50 cuando las computadoras eran del tamaño de una
+casa), pero podemos /transformar/ estos objetos a *números*, *letras*
+y *verdadero/falso* que son valores que son procesables por una
+computadora.
+
+
+Por ejemplo, podemos crear un objeto *Gato* dentro de nuestra
+computadora, si nos fijamos en las cualidades o caracterísiticas del
+gato en la vida real como:
+|-----------------+---------|
+| Descripcion     | Valor   |
+|-----------------+---------|
+| Edad del gato   | 16 años |
+| Peso del gato   | 4.3 kg  |
+| Nombre del gato | /Crazy/ |
+| Vivo o muerto?  | True    |
+| Color del gato  | /Gris/  |
+| Macho o hembra? | True    |
+|-----------------+---------|
+
+
+Podemos definir tantas propiedades como queramos; mientras más
+características más preciso será nuestro /objeto/ dentro de la
+computadora. Notemos que solo se trata de números y letras, cosas que
+se pueden operar.
+
+Si queremos generar una imagen de un gato, o un modelo 3D le hacemos
+una /representación visual/ al objeto que es hacer un trabajo extra,
+pero la información importante está definida por estos valores.
+
+
+La /programación orientada a objetos/ es un *paradigma* de
+programación, una religión, una forma de programar y creer en el
+código. No existe el lenguaje supremo, o menos valioso; _todos_ los
+lenguajes contribuyen a solucionar ciertos tipos de problemas de
+cierta manera.
+
+Para nuestra fortuna, /Java/ es de propósito general
+por lo que podemos hacer todo lo que podamos imaginar como dice
+/Alejandro Taboada/; la cuestión está en imaginarlo correctamente y
+todo lo demás es apretar teclas!.

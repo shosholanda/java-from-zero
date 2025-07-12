@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-11 Fri 21:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org016d125">1. Errores en programación</a>
+<ul>
+<li><a href="#org1aaa487">1.1. Propiedades del lenguaje</a>
+<ul>
+<li><a href="#org5f7a1a8">1.1.1. Sintaxis</a></li>
+<li><a href="#org38c109d">1.1.2. Semántica</a></li>
+<li><a href="#org6227cbe">1.1.3. Pragmática</a></li>
+</ul>
+</li>
+<li><a href="#org632139f">1.2. Errores sintácticos</a></li>
+<li><a href="#org28884aa">1.3. Errores semánticos</a></li>
+<li><a href="#org763bc54">1.4. Errores lógicos</a></li>
+<li><a href="#org88b2fd2">1.5. Errores en tiempo de ejecución</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org016d125" class="outline-2">
+<h2 id="org016d125"><span class="section-number-2">1.</span> Errores en programación</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Es probable que el programa anterior no te haya funcionado a la
+primera, ¿por qué?
+</p>
+
+<p>
+No hay nada de diferente entre un <span class="underline">lenguaje natural</span> como el <i>español</i>
+con un <span class="underline">lenguaje de programación</span> como <i>Java</i>. Ambos deben cumplir
+ciertas reglas para que la comunicación sea efectiva.
+</p>
+</div>
+<div id="outline-container-org1aaa487" class="outline-3">
+<h3 id="org1aaa487"><span class="section-number-3">1.1.</span> Propiedades del lenguaje</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+En general, hablando de lenguajes tenemos 3 propiedades específicas:
+</p>
+</div>
+<div id="outline-container-org5f7a1a8" class="outline-4">
+<h4 id="org5f7a1a8"><span class="section-number-4">1.1.1.</span> Sintaxis</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Son reglas <i>gramaticales</i> para decir cómo se escriben las palabras y
+en qué orden deben ir. Por ejemplo tenemos la estructura <i>Sujeto,
+verbo y predicado</i>
+</p>
+
+<blockquote>
+<p>
+<i>"Yo como unos tacos dorados de pollo"</i> ✔
+</p>
+
+<p>
+<i>"pollo unos yo. tacos Dorados como de"</i> ✗
+</p>
+</blockquote>
+
+<p>
+En programación una buena sintaxis sería:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">x</span> = 13;
+<span style="color: #00bfff;">if</span> (x &gt; 10) {
+    System.out.println(<span style="color: #deb887;">"x es mayor a 10"</span>);
+}
+</pre>
+</div>
+
+<p>
+Y donde no:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">while</span> )
+<span style="color: #a2cd5a;">true</span> = <span style="color: #ff0000;">'</span>asddfasdf<span style="color: #ff0000;">'</span>
+    system.out[hola +1)
+    }};
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org38c109d" class="outline-4">
+<h4 id="org38c109d"><span class="section-number-4">1.1.2.</span> Semántica</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+El significado que tiene cada palabra del lenguaje y que tenga sentido
+la idea que se dice. Por ejemplo
+</p>
+
+<blockquote>
+<p>
+<i>"Era un gobierno facista."</i> ✔
+</p>
+
+<p>
+<i>"Ayer iré a hablar con mi gato ha corrido desde 4 semanas
+siguientes"</i> ✗
+</p>
+</blockquote>
+
+<p>
+No debemos intercambiar tiempos presente, futuro, pasado perfecto
+aleatoriamente.
+</p>
+
+<blockquote>
+<p>
+<i>"Eta koshka nie biezhit"</i> ✗
+</p>
+</blockquote>
+
+<p>
+Esta línea es ruso, pero en español ninguna palabra tiene sentido por
+sí misma. La semántica también depende del lenguaje. Por ejemplo
+<i>orange</i> en español no existe, pero en inglés sí.
+</p>
+
+<p>
+En programación un ejemplo de sintaxis sería
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span> = 25; &#10004;
+</pre>
+</div>
+
+<p>
+Y donde no:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">AAAAAA</span> = <span style="color: #deb887;">"Hola mundo"</span>; &#10007;
+</pre>
+</div>
+
+<p>
+Claramente un número de punto decimal no es "Hola mundo", no tiene
+sentido aunque sintácticamente sea correcto.
+</p>
+</div>
+</div>
+<div id="outline-container-org6227cbe" class="outline-4">
+<h4 id="org6227cbe"><span class="section-number-4">1.1.3.</span> Pragmática</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+El significado que se le da a la oración dependiendo del contexto.
+</p>
+
+<blockquote>
+<p>
+<i>"El perro de tu tío es muy bravo."</i> ✔
+</p>
+
+<p>
+<i>"¡Qué pedo!"</i> ✔
+</p>
+</blockquote>
+
+<p>
+Esta última regla no aplica directamente en lenguajes de programacion
+ya que una computadora siempre hará exactamente lo que fue programada
+para hacer, en otras palabras es <b>determinístico</b>. No es posible que
+el siguiente código
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">boolean</span> <span style="color: #4eee94;">esGrande</span> = 5 &gt; 9;
+System.out.println(esGrande);
+</pre>
+</div>
+
+<p>
+imprima una cadena, o un número. Solo puede <span class="underline">y debe</span> imprimir el
+booleano <code>esGrande</code>, o sea <code>false</code>.
+</p>
+
+
+<p>
+Claramente un lenguaje natural es <i>mucho</i> más dificil que un lenguaje de
+programación porque tiene excepciones de lenguaje, conjugación de
+verbos, personas, son muchas palabras y vocabulario que memorizar!
+</p>
+
+<p>
+En <i>java</i>, solo hay que aprender como unas 20 palabras y cómo es que se
+deben seguir las palabras para que tenga sentido, por lo que CUALQUIER
+PERSONA puede aprender a programar, ya que aprendió antes su lengua
+materna y es un lenguaje al final de cuentas.
+</p>
+
+<p>
+Crearemos a propósito un programa con errores de <i>sintaxis</i> y
+<i>semántica</i> para que puedas ver cómo es que el compilador nos ayuda a
+detectarlos!  El programa calculará el área de un triángulo, el
+diagrama de flujo será como el siguiente.
+</p>
+
+
+<div id="org723dfb6" class="figure">
+<p><img src="../img/intro/problem02.svg" alt="problem02.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Diagrama de flujo para sacar un área de un triángulo.</p>
+</div>
+
+<p>
+Esta es una excepción y puedes <i>copiar</i> el código. Creamos un archivo
+que se llame <code>Triangulo.java</code>.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Triangulo</span> {
+
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span>(<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>) {
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">scanner</span>(System.in);
+
+        <span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">base</span>;
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">altura</span>
+
+        System.out.print(<span style="color: #ff0000;">"</span><span style="color: #deb887;">Ingrese la base del tri&#225;ngulo: );</span><span style="color: #ff0000;">
+</span>        base = input.nextInt;
+
+        System.out.print(<span style="color: #deb887;">"Ingrese la altura del tri&#225;ngulo: "</span>);
+        altura = input.nextInt;
+
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">area</span>  base + altura;
+
+        system.out.println(<span style="color: #deb887;">"El &#225;rea de tri&#225;ngulo es: "</span> + area);
+        <span style="color: #98f5ff;">input</span> <span style="color: #daa520;">close</span>();
+    }
+}
+</pre>
+</div>
+<p>
+Aquí hay demasiados errores, cubriremos los más comunes. Tratamos de
+compilar con javac.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org632139f" class="outline-3">
+<h3 id="org632139f"><span class="section-number-3">1.2.</span> Errores sintácticos</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Lo primero que verifica <i>java</i> es la <span class="underline">sintaxis</span>. El compilador de java
+nos muestra al menos un error:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ javac Triangulo.java 
+Triangulo.java:9: error: <span style="color: #deb887;">';'</span> expected
+        int altura
+                  ^
+Triangulo.java:11: error: unclosed string literal
+        System.out.print(<span style="color: #deb887;">"Ingrese la base del tri&#225;ngulo: );
+                         ^
+Triangulo.java:17: error: ';' expected
+        int area  base + altura;
+                ^
+Triangulo.java:17: error: not a statement
+        int area  base + altura;
+                       ^
+Triangulo.java:20: error: ';' expected
+        input close();
+                   ^
+5 errors</span>
+</pre>
+</div>
+
+<p>
+El compilador ha sido programado para que nos de una idea de qué es
+lo que puede estar fallando. A veces el mensaje es muy claro, otras
+veces no tanto. Además nos dice en qué archivo y en qué línea de
+código de ese archivo se encuentra el error, justamente en donde
+señala la flechita <code>^</code>. Por ejemplo, el error
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Triangulo.java:9: error: <span style="color: #deb887;">';'</span> expected
+      int altura
+                ^
+</pre>
+</div>
+
+<p>
+Dice que en el archivo <code>Triangulo.java</code>, en la línea 9 está el error y nos
+dice que se esperaba un <code>;</code>
+</p>
+
+
+<div id="org508430e" class="figure">
+<p><img src="../img/intro/lines.png" alt="lines.png" />
+</p>
+</div>
+
+<p>
+Corregimos esa línea agregando <code>;</code> al final de la línea y lo
+guardamos. Volvemos a compilar.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ javac Triangulo.java 
+Triangulo.java:11: error: unclosed string literal
+        System.out.print(<span style="color: #deb887;">"Ingrese la base del tri&#225;ngulo: );
+                         ^
+Triangulo.java:17: error: ';' expected
+        int area  base + altura;
+                ^
+Triangulo.java:17: error: not a statement
+        int area  base + altura;
+                       ^
+Triangulo.java:20: error: ';' expected
+        input close();
+                   ^
+4 errors</span>
+</pre>
+</div>
+
+<p>
+Ahora son menos errores! Vamos con el siguiente error.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Triangulo.java:11: error: unclosed string literal
+      System.out.print(<span style="color: #deb887;">"Ingrese la base del tri&#225;ngulo: );
+                       ^</span>
+</pre>
+</div>
+
+<p>
+Nos dice que el caracter <code>"</code> no cierra nunca. Es decir debemos cerrar
+el mensaje dentro de <code>" texto "</code>.  Ponemos dobles comillas al final de
+los 2 puntos del mensaje como <code>"Ingrese la base del triángulo: "</code>
+</p>
+
+<p>
+Corregimos, guardamos y volvemos a compilar, ahora tenemos todavía
+menos errores!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ javac Triangulo.java 
+Triangulo.java:17: error: <span style="color: #deb887;">';'</span> expected
+        int area  base + altura;
+                ^
+Triangulo.java:17: error: not a statement
+        int area  base + altura;
+                       ^
+Triangulo.java:20: error: <span style="color: #deb887;">';'</span> expected
+        input close();
+                   ^
+3 errors
+</pre>
+</div>
+
+<p>
+El tercer error fácilmente podríamos poner `;` para poder solucionarlo
+como el primer caso.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Triangulo.java:17: error: <span style="color: #deb887;">';'</span> expected
+      int area  base + altura;
+              ^
+</pre>
+</div>
+
+<p>
+pero lo que hace falta es en realidad es la asignación de <code>base +
+altura</code> al valor <i>area</i>, por lo que el mensaje del compilador aquí no
+nos ayuda mucho porque generaríamos más errores si ponemos
+<code>;</code>. Corregimos entonces como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">area</span> = base + altura;
+</pre>
+</div>
+
+<p>
+Con esta corrección, hemos matado 2 pájaros de un tiro. Guardamos y
+compilamos nuevamente. Ahora tenemos solamente 1 error más:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ javac Triangulo.java 
+Triangulo.java:20: error: <span style="color: #deb887;">';'</span> expected
+        input close();
+                   ^
+1 error
+</pre>
+</div>
+
+<p>
+Aunque espera <code>;</code> lo que en realidad queremos es utilizar el método
+<code>close()</code> como el ejercicio pasado, por lo que si vemos detalladamente
+solamente necesitamos un <code>.</code> entre <code>input</code> y <code>close()</code>.
+</p>
+
+<p>
+Con esto terminamos los errores de sintaxis :) 
+Nuestro programa sigue teniendo errores :(
+</p>
+
+
+
+<p>
+<b><b>Nota</b></b>: No por tener menos errores significa que estamos más cerca de
+corregir el programa. A veces nos pueden aparecer como 20 errores,
+pero todos son ocasionados por una <code>{}</code> que no cerró, o porque nos faltó
+un <code>;</code>, o no pusimos un <code>=</code>. Está decretado que esto les pasará a los
+estudiantes de primeros semestres de <i>ciencias de la computación</i> y es un evento
+canónico :)
+</p>
+</div>
+</div>
+<div id="outline-container-org28884aa" class="outline-3">
+<h3 id="org28884aa"><span class="section-number-3">1.3.</span> Errores semánticos</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Lo segundo que checa el compilador de <i>Java</i> son errores
+semánticos. No podemos ver errores semánticos sin <span class="underline">antes</span> haber
+arreglado los errores sintácticos. Los errores semánticos son:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ javac Triangulo.java 
+Triangulo.java:6: error: cannot find symbol
+        Scanner input = new scanner(System.in);
+                            ^
+  symbol:   class scanner
+  location: class Triangulo
+Triangulo.java:12: error: cannot find symbol
+        base = input.nextInt;
+                    ^
+  symbol:   variable nextInt
+  location: variable input of type Scanner
+Triangulo.java:15: error: cannot find symbol
+        altura = input.nextInt;
+                      ^
+  symbol:   variable nextInt
+  location: variable input of type Scanner
+Triangulo.java:17: error: incompatible types: possible lossy conversion from double to int
+        int area = base + altura;
+                        ^
+Triangulo.java:19: error: package system does not exist
+        system.out.println(<span style="color: #deb887;">"El &#225;rea de tri&#225;ngulo es: "</span> + area);
+              ^
+5 errors
+</pre>
+</div>
+
+<p>
+El primer error se debe a que  <code>Scanner</code> lo pusimos en
+minúsculas. Recordemos que los nombres de las clases <b>siempre</b>
+empiezan con mayúsculas. En realidad estamos llamando al
+<i>constructor</i> de <code>Scanner</code> que se debe llamar <span class="underline">exactamente igual</span> que
+la clase. En este caso nuestra clase es <code>Scanner</code>. Justamente el error
+nos dice que <i>no encuentra referencia a <code>scanner</code></i>. Ponemos en
+mayúscula <code>Scanner</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Triangulo.java:6: error: cannot find symbol
+      Scanner input = new scanner(System.in);
+                          ^
+symbol:   class scanner
+location: class Triangulo
+</pre>
+</div>
+
+<p>
+El siguente error tiene que ver con que no podemos combinar <i>peras con
+manzanas</i>. En este caso no podemos <i>sumar</i> números enteros con números
+de punto decimal puesto a que perderíamos información como <i>truncar</i>
+el número; claro que en lápiz y papel sí lo podemos hacer, pero la
+computadora para ser precisa debe tener todo del mismo tipo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">symbol:   variable nextInt
+  location: variable input of type Scanner
+Triangulo.java:17: error: incompatible types: possible lossy conversion from double to int
+        int area = base + altura;
+                        ^
+</pre>
+</div>
+
+<p>
+Por ejemplo, la suma 
+</p>
+
+\begin{equation}
+4 + 5.00099 = 9.00099
+\end{equation}
+
+<p>
+nos fijamos que el resultado es <span class="underline">punto decimal</span>, no de valor
+entero. Si sumamos <i>guardando el resultado en un entero</i> (como está en
+el código, tendremos:
+</p>
+
+\begin{equation}
+4 + 5.00099 = 9
+\end{equation}
+
+<p>
+Lo cual es <i>incorrecto</i> por eso nos dice el compilador: <i>posible
+pérdida de información</i>. Por lo que el resultado que guardamos en area
+no debe ser tipo <code>int</code> (sin punto decimal) sino que debe ser de tipo
+<code>double</code> (con punto decimal).
+</p>
+
+
+<p>
+Finalmente, <code>System</code> también es una clase y nuevamente está empezando en
+minúscula!  Solamente debemos poner mayúscula.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Triangulo.java:19: error: package system does not exist
+      system.out.println(<span style="color: #deb887;">"El &#225;rea de tri&#225;ngulo es: "</span> + area);
+            ^
+</pre>
+</div>
+
+<p>
+Después de corregir los errores semánticos podremos compilar nuestro
+programa sin problemas. Esto no significa que nuestro programa ya sea
+un buen programa. Todavía faltan 2 últimos tipos de
+errores. Compilamos y ejecutamos nuestro programa con:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ java Triangulo
+</pre>
+</div>
+
+<p>
+<b>Nota</b>. Es importante aclarar que no debes <i>memorizar</i> cómo solucionar
+cada caso, este mini poder se va adquiriendo a lo largo de la
+programación, así que solamente programa y lo adquirirás!
+</p>
+</div>
+</div>
+<div id="outline-container-org763bc54" class="outline-3">
+<h3 id="org763bc54"><span class="section-number-3">1.4.</span> Errores lógicos</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Este tipo de errores son los más difíciles de detectar ya que no son
+capturados por el compilador, además tiene que ver que nuestra salida
+sea la esperada.
+</p>
+
+<p>
+Si ejecutamos una vez nuestro programa, y le damos 2 números,
+aleatorios, por ejemplo 5 y 6, el resultado es el siguiente.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ java Triangulo 
+Ingrese la base del tri&#225;ngulo: 5
+Ingrese la altura del tri&#225;ngulo: 6
+El &#225;rea de tri&#225;ngulo es: 11.0
+</pre>
+</div>
+
+<p>
+El programa termina correctamente, pero el valor que nos da, no es el
+esperado, puesto que la fórmula para calcular el área de un triángulo
+es <code>(base * altura)/2</code>;
+</p>
+
+<p>
+Por lo que \((5*6)/2 = 30/2 = 15\) es diferente de 11!  Este tipo de
+errores se les suele atacar con algo llamado <i>pruebas unitarias</i> o
+<i>tests</i>, es decir, probamos con valores conocidos esperando resultados
+conocidos para saber si está bien el programa o no. Existe toda un
+área de la industria a realizar este tipo de pruebas con la finalidad
+de que el programa sea lo más correcto posible.
+</p>
+
+<p>
+Corregimos entonces nuestro programa para que calcule el área
+correctamente.
+</p>
+
+
+<p>
+Estos errores salen a la luz cuando confiamos que nuestro programa
+hará lo que tiene que hacer pero no lo hace, como por ejemplo ponerle
+<i>play</i> a un video y que no pase nada, o que la suma de nuestros ahorros
+nos de un número negativo!
+</p>
+</div>
+</div>
+<div id="outline-container-org88b2fd2" class="outline-3">
+<h3 id="org88b2fd2"><span class="section-number-3">1.5.</span> Errores en tiempo de ejecución</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Todavía hay un último tipo de error y es de esos errores que son
+difíciles de determinar ya que <i>existen</i> hasta que <i>existen</i>.
+</p>
+
+<p>
+Estos son los errores son cuando el usuario se quiere <span class="underline">pasar de listo</span>,
+o nuestro programa no es lo suficientemente <i>robusto</i> para procesar
+<i>cualquier</i> entrada, por ejemplo, ejecutemos nuestro programa, pero en
+lugar de darle números, le pasamos una palabra.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ java Triangulo 
+Ingrese la base del tri&#225;ngulo: Pichu
+Exception<span style="color: #00bfff;"> in</span> thread <span style="color: #deb887;">"main"</span> java.util.InputMismatchException
+        at java.base/java.util.Scanner.throwFor(Scanner.java:939)
+        at java.base/java.util.Scanner.next(Scanner.java:1594)
+        at java.base/java.util.Scanner.nextInt(Scanner.java:2258)
+        at java.base/java.util.Scanner.nextInt(Scanner.java:2212)
+        at Triangulo.main(Triangulo.java:12)
+</pre>
+</div>
+
+<p>
+Nos mostrará algo de <code>Exception</code>, errores que proceden de una
+entrada no definida, en este caso cuando un usuario (nosotros) le
+pasamos en lugar de un número algo que no sea número. Claramente si
+siempre pasamos una entrada válida nuestro programa funcionará
+correctamente, pero nunca falta el usuario que en un campo de <i>País</i>
+ponga su fecha de nacimiento ._.
+</p>
+
+<p>
+También es posible que nuestro mismo programa genere estados
+inconsistentes, por ejemplo el clásico pantallazo azul de windows es
+un error en tiempo de ejecución, también conocidos en java como
+<code>RuntimeException</code>. O que un programa se cierre inmediatamente
+es parte de errores en tiempo de ejecución.
+</p>
+
+<p>
+Finalmente que un programa no <b>termine</b> cuando debería terminar
+también es un error de tiempo de ejecución ya que por definición de un
+algoritmo <i>debe terminar</i>, excepto cuando el usuario decida no <i>terminarlo</i>.
+</p>
+
+<p>
+Saber cómo corregir errores no es <i>trivial</i>, no hay otra forma más que
+intentarlo y aprendiendo de las fallas :( Dicen que para poder hacer
+algo bien debes fallar otras 100 veces. Al final es aprendizaje, y
+todo lo que aprendes nadie te lo quitará :)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-11 Fri 21:18</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

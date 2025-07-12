@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-11 Fri 17:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5a0d6bb">1. Programación secuencial</a>
+<ul>
+<li><a href="#org2e354b3">1.1. Problema 1</a>
+<ul>
+<li><a href="#orgb87040b">1.1.1. Tabla de pruebas</a></li>
+</ul>
+</li>
+<li><a href="#orgd3ca1d9">1.2. Problema 2</a></li>
+<li><a href="#orgc62f5f4">1.3. Problema 3</a></li>
+<li><a href="#org2d4bc65">1.4. Problema 4</a></li>
+<li><a href="#org19f36f5">1.5. Problema 5</a></li>
+<li><a href="#org6d0aebe">1.6. Problema 6</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5a0d6bb" class="outline-2">
+<h2 id="org5a0d6bb"><span class="section-number-2">1.</span> Programación secuencial</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Programar es como escribir un libro. Tiene un inicio, cosas
+interesantes y un final. Programar es todavía más poderoso, ya que
+existen palabras <i>especiales</i> que nos permitirán adelantar el
+capítulo, regresar al prólogo o parar de leer en ciertos momentos.
+</p>
+
+<p>
+Cuando hablamos de la programación secuencial, nos referimos a
+programar y ejecutar <i>linea por línea</i> sin saltar absolutamente nada
+como hemos hecho los problemas anteriores.
+</p>
+</div>
+<div id="outline-container-org2e354b3" class="outline-3">
+<h3 id="org2e354b3"><span class="section-number-3">1.1.</span> Problema 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Realizar un programa que calcule las soluciones de una ecuación
+cuadrática de la forma \(ax^2 + bx + c = 0\)
+</p>
+
+<p>
+Con tan solo leer el problema huele a chicharrones, por lo que
+utilizamos la fórmula para sacar las raíces de la ecuación con:
+</p>
+
+\begin{equation}
+x = \frac{-b \pm \sqrt{b^{2} - 4ac} }{ 2a}
+\end{equation}
+
+<p>
+Necesitamos entonces obtener los valores de <code>a, b, c</code> para poder
+encontrar soluciones. El diagrama de flujo correspondiente secuencial
+es como sigue:
+</p>
+
+
+<div id="org3c3e66f" class="figure">
+<p><img src="../img/icc/problem01.svg" alt="problem01.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Diagrama de flujo para encontrar las raíces de una ecuación cuadrática</p>
+</div>
+
+<p>
+Código
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Problema1</span> {
+
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>;
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">b</span>;
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">c</span>;
+        <span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">solucionP</span>;
+        <span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">solucionN</span>;
+
+        System.out.print(<span style="color: #deb887;">"Ingrese el valor de a: "</span>);
+        a = input.nextInt();
+
+        System.out.print(<span style="color: #deb887;">"Ingrese el valor de b: "</span>);
+        b = input.nextInt();
+
+        System.out.print(<span style="color: #deb887;">"Ingrese el valor de c: "</span>);
+        c = input.nextInt();
+
+        input.close();
+
+        solucionP = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c))/ (2*a);
+        solucionN = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c))/ (2*a);
+
+        System.out.println(<span style="color: #deb887;">"Soluciones:"</span>);
+        System.out.println(<span style="color: #deb887;">"X_1: "</span> + solucionP);
+        System.out.println(<span style="color: #deb887;">"X_2: "</span> + solucionN);
+    }
+}
+</pre>
+</div>
+
+<p>
+Claramente si \(4ac > b^2\) nos mandará error, o si \(a = 0\) ocurre una
+indeterminacion, pero ignoremos por ahora los números imaginarios e
+indeterminaciones.
+</p>
+
+<p>
+Algunas cosas nuevas es que podemos <i>asociar</i> operaciones aritméticas
+con paréntesis. También podemos utilizar la clase <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a> que contiene
+funciones matemáticas ya listas para usar como lo es la raíz cuadrada
+y potencia
+</p>
+
+<div class="org-src-container">
+<label class="org-src-name"><span class="listing-number">Listing 1: </span>Eleva <code>a</code> la potencia <code>b</code>, o multiplica <code>a</code> consigo misma <code>b</code> veces.</label><pre class="src src-java">Math.pow(<span style="color: #98f5ff;">a</span>, <span style="color: #98f5ff;">b</span>);
+</pre>
+</div>
+</div>
+<div id="outline-container-orgb87040b" class="outline-4">
+<h4 id="orgb87040b"><span class="section-number-4">1.1.1.</span> Tabla de pruebas</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">a</th>
+<th scope="col" class="org-right">b</th>
+<th scope="col" class="org-right">c</th>
+<th scope="col" class="org-left">resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">5</td>
+<td class="org-right">6</td>
+<td class="org-left">-2, -3</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-left">imaginario (NaN)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-left">-1, -1</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">32</td>
+<td class="org-right">5</td>
+<td class="org-left">-0.162882, -3.83711</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd3ca1d9" class="outline-3">
+<h3 id="orgd3ca1d9"><span class="section-number-3">1.2.</span> Problema 2</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Crear un programa que reciba 5 edades de personas y nos regrese el
+promedio de esas edades.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc62f5f4" class="outline-3">
+<h3 id="orgc62f5f4"><span class="section-number-3">1.3.</span> Problema 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Crear un programa que dado el radio de una esfera, calcule su
+volumen. La fórmula está dada por
+</p>
+\begin{equation}
+ V = \frac{4}{3} \pi r^3
+\end{equation}
+</div>
+</div>
+<div id="outline-container-org2d4bc65" class="outline-3">
+<h3 id="org2d4bc65"><span class="section-number-3">1.4.</span> Problema 4</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Crear un programa que calcule el <i>interés simple</i> a partir de los
+parámetros:
+</p>
+<ul class="org-ul">
+<li>\(C_0\) corresponde a la cantidad inicial</li>
+<li>\(i\) corresponde a la tasa de interés <i>anual</i></li>
+<li>\(n\) corresponde a el número de periodos o años</li>
+</ul>
+
+\begin{equation}
+ C_f = C_0 (1 + (i * n))
+\end{equation}
+</div>
+</div>
+<div id="outline-container-org19f36f5" class="outline-3">
+<h3 id="org19f36f5"><span class="section-number-3">1.5.</span> Problema 5</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Crear un programa que calcule el interés compuesto a partir de los
+valores:
+</p>
+<ul class="org-ul">
+<li>\(C_0\) corresponde a la cantidad inicial</li>
+<li>\(i\) corresponde a la tasa de interés <i>anual</i></li>
+<li>\(n\) corresponde a el número de periodos o años</li>
+</ul>
+\begin{equation}
+ C_f = C_0 (1 + i) ^ n
+\end{equation}
+</div>
+</div>
+<div id="outline-container-org6d0aebe" class="outline-3">
+<h3 id="org6d0aebe"><span class="section-number-3">1.6.</span> Problema 6</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Crear un programa que dadas 2 coordenadas en el plano cartesiano
+\((x_1, y_1), (x_2, y_2)\) nos de la distancia que hay entre estos dos puntos
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-11 Fri 17:49</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

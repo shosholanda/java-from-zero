@@ -1,0 +1,208 @@
+* Programación condicional simple y compuesta
+
+No todos los problemas se pueden resolver utilizando programación
+secuencial. Muchas veces en la vida hay que tomar decisiones que de
+una u otra manera afectarán nuestro futuro. Preguntas como
+
+- ¿Hoy llovera?
+- ¿Hago la tarea hoy o mañana?
+- ¿Tengo dinero para una torta?
+
+  Son ejemplos de condiciones que nos forzan a seguir un camino u otro
+  dependiendo de la respuesta.
+
+** Estructura condicional simple
+Cuando se presenta una elección tenemos la opción de realizar una
+actividad o ignorarla.
+
+Por ejemplo estoy tranquilamente en mi cuarto y
+recibo una llamada. Si contesto, entonces platico con la persona. Si
+no contesto sigo con mi vida.
+
+#+CAPTION: Estructura condicional simple
+[[../img/icc/simple_cond.svg]]
+
+Se trata de una condicional /simple/ porque el camino de /verdadero/
+hay actividades mientras que por el otro no hay.
+
+** Estructura condicional compuesta
+Esta estructura realiza operaciones _en ambos caminos_ de la
+condición.
+
+Por ejemplo, cuando me van a comprar un regalo y me dicen: Puedes
+escoger entre el regalo A o el regalo B. No pueden ser ambos regalos
+al mismo tiempo. Cuando se va por un camino el otro se pierde
+automáticamente.
+
+#+CAPTION: Estructura condicional compuesta
+[[../img/icc/comp_cond.svg]]
+
+A diferencia del primero, este condicional es /exclusivo/, o pasa
+uno u otro. En el simple podemos tomar el camino verdadero y luego
+hacer el segundo camino (cuando es /false/) pero en este no.
+
+En /java/ utilizamos la palabra ~if (condicion)~ para dividir nuestro
+camino en 2 posibles opciones  y ~if - else~ para indicar que los
+caminos son /exclusivos/.
+
+** Operadores lógicos
+Cuando queremos evaluar una condición a verdadero o falso, debemos de
+utilizar los operadores lógicos, que básicamente son operadores de
+proposiciones.
+
+- AND: Ocurre si ambas condiciones se cumplen.
+  
+  Ej: Si me manda mensaje y contesta mi estado, entonces quiere conmigo.
+  |-----+-----+----------|
+  | ~A~ | ~B~ | ~A && B~ |
+  |-----+-----+----------|
+  |   0 |   0 |        0 |
+  |   0 |   1 |        0 |
+  |   1 |   0 |        0 |
+  |   1 |   1 |        1 |
+  |-----+-----+----------|
+- OR: Ocurre si al menos una de las 2 condiciones ocurre.
+  Ej: Tengo tiempo libre, puedo jugar Halo o Minecraft, pero también
+  puedo jugar ambos ¿por qué no?
+  |-----+-----+----------|
+  | ~A~ | ~B~ | ~A && B~ |
+  |-----+-----+----------|
+  |   0 |   0 |        0 |
+  |   0 |   1 |        1 |
+  |   1 |   0 |        1 |
+  |   1 |   1 |        1 |
+  |-----+-----+----------|
+- NOT: Niega lo que sea.
+  Ejemplo: El contrario de volar es /no volar/, no /caminar/ o
+  /nadar/. La negación de /soy estudiante/, no es /soy nini/, sino /No
+  soy estudiante/.
+  |-----+------|
+  | ~A~ | ~!A~ |
+  |-----+------|
+  |   0 |    1 |
+  |   1 |    0 |
+  |-----+------|
+
+
+Cuando queremos comparar números usualmente usamos operadores de
+relación.
+
+|----------+------------------------------------+---------------|
+| operador | significado                        | Ejemplo       |
+|----------+------------------------------------+---------------|
+| ~A > B~  | A es mayor (estricto) a B          | $10 > 4$      |
+| ~A >= B~ | A es mayor-igual a B               | $1 \geq 1$    |
+| ~A < B~  | A es menor (estricto) a B          | $-4 < 0$      |
+| ~A <= B~ | A es menor-igual a B               | $-4 \leq -4$  |
+| ~A == B~ | A es (exactamente) igual a B       | $0 = 0$       |
+| ~A != B~ | A no es (exactamente) igual a B    | $4 \neq -4$   |
+| ~A % B~  | El residuo entero de dividir A / B | $13 \% 10 = 3$ |
+|----------+------------------------------------+---------------|
+
+** Problema 1: Paridad
+Crear un programa que dado un número nos diga si es par o impar.
+
+¿Cómo sabemos si un número es par? Fácil, sabemos que lo podemos
+dividir entre 2 /y que no quede un punto decimal por ahí volando/. Por
+ejemplo 2048 es par porque al dividirlo entre 2 nos queda 1024.0
+
+2049 no es par porque al dividirlo entre 2 nos queda 1024.5.
+Este punto decimal es también conocido como /residuo/ que se puede
+sacar con el operador aritmético /módulo/ ~%~.
+
+\begin{equation}
+1025 \% 2 = 2 * (512) + 1 
+         = 1
+\end{equation}
+
+Si el residuo es 0, significa que no sobro nada al dividir y por lo
+mismo es múltiplo de ese número. Si el residuo *no* es 0, entonces
+sobró un cacho.
+
+#+CAPTION: Diagrama de flujo para saber si un número es par o no
+[[../img/icc/parity.svg]]
+
+#+begin_src java
+  import java.util.Scanner;
+
+  public class Problema1 {
+      
+      public static void main (String[] args) {
+  	Scanner input = new Scanner(System.in);
+
+  	int n;
+
+  	System.out.print("Ingresa un número para conocer su paridad: ");
+  	n = input.nextInt();
+  	input.close();
+
+  	if (n % 2 == 0) {
+  	    System.out.println("Es un número par");
+  	} else {
+  	    System.out.println("Es un número impar");
+  	}
+      }
+  }
+
+#+end_src
+
+
+** Problema 2: Valor absoluto
+Crear un programa que dado un número nos diga si es positivo, negativo
+o es cero.
+
+** Problema 3: Arbol meteorológico
+El árbol meteorológico es un árbol que susurra en el bosque de las
+maravillas lo siguiente: "Si hoy llueve mañana hará un buen día."
+Realiza un programa que reciba como entrada si hoy llovió para
+predecir el día de mañana.
+
+** Problema 4. Fizz Buzz
+Dado un número *n*, que nos diga /Fizz/ si ese número es divisible
+entre 3, y /Buzz/ si ese número es divisible por 5 y /Fizz-Buzz/ si es
+divisible por 3 y 5 al mismo tiempo.
+
+*Nota*: No puedes hacer un caso para cada número, debes de hacerlo
+para cualquier número. Utiliza el operador módulo
+
+Tabla de resultados
+|--------+-----------|
+|      n | resultado |
+|--------+-----------|
+|      1 |           |
+|      2 |           |
+|      3 | Fizz      |
+|      4 |           |
+|      5 | Buzz      |
+|      6 | Fizz      |
+|      7 |           |
+|      8 |           |
+|      9 | Fizz      |
+|     10 | Buzz      |
+|     11 |           |
+|     12 | Fizz      |
+|     13 |           |
+|     14 |           |
+|     15 | Fizz-Buzz |
+|    510 | Fizz-Buzz |
+|   1296 | Fizz      |
+|  10665 | Fizz-Buzz |
+| 106660 | Buzz      |
+|--------+-----------|
+
+
+** Problema 5: Número de dígitos
+Dado un número entero *n*, decir cuántos dígitos tiene.
+
+|-------+-----------|
+|     n | respuesta |
+|-------+-----------|
+|     3 |         1 |
+|    38 |         2 |
+|   484 |         3 |
+|  1048 |         4 |
+| 83431 |         5 |
+|-------+-----------|
+
+
+

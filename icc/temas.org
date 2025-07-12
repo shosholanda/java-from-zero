@@ -1,0 +1,50 @@
+* Temas para icc
+
+- Programación secuencial
+- Estructura condicional
+  - if
+  - if-else
+  - ifs anidados
+  - switch
+- Estructura repetitiva
+  - while
+  - for
+  - do while
+  - recursion
+  - complejidad computacional
+- Clases y objetos
+  - metodos
+    - constructor
+    - estatico vs no estatico
+    - tipos de regreso
+    - void vs return
+    - getters y setters
+  - atributos
+  - main
+  - string
+  - enumeraciones
+  - Object
+- Herencia
+  - extends
+  - interfaces
+  - clases abstractas
+  - Casting
+- Estructuras de datos
+  - Arreglos
+  - Lista simple
+  - Genéricos
+  - ordenamientos
+  - búsquedas
+  - iteradores
+- Entrada y salida
+  - Archivos
+  - Entrada estándar
+  - WEB
+  - Excepciones
+- Interfaces gráficas
+  - JAVA FX
+  - MVC
+  - sockets
+- Programación concurrente
+  - synchronized
+  - variables atomicas

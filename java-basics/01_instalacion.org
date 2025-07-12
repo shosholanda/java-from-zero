@@ -1,0 +1,64 @@
+* Instalación de Java
+
+
+** Verificación de instalación
+Cuando instalamos nuestro sistema operativo podemos verificar si
+/Java/ está instalado con el comando:
+
+#+BEGIN_SRC bash
+$ java --version ; javac --version
+#+END_SRC
+
+Si nos manda error significa que hay que descargarlo e instalarlo.
+
+*Nota*: Si no sabes absolutamente nada de /Java/ no descargues un IDE
+como _Eclipse, NetBeans, VSCode, JetBrains_ ya que debes aprender los
+fundamentos del lenguaje primero. No puedes correr, aunque tengas los
+mejores tenis si no sabes gatear.
+
+** Actualizar paquetes
+
+Hablando desde un sistema /Linux/, antes de instalar cualquier
+programa debemos tener actualizado nuestro gestor de paquetes. El
+gestor de paquetes es básicamente el instalador que tenemos desde la
+terminal. Dependiendo de la distribución que utilicemos cambiará el
+nombre. El siguiente funciona para /Ubuntu/ y /Debian/
+
+#+BEGIN_SRC bash
+$ sudo apt update && sudo apt upgrade
+#+END_SRC
+
+*Nota:* Si nos pide la contraseña, debemos colocarla aunque no
+aparezca nada en la pantalla, es un sistema de seguridad.
+
+** Instalar Java
+
+Usaremos el siguiente comando para instalar la última version de java;
+existen versiones más recientes pero es más que suficiente para poder
+explotar al máximo el poder de este lenguaje. Para ahorrarnos un poco
+de detalles técnicos como instalar para nuestra distribución de Linux
+exactamente, o la versión de las actualizaciones de java, usamos.
+
+#+BEGIN_SRC bash
+$ sudo apt install default-jdk
+$ sudo apt install default-jre
+#+END_SRC
+
+En realidad, se van a instalar 2 cosas.
+
+1. El compilador de código de java (Java Development Kit)
+2. El ejecutador de aplicaciones de java (Java Running Enviroment)
+
+El primero nos ayudará a ejecutar nuestros programas, que deben ser
+primero compilados (traducidos) a lenguaje de máquina (bytecode) por
+el segudo programita. Con estos 2 es más que suficiente para poder
+empezar a trabajar con Java!
+
+
+Si no se pudo instalar o genera error, hay que buscar en internet cómo
+instalar java para tu caso particular. Siempre puedes pedir ayuda a
+los ayudantes de cualquier materia de computación y te pueden guiar!
+
+Finamente, hay que revisar si se instaló correctamente utilizando el
+comando del inicio.
+ 

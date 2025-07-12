@@ -2,24 +2,32 @@ import java.util.Scanner;
 
 public class Problema1 {
     
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    public static void main (String[] args){
+  	Scanner input = new Scanner(System.in);
 
-        int lados;
-        double lado, apotema;
+	  int a;
+	  int b;
+	  int c;
+	  double solucionP;
+	  double solucionN;
 
-        System.out.print("Ingrese número de lados del polígono: ");
-        lados = input.nextInt();
+	  System.out.println("Ingrese el valor de a: ");
+	  a = input.nextInt();
 
-        System.out.print("Ingrese el tamaño de un lado: ");
-        lado = input.nextDouble();
+	  System.out.println("Ingrese el valor de b: ");
+	  b = input.nextInt();
 
-        System.out.print("Ingrese el tamaño de la apotema: ");
-        apotema = input.nextDouble();
-        input.close();
+	  System.out.println("Ingrese el valor de c: ");
+	  c = input.nextInt();
 
-        double area = (lados*lado) * apotema / 2;
+	  input.close();
 
-        System.out.println("El área del polígono de " + lados + " lados es: " + area);
+	  solucionP = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c))/ (2*a);
+	  solucionN = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c))/ (2*a);
+
+	  System.out.println("Soluciones:");
+	  System.out.print("X_1: ");
+	  System.out.println(solucionP);
+	  System.out.println("X_2: " + solucionN);
     }
 }
