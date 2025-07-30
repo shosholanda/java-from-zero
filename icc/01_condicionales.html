@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-11 Fri 19:55 -->
+<!-- 2025-07-17 Thu 14:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -227,29 +227,32 @@
 </script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7a69784">1. Programación condicional simple y compuesta</a>
+<li><a href="#org1397f99">1. Programación condicional simple y compuesta</a>
 <ul>
-<li><a href="#org881c90c">1.1. Estructura condicional simple</a></li>
-<li><a href="#org55822dc">1.2. Estructura condicional compuesta</a></li>
-<li><a href="#org3d22034">1.3. Operadores lógicos</a></li>
-<li><a href="#org1475cd3">1.4. Problema 1: Paridad</a></li>
-<li><a href="#orgc293dd5">1.5. Problema 2: Valor absoluto</a></li>
-<li><a href="#org32cc538">1.6. Problema 3: Arbol meteorológico</a></li>
-<li><a href="#orgba41432">1.7. Problema 4. Fizz Buzz</a></li>
-<li><a href="#org2dc67a5">1.8. Problema 5: Año bisiesto</a></li>
-<li><a href="#org736b10e">1.9. Problema 6: Número de dígitos</a></li>
+<li><a href="#org34846cb">1.1. Estructura condicional simple</a></li>
+<li><a href="#orgc5ebd92">1.2. Estructura condicional compuesta</a></li>
+<li><a href="#orgbbca8ef">1.3. Operadores de relacion</a></li>
+<li><a href="#org28c575b">1.4. Problema 1: Paridad</a></li>
+<li><a href="#org3592f4b">1.5. Problema 2: Valor absoluto</a></li>
+<li><a href="#orgcd0f600">1.6. Problema 3: Arbol meteorológico</a></li>
+<li><a href="#org08ea2b2">1.7. Problema 4. Fizz Buzz</a></li>
+<li><a href="#orgc33618a">1.8. Problema 5: Número de dígitos</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7a69784" class="outline-2">
-<h2 id="org7a69784"><span class="section-number-2">1.</span> Programación condicional simple y compuesta</h2>
+<div id="outline-container-org1397f99" class="outline-2">
+<h2 id="org1397f99"><span class="section-number-2">1.</span> Programación condicional simple y compuesta</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 No todos los problemas se pueden resolver utilizando programación
@@ -260,18 +263,16 @@ una u otra manera afectarán nuestro futuro. Preguntas como
 <ul class="org-ul">
 <li>¿Hoy llovera?</li>
 <li>¿Hago la tarea hoy o mañana?</li>
-<li><p>
-¿Tengo dinero para una torta?
-</p>
+<li>¿Tengo dinero para una torta?</li>
+</ul>
 
 <p>
 Son ejemplos de condiciones que nos forzan a seguir un camino u otro
 dependiendo de la respuesta.
-</p></li>
-</ul>
+</p>
 </div>
-<div id="outline-container-org881c90c" class="outline-3">
-<h3 id="org881c90c"><span class="section-number-3">1.1.</span> Estructura condicional simple</h3>
+<div id="outline-container-org34846cb" class="outline-3">
+<h3 id="org34846cb"><span class="section-number-3">1.1.</span> Estructura condicional simple</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Cuando se presenta una elección tenemos la opción de realizar una
@@ -285,7 +286,7 @@ no contesto sigo con mi vida.
 </p>
 
 
-<div id="org9da3409" class="figure">
+<div id="org228f636" class="figure">
 <p><img src="../img/icc/simple_cond.svg" alt="simple_cond.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Estructura condicional simple</p>
@@ -297,8 +298,8 @@ hay actividades mientras que por el otro no hay.
 </p>
 </div>
 </div>
-<div id="outline-container-org55822dc" class="outline-3">
-<h3 id="org55822dc"><span class="section-number-3">1.2.</span> Estructura condicional compuesta</h3>
+<div id="outline-container-orgc5ebd92" class="outline-3">
+<h3 id="orgc5ebd92"><span class="section-number-3">1.2.</span> Estructura condicional compuesta</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Esta estructura realiza operaciones <span class="underline">en ambos caminos</span> de la
@@ -313,7 +314,7 @@ automáticamente.
 </p>
 
 
-<div id="org748061b" class="figure">
+<div id="orgbad8046" class="figure">
 <p><img src="../img/icc/comp_cond.svg" alt="comp_cond.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Estructura condicional compuesta</p>
@@ -332,149 +333,9 @@ caminos son <i>exclusivos</i>.
 </p>
 </div>
 </div>
-<div id="outline-container-org3d22034" class="outline-3">
-<h3 id="org3d22034"><span class="section-number-3">1.3.</span> Operadores lógicos</h3>
+<div id="outline-container-orgbbca8ef" class="outline-3">
+<h3 id="orgbbca8ef"><span class="section-number-3">1.3.</span> Operadores de relacion</h3>
 <div class="outline-text-3" id="text-1-3">
-<p>
-Cuando queremos evaluar una condición a verdadero o falso, debemos de
-utilizar los operadores lógicos, que básicamente son operadores de
-proposiciones.
-</p>
-
-<ul class="org-ul">
-<li><p>
-AND: Ocurre si ambas condiciones se cumplen.
-</p>
-
-<p>
-Ej: Si me manda mensaje y contesta mi estado, entonces quiere conmigo.
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right"><code>A</code></th>
-<th scope="col" class="org-right"><code>B</code></th>
-<th scope="col" class="org-right"><code>A &amp;&amp; B</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">0</td>
-<td class="org-right">0</td>
-<td class="org-right">0</td>
-</tr>
-
-<tr>
-<td class="org-right">0</td>
-<td class="org-right">1</td>
-<td class="org-right">0</td>
-</tr>
-
-<tr>
-<td class="org-right">1</td>
-<td class="org-right">0</td>
-<td class="org-right">0</td>
-</tr>
-
-<tr>
-<td class="org-right">1</td>
-<td class="org-right">1</td>
-<td class="org-right">1</td>
-</tr>
-</tbody>
-</table></li>
-<li><p>
-OR: Ocurre si al menos una de las 2 condiciones ocurre.
-Ej: Tengo tiempo libre, puedo jugar Halo o Minecraft, pero también
-puedo jugar ambos ¿por qué no?
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right"><code>A</code></th>
-<th scope="col" class="org-right"><code>B</code></th>
-<th scope="col" class="org-right"><code>A &amp;&amp; B</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">0</td>
-<td class="org-right">0</td>
-<td class="org-right">0</td>
-</tr>
-
-<tr>
-<td class="org-right">0</td>
-<td class="org-right">1</td>
-<td class="org-right">1</td>
-</tr>
-
-<tr>
-<td class="org-right">1</td>
-<td class="org-right">0</td>
-<td class="org-right">1</td>
-</tr>
-
-<tr>
-<td class="org-right">1</td>
-<td class="org-right">1</td>
-<td class="org-right">1</td>
-</tr>
-</tbody>
-</table></li>
-<li><p>
-NOT: Niega lo que sea.
-Ejemplo: El contrario de volar es <i>no volar</i>, no <i>caminar</i> o
-<i>nadar</i>. La negación de <i>soy estudiante</i>, no es <i>soy nini</i>, sino <i>No
-soy estudiante</i>.
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-right" />
-
-<col  class="org-right" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-right"><code>A</code></th>
-<th scope="col" class="org-right"><code>!A</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-right">0</td>
-<td class="org-right">1</td>
-</tr>
-
-<tr>
-<td class="org-right">1</td>
-<td class="org-right">0</td>
-</tr>
-</tbody>
-</table></li>
-</ul>
-
-
 <p>
 Cuando queremos comparar números usualmente usamos operadores de
 relación.
@@ -543,8 +404,8 @@ relación.
 </table>
 </div>
 </div>
-<div id="outline-container-org1475cd3" class="outline-3">
-<h3 id="org1475cd3"><span class="section-number-3">1.4.</span> Problema 1: Paridad</h3>
+<div id="outline-container-org28c575b" class="outline-3">
+<h3 id="org28c575b"><span class="section-number-3">1.4.</span> Problema 1: Paridad</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Crear un programa que dado un número nos diga si es par o impar.
@@ -574,7 +435,7 @@ sobró un cacho.
 </p>
 
 
-<div id="orgb2ba16e" class="figure">
+<div id="orgd0f32c2" class="figure">
 <p><img src="../img/icc/parity.svg" alt="parity.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Diagrama de flujo para saber si un número es par o no</p>
@@ -606,8 +467,8 @@ sobró un cacho.
 </div>
 </div>
 </div>
-<div id="outline-container-orgc293dd5" class="outline-3">
-<h3 id="orgc293dd5"><span class="section-number-3">1.5.</span> Problema 2: Valor absoluto</h3>
+<div id="outline-container-org3592f4b" class="outline-3">
+<h3 id="org3592f4b"><span class="section-number-3">1.5.</span> Problema 2: Valor absoluto</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 Crear un programa que dado un número nos diga si es positivo, negativo
@@ -615,8 +476,8 @@ o es cero.
 </p>
 </div>
 </div>
-<div id="outline-container-org32cc538" class="outline-3">
-<h3 id="org32cc538"><span class="section-number-3">1.6.</span> Problema 3: Arbol meteorológico</h3>
+<div id="outline-container-orgcd0f600" class="outline-3">
+<h3 id="orgcd0f600"><span class="section-number-3">1.6.</span> Problema 3: Arbol meteorológico</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 El árbol meteorológico es un árbol que susurra en el bosque de las
@@ -626,8 +487,8 @@ predecir el día de mañana.
 </p>
 </div>
 </div>
-<div id="outline-container-orgba41432" class="outline-3">
-<h3 id="orgba41432"><span class="section-number-3">1.7.</span> Problema 4. Fizz Buzz</h3>
+<div id="outline-container-org08ea2b2" class="outline-3">
+<h3 id="org08ea2b2"><span class="section-number-3">1.7.</span> Problema 4. Fizz Buzz</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 Dado un número <b>n</b>, que nos diga <i>Fizz</i> si ese número es divisible
@@ -756,35 +617,11 @@ Tabla de resultados
 </table>
 </div>
 </div>
-<div id="outline-container-org2dc67a5" class="outline-3">
-<h3 id="org2dc67a5"><span class="section-number-3">1.8.</span> Problema 5: Año bisiesto</h3>
+<div id="outline-container-orgc33618a" class="outline-3">
+<h3 id="orgc33618a"><span class="section-number-3">1.8.</span> Problema 5: Número de dígitos</h3>
 <div class="outline-text-3" id="text-1-8">
 <p>
-Un año es bisiesto si tiene al 29 de febrero. Podemos saber
-rápidamente si un año es bisiesto si:
-</p>
-
-<ol class="org-ol">
-<li>El año es un múltiplo de 4.</li>
-<li>El año no es un centenario. (El año 200 no fue bisiesto)</li>
-<li>El año es un cuarto centenario, es decir múltiplo de 400 (pero 1200
-sí).</li>
-</ol>
-
-<p>
-Podemos utilizar la fórmula con el año a calcular.
-</p>
-
-\begin{equation}
-B = (A \% 4 = 0 \& A \% 100 \neq 0) or (A \% 400 == 0)
-\end{equation}
-</div>
-</div>
-<div id="outline-container-org736b10e" class="outline-3">
-<h3 id="org736b10e"><span class="section-number-3">1.9.</span> Problema 6: Número de dígitos</h3>
-<div class="outline-text-3" id="text-1-9">
-<p>
-Dado un número entero <b>n</b>, decir cuántos dígitos tiene.
+Dado un número entero <b>n</b> menor a \(1,000,000\), decir cuántos dígitos tiene.
 </p>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -834,7 +671,7 @@ Dado un número entero <b>n</b>, decir cuántos dígitos tiene.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-11 Fri 19:55</p>
+<p class="date">Created: 2025-07-17 Thu 14:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

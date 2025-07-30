@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-17 Thu 14:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga4f5667">1. Más condicionales</a>
+<ul>
+<li><a href="#org763dbd5">1.1. Condicionales anidadas</a></li>
+<li><a href="#org18246f9">1.2. Problema 1: Tricotomía</a></li>
+<li><a href="#org831709a">1.3. Problema 2: Mayor entre 4 números.</a></li>
+<li><a href="#orgf92b12d">1.4. Operadores lógicos</a></li>
+<li><a href="#org1b364a6">1.5. Problema 3: Año bisiesto</a></li>
+<li><a href="#orgb24431b">1.6. Problema 4:</a></li>
+<li><a href="#orgeaa0bcc">1.7. Problema 5: PIN</a></li>
+<li><a href="#org1f5db53">1.8. Problema 6: Menú</a></li>
+<li><a href="#orgeacee48">1.9. Switch Case</a></li>
+<li><a href="#orgd96dd1b">1.10. Problema 6: Switch case</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4f5667" class="outline-2">
+<h2 id="orga4f5667"><span class="section-number-2">1.</span> Más condicionales</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org763dbd5" class="outline-3">
+<h3 id="org763dbd5"><span class="section-number-3">1.1.</span> Condicionales anidadas</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+A veces, es necesario dividir un camino todavía en otro camino. Una
+condición anidada es hacer una condicional <i>simple</i> o <i>compuesta</i>
+dentro de otra <i>simple</i> o compuesta. La representación gráfica es la
+siguiente:
+</p>
+
+
+<div id="orge26807d" class="figure">
+<p><img src="../img/icc/nested_cond.svg" alt="nested_cond.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Condicion simple anidada</p>
+</div>
+
+<p>
+Observamos que en caso de que no se cumpla <i>condicion1</i> tenemos otras
+2 opciones para continuar, que deberemos evaluar para decidir qué
+camino seguir, así tenemos al menos 3 caminos diferentes y no solo 2.
+</p>
+
+
+<p>
+<b>Nota</b>: Podemos anidar <i>cuantas veces queramos</i> estructuras condicionales.
+</p>
+</div>
+</div>
+<div id="outline-container-org18246f9" class="outline-3">
+<h3 id="org18246f9"><span class="section-number-3">1.2.</span> Problema 1: Tricotomía</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+La <i>tricotomía</i> nos dice que para dos números cualquiera <b>a</b> y
+<b>b</b> pasa <i>siempre</i> una de las siguientes.
+</p>
+<ul class="org-ul">
+<li>a es mayor que b \(a > b\)</li>
+<li>b es mayor que a \(b > a\)</li>
+<li>a es igual a b \(a = b\)</li>
+</ul>
+
+<p>
+Crear un programa que reciba 2 números y nos diga cual de los 3
+posibles casos pasa entre estos 2 números.
+</p>
+
+
+<div id="org1522863" class="figure">
+<p><img src="../img/icc/tricotomy.svg" alt="tricotomy.svg" class="org-svg" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Problema1</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>, <span style="color: #4eee94;">b</span>;
+        System.out.print(<span style="color: #deb887;">"Ingresa el primer valor: "</span>);
+        a = input.nextInt();
+
+        System.out.print(<span style="color: #deb887;">"Ingresa el segundo valor: "</span>);
+        b = input.nextInt();
+
+        input.close();
+
+        <span style="color: #00bfff;">if</span> (a &gt; b) {
+            System.out.print(a);
+            System.out.print(<span style="color: #deb887;">" es mayor a "</span>);
+            System.out.println(b);
+        } <span style="color: #00bfff;">else</span> {
+            <span style="color: #00bfff;">if</span> (b &gt; a) {
+                System.out.println(<span style="color: #deb887;">""</span> + b + <span style="color: #deb887;">" es mayor a "</span> + a);
+            } <span style="color: #00bfff;">else</span> {
+                System.out.printf(<span style="color: #deb887;">"%i es igual a %i"</span>, a, b);
+            }
+        }
+    }
+}
+</pre>
+</div>
+
+<p>
+Algunas cosas nuevas es que podemos definir varias variables en una
+sola línea
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>, <span style="color: #4eee94;">b</span>;
+</pre>
+</div>
+
+<p>
+También que podemos ahorrarnos varios <code>System.out.print</code> si
+<i>concatenamos</i> el texto.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(<span style="color: #deb887;">""</span> + b + <span style="color: #deb887;">" es mayor a "</span> + a);
+</pre>
+</div>
+
+<p>
+Empezamos con la cadena vacía <code>""</code> ya que si empezamos con <code>b</code> el
+operador <code>+</code> buscará otro número para sumar y dará error. En cambio si
+el primer operando es <i>texto</i> el segundo operando lo tratará como
+texto.
+</p>
+
+<p>
+Finalmente podemos escribir todo en una solo texto utilizando los
+<i>colocadores</i>, donde el símbolo <code>%</code> significa que se va a <span class="underline">reemplazar</span>
+por los argumentos que le pasemos en orden.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">System.out.printf(<span style="color: #deb887;">"%i es igual a %i"</span>, <span style="color: #98f5ff;">a</span>, <span style="color: #98f5ff;">b</span>);
+</pre>
+</div>
+
+<p>
+Existen otros reemplazadores
+</p>
+<ul class="org-ul">
+<li><code>%i</code> para números enteros.</li>
+<li><code>%.2f</code> para decimales con 2 digitos después del punto.</li>
+<li><code>%s</code> para texto <i>cadenas de caracteres</i>.</li>
+<li><code>%b</code> para booleanos.</li>
+<li><code>%c</code> para caracteres.</li>
+<li><code>%t</code> para tiempo.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org831709a" class="outline-3">
+<h3 id="org831709a"><span class="section-number-3">1.3.</span> Problema 2: Mayor entre 4 números.</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Dados 4 números enteros, decidir cuál es el mayor de ellos.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf92b12d" class="outline-3">
+<h3 id="orgf92b12d"><span class="section-number-3">1.4.</span> Operadores lógicos</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Cuando queremos evaluar una condición a verdadero o falso, debemos de
+utilizar los operadores lógicos, que básicamente son operadores de
+proposiciones.
+</p>
+
+<ul class="org-ul">
+<li><p>
+AND: Ocurre si ambas condiciones se cumplen.
+</p>
+
+<p>
+Ej: Si me manda mensaje y contesta mi estado, entonces quiere conmigo.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><code>A</code></th>
+<th scope="col" class="org-right"><code>B</code></th>
+<th scope="col" class="org-right"><code>A &amp;&amp; B</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+OR: Ocurre si al menos una de las 2 condiciones ocurre.
+Ej: Tengo tiempo libre, puedo jugar Halo o Minecraft, pero también
+puedo jugar ambos ¿por qué no?
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><code>A</code></th>
+<th scope="col" class="org-right"><code>B</code></th>
+<th scope="col" class="org-right"><code>A v B</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+NOT: Niega lo que sea.
+Ejemplo: El contrario de volar es <i>no volar</i>, no <i>caminar</i> o
+<i>nadar</i>. La negación de <i>soy estudiante</i>, no es <i>soy nini</i>, sino <i>No
+soy estudiante</i>.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right"><code>A</code></th>
+<th scope="col" class="org-right"><code>!A</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1b364a6" class="outline-3">
+<h3 id="org1b364a6"><span class="section-number-3">1.5.</span> Problema 3: Año bisiesto</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Un año es bisiesto si tiene al 29 de febrero. Podemos saber
+rápidamente si un año es bisiesto si:
+</p>
+
+<ol class="org-ol">
+<li>El año es un múltiplo de 4.</li>
+<li>El año no es un centenario. (El año 200 no fue bisiesto)</li>
+<li>El año es un cuarto centenario, es decir múltiplo de 400 (pero 1200
+sí).</li>
+</ol>
+
+<p>
+Podemos utilizar la fórmula con el año a calcular.
+</p>
+
+\begin{equation}
+B = (A \bmod 4 = 0 \land A \bmod 100 \neq 0) \lor (A \bmod 400 == 0)
+\end{equation}
+<p>
+Crea un programa que dado un año <i>D.C</i> nos diga si es bisiesto o no.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb24431b" class="outline-3">
+<h3 id="orgb24431b"><span class="section-number-3">1.6.</span> Problema 4:</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Un programa de gobierno dará beneficios a ciertas personas de ciertas
+edades. Crea un programa que dada la edad y sexo de la persona le de
+los siguientes beneficios:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Edad</th>
+<th scope="col" class="org-left">sexo</th>
+<th scope="col" class="org-left">beneficio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&lt; 18</td>
+<td class="org-left">H</td>
+<td class="org-left">Desayuno: Café, pan y chilaquiles</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt; 18</td>
+<td class="org-left">M</td>
+<td class="org-left">Desayuno: Té, fruta y enchiladas</td>
+</tr>
+
+<tr>
+<td class="org-left">18 - 30</td>
+<td class="org-left">H</td>
+<td class="org-left">Comida: Sopa, arroz y milanesa</td>
+</tr>
+
+<tr>
+<td class="org-left">18 - 30</td>
+<td class="org-left">M</td>
+<td class="org-left">Comida: Consomé, spaguetti y tacos dorados</td>
+</tr>
+
+<tr>
+<td class="org-left">31 - 50</td>
+<td class="org-left">H</td>
+<td class="org-left">Bono: $100 al día</td>
+</tr>
+
+<tr>
+<td class="org-left">31 - 50</td>
+<td class="org-left">M</td>
+<td class="org-left">Bono: $150 al día</td>
+</tr>
+
+<tr>
+<td class="org-left">51 - 100</td>
+<td class="org-left">H</td>
+<td class="org-left">Descuento: 50% en todas las compras</td>
+</tr>
+
+<tr>
+<td class="org-left">51 - 100</td>
+<td class="org-left">M</td>
+<td class="org-left">Descuento: 60% en todas las compras</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>Nota</b>: puedes usar <code>1</code> si es el sexo es mujer y <code>0</code> si es hombre.
+</p>
+</div>
+</div>
+<div id="outline-container-orgeaa0bcc" class="outline-3">
+<h3 id="orgeaa0bcc"><span class="section-number-3">1.7.</span> Problema 5: PIN</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Crea un programa que reciba un identificador (entero) y un PIN
+(entero) y si coincide exactamente con los valores de la tabla,
+imprimir <i>Acceso concedido</i>, en caso contrario <i>ID o PIN incorrectos</i>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">id</th>
+<th scope="col" class="org-right">PIN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">2821</td>
+<td class="org-right">8831</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org1f5db53" class="outline-3">
+<h3 id="org1f5db53"><span class="section-number-3">1.8.</span> Problema 6: Menú</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Un programa en <i>terminal</i> requiere de una accion a
+realizar. Dependiendo de lo que seleccione el usuario hará una
+funcionalidad diferente. Las acciones son las siguientes:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">opcion</th>
+<th scope="col" class="org-left">Funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">Salir del programa</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">Crear un nuevo laberinto</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">Leer laberinto desde entrada estandar</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">Leer un laberinto desde disco</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Crear un laberinto personalizado</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-left">Modificar la semilla de generación</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-left">Visualizar laberinto cargado</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-left">Exportar laberinto a formato SVG</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Imprimir la funcion que realizará el programa y terminar.
+</p>
+</div>
+</div>
+<div id="outline-container-orgeacee48" class="outline-3">
+<h3 id="orgeacee48"><span class="section-number-3">1.9.</span> Switch Case</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Muchas veces tenemos un <i>subconjunto</i> de opciones, y queremos ver si
+un valor dado coincide con alguna de esas opciones. Podríamos utilizar
+<code>if-else</code> hasta el aburrimiento como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Calificacion de servicio de 1 al 5
+</span><span style="color: #00bfff;">if</span> (a == 1) { ... }
+<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 2) { ... }
+<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 3) { ... }
+<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 4) { ... }
+<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 5) { ... }
+<span style="color: #00bfff;">else</span> { ... }
+</pre>
+</div>
+
+<p>
+El <code>switch-case</code> es útil cuando tenemos un conjunto de
+opciones definidas, es como tener una ramificación de varios caminos
+<i>exclusivos</i>.
+</p>
+
+
+<div id="orgb8b34d9" class="figure">
+<p><img src="../img/icc/switch.svg" alt="switch.svg" class="org-svg" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">switch</span>(a) {
+<span style="color: #00bfff;">case</span> 1: ...
+    <span style="color: #00bfff;">break</span>;
+<span style="color: #00bfff;">case</span> 2: ...
+    <span style="color: #00bfff;">break</span>;
+<span style="color: #00bfff;">case</span> 3: ...
+    <span style="color: #00bfff;">break</span>;
+<span style="color: #00bfff;">case</span> 4: ...
+    <span style="color: #00bfff;">break</span>;
+<span style="color: #00bfff;">case</span> 5: ...
+    <span style="color: #00bfff;">break</span>;
+<span style="color: #00bfff;">default</span>: ...
+    <span style="color: #00bfff;">break</span>;
+}                   
+</pre>
+</div>
+
+<p>
+<b>Nota</b>: El caso <i>default</i> es lo que se ejecuta si no entra antes a
+ningun <code>case</code>. Por temas históricos es necesario escribir el <code>break;</code>
+al final del código en cada caso. Podemos tener tantos casos como queramos.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd96dd1b" class="outline-3">
+<h3 id="orgd96dd1b"><span class="section-number-3">1.10.</span> Problema 6: Switch case</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Reescribe el problema del <i>Menú</i> utilizando solamente la estructura <code>switch case</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-17 Thu 14:48</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

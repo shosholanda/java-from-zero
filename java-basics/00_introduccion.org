@@ -1,3 +1,6 @@
+#+HTML_LINK_HOME: ../inicio.html
+# #+HTML_LINK_UP: ../
+
 * Introducción a Java
 
 Antes de empezar a programar, es escencial entrar en contexto, ya que

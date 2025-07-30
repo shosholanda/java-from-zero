@@ -1,0 +1,366 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Métodos y tipos de retorno
+
+Hasta ahora, sabemos que un objeto cumple con
+
++ Identidad
++ Atributos
++ Comportamiento
+
+Claramente el comportamiento corresponde a los /métodos/. Hasta ahora
+solo hemos visto el método ~main~ y métodos de ~inicializar()~ o
+~imprimir()~, que son un caso particular de toda una familia.
+
+#+begin_src java
+  [public/private/protected] [static] [tipo de retorno] [nombre método]([parámetros]){
+      [algoritmo]
+  	...
+      return [tipo de retorno];
+  }
+#+end_src
+
+Ya que el comportamiento es de las cosas /más importantes/ en un
+objeto, debemos entender todos los diferentes variaciones que puede
+tener un método. Por ahora solo utilizaremos el tipo de acceso como
+~public~, pero veremos más adelante las otras dos variaciones. *Todos
+los métodos, al igual que las variables empiezan con minúscula.*
+
+** Static vs NO Static
+
+El método ~main()~ lo hemos escrito como
+
+#+begin_src java
+  public static void main (String[] args){
+#+end_src
+
+Los métodos que tienen la cláusula ~static~ son métodos que /existen
+sin crear un objeto de esa clase/. Por otro lado, los métodos que no
+tienen ~static~, *necesitan forzosamente* tener un objeto creado para
+poder ejecutar dicho método.
+
+#+begin_src java
+  public void inicializar(){
+#+end_src
+
+Por ejemplo, ejecutamos el método ~inicializar~ como
+
+#+begin_src java
+  Gato gato1 = new Gato();
+  gato1.inicializar();
+  ...
+#+end_src
+
+No podemos llamar al método ~inicializar~ *sin antes haber creado al
+gato*, por lo que es /no estático/.
+
+Por otra parte, podemos tener el siguiente código
+
+#+begin_src java
+  public class Ejemplo1 {
+      public static void main (String[] args) {
+  	System.out.println("Hola, estoy en el main");
+  	Ejemplo1.foo();
+      }
+
+      public static void foo(){
+  	System.out.println("Hola, estoy en el fooo");
+      }
+  }
+#+end_src
+
+A diferencia del método /no estático/, no requerimos crear ningún
+objeto de tipo /Ejemplo1/, simplemente llamamos al método ~foo~ *desde
+la clase*. Como estamos /dentro/ de la clase (estamos al alcance de
+/Ejemplo1/), no es necesario llamar como ~Ejemplo1.foo()~, simplemente ~foo()~.
+
+#+begin_src java
+  public static void main (String[] args) {
+      System.out.println("Hola, estoy en el main");
+      foo();
+  }
+#+end_src
+
+Un método estático normalmente se utiliza para comportamiento que
+provea la clase que no necesite de un objeto previo.  En la clase
+~Math~ se utilizan varios métodos estáticos como ~Math.random()~ o
+~Math.sqrt()~ ya que son funciones generales.
+
+** Parámetros y argumentos de un método
+
+Muchas veces, un método necesita información extra para poder realizar
+el algoritmo. Un método recibe estos datos en medio de los ~()~ que
+tiene.
+
+Los /parámetros/ es la definición de los datos que recibe. Debemos
+especificar en los parámetros el tipo de dato y una variable que
+refiera a este valor. Por otro lado los /argumentos/ es el valor que
+se pasa por los parámetros /en tiempo de ejecución/.
+
+
+Crearemos un programa que sume dos números. No usamos diagrama de
+flujo ya que no es palpable en un diagrama el siguiente código.
+
+#+begin_src java
+  import java.util.Scanner;
+
+  public class Programa1 {
+      public static void main (String[] args){
+  	Scanner input = new Scanner(System.in);
+
+  	System.out.print("Número 1: ");
+  	int n1 = input.nextInt();
+  	System.out.print("Número 2: ");
+  	int n2 = input.nextInt();
+
+  	suma(n1, n2);
+      }
+
+      public static void suma(int a, int b){
+  	int suma = a + b;
+  	System.out.println("" + a + " + " + b + " = " + suma);
+      }
+  }
+#+end_src
+
+Notamos la /firma del método estático/ ~suma~, recibe 2 /parámetros/
+los cuales son ~a~ y ~b~ de tipo ~int~. El orden de los parámetros es
+importante cuando los mandemos llamar.
+
+#+begin_src java
+  public static void suma(int a, int b){
+#+end_src
+
+Los /argumentos/ son los valores que se pasan al método /en tiempo de
+ejecución/ o con lo que es llamado el método, en este caso son los
+valores $n_1, n_2$.
+
+#+begin_src java
+  suma(n1, n2);
+#+end_src
+
+Notemos que la variable $n_1$ (o $n_2$) cambia por la variable $a$ (o
+$b$). Esto no significa que la variable $n_1$ tenga otro
+/identificador/, sino que se hace una /copia del valor/ $n_1$ a $a$,
+por lo que en tiempo de ejecución existen $n_1, a$ con el mismo
+valor. En lenguajes de programación esto se le conoce como /paso por
+valor/; si cambia el valor de $a$ dentro del método ~suma()~ *NO
+cambia* el valor de $n_1$ original. Otros lenguajes utilizan el /paso
+por referencia/ que literalmente /pasa el lugar donde se encuentra/ el
+valor, y si cambia /internamente/ $a$, también cambia el valor $n_1$
+/fuera de ese método/. Java es totalmente team /paso por valor/.
+
+** Tipos de regreso
+Casi todos los métodos, regresan un valor. Por la definición de
+algoritmo, hay una entrada (argumentos) y una salida (return). En un
+lenguaje como ~C~, incluso el mismisimo método ~main~ tiene valor de
+retorno.
+
+#+begin_src c
+  int main(){
+    ...
+    return 0; //El programa finalizó correctamente
+  }
+#+end_src
+
+
+De hecho, ya hemos usado los /tipo de regreso/, cuando
+asignamos a una variable el valor de algún método; ese método esta
+_regresando_ un valor, el cual es asignado a la variable que queremos.
+
+El método ~nextInt()~ regresa el entero ingresado por el usuario en la
+terminal.
+#+begin_src java
+  int edad = input.nextInt();
+#+end_src
+
+
+El método ~length()~ de una ~String~ nos regresa la longitud de la
+cadena.
+#+begin_src java
+  String s = "Ohana significa familia";
+  int n = s.length(); // n = 23
+#+end_src
+
+Incluso el operador ~new~ /regresa/ una nueva instancia de la clase!
+#+begin_src java
+  Gato gato1 = new Gato();
+#+end_src
+
+Si lo puedo asignar, entonces regresa un valor. El tipo de retorno del
+método *debe ser el mismo* que el de la variable que lo contendrá.
+Por ejemplo, obtenemos un número aleatorio con el método
+~Math.random()~  como
+
+#+begin_src java
+  double aleatorio = Math.random();
+#+end_src
+
+El tipo de dato de ~aleatorio~ es el mismo tipo de dato que el de la
+firma del método.
+
+#+begin_src java
+  public static double random() {
+      double random;
+      ... algoritmo para generar un número
+  	pseudo-aleatorio entre [0, 1).
+      return random;
+  }
+#+end_src
+
+
+En la firma del método tenemos un salvaje ~double~, que indica el tipo
+de regreso, esto es, de todo lo que haga el método /solo habrá un
+valor final de tipo ~double~, y este será el que salga de este
+método/.
+
+Es claro que, debemos crear algo del mismo tipo de regreso /dentro del
+método/. No podemos hacer algo como
+
+#+begin_src java
+  public static String toUpperCase(){
+      return -1;
+  }
+#+end_src
+
+Esto es un error de /sintaxis/ porque mezclamos /peras con manzanas/.
+Podemos mejorar nuestro programa suma añadiendo el tipo de retorno
+~int~ como
+
+#+begin_src java
+  import java.util.Scanner;
+
+  public class Programa1 {
+      public static void main (String[] args){
+  	Scanner input = new Scanner(System.in);
+
+  	System.out.print("Número 1: ");
+  	int n1 = input.nextInt();
+  	System.out.print("Número 2: ");
+  	int n2 = input.nextInt();
+
+  	int suma = suma(n1, n2);
+      }
+
+      public static int suma(int a, int b){
+  	int resultado = a + b;
+  	return resultado;
+      }
+  }
+#+end_src
+
+Notamos que cambiamos nuestro tipo de retorno de ~void~ a ~int~. 
+
+Esta forma de escribir nuestro método es la más /óptima/, ya que
+estamos delegando todo el comportamiento (y todo el trabajo) al método
+/suma/, y así despreocuparnos por complementar el método suma /fuera
+del método suma/; solo obtenemos el resultado y ya.
+
+~void~ también es un tipo de regreso, pero es el regreso /vacío/, por
+lo que no regresa nada el método. En otras palabras, no podemos
+asignar a una variable un método ~void~.
+
+Por ejemplo ~inicializar()~ es de tipo ~void~.
+
+#+begin_src java
+  public void inicializar(){
+      ...
+  }
+#+end_src
+
+Y al no regresar /nada/, no podemos asignar ese /nada/ a una variable como.
+
+#+begin_src java
+  Gato gato1 = new Gato();
+  char c = gato1.inicializar(); // ???
+#+end_src
+
+Lo cual es un error en /sintaxis/. Los métodos ~void~ normalmente se
+utilizar para /cambiar el estado/ del programa, /asignar variables/ o
+/imprimir/. Todo método que no tenga un ~=~ de su lado izquierdo es
+~void~ como el método.
+
+#+begin_src java
+  System.out.println();
+#+end_src
+
+
+** Problema 1: Calculadora
+
+Complementa el ~Programa1~ con las siguientes operaciones aritméticas:
++ Multiplicación
++ División
++ Resta
++ Exponeciación
+
+
+Utilizando métodos /estáticos/ con el tipo de retorno adecuado. El
+método ~main~ deberá ejecutarse como sigue:
+
+#+begin_src java
+  public static void main (String[] args){
+      int n1, n2;
+      // Leer la entrada de usuario en n1 y n2
+      // ...
+      //
+      int suma = suma(n1, n2);
+      System.out.printf("%i + %i = %i\n", n1, n2, suma);
+      int resta = resta(n1, n2);
+      System.out.printf("%i - %i = %i\n", n1, n2, resta);
+      double division = division(n1, n2);
+      System.out.printf("%i / %i = %i\n", n1, n2, division);
+      int multiplicacion = multiplicacion(n1, n2);
+      System.out.printf("%i * %i = %i\n", n1, n2, multiplicacion);
+      int exponenciacion = exponenciacion(n1, n2);
+      System.out.printf("%i ^ %i = %i\n", n1, n2, exponenciacion);
+  }
+#+end_src
+
+Y cambia el nombre de la clase a ~Calculadora~
+
+** Problema 2: Lógica
+
+Crear un programa que reciba 2 booleanos $b_1, b_2$ con posibles
+valores ~true, false~. Luego evaluar cada una de los valores leídos en
+los siguientes métodos /estáticos/ con el tipo de retorno
+adecuado.
+
++ ~not~ (negación, recibe un solo parámetro)
++ ~and~
++ ~or~
++ ~implies~ (implicación)
++ ~iff~ (si y solo si)
+
+Recuerda que podemos utilizar equivalencias lógicas para los
+operadores /implica/ y /syss/. El método ~not~ se haría como sigue:
+
+#+begin_src java
+  public static boolean not(boolean b){
+      return !b;
+  }
+#+end_src
+
+*Nota*: Es posible que ~return~ evalúe una expresión, en lugar de
+ asignarla a una variable nueva y luego regresar esa variable.
+
+** Problema 3: Calculadora++
+
+Añade a la clase ~Calculadora~ del /Problema1/ los métodos estáticos:
+
++ ~abs(n)~ Valor absoluto de n
++ ~mayor(a, b)~ El mayor entre a, b
++ ~menor(a, b)~ El menor entre a, b
++ ~log_2(n)~ Logaritmo base 2 de n
++ ~esPar(n)~ Si n es par
++ ~esPrimo(n)~ Si n es primo
++ ~chicharronera(a, b, c)~ la chicharronera. Regresar las soluciones
+  exactamente como ~[x1, x2]~, con el tipo de regreso ~double[]~
++ ~noDigitos(n)~ el número de dígitos de n
++ ~binario(n)~ convierte n a número binario, regresa un ~String~
++ ~inv_add(a, m)~ Nos da el inverso aditivo de ~a~ módulo ~m~ tal
+  que $((a + i) \mod m) = 0$
++ ~inv_mult(a, m)~ Nos da el inverso multiplicativo de ~a~ módulo ~m~
+  tal que $((a * i) \mod m) = 1$
+
+*Hint para inv_*: Debes iterar i en el intervalo $[0, m)$ y regresar
+*i* cuando se cumpla la condición que iguala a 0.
+

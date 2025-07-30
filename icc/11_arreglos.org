@@ -1,0 +1,298 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Arreglos
+
+Todo en programación es /cantar y coser/ hasta que aparecen números
+mayores a 1000. Por ejemplo, imaginemos que tenemos una nómina con 250
+empleados. Supongamos que tenemos la clase /Empleado/ y debemos
+cargarle los valores ~nombre, sueldo~. Nuestra clase /Nomina/ deberá
+tener registrados todos los empleados como:
+
+#+begin_src java
+  public class Nomina {
+
+      private Empleado e1;
+      private Empleado e2;
+      private Empleado e3;
+      private Empleado e4;
+      private Empleado e5;
+      //... nos faltan 245 líneas así!!! D:
+#+end_src
+
+Como puedes ver, es masoquizta declarar 1x1 cada variable que guarde a
+cada empleado. Peor aún, si queremos añadir un nuevo empleado,
+deberíamos /detener la ejecución del código, añadir el código nuevo y
+volver a ejecutar/; esto nunca pasa en la vida real. El código que
+escribimos debe ser capaz de poder adaptarse a las situaciones que
+enfrente.
+
+Una /estructura de datos/ se dedica a guardar información /dentro de
+sí misma en tiempo de ejecución/, así podemos tener una sola variable
+que guarde /N/ cantidad de valores; solo existen estructuras de datos
+dinámicas (que cambian) y estructuras de datos estáticas que veremos
+en esta sección.
+
+** Definición
+Un arreglo (no, no es un arreglo floral), son espacios reservados en
+memora de tamaño fijo para poder almacenar datos /de un mismo tipo/ a
+través de un índice. En otras palabras, *son chorizos de memoria*.
+
+Por ejemplo, aquí el tamaño es fijo (5 en total), los datos
+almacenados son del mismo tipo (~int~), y diferentes valores se
+diferencian por el índice rodeado de /corchetes/ ~[i]~
+
+|   1200 |    750 |    820 |    550 |    490 |
+|--------+--------+--------+--------+--------|
+| arr[0] | arr[1] | arr[2] | arr[3] | arr[4] |
+
+Donde:
+
+1. ~arr~ es el bloque total donde se encuentra el espacio reservado
+2. ~[i]~ es el índice del cajón *empezando en 0*, en este caso 0, 1,
+   2, 3, 4 |  5 en total
+3. ~1200~ es el valor que se guarda /en el espacio 0/, ~750~ en el
+   /espacio 1/ y así sucesivamente.
+
+Un arreglo *siempre* debe definir su tamaño /final/ al momento de
+crearlo; por lo que es una estructura de datos /estática/, es decir,
+no cambia si se añaden/quitan datos y es un objeto. Otras estructuras
+sí cambian dependiendo del tamaño que son /dinámicas/ pero las veremos
+más adelante.
+
+En /Java/ podemos crear la tabla anterior, donde en cada cajón resulte
+a un sueldo. 
+
+#+begin_src java
+  import java.util.Arrays;
+
+  public static void main (String[] args){
+      
+      int[] arr;
+      arr = new int[5];
+      arr[0] = 1200;
+      arr[1] = 750;
+      arr[2] = 820;
+      arr[3] = 550;
+      arr[4] = 490;
+
+      System.out.println(Arrays.toString(arr));
+      // Output:
+      // [1200, 750, 820, 550, 490]
+  }
+#+end_src
+
+Primero importamos esta clase extraña que nos ayudará a imprimir
+bonito nuestros arreglos y solamente la utilizaremos para eso aunque
+también se puede crear a mano esa representación en cadena y es trivial.
+
+#+begin_src java
+  import java.util.Arrays;
+#+end_src
+
+Luego, en el main tenemos la declaración de un arreglo; utilizamos el
+tipo de dato y corchetes ~[]~ como:
+
+#+begin_src java
+  int[] arr;
+#+end_src
+
+Después /creamos/ el arreglo con el operador ~new~ ya que también son
+objetos los arreglos. El tamaño del arreglo se especifica /entre corchetes/.
+
+#+begin_src java
+  arr = new int[5];
+#+end_src
+
+Mientras exista ~arr~ tendremos 5 lugares disponibles. Si queremos
+añadir un sexto dato, no nos sirve este arreglo porque es /estático/;
+debemos crear /aparte/ un arreglo de tamaño 6. Por otra parte si
+queremos utilizar menos espacios del total, nos sobran lugares que
+ocupan memoria y se desaprovecha. Los arreglos debemos de planearlos
+bien.
+
+
+Regresando, asignamos a /cada cajón/ del arreglo un valor
+final. ~arr[i]~ es una variable para asignacion; donde si cambia /i/
+cambia la variable.
+
+#+begin_src java
+  arr[0] = 1200;
+  arr[1] = 750;
+  arr[2] = 820;
+  arr[3] = 550;
+  arr[4] = 490;
+#+end_src
+
+Finalmente tenemos la impresión del arreglo de una manera bonita; si
+no lo imprimimos así, por ~toString()~ de /Object/ nos imprimirá la
+referencia en memoria del objeto como ~arr@1233456fe~
+
+#+begin_src java
+  System.out.println(Arrays.toString(arr));
+#+end_src
+
+
+** Problema 1: Promedio sueldos
+Dado una entrada /N/ del usuario, sacar el promedio de /N/ sueldos.
+Como no sabemos en tiempo de ejecución el tamaño de /N/ usaremos el
+atributo /length/ de arreglo para saber el tamaño final.
+
+#+begin_src java
+  import java.util.Scanner;
+  import java.util.Arrays;
+
+  public class Problema1 {
+      public static void main (String[] args){
+  	Scanner input = new Scanner(System.in);
+
+  	int n;
+  	System.out.print("Ingrese el número de sueldos a promediar: ");
+  	n = input.nextInt();
+  	
+  	float[] sueldos;
+  	sueldos = new float[n];
+
+  	for (int i = 0; i < n; i++){
+  	    System.out.printf("Ingrese el sueldo #%i: ", i+1);
+  	    sueldos[i] = input.nextFloat();
+  	}
+
+  	System.out.println(Arrays.toSting(sueldos));
+
+  	float promedio = 0;
+  	for (int i = 0; i < sueldos.length; i++){
+  	    promedio = promedio + sueldos[i];
+  	}
+
+  	promedio = promedio/n;
+  	System.out.printf("El promedio de sueldos es de $%f\n", promedio);
+      }
+  }
+#+end_src
+
+Esta vez utilizamos 2 paquetes de ~java.util~. No te sorprendas si ves
+100 líneas de /imports/ en grandes proyectos, gajes del oficio.
+
+#+begin_src java
+  import java.util.Scanner;
+  import java.util.Arrays;
+#+end_src
+
+Como de costumbre, inicializamos la entrada de ~Scanner~, definimos
+una variable ~n~ donde leeremos el tamaño total del arreglo. Luego
+creamos el arreglo /de tipo *float*/. Estamos diciendo que existirá un
+arreglo, mas todavía no sabemos de cuantos elementos.
+
+#+begin_src java
+  float[] sueldos;
+#+end_src
+
+pero en la siguiente línea termina la duda, y tiene tamaño /N/.
+#+begin_src java
+  sueldos = new float[n];
+#+end_src
+
+Tranquilamente podríamos hacer ambas líneas por transitividad en una
+sola línea como
+
+#+begin_src java
+  float[] sueldos = new float[n];
+#+end_src
+
+*Dato curioso*: ~float~ es como el /antecesor/ de ~double~, pero ambos
+ son de punto decimal aunque claro el ~double~ es de /doble/
+ precisión.
+
+ Luego, tenemos que leer /N/ datos con el /mesmo/ mensaje. El ~for~ se
+ adapta mejor que un ~while~ porque tenemos toda la información a la
+ mano. *Terminamos antes de que llegue a N*; así $i$ /itera/ en los
+ valores de $0, 1, 2, 3, \ldots N-1$ *y no* $1, 2, 3, 4, \ldots N$ aunque ambos
+ cuentan /5/. Mucho ojo con esto.
+
+ #+begin_src java
+   for (int i = 0; i < n; i++){
+       System.out.printf("Ingrese el sueldo #%i: ", i+1);
+       sueldos[i] = input.nextFloat();
+   }
+ #+end_src
+
+ Este for nos ahorra escribir /N/ líneas como:
+
+ #+begin_src java
+   System.out.printf("Ingrese el sueldo #1: ");
+   sueldos[0] = input.nextFloat();
+   System.out.printf("Ingrese el sueldo #2: ");
+   sueldos[1] = input.nextFloat();
+   System.out.printf("Ingrese el sueldo #3: ");
+   sueldos[2] = input.nextFloat();
+   System.out.printf("Ingrese el sueldo #4: ");
+   sueldos[3] = input.nextFloat();
+   System.out.printf("Ingrese el sueldo #5: ");
+   sueldos[5] = input.nextFloat();
+   // ... N 
+ #+end_src
+
+ Cada uno de los datos ingresados los guardamos en la variable
+ /sueldos/ en la posición /i/ y los tenemos por separado. El método
+ ~nextFloat()~ no debería sorprendernos si lee un /número decimal/.
+
+ Después de imprimir lo datos creamos una variable ~promedio~ donde
+ guardaremos la suma total de los datos recolectados y, /recorremos/
+ el arreglo cajón por cajón. ~sueldos.length~ con *TH* /y no ht/, es
+ una variable que guarda el valor del tamaño del arreglo. En este caso
+~n = sueldos.length~
+
+ #+begin_src java
+   float promedio = 0;
+   for (int i = 0; i < sueldos.length; i++){
+       promedio = promedio + sueldos[i];
+   }
+ #+end_src
+
+ Cada vez que cambia i, sumamos el valor que tenía promedio y el valor
+ que está en el cajón /i/.
+
+ Finalmente, el promedio es la /suma total/ entre el /total de
+ elementos/.
+
+ 
+** Problema 2: Estadistica
+Una encuesta de gobierno quere saber cuántas personas son /mayores y
+menores/ al promedio. Crea un programa que calcule el promedio de /N/
+edades y luego mostrar cuántas personas son mayores al promedio y
+cuántas menores.
+
+** Problema 3: Empleados
+Una empresa tiene dos turnos matutino y vespertino donde trabajan 10
+empleados (5 en la mañana y 5 en la tarde). Crear un programa que
+permita almacenar los sueldos de los empleados agrupados por
+turno. Imprimir el total de cada turno.
+
+** Problema 4: Distribución Gaussiana
+Crea un programa que guarde 10,000 números enteros en el rango
+$[0-100]$ utilizando ~(int)(Math.random()*100)~. 
+Contar cuántos números son del rango $[0-9]$, del $[10, 19]$ del
+$[20-29]$ y así sucesivamente hasta llegar al 100
+Luego imprimir la cantidad de cada rango ordenadamente como
+
+| 0-9 | 10-19 | 20-29 | 30-39 | ... |
+|-----+-------+-------+-------+-----|
+|   5 |     8 |     2 |     1 | etc |
+
+** Problema 5: Estudiantes
+Un salóń de clases tiene /N/ estudiantes. Crear un programa que guarde
+en 2 arrelgos su /nombre/ y su /calificación/ en el rango $[4,10]$.
+
+Imprimir quién fue el mejor estudiante con mejor calificación. 
+
+** Problema 6. Ordenado?
+Crear un arreglo de 10 /enteros por usuario/ y luego decidir si este
+arreglo está ordenado o no de menor a mayor.
+
+** Problema 7. ToString
+Crea un arreglo /ordenado/ de tamaño 20, luego imprímelo con un método
+/estático/ que se llame ~imprimir()~. El método debe imprimir
+/exactamente igual/ que como lo haría ~Arrays.toString(a)~. Llamalo
+desde el método ~main()~
+
+*Hint* Ve un patrón que se repita.
+

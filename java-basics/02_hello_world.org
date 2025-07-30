@@ -1,3 +1,5 @@
+#+HTML_LINK_HOME: ../inicio.html
+
 * Creación de programas en /Java/
 
 *TODOS* los programas y aplicaciones son escritos en texto plano

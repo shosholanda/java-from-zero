@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-18 Fri 19:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgeba71c9">1. Encapsulación, constructor y toString</a>
+<ul>
+<li><a href="#org56e7c68">1.1. Ejemplo 1: Vaca y Pollito</a></li>
+<li><a href="#org48573bf">1.2. Problema 1: Gatos++</a></li>
+<li><a href="#org5f84811">1.3. Problema 2: Caja</a></li>
+<li><a href="#org18461ca">1.4. Constructor</a></li>
+<li><a href="#org8e084f2">1.5. ToString</a></li>
+<li><a href="#org5cb960e">1.6. Problema 3 y 4. Cajas++</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeba71c9" class="outline-2">
+<h2 id="orgeba71c9"><span class="section-number-2">1.</span> Encapsulación, constructor y toString</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Anteriormente vimos que los <i>atributos de clase</i> deben escribirse como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+</pre>
+</div>
+
+<p>
+La palabra reservada <code>private</code> indica que solo puede ser usada esta
+variable (o método también) <b>dentro de la misma clase y no
+fuera</b>. Esto no tiene nada que ver con <i>proteger los datos de un
+hacker</i>, pero sí protegerlo de <i>otras clases</i> lo cual es parte de los
+principios de la <i>Programación Orientada a Objetos (POO)</i>.
+</p>
+</div>
+<div id="outline-container-org56e7c68" class="outline-3">
+<h3 id="org56e7c68"><span class="section-number-3">1.1.</span> Ejemplo 1: Vaca y Pollito</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Tenemos dos clases, <i>Vaca y Pollito</i> <b>en 2 archivos diferentes</b> como:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Archivo Vaca.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Vaca</span> {
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Esto es inaceptable, solo es un ejemplo
+</span>    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">edad</span>;
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+        System.out.print(<span style="color: #deb887;">"Ingresa un nombre para la vaca: "</span>);
+        nombre = input.nextLine();
+        System.out.print(<span style="color: #deb887;">"Ingresa una edad de la vaca: "</span>);
+        edad = input.nextLine();
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">imprimir</span>(){
+        <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">" _________________________________________\n"</span> + 
+            <span style="color: #deb887;">"&lt; Hola, soy la vaca %s y tengo %i a&#241;os! &gt;\n"</span> + 
+            <span style="color: #deb887;">" -----------------------------------------\n"</span> + 
+            <span style="color: #deb887;">"        \   ^__^\n"</span> + 
+            <span style="color: #deb887;">"         \  (oo)\_______\n"</span> + 
+            <span style="color: #deb887;">"            (__)\       )\\/\\\n"</span> + 
+            <span style="color: #deb887;">"                ||----w |\n"</span> + 
+            <span style="color: #deb887;">"                ||     ||\n"</span> +
+            <span style="color: #deb887;">"#############################################\n"</span>;
+        System.out.printf(s, nombre, edad);
+    }
+}
+</pre>
+</div>
+
+<p>
+Dejaré este dato por aquí
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ echo <span style="color: #deb887;">"Lola"</span> | cowsay
+</pre>
+</div>
+
+
+<p>
+Clase <i>Pollito</i>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Archivo Pollito.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Pollito</span> {
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Esto s&#237; se debe hacer
+</span>    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+        System.out.print(<span style="color: #deb887;">"Ingresa nombre de pollito: "</span>);
+        nombre = input.nextLine();
+        System.out.print(<span style="color: #deb887;">"Ingresa edad de pollito: "</span>);
+        edad = input.nextInt();
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">imprimir</span>(){
+        <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">" _________________________________________\n"</span> +
+            <span style="color: #deb887;">"&lt; Hola, soy el pollito %s y tengo %i a&#241;os! &gt;\n"</span> +
+            <span style="color: #deb887;">"  ----------------------------------------------\n"</span> + 
+            <span style="color: #deb887;">"        \   \n"</span> + 
+            <span style="color: #deb887;">"         \  \n"</span> +
+            <span style="color: #deb887;">"          \ \n"</span> +
+            <span style="color: #deb887;">"             M\n"</span> +
+            <span style="color: #deb887;">"           &lt;&#176;v&#176;&gt;\n"</span> +
+            <span style="color: #deb887;">"            Y Y\n"</span> +
+            <span style="color: #deb887;">"############################################\n"</span>;
+        System.out.printf(s, nombre, edad);
+    }
+}       
+</pre>
+</div>
+
+<p>
+Y finalmente en otro archivo diferente <i>Main</i>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Main</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Vaca</span> <span style="color: #4eee94;">v1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Vaca</span>();
+        v1.inicializar();
+        v1.imprimir();
+
+        <span style="color: #98f5ff;">Pollito</span> <span style="color: #4eee94;">p1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Pollito</span>();
+        p1.inicializar();
+        p1.imprimir();
+    }
+}
+</pre>
+</div>
+
+<p>
+<b>Nota</b> Para poder usar otras clases en nuestro <i>Main</i>, estas clases
+ deben de
+</p>
+
+<ul class="org-ul">
+<li>Estar en la misma carpeta que el <i>Main</i></li>
+<li>Importarse (como <code>import java.util.Scanner;</code>)</li>
+<li>Importar el paquete. (pendiente)</li>
+</ul>
+
+<p>
+Por ahora, los 3 archivos están en la misma carpeta. Y podemos
+compilar <i>todos</i> los archivos java como:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ ls
+Vaca.java       Pollito.java      Main.java
+$ javac *.java
+$ java Main
+</pre>
+</div>
+
+
+<p>
+Una vez cargado los valores de <i>Vaca y Pollito</i>, podríamos cambiar los
+atributos de la clase <i>Vaca</i> que son <i>públicos</i> como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+    <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">...
+</span>    v1.nombre = <span style="color: #deb887;">"Guillermina"</span>;
+    v1.edad = -10;
+    v1.imprimir();
+}
+</pre>
+</div>
+
+<p>
+Java nos permite <i>si es que es público</i>, asignar a los atributos
+valores <i>directamente</i>. Por una parte esto es válido porque es lógica,
+pero claramente tener una <i>edad negativa</i> no es sensato. <b>No podemos
+modificar atributos <span class="underline">sin que NO lo sepa la clase</span></b>. Lo correcto sería
+que la clase misma <i>autorice</i> que se está cambiando un valor suyo; los
+atributos son exclusivos de la misma clase y nadie <i>salvo ella</i> puede
+modificar sus valores. Esto es la <b>encapsulación</b>.
+</p>
+
+<p>
+En este ejemplo <b>sobrepasamos</b> al objeto <code>v1</code> y podemos asignar una
+edad <i>negativa!</i>. Para <i>informar</i> a la clase que estamos modificando
+un valor, necesitamos crear un método que haga esta asignación a su variable
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Vaca</span> {
+
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Ahora s&#237; se cumple el encapsulamiento
+</span>    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">cambiaNombre</span>(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span>){
+        nombre = s;
+    }
+
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">.. m&#225;s m&#233;todos</span>
+</pre>
+</div>
+
+<p>
+Así, cuando queramos cambiar el valor a <code>nombre</code> solo puede ser
+posible únicamente a través del método <code>cambiaNombre()</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">v1.cambiaNombre(<span style="color: #deb887;">"Guillermina"</span>);
+</pre>
+</div>
+
+<p>
+Incluso, podemos validar que la información que nos pasen sea la
+correcta, como en el caso de la edad, si es negativa, simplemente
+<i>ignorar esta entrada</i> lo cual nos da un nivel más de <i>robustez</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">cambiaEdad</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n</span>){
+    <span style="color: #00bfff;">if</span> (n &lt; 0)
+        System.out.println(<span style="color: #deb887;">"No se puede asignar edad negativa"</span>);
+    <span style="color: #00bfff;">else</span>
+        edad = n;
+}
+</pre>
+</div>
+
+<p>
+De igual forma, no podemos <i>leer</i> los atributos privados directamente
+como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombreVaca</span> = v1.nombre; <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">Never</span>
+</pre>
+</div>
+
+<p>
+De nuevo, la clase <i>debe saber</i> lo que está pasando con sus variables,
+incluso si solo es leer el valor. Por lo que creamos un método que a
+través de él nos regrese el valor privado de la clase.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">obtieneNombre</span>(){
+    <span style="color: #00bfff;">return</span> nombre;
+}
+</pre>
+</div>
+
+<p>
+Por lo que, tenemos siempre 2 tipos de métodos de cajón por cada
+variable de clase:
+</p>
+
+<ol class="org-ol">
+<li>Asignar un valor a una variable</li>
+<li>Obtener un valor de una variable</li>
+</ol>
+
+<p>
+En la comunidad de <i>Java</i>, se ha acordado que estos dos tipos de
+métodos (que siempre existen) tengan el prefijo <code>set</code> y <code>get</code> para
+asignar y leer valores respectivamente. Así tenemos los famosos
+<i>getters</i> y <i>setters</i> cuyo único propósito es ser intermediarios
+entre el exterior y las variables privadas.
+</p>
+
+<p>
+La clase <i>Pollito</i>, siguiendo el principio de encapsulación quedaría
+como:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Archivo Pollito.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Pollito</span> {
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Esto s&#237; se debe hacer
+</span>    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">setNombre</span>(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nuevoNombre</span>){
+        nombre = nuevoNombre;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">getNombre</span>(){
+        <span style="color: #00bfff;">return</span> nombre;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">setEdad</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">nuevaEdad</span>){
+        <span style="color: #00bfff;">if</span> (nuevaEdad &lt; 0 || nuevaEdad &gt; 10)
+            System.out.println(<span style="color: #deb887;">"Los pollos no viven "</span> + nuevaEdad + <span style="color: #deb887;">" a&#241;os"</span>);
+        <span style="color: #00bfff;">else</span>
+            edad = nuevaEdad;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">getEdad</span>(){
+        <span style="color: #00bfff;">return</span> edad;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+        System.out.print(<span style="color: #deb887;">"Ingresa nombre de pollito: "</span>);
+        nombre = input.nextLine();
+        System.out.print(<span style="color: #deb887;">"Ingresa edad de pollito: "</span>);
+        edad = input.nextInt();
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">imprimir</span>(){
+        <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">" _________________________________________\n"</span> +
+            <span style="color: #deb887;">"&lt; Hola, soy el pollito %s y tengo %i a&#241;os! &gt;\n"</span> +
+            <span style="color: #deb887;">"  ----------------------------------------------\n"</span> + 
+            <span style="color: #deb887;">"        \   \n"</span> + 
+            <span style="color: #deb887;">"         \  \n"</span> +
+            <span style="color: #deb887;">"          \ \n"</span> +
+            <span style="color: #deb887;">"             M\n"</span> +
+            <span style="color: #deb887;">"           &lt;&#176;v&#176;&gt;\n"</span> +
+            <span style="color: #deb887;">"            Y Y\n"</span> +
+            <span style="color: #deb887;">"############################################\n"</span>;
+        System.out.printf(s, nombre, edad);
+    }
+}       
+</pre>
+</div>
+
+<p>
+Resumiendo, para seguir el principio de encapsulación en <i>Java</i>:
+</p>
+
+<ul class="org-ul">
+<li>Todas las variables de clase deben tener acceso <code>private</code>.</li>
+<li>Por cada variable debe haber un método <code>get</code> y <code>set</code> que hagan
+obtención y asignación de la variable.</li>
+<li>Cuando se requiera leer u obtener el valor de una variable <i>fuera de
+la clase</i> debemos utilizar ĺos <i>getters y setters</i>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org48573bf" class="outline-3">
+<h3 id="org48573bf"><span class="section-number-3">1.2.</span> Problema 1: Gatos++</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+De la clase <i>Gato</i> programada anteriormente, modifícala para que ahora
+cumpla con el principio de encapsulación.
+</p>
+</div>
+</div>
+<div id="outline-container-org5f84811" class="outline-3">
+<h3 id="org5f84811"><span class="section-number-3">1.3.</span> Problema 2: Caja</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Crea una clase <i>Caja</i> que tenga como atributos
+</p>
+
+<ul class="org-ul">
+<li>ID de caja (<code>int</code>)</li>
+<li>Contenido de la caja (<code>String</code>)</li>
+<li>Color de la caja (<code>String</code>)</li>
+</ul>
+
+<p>
+con los métodos <i>no estáticos</i>
+</p>
+<ul class="org-ul">
+<li><code>inicializar()</code></li>
+<li><code>getters, setters</code></li>
+<li><p>
+<code>imprimir()</code> La cadena impresa debe ser como
+</p>
+<pre class="example" id="org727c36a">
++---- ID de la caja ----+
+|-----------------------|
+|  contenido de la caja |
+|  COLOR: ColorCaja     |
++-----------------------+
+</pre>
+<p>
+Nota que la caja deberá ajustarse en tamaño al nombre y al
+contenido. 
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org18461ca" class="outline-3">
+<h3 id="org18461ca"><span class="section-number-3">1.4.</span> Constructor</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Ya que nuestras variables de clase <i>deben inicializarse</i> hay que
+llamar al método <code>inicializar()</code>, donde leemos uno por uno los valores
+que tendrá.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+    <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+    System.out.print(<span style="color: #deb887;">"Ingresa nombre de pollito: "</span>);
+    nombre = input.nextLine();
+    System.out.print(<span style="color: #deb887;">"Ingresa edad de pollito: "</span>);
+    edad = input.nextInt();
+}
+</pre>
+</div>
+
+<p>
+<i>Java</i> nos provee de un <i>constructor de clase</i> para poder inicializar
+estas variables de antemano, si es lo que sabemos. Un <i>constructor</i>
+es un método especial que tiene la excepción de:
+</p>
+
+<ol class="org-ol">
+<li>Llamarse igual que la clase</li>
+<li>Ser un método.</li>
+<li>Es el primer método que se ejecuta de la clase</li>
+</ol>
+
+<p>
+Su único propósito es dejar a la clase <i>lista</i> en valores cuando se
+termine de crear con el operador <code>new</code>. Es básicamente un
+incializador. Hasta ahora solo hemos utilizado el constructor <i>vacío</i>
+que inicializa todo en valores mínimos, pero lo podemos
+<i>sobreescribir</i>. Podríamos hacer el constructor de <i>Pollito</i> como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Constructor de la clase Pollito.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">public</span> Pollito(){
+    inicializar();
+}
+</pre>
+</div>
+
+<p>
+para poder ahorrarnos llamar al método <code>inicializar()</code> una vez creado
+el objeto
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+    <span style="color: #98f5ff;">Pollito</span> <span style="color: #4eee94;">p1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Pollito</span>();
+    <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">p1.inicializar() se ejecut&#243; al momento de crear Pollito()
+</span>    p1.imprimir();
+</pre>
+</div>
+
+<p>
+Mejor aún, podríamos ahorrarnos escribir incluso el método
+<code>inicializar()</code> si directamente su código lo ponemos en el constructor
+como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Constructor de la clase Pollito.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">public</span> Pollito(){
+    <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+    System.out.print(<span style="color: #deb887;">"Ingresa nombre de pollito: "</span>);
+    nombre = input.nextLine();
+    System.out.print(<span style="color: #deb887;">"Ingresa edad de pollito: "</span>);
+    edad = input.nextInt();
+}
+</pre>
+</div>
+
+<p>
+Pero la manera óptima es pasarle los valores al constructor como
+parámetro y no utilizar el objeto  <code>Scanner</code> en lo absoluto! 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> Pollito(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>){
+    <span style="color: #00bfff;">this</span>.nombre = nombre;
+    <span style="color: #00bfff;">this</span>.edad = edad;
+}
+</pre>
+</div>
+
+<p>
+<b>Nota</b>: Ya que la <i>variable de clase</i> se llama <code>nombre</code>, y el
+ <i>parámetro del constructor</i> se llama <code>nombre</code>, <i>Java</i> no puede
+ identificar en qué variable asignará qué. Por esto se utiliza la
+ palabra reservada <code>this</code>. <code>this</code> hace referencia a <i>esta clase</i> desde
+ <i>dentro de la clase</i>, o simplemente para referirse a los atributos y
+ métodos de la clase y evitar <i>ambiguedad</i>.
+</p>
+
+<p>
+Los valores de <code>nombre</code> y <code>edad</code> se los podemos pasar desde el
+<code>main</code>. Así estamos creando <i>alta cohesion</i> a nuestro objeto, lo que
+significa: Enfocate solamente en <i>Pollito</i>, cosas como <code>Scanner</code> no
+tienen nada que ver con un <i>Pollito</i>, por lo que nuestro objeto solo
+se debe de preocupar de cosas de <i>Pollito</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+
+    <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+    System.out.print(<span style="color: #deb887;">"Ingresa nombre de pollito: "</span>);
+    nombre = input.nextLine();
+    System.out.print(<span style="color: #deb887;">"Ingresa edad de pollito: "</span>);
+    edad = input.nextInt();
+
+    <span style="color: #98f5ff;">Pollito</span> <span style="color: #4eee94;">p1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Pollito</span>(nombre, edad);
+    p1.imprimir();
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8e084f2" class="outline-3">
+<h3 id="org8e084f2"><span class="section-number-3">1.5.</span> ToString</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Todos los objetos en <i>Java</i> tienen un método <i>heredado de Object</i>
+llamado <code>toString()</code>. Sirve para dar una representación en cadena del
+objeto mismo, exactamente lo que hace el método <code>imprimir()</code>, pero con
+un poco más de elegancia.
+</p>
+
+<p>
+Muchas veces es importante imprimir una representación del objeto como
+sigue
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+    <span style="color: #98f5ff;">Vaca</span> <span style="color: #4eee94;">v</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Vaca</span>(<span style="color: #deb887;">"Lola"</span>, 22); <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Constructor &#243;ptimo
+</span>    System.out.println(v.toString());
+}
+</pre>
+</div>
+
+<p>
+Aunque no hemos <i>programado</i> el método <code>toString()</code> lo tenemos porque
+es heredado. Más adelante veremos qué es esto. En la consola nos
+aparecería algo como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ javac Main.java &amp;&amp; java Main
+Vaca@2a139a55
+</pre>
+</div>
+
+<p>
+Lo que aparece es la <i>direccion de memoria</i> del objeto en cuestión, lo
+que es <i>exactamente</i> su <b>identificador</b>, obviamente en un <code>String</code>. El
+método <code>toString()</code> podemos <i>modificarlo</i> para que en lugar de que nos
+imprima la dirección en memoria del objeto, nos imprima la cadena que
+hemos definido anteriormente.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a2cd5a;">@Override</span>
+<span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">toString</span>(){
+    <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">" _________________________________________\n"</span> + 
+        <span style="color: #deb887;">"&lt; Hola, soy la vaca %s y tengo %i a&#241;os! &gt;\n"</span> + 
+        <span style="color: #deb887;">" -----------------------------------------\n"</span> + 
+        <span style="color: #deb887;">"        \   ^__^\n"</span> + 
+        <span style="color: #deb887;">"         \  (oo)\_______\n"</span> + 
+        <span style="color: #deb887;">"            (__)\       )\\/\\\n"</span> + 
+        <span style="color: #deb887;">"                ||----w |\n"</span> + 
+        <span style="color: #deb887;">"                ||     ||\n"</span> +
+        <span style="color: #deb887;">"#############################################\n"</span>;
+    <span style="color: #00bfff;">return</span> s;
+}
+</pre>
+</div>
+
+<p>
+<b>Nota</b>: No estamos imprimiendo la cadena, mejor aún la <i>regresamos</i>
+para que esta cadena pueda servir para más que solo imprimir en
+pantalla! Como por ejemplo, mandarla en un chat, guardarla a un
+archivo etc.
+</p>
+
+<p>
+La anotación <code>@Override</code> significa que estamos <i>sobrecargando</i> el
+método, es decir si ya estaba implementado el método (claramente sí,
+cuando imprimía la dirección de memoria), lo <i>reimplementa</i> o
+<i>sobreescribe</i> su código por nuestro código.
+</p>
+
+<p>
+El código de la clase <i>Vaca</i> siguiendo el paradigma de <i>Programación
+orientada a objetos</i> con las mejores prácticas queda como
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Vaca</span> {
+
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+
+    <span style="color: #00bfff;">public</span> Vaca(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>){
+        <span style="color: #00bfff;">this</span>.nombre = nombre;
+        <span style="color: #00bfff;">this</span>.edad = edad;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">getNombre</span>(){
+        <span style="color: #00bfff;">return</span> nombre;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">setNombre</span>(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>){
+        <span style="color: #00bfff;">if</span> (nombre.equals(<span style="color: #deb887;">""</span>))
+            System.out.println(<span style="color: #deb887;">"Nombre no v&#225;lido"</span>);
+        <span style="color: #00bfff;">else</span> 
+            <span style="color: #00bfff;">this</span>.nombre = nombre;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">getEdad</span>(){
+        <span style="color: #00bfff;">return</span> edad;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">setEdad</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>){
+        <span style="color: #00bfff;">if</span> (edad &lt; 0 || edad &gt; 20)
+            System.out.println(<span style="color: #deb887;">"El tiempo de vida de una vaca es de 0 a 20 a&#241;os"</span>);
+        <span style="color: #00bfff;">else</span>
+            <span style="color: #00bfff;">this</span>.edad = edad;
+    }
+
+    <span style="color: #a2cd5a;">@Override</span>
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">toString</span>(){
+        <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">" _________________________________________\n"</span> + 
+            <span style="color: #deb887;">"&lt; Hola, soy la vaca %s y tengo %i a&#241;os! &gt;\n"</span> + 
+            <span style="color: #deb887;">" -----------------------------------------\n"</span> + 
+            <span style="color: #deb887;">"        \   ^__^\n"</span> + 
+            <span style="color: #deb887;">"         \  (oo)\_______\n"</span> + 
+            <span style="color: #deb887;">"            (__)\       )\\/\\\n"</span> + 
+            <span style="color: #deb887;">"                ||----w |\n"</span> + 
+            <span style="color: #deb887;">"                ||     ||\n"</span> +
+            <span style="color: #deb887;">"#############################################\n"</span>;
+        <span style="color: #00bfff;">return</span> s;
+    }
+}      
+</pre>
+</div>
+
+<p>
+Con esto terminamos <i>parcialmente</i> el uso de métodos  en
+<i>Java</i>. Existen otras variaciones, pero por ahora es más que suficiente.
+</p>
+</div>
+</div>
+<div id="outline-container-org5cb960e" class="outline-3">
+<h3 id="org5cb960e"><span class="section-number-3">1.6.</span> Problema 3 y 4. Cajas++</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Modifica las clases de <code>Vaca, Pollito, Gato, Caja</code> para que tengan las
+mejores prácticas de programación, es decir:
+</p>
+
+<ul class="org-ul">
+<li>Constructor de clase</li>
+<li>Encapsulamiento de datos</li>
+<li>Método toString()</li>
+</ul>
+
+
+<p>
+<a href="07_metodos.html">Anterior</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-18 Fri 19:57</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

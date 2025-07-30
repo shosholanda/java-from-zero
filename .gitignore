@@ -24,7 +24,12 @@ hs_err_pid*
 replay_pid*
 
 # TRASH
+test/*
+
 target/*
 /target/
 
-
+*.bkp
+*#*
+*$*
+*~*

@@ -1,0 +1,527 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Encapsulación, constructor y toString
+
+Anteriormente vimos que los /atributos de clase/ deben escribirse como
+
+#+begin_src java
+  private String nombre;
+  private int edad;
+#+end_src
+
+La palabra reservada ~private~ indica que solo puede ser usada esta
+variable (o método también) *dentro de la misma clase y no
+fuera*. Esto no tiene nada que ver con /proteger los datos de un
+hacker/, pero sí protegerlo de /otras clases/ lo cual es parte de los
+principios de la /Programación Orientada a Objetos (POO)/.
+
+** Ejemplo 1: Vaca y Pollito
+
+Tenemos dos clases, /Vaca y Pollito/ *en 2 archivos diferentes* como:
+
+#+begin_src java
+  /* Archivo Vaca.java */
+  import java.util.Scanner;
+
+  public class Vaca {
+      // Esto es inaceptable, solo es un ejemplo
+      public String nombre;
+      public String edad;
+
+      public void inicializar(){
+  	Scanner input = new Scanner(System.in);
+  	System.out.print("Ingresa un nombre para la vaca: ");
+  	nombre = input.nextLine();
+  	System.out.print("Ingresa una edad de la vaca: ");
+  	edad = input.nextLine();
+      }
+
+      public void imprimir(){
+  	String s = " _________________________________________\n" + 
+  	    "< Hola, soy la vaca %s y tengo %i años! >\n" + 
+  	    " -----------------------------------------\n" + 
+  	    "        \   ^__^\n" + 
+  	    "         \  (oo)\_______\n" + 
+  	    "            (__)\       )\\/\\\n" + 
+  	    "                ||----w |\n" + 
+  	    "                ||     ||\n" +
+  	    "#############################################\n";
+  	System.out.printf(s, nombre, edad);
+      }
+  }
+#+end_src
+
+Dejaré este dato por aquí
+#+begin_src bash
+  $ echo "Lola" | cowsay
+#+end_src
+
+
+Clase /Pollito/
+
+#+begin_src java
+  /* Archivo Pollito.java */
+  import java.util.Scanner;
+
+  public class Pollito {
+      // Esto sí se debe hacer
+      private String nombre;
+      private int edad;
+
+      public void inicializar(){
+  	Scanner input = new Scanner(System.in);
+  	System.out.print("Ingresa nombre de pollito: ");
+  	nombre = input.nextLine();
+  	System.out.print("Ingresa edad de pollito: ");
+  	edad = input.nextInt();
+      }
+
+      public void imprimir(){
+  	String s = " _________________________________________\n" +
+  	    "< Hola, soy el pollito %s y tengo %i años! >\n" +
+  	    "  ----------------------------------------------\n" + 
+  	    "        \   \n" + 
+  	    "         \  \n" +
+  	    "          \ \n" +
+  	    "             M\n" +
+  	    "           <°v°>\n" +
+  	    "            Y Y\n" +
+  	    "############################################\n";
+  	System.out.printf(s, nombre, edad);
+      }
+  }	
+#+end_src
+
+Y finalmente en otro archivo diferente /Main/
+
+#+begin_src java
+  public class Main {
+      public static void main (String[] args){
+  	Vaca v1 = new Vaca();
+  	v1.inicializar();
+  	v1.imprimir();
+
+  	Pollito p1 = new Pollito();
+  	p1.inicializar();
+  	p1.imprimir();
+      }
+  }
+#+end_src
+
+*Nota* Para poder usar otras clases en nuestro /Main/, estas clases
+ deben de
+
++ Estar en la misma carpeta que el /Main/
++ Importarse (como ~import java.util.Scanner;~)
++ Importar el paquete. (pendiente)
+
+Por ahora, los 3 archivos están en la misma carpeta. Y podemos
+compilar /todos/ los archivos java como:
+#+begin_src bash
+  $ ls
+  Vaca.java       Pollito.java      Main.java
+  $ javac *.java
+  $ java Main
+#+end_src
+
+
+Una vez cargado los valores de /Vaca y Pollito/, podríamos cambiar los
+atributos de la clase /Vaca/ que son /públicos/ como
+
+#+begin_src java
+  public static void main (String[] args){
+      //...
+      v1.nombre = "Guillermina";
+      v1.edad = -10;
+      v1.imprimir();
+  }
+#+end_src
+
+Java nos permite /si es que es público/, asignar a los atributos
+valores /directamente/. Por una parte esto es válido porque es lógica,
+pero claramente tener una /edad negativa/ no es sensato. *No podemos
+modificar atributos _sin que NO lo sepa la clase_*. Lo correcto sería
+que la clase misma /autorice/ que se está cambiando un valor suyo; los
+atributos son exclusivos de la misma clase y nadie /salvo ella/ puede
+modificar sus valores. Esto es la *encapsulación*.
+
+En este ejemplo *sobrepasamos* al objeto ~v1~ y podemos asignar una
+edad /negativa!/. Para /informar/ a la clase que estamos modificando
+un valor, necesitamos crear un método que haga esta asignación a su variable
+
+#+begin_src java
+  public class Vaca {
+
+      // Ahora sí se cumple el encapsulamiento
+      private String nombre;
+      private int edad;
+
+      public void cambiaNombre(String s){
+  	nombre = s;
+      }
+
+      // .. más métodos
+#+end_src
+
+Así, cuando queramos cambiar el valor a ~nombre~ solo puede ser
+posible únicamente a través del método ~cambiaNombre()~.
+
+#+begin_src java
+  v1.cambiaNombre("Guillermina");
+#+end_src
+
+Incluso, podemos validar que la información que nos pasen sea la
+correcta, como en el caso de la edad, si es negativa, simplemente
+/ignorar esta entrada/ lo cual nos da un nivel más de /robustez/.
+
+#+begin_src java
+  public void cambiaEdad(int n){
+      if (n < 0)
+  	System.out.println("No se puede asignar edad negativa");
+      else
+  	edad = n;
+  }
+#+end_src
+
+De igual forma, no podemos /leer/ los atributos privados directamente
+como
+
+#+begin_src java
+  String nombreVaca = v1.nombre; //Never
+#+end_src
+
+De nuevo, la clase /debe saber/ lo que está pasando con sus variables,
+incluso si solo es leer el valor. Por lo que creamos un método que a
+través de él nos regrese el valor privado de la clase.
+
+#+begin_src java
+  public String obtieneNombre(){
+      return nombre;
+  }
+#+end_src
+
+Por lo que, tenemos siempre 2 tipos de métodos de cajón por cada
+variable de clase:
+
+1. Asignar un valor a una variable
+2. Obtener un valor de una variable
+
+En la comunidad de /Java/, se ha acordado que estos dos tipos de
+métodos (que siempre existen) tengan el prefijo ~set~ y ~get~ para
+asignar y leer valores respectivamente. Así tenemos los famosos
+/getters/ y /setters/ cuyo único propósito es ser intermediarios
+entre el exterior y las variables privadas.
+
+La clase /Pollito/, siguiendo el principio de encapsulación quedaría
+como:
+
+
+#+begin_src java
+  /* Archivo Pollito.java */
+  import java.util.Scanner;
+
+  public class Pollito {
+      // Esto sí se debe hacer
+      private String nombre;
+      private int edad;
+
+      public void setNombre(String nuevoNombre){
+  	nombre = nuevoNombre;
+      }
+
+      public String getNombre(){
+  	return nombre;
+      }
+
+      public void setEdad(int nuevaEdad){
+  	if (nuevaEdad < 0 || nuevaEdad > 10)
+  	    System.out.println("Los pollos no viven " + nuevaEdad + " años");
+  	else
+  	    edad = nuevaEdad;
+      }
+
+      public String getEdad(){
+  	return edad;
+      }
+
+      public void inicializar(){
+  	Scanner input = new Scanner(System.in);
+  	System.out.print("Ingresa nombre de pollito: ");
+  	nombre = input.nextLine();
+  	System.out.print("Ingresa edad de pollito: ");
+  	edad = input.nextInt();
+      }
+
+      public void imprimir(){
+  	String s = " _________________________________________\n" +
+  	    "< Hola, soy el pollito %s y tengo %i años! >\n" +
+  	    "  ----------------------------------------------\n" + 
+  	    "        \   \n" + 
+  	    "         \  \n" +
+  	    "          \ \n" +
+  	    "             M\n" +
+  	    "           <°v°>\n" +
+  	    "            Y Y\n" +
+  	    "############################################\n";
+  	System.out.printf(s, nombre, edad);
+      }
+  }	
+#+end_src
+
+Resumiendo, para seguir el principio de encapsulación en /Java/:
+
++ Todas las variables de clase deben tener acceso ~private~.
++ Por cada variable debe haber un método ~get~ y ~set~ que hagan
+  obtención y asignación de la variable.
++ Cuando se requiera leer u obtener el valor de una variable /fuera de
+  la clase/ debemos utilizar ĺos /getters y setters/.
+
+
+** Problema 1: Gatos++
+
+De la clase /Gato/ programada anteriormente, modifícala para que ahora
+cumpla con el principio de encapsulación.
+
+** Problema 2: Caja
+
+Crea una clase /Caja/ que tenga como atributos
+
++ ID de caja (~int~)
++ Contenido de la caja (~String~)
++ Color de la caja (~String~)
+
+con los métodos /no estáticos/
+- ~inicializar()~
+- ~getters, setters~
+- ~imprimir()~ La cadena impresa debe ser como
+  #+begin_example
+  +---- ID de la caja ----+
+  |-----------------------|
+  |  contenido de la caja |
+  |  COLOR: ColorCaja     |
+  +-----------------------+
+  #+end_example
+  Nota que la caja deberá ajustarse en tamaño al nombre y al
+  contenido. 
+
+** Constructor
+
+Ya que nuestras variables de clase /deben inicializarse/ hay que
+llamar al método ~inicializar()~, donde leemos uno por uno los valores
+que tendrá.
+
+ #+begin_src java
+   public void inicializar(){
+       Scanner input = new Scanner(System.in);
+       System.out.print("Ingresa nombre de pollito: ");
+       nombre = input.nextLine();
+       System.out.print("Ingresa edad de pollito: ");
+       edad = input.nextInt();
+   }
+ #+end_src
+
+ /Java/ nos provee de un /constructor de clase/ para poder inicializar
+ estas variables de antemano, si es lo que sabemos. Un /constructor/
+ es un método especial que tiene la excepción de:
+
+1. Llamarse igual que la clase
+2. Ser un método.
+3. Es el primer método que se ejecuta de la clase
+
+Su único propósito es dejar a la clase /lista/ en valores cuando se
+termine de crear con el operador ~new~. Es básicamente un
+incializador. Hasta ahora solo hemos utilizado el constructor /vacío/
+que inicializa todo en valores mínimos, pero lo podemos
+/sobreescribir/. Podríamos hacer el constructor de /Pollito/ como
+
+#+begin_src java
+  /* Constructor de la clase Pollito.java */
+  public Pollito(){
+      inicializar();
+  }
+#+end_src
+
+para poder ahorrarnos llamar al método ~inicializar()~ una vez creado
+el objeto
+
+#+begin_src java
+  public static void main (String[] args){
+      Pollito p1 = new Pollito();
+      //p1.inicializar() se ejecutó al momento de crear Pollito()
+      p1.imprimir();
+#+end_src
+
+Mejor aún, podríamos ahorrarnos escribir incluso el método
+~inicializar()~ si directamente su código lo ponemos en el constructor
+como
+
+#+begin_src java
+  /* Constructor de la clase Pollito.java */
+  public Pollito(){
+      Scanner input = new Scanner(System.in);
+      System.out.print("Ingresa nombre de pollito: ");
+      nombre = input.nextLine();
+      System.out.print("Ingresa edad de pollito: ");
+      edad = input.nextInt();
+  }
+#+end_src
+
+Pero la manera óptima es pasarle los valores al constructor como
+parámetro y no utilizar el objeto  ~Scanner~ en lo absoluto! 
+
+#+begin_src java
+  public Pollito(String nombre, int edad){
+      this.nombre = nombre;
+      this.edad = edad;
+  }
+#+end_src
+
+*Nota*: Ya que la /variable de clase/ se llama ~nombre~, y el
+ /parámetro del constructor/ se llama ~nombre~, /Java/ no puede
+ identificar en qué variable asignará qué. Por esto se utiliza la
+ palabra reservada ~this~. ~this~ hace referencia a /esta clase/ desde
+ /dentro de la clase/, o simplemente para referirse a los atributos y
+ métodos de la clase y evitar /ambiguedad/.
+
+ Los valores de ~nombre~ y ~edad~ se los podemos pasar desde el
+ ~main~. Así estamos creando /alta cohesion/ a nuestro objeto, lo que
+ significa: Enfocate solamente en /Pollito/, cosas como ~Scanner~ no
+ tienen nada que ver con un /Pollito/, por lo que nuestro objeto solo
+ se debe de preocupar de cosas de /Pollito/.
+
+#+begin_src java
+  public static void main (String[] args){
+
+      Scanner input = new Scanner(System.in);
+      System.out.print("Ingresa nombre de pollito: ");
+      nombre = input.nextLine();
+      System.out.print("Ingresa edad de pollito: ");
+      edad = input.nextInt();
+      
+      Pollito p1 = new Pollito(nombre, edad);
+      p1.imprimir();
+  }
+#+end_src
+
+** ToString
+
+Todos los objetos en /Java/ tienen un método /heredado de Object/
+llamado ~toString()~. Sirve para dar una representación en cadena del
+objeto mismo, exactamente lo que hace el método ~imprimir()~, pero con
+un poco más de elegancia.
+
+Muchas veces es importante imprimir una representación del objeto como
+sigue
+
+#+begin_src java
+  public static void main (String[] args){
+      Vaca v = new Vaca("Lola", 22); // Constructor óptimo
+      System.out.println(v.toString());
+  }
+#+end_src
+
+Aunque no hemos /programado/ el método ~toString()~ lo tenemos porque
+es heredado. Más adelante veremos qué es esto. En la consola nos
+aparecería algo como
+
+#+begin_src bash
+  $ javac Main.java && java Main
+  Vaca@2a139a55
+#+end_src
+
+Lo que aparece es la /direccion de memoria/ del objeto en cuestión, lo
+que es /exactamente/ su *identificador*, obviamente en un ~String~. El
+método ~toString()~ podemos /modificarlo/ para que en lugar de que nos
+imprima la dirección en memoria del objeto, nos imprima la cadena que
+hemos definido anteriormente.
+
+#+begin_src java
+  @Override
+  public String toString(){
+      String s = " _________________________________________\n" + 
+  	"< Hola, soy la vaca %s y tengo %i años! >\n" + 
+  	" -----------------------------------------\n" + 
+  	"        \   ^__^\n" + 
+  	"         \  (oo)\_______\n" + 
+  	"            (__)\       )\\/\\\n" + 
+  	"                ||----w |\n" + 
+  	"                ||     ||\n" +
+  	"#############################################\n";
+      return s;
+  }
+#+end_src
+
+*Nota*: No estamos imprimiendo la cadena, mejor aún la /regresamos/
+para que esta cadena pueda servir para más que solo imprimir en
+pantalla! Como por ejemplo, mandarla en un chat, guardarla a un
+archivo etc.
+
+La anotación ~@Override~ significa que estamos /sobrecargando/ el
+método, es decir si ya estaba implementado el método (claramente sí,
+cuando imprimía la dirección de memoria), lo /reimplementa/ o
+/sobreescribe/ su código por nuestro código.
+
+El código de la clase /Vaca/ siguiendo el paradigma de /Programación
+orientada a objetos/ con las mejores prácticas queda como
+#+begin_src java
+  public class Vaca {
+      
+      private String nombre;
+      private int edad;
+
+      public Vaca(String nombre, int edad){
+  	this.nombre = nombre;
+  	this.edad = edad;
+      }
+
+      public String getNombre(){
+  	return nombre;
+      }
+
+      public void setNombre(String nombre){
+  	if (nombre.equals(""))
+  	    System.out.println("Nombre no válido");
+  	else 
+  	    this.nombre = nombre;
+      }
+
+      public int getEdad(){
+  	return edad;
+      }
+
+      public void setEdad(int edad){
+  	if (edad < 0 || edad > 20)
+  	    System.out.println("El tiempo de vida de una vaca es de 0 a 20 años");
+  	else
+  	    this.edad = edad;
+      }
+
+      @Override
+      public String toString(){
+  	String s = " _________________________________________\n" + 
+  	    "< Hola, soy la vaca %s y tengo %i años! >\n" + 
+  	    " -----------------------------------------\n" + 
+  	    "        \   ^__^\n" + 
+  	    "         \  (oo)\_______\n" + 
+  	    "            (__)\       )\\/\\\n" + 
+  	    "                ||----w |\n" + 
+  	    "                ||     ||\n" +
+  	    "#############################################\n";
+  	return s;
+      }
+  }      
+#+end_src
+
+Con esto terminamos /parcialmente/ el uso de métodos  en
+/Java/. Existen otras variaciones, pero por ahora es más que suficiente.
+
+** Problema 3 y 4. Cajas++
+
+Modifica las clases de ~Vaca, Pollito, Gato, Caja~ para que tengan las
+mejores prácticas de programación, es decir:
+
++ Constructor de clase
++ Encapsulamiento de datos
++ Método toString()
+
+
+[[file:07_metodos.html][Anterior]]

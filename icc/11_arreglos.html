@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-22 Tue 19:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9890d9d">1. Arreglos</a>
+<ul>
+<li><a href="#org5be48ae">1.1. Definición</a></li>
+<li><a href="#orgbd5ea20">1.2. Problema 1: Promedio sueldos</a></li>
+<li><a href="#orge0c63b4">1.3. Problema 2: Estadistica</a></li>
+<li><a href="#org839df34">1.4. Problema 3: Empleados</a></li>
+<li><a href="#org1aa25e6">1.5. Problema 4: Distribución Gaussiana</a></li>
+<li><a href="#org4ba9e25">1.6. Problema 5: Estudiantes</a></li>
+<li><a href="#orgb71ca31">1.7. Problema 6. Ordenado?</a></li>
+<li><a href="#orgcf826df">1.8. Problema 7. ToString</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9890d9d" class="outline-2">
+<h2 id="org9890d9d"><span class="section-number-2">1.</span> Arreglos</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Todo en programación es <i>cantar y coser</i> hasta que aparecen números
+mayores a 1000. Por ejemplo, imaginemos que tenemos una nómina con 250
+empleados. Supongamos que tenemos la clase <i>Empleado</i> y debemos
+cargarle los valores <code>nombre, sueldo</code>. Nuestra clase <i>Nomina</i> deberá
+tener registrados todos los empleados como:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Nomina</span> {
+
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">Empleado</span> <span style="color: #4eee94;">e1</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">Empleado</span> <span style="color: #4eee94;">e2</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">Empleado</span> <span style="color: #4eee94;">e3</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">Empleado</span> <span style="color: #4eee94;">e4</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">Empleado</span> <span style="color: #4eee94;">e5</span>;
+    <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">... nos faltan 245 l&#237;neas as&#237;!!! D:</span>
+</pre>
+</div>
+
+<p>
+Como puedes ver, es masoquizta declarar 1x1 cada variable que guarde a
+cada empleado. Peor aún, si queremos añadir un nuevo empleado,
+deberíamos <i>detener la ejecución del código, añadir el código nuevo y
+volver a ejecutar</i>; esto nunca pasa en la vida real. El código que
+escribimos debe ser capaz de poder adaptarse a las situaciones que
+enfrente.
+</p>
+
+<p>
+Una <i>estructura de datos</i> se dedica a guardar información <i>dentro de
+sí misma en tiempo de ejecución</i>, así podemos tener una sola variable
+que guarde <i>N</i> cantidad de valores; solo existen estructuras de datos
+dinámicas (que cambian) y estructuras de datos estáticas que veremos
+en esta sección.
+</p>
+</div>
+<div id="outline-container-org5be48ae" class="outline-3">
+<h3 id="org5be48ae"><span class="section-number-3">1.1.</span> Definición</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Un arreglo (no, no es un arreglo floral), son espacios reservados en
+memora de tamaño fijo para poder almacenar datos <i>de un mismo tipo</i> a
+través de un índice. En otras palabras, <b>son chorizos de memoria</b>.
+</p>
+
+<p>
+Por ejemplo, aquí el tamaño es fijo (5 en total), los datos
+almacenados son del mismo tipo (<code>int</code>), y diferentes valores se
+diferencian por el índice rodeado de <i>corchetes</i> <code>[i]</code>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">1200</th>
+<th scope="col" class="org-right">750</th>
+<th scope="col" class="org-right">820</th>
+<th scope="col" class="org-right">550</th>
+<th scope="col" class="org-right">490</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">arr[0]</td>
+<td class="org-right">arr[1]</td>
+<td class="org-right">arr[2]</td>
+<td class="org-right">arr[3]</td>
+<td class="org-right">arr[4]</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Donde:
+</p>
+
+<ol class="org-ol">
+<li><code>arr</code> es el bloque total donde se encuentra el espacio reservado</li>
+<li><code>[i]</code> es el índice del cajón <b>empezando en 0</b>, en este caso 0, 1,
+2, 3, 4 |  5 en total</li>
+<li><code>1200</code> es el valor que se guarda <i>en el espacio 0</i>, <code>750</code> en el
+<i>espacio 1</i> y así sucesivamente.</li>
+</ol>
+
+<p>
+Un arreglo <b>siempre</b> debe definir su tamaño <i>final</i> al momento de
+crearlo; por lo que es una estructura de datos <i>estática</i>, es decir,
+no cambia si se añaden/quitan datos y es un objeto. Otras estructuras
+sí cambian dependiendo del tamaño que son <i>dinámicas</i> pero las veremos
+más adelante.
+</p>
+
+<p>
+En <i>Java</i> podemos crear la tabla anterior, donde en cada cajón resulte
+a un sueldo. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Arrays</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+
+    <span style="color: #98f5ff;">int</span>[] <span style="color: #4eee94;">arr</span>;
+    arr = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">int</span>[5];
+    arr[0] = 1200;
+    arr[1] = 750;
+    arr[2] = 820;
+    arr[3] = 550;
+    arr[4] = 490;
+
+    System.out.println(Arrays.toString(arr));
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Output:
+</span>    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">[1200, 750, 820, 550, 490]
+</span>}
+</pre>
+</div>
+
+<p>
+Primero importamos esta clase extraña que nos ayudará a imprimir
+bonito nuestros arreglos y solamente la utilizaremos para eso aunque
+también se puede crear a mano esa representación en cadena y es trivial.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Arrays</span>;
+</pre>
+</div>
+
+<p>
+Luego, en el main tenemos la declaración de un arreglo; utilizamos el
+tipo de dato y corchetes <code>[]</code> como:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span>[] <span style="color: #4eee94;">arr</span>;
+</pre>
+</div>
+
+<p>
+Después <i>creamos</i> el arreglo con el operador <code>new</code> ya que también son
+objetos los arreglos. El tamaño del arreglo se especifica <i>entre corchetes</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">arr = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">int</span>[5];
+</pre>
+</div>
+
+<p>
+Mientras exista <code>arr</code> tendremos 5 lugares disponibles. Si queremos
+añadir un sexto dato, no nos sirve este arreglo porque es <i>estático</i>;
+debemos crear <i>aparte</i> un arreglo de tamaño 6. Por otra parte si
+queremos utilizar menos espacios del total, nos sobran lugares que
+ocupan memoria y se desaprovecha. Los arreglos debemos de planearlos
+bien.
+</p>
+
+
+<p>
+Regresando, asignamos a <i>cada cajón</i> del arreglo un valor
+final. <code>arr[i]</code> es una variable para asignacion; donde si cambia <i>i</i>
+cambia la variable.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">arr[0] = 1200;
+arr[1] = 750;
+arr[2] = 820;
+arr[3] = 550;
+arr[4] = 490;
+</pre>
+</div>
+
+<p>
+Finalmente tenemos la impresión del arreglo de una manera bonita; si
+no lo imprimimos así, por <code>toString()</code> de <i>Object</i> nos imprimirá la
+referencia en memoria del objeto como <code>arr@1233456fe</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(Arrays.toString(<span style="color: #98f5ff;">arr</span>));
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbd5ea20" class="outline-3">
+<h3 id="orgbd5ea20"><span class="section-number-3">1.2.</span> Problema 1: Promedio sueldos</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Dado una entrada <i>N</i> del usuario, sacar el promedio de <i>N</i> sueldos.
+Como no sabemos en tiempo de ejecución el tamaño de <i>N</i> usaremos el
+atributo <i>length</i> de arreglo para saber el tamaño final.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+<span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Arrays</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Problema1</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n</span>;
+        System.out.print(<span style="color: #deb887;">"Ingrese el n&#250;mero de sueldos a promediar: "</span>);
+        n = input.nextInt();
+
+        <span style="color: #98f5ff;">float</span>[] <span style="color: #4eee94;">sueldos</span>;
+        sueldos = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">float</span>[n];
+
+        <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; <span style="color: #98f5ff;">n</span>; i++){
+            System.out.printf(<span style="color: #deb887;">"Ingrese el sueldo #%i: "</span>, i+1);
+            sueldos[i] = input.nextFloat();
+        }
+
+        System.out.println(Arrays.toSting(sueldos));
+
+        <span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">promedio</span> = 0;
+        <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; sueldos.<span style="color: #98f5ff;">length</span>; i++){
+            promedio = promedio + sueldos[i];
+        }
+
+        promedio = promedio/n;
+        System.out.printf(<span style="color: #deb887;">"El promedio de sueldos es de $%f\n"</span>, promedio);
+    }
+}
+</pre>
+</div>
+
+<p>
+Esta vez utilizamos 2 paquetes de <code>java.util</code>. No te sorprendas si ves
+100 líneas de <i>imports</i> en grandes proyectos, gajes del oficio.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+<span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Arrays</span>;
+</pre>
+</div>
+
+<p>
+Como de costumbre, inicializamos la entrada de <code>Scanner</code>, definimos
+una variable <code>n</code> donde leeremos el tamaño total del arreglo. Luego
+creamos el arreglo <i>de tipo <b>float</b></i>. Estamos diciendo que existirá un
+arreglo, mas todavía no sabemos de cuantos elementos.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">float</span>[] <span style="color: #4eee94;">sueldos</span>;
+</pre>
+</div>
+
+<p>
+pero en la siguiente línea termina la duda, y tiene tamaño <i>N</i>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">sueldos = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">float</span>[n];
+</pre>
+</div>
+
+<p>
+Tranquilamente podríamos hacer ambas líneas por transitividad en una
+sola línea como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">float</span>[] <span style="color: #4eee94;">sueldos</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">float</span>[n];
+</pre>
+</div>
+
+<p>
+<b>Dato curioso</b>: <code>float</code> es como el <i>antecesor</i> de <code>double</code>, pero ambos
+ son de punto decimal aunque claro el <code>double</code> es de <i>doble</i>
+ precisión.
+</p>
+
+<p>
+Luego, tenemos que leer <i>N</i> datos con el <i>mesmo</i> mensaje. El <code>for</code> se
+adapta mejor que un <code>while</code> porque tenemos toda la información a la
+mano. <b>Terminamos antes de que llegue a N</b>; así \(i\) <i>itera</i> en los
+valores de \(0, 1, 2, 3, \ldots N-1\) <b>y no</b> \(1, 2, 3, 4, \ldots N\) aunque ambos
+cuentan <i>5</i>. Mucho ojo con esto.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; <span style="color: #98f5ff;">n</span>; i++){
+    System.out.printf(<span style="color: #deb887;">"Ingrese el sueldo #%i: "</span>, i+1);
+    sueldos[i] = input.nextFloat();
+}
+</pre>
+</div>
+
+<p>
+Este for nos ahorra escribir <i>N</i> líneas como:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">System.out.printf(<span style="color: #deb887;">"Ingrese el sueldo #1: "</span>);
+sueldos[0] = input.nextFloat();
+System.out.printf(<span style="color: #deb887;">"Ingrese el sueldo #2: "</span>);
+sueldos[1] = input.nextFloat();
+System.out.printf(<span style="color: #deb887;">"Ingrese el sueldo #3: "</span>);
+sueldos[2] = input.nextFloat();
+System.out.printf(<span style="color: #deb887;">"Ingrese el sueldo #4: "</span>);
+sueldos[3] = input.nextFloat();
+System.out.printf(<span style="color: #deb887;">"Ingrese el sueldo #5: "</span>);
+sueldos[5] = input.nextFloat();
+<span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">... N </span>
+</pre>
+</div>
+
+<p>
+Cada uno de los datos ingresados los guardamos en la variable
+<i>sueldos</i> en la posición <i>i</i> y los tenemos por separado. El método
+<code>nextFloat()</code> no debería sorprendernos si lee un <i>número decimal</i>.
+</p>
+
+<p>
+Después de imprimir lo datos creamos una variable <code>promedio</code> donde
+guardaremos la suma total de los datos recolectados y, <i>recorremos</i>
+el arreglo cajón por cajón. <code>sueldos.length</code> con <b>TH</b> <i>y no ht</i>, es
+una variable que guarda el valor del tamaño del arreglo. En este caso
+<code>n = sueldos.length</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">float</span> <span style="color: #4eee94;">promedio</span> = 0;
+<span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; sueldos.<span style="color: #98f5ff;">length</span>; i++){
+    promedio = promedio + sueldos[i];
+}
+</pre>
+</div>
+
+<p>
+Cada vez que cambia i, sumamos el valor que tenía promedio y el valor
+que está en el cajón <i>i</i>.
+</p>
+
+<p>
+Finalmente, el promedio es la <i>suma total</i> entre el <i>total de
+elementos</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-orge0c63b4" class="outline-3">
+<h3 id="orge0c63b4"><span class="section-number-3">1.3.</span> Problema 2: Estadistica</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Una encuesta de gobierno quere saber cuántas personas son <i>mayores y
+menores</i> al promedio. Crea un programa que calcule el promedio de <i>N</i>
+edades y luego mostrar cuántas personas son mayores al promedio y
+cuántas menores.
+</p>
+</div>
+</div>
+<div id="outline-container-org839df34" class="outline-3">
+<h3 id="org839df34"><span class="section-number-3">1.4.</span> Problema 3: Empleados</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Una empresa tiene dos turnos matutino y vespertino donde trabajan 10
+empleados (5 en la mañana y 5 en la tarde). Crear un programa que
+permita almacenar los sueldos de los empleados agrupados por
+turno. Imprimir el total de cada turno.
+</p>
+</div>
+</div>
+<div id="outline-container-org1aa25e6" class="outline-3">
+<h3 id="org1aa25e6"><span class="section-number-3">1.5.</span> Problema 4: Distribución Gaussiana</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Crea un programa que guarde 10,000 números enteros en el rango
+\([0-100]\) utilizando <code>(int)(Math.random()*100)</code>. 
+Contar cuántos números son del rango \([0-9]\), del \([10, 19]\) del
+\([20-29]\) y así sucesivamente hasta llegar al 100
+Luego imprimir la cantidad de cada rango ordenadamente como
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">0-9</th>
+<th scope="col" class="org-right">10-19</th>
+<th scope="col" class="org-right">20-29</th>
+<th scope="col" class="org-right">30-39</th>
+<th scope="col" class="org-left">&#x2026;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">8</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-left">etc</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org4ba9e25" class="outline-3">
+<h3 id="org4ba9e25"><span class="section-number-3">1.6.</span> Problema 5: Estudiantes</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Un salóń de clases tiene <i>N</i> estudiantes. Crear un programa que guarde
+en 2 arrelgos su <i>nombre</i> y su <i>calificación</i> en el rango \([4,10]\).
+</p>
+
+<p>
+Imprimir quién fue el mejor estudiante con mejor calificación. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgb71ca31" class="outline-3">
+<h3 id="orgb71ca31"><span class="section-number-3">1.7.</span> Problema 6. Ordenado?</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Crear un arreglo de 10 <i>enteros</i> y luego decidir si este arreglo está
+ordenado o no de menor a mayor. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgcf826df" class="outline-3">
+<h3 id="orgcf826df"><span class="section-number-3">1.8.</span> Problema 7. ToString</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Crea un arreglo <i>ordenado</i> de tamaño 20, luego imprímelo con un método
+<i>estático</i> que se llame <code>imprimir()</code>. El método debe imprimir
+<i>exactamente igual</i> al arreglo que como lo haría
+<code>Arrays.toString(a)</code>. Llamalo desde el método <code>main()</code>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-22 Tue 19:44</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

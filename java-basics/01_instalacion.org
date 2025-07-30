@@ -1,3 +1,5 @@
+#+HTML_LINK_HOME: ../inicio.html
+
 * Instalación de Java
 
 

@@ -1,0 +1,141 @@
+#+HTML_LINK_HOME: ../inicio.html
+** Matrices
+Ya que un arreglo puede contener /lo que sea/, puede incluir también
+/más arreglos/, creando /dimensiones/ de arreglos. La primera
+dimensión es la que hemos visto que un arreglo tiene elementos.
+
+[[../img/icc/array.svg]]
+
+Un arreglo /con arreglos/ es tener un arreglo de tamaño /N/, con otro
+arreglo tamaño /M/ en ~a[0]~, luego otro arreglo en ~a[1]~ y así
+sucesivamente... Claramente /M/ puede ser de diferente tamaño, no es
+necesariamente /cuadrada/, y más importante aún, *todos los elementos
+son del mismo tipo*
+
+[[../img/icc/matrix.svg]]
+
+
+Muchos programadores se refieren a una matriz por filas y columnas.
+
+[[../img/icc/matrix2.svg]]
+
+Donde el primer índice representa las /filas/ y el segundo índice
+representa a las /columnas/. Por ejemplo el número 9 se encuentra en
+fila 4, columna 1. Y el 60 en fila 2, columna 3. *El 0 también cuenta
+como una fila/columna*
+
+En /Java/ la declaración de matrices es utilizar la notación de
+arreglo de arreglos como:
+
+#+begin_src java
+  int[][] matriz;
+#+end_src
+
+El número de ~[]~ indica la dimensión; con 2 significa que estamos en
+un plano /2D/, con 3 /3D/ y así sucesivamente. Es muy raro de hecho
+encontrar arreglos de dimension /mayor a 2/.
+
+** Programa 1: Identidad
+Crear un programa que imprima la identidad de una matriz de tamaño
+$5\times 7$
+
+#+begin_src java
+  import java.util.Scanner;
+  import java.util.Arrays;
+
+  public class Matriz5x7 {
+      public static void main (String[] args){
+  	Scanner input = new Scanner(System.in);
+  	
+  	int[][] matriz = new int[5][7];
+
+  	for (int i = 0; i < matriz.length; i++){
+  	    for (int j = 0; j < matriz[i].length; j++){
+  		System.out.printf("Ingresar la coordenada [%d][%d]: ", i, j);
+  		matriz[i][j] = input.nextInt();
+  	    }
+  	}
+
+  	System.out.println(Arrays.deepToString(matriz));
+
+  	for (int i = 0; i < 5; i++)
+  	    System.out.println(matriz[i][i]);
+      }
+  }
+#+end_src
+
+Lo primero que hay que decir es que, cada /pixel/ de la matriz se debe
+rellenar, ya sea a manita o a través de filas completas; por eso
+utilizamos ~Scanner~, para que sea más interactiva la entrada. Luego
+/creamos una matriz/ de $5\times7$, 5 filas por 7 columnas de tipo
+~int~
+
+#+begin_src java
+  int[][] matriz = new int[5][7];
+#+end_src
+
+Luego viene la parte turbulenta; la primera representación de /matriz/
+ayuda a entender mejor esta parte. Vamos a /recorrer/ con el ~for~
+externo el arreglo de tamaño /N/ o el arreglo /que contiene a los
+demás arreglos/, iterando espacio por espacio hasta antes de
+~matriz.length~.
+
+El segundo ~for~ recorrerá el arreglo /que está adentro/ en la
+posición ~a[i]~, por eso utilizamos ~matriz[i].length~ porque es el
+tamaño del /subarreglo/ de tamaño /M/ que está en la posición /i/.
+
+#+begin_src java
+  for (int i = 0; i < matriz.length; i++){
+      for (int j = 0; j < matriz[i].length; j++){
+#+end_src
+
+Para cada /i/, vamos a recorrer /j/ veces de $0$ a $M-1$, así que estas líneas se
+repiten $i\times j$ que rellena todos los espacios de matriz 1x1.
+
+#+begin_src java
+  System.out.printf("Ingresar la coordenada [%d][%d]: ", i, j);
+  matriz[i][j] = input.nextInt();
+#+end_src
+
+Casi siempre por lo general, recorrer una matriz es por memoria más
+que por /razonamiento/. Solo memoriza los 2 ~fors~ y no tendrás miedo
+de recorrer ninguna matriz.
+
+Después, utilizamos el método ~Arrays.deepToString()~ que básicamente
+imprime /matrices/ como la representación de arreglo de arreglos.
+
+#+begin_src java
+  "[[1, 2, 3, 4, 5, 6, 1], [2, 3, 4, 5, 6, 1, 2], [3, 4, 5, 5, 6, 7, 1], [2, 3, 4, 4, 5, 5, 6], [6, 1, 2, 3, 4, 6, 6]]"
+#+end_src
+
+Y finalmente imprimir la /multiplicación con la matriz identidad/. La
+identidad de una matriz se define como las entradas
+
+\begin{equation}
+A_{ij} \text{, donde } i = j
+\end{equation}
+
+Como $i=j$ nos basta para solo recorrer en /i/ con un solo ~for~. Es
+claro que como la matriz no es cuadrada, la identidad saldrá
+/recortada/ al tamaño mínimo de filas o columnas. Como sea, imprimimos
+la entrada ~[i][i]~
+
+#+begin_src java
+  for (int i = 0; i < 5; i++)
+      System.out.println(matriz[i][i]);
+#+end_src
+
+
+** Problema 1: Mayor elemento
+Dado el tamaño de una matriz $N\times M$ /por argumentos/, rellenar la
+matriz para luego encontrar el mayor elemento en la misma. Imprimir
+también la /fila/ y /columna/ donde se encuentra ese elemento.
+
+** Problema 2: Matriz2x2
+
+
+
+** toString
+
+Replica el método ~Arrays.deepToString()~ para matrices con un método
+/estático/ que regrese el valor de la matriz.

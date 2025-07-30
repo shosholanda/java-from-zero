@@ -1,37 +1,44 @@
 * Temas para icc
-
-- Programación secuencial
-- Estructura condicional
-  - if
-  - if-else
-  - ifs anidados
-  - switch
-- Estructura repetitiva
-  - while
-  - for
-  - do while
-  - recursion
-  - complejidad computacional
+:ASASDAS:
+HOla
+:END:
+ 
+- Programación lineal
+  - Estructura condicional
+    - if
+    - if-else
+    - ifs anidados
+    - switch
+  - Estructura repetitiva
+    - while
+    - for
+    - do while
+    - ciclos infinitos
 - Clases y objetos
+  - string
+  - clases  y objetos
   - metodos
-    - constructor
     - estatico vs no estatico
-    - tipos de regreso
     - void vs return
     - getters y setters
-  - atributos
+    - constructor
+    - toString
   - main
-  - string
   - enumeraciones
-  - Object
 - Herencia
-  - extends
-  - interfaces
+  - reutilizando código
   - clases abstractas
-  - Casting
+  - extends
+  - Object
 - Estructuras de datos
   - Arreglos
+    - arreglos
+    - argumentos main
+    - matrices
   - Lista simple
+  - complejidad computacional
+  - interfaces
+  - Casting
   - Genéricos
   - ordenamientos
   - búsquedas
@@ -48,3 +55,10 @@
 - Programación concurrente
   - synchronized
   - variables atomicas
+
+    "El cielo nocturno contiene más estrellas de las que puedo contar,
+    aunque menos de cinco mil son visibles a simple vista. El universo
+    observable contiene alrededor de setenta billones de
+    estrellas. Pero el número de estrellas es finito, mientras que los
+    números naturales son infinitos. Cuenta todas las estrellas y aún
+    te quedarán tantos números naturales como al principio."

@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-17 Thu 14:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0b14329">1. Más sobre ciclos</a>
+<ul>
+<li><a href="#org647bb62">1.1. Ciclos infinitos</a></li>
+<li><a href="#org4c3c8c3">1.2. Problema 1: Yes en Java</a></li>
+<li><a href="#orgd5e081e">1.3. Problema 2: Generador de números aleatorios</a></li>
+<li><a href="#org10828ae">1.4. El problema del paro</a></li>
+<li><a href="#org3834fc0">1.5. Problema 3: Adivina adivinador.</a></li>
+<li><a href="#org179b894">1.6. Ciclos anidados</a></li>
+<li><a href="#orgc863a9c">1.7. Problema 4: Pascal</a></li>
+<li><a href="#org4b17649">1.8. Problema 5: Dibujo</a></li>
+<li><a href="#org23e0c06">1.9. Problema 6: Tablas de multiplicación</a></li>
+<li><a href="#orgc33e333">1.10. Problema 7: Criba de eratóstenes</a></li>
+<li><a href="#orgc9773b4">1.11. Recursión</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0b14329" class="outline-2">
+<h2 id="org0b14329"><span class="section-number-2">1.</span> Más sobre ciclos</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org647bb62" class="outline-3">
+<h3 id="org647bb62"><span class="section-number-3">1.1.</span> Ciclos infinitos</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Como mencionamos anteriomente, existen ciclos infinitos dentro de la
+programación que pueden ser un <i>error</i> o una <i>funcionalidad</i> del
+programa.
+</p>
+
+<p>
+Un ejemplo de un ciclo infinito es tener la computadora prendida. Este
+ciclo no terminará hasta que el usuario decida, que potencialmente es
+nunca. Y mientras esté prendida, se harán ciertas operaciones como
+conectar a internet, escuchar música etc. Cada aplicación abierta es
+un ciclo infinito a su vez.
+</p>
+
+
+<div id="org4cba40e" class="figure">
+<p><img src="../img/icc/while_break.svg" alt="while_break.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Ciclo infinito con escape.</p>
+</div>
+
+<p>
+En la terminal de linux, podemos ejecutar el programa <code>yes</code>, un ciclo
+infinito de impresión de <code>y</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ yes
+</pre>
+</div>
+
+<p>
+Podemos forzar la detención del ciclo utilizando la combinación
+especial de teclas <code>Ctrl-c</code> en UNIX.
+</p>
+
+<p>
+Por otra parte si queremos calcular el factorial de un número <i>y no
+termina nunca</i> significa que tenemos un error ya que un algoritmo debe
+terminar siempre.
+</p>
+
+<p>
+Para simular un ciclo infinito en <i>Java</i> solo debemos tener una
+condición que siempre sea verdadera, por ejemplo
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">while</span> (<span style="color: #a2cd5a;">true</span>) {
+    ...
+}
+</pre>
+</div>
+
+<p>
+o utilizando un <code>for</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">for</span> (;;){
+    ...
+}
+</pre>
+</div>
+
+<p>
+Normalmente se utiliza siempre la primera opción.
+</p>
+</div>
+</div>
+<div id="outline-container-org4c3c8c3" class="outline-3">
+<h3 id="org4c3c8c3"><span class="section-number-3">1.2.</span> Problema 1: Yes en Java</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Crea una copia del programa de UNIX <code>yes</code> en <i>Java</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd5e081e" class="outline-3">
+<h3 id="orgd5e081e"><span class="section-number-3">1.3.</span> Problema 2: Generador de números aleatorios</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Dado un número entero positivo como cota superior <i>N</i>, generar números
+aleatorios entre 0 y <i>N</i>; salir del programa cuando se ingrese la
+tecla <code>q</code>
+</p>
+
+<p>
+No hay necesidad de diagrama de flujo ya que es identico a los
+diagramas anteriores pero analizaremos las sutilezas que hay del
+código.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Problema1</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>) {
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+          System.out.print(<span style="color: #deb887;">"Ingrese la cota superior: "</span>);
+          <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n</span> = input.nextInt();
+
+          <span style="color: #00bfff;">while</span> (<span style="color: #a2cd5a;">true</span>){
+              <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = input.nextLine();
+              <span style="color: #00bfff;">if</span> (s.equals(<span style="color: #deb887;">"q"</span>))
+                  <span style="color: #00bfff;">break</span>;
+
+              <span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">random</span> = Math.random() * n;
+              System.out.print(random);
+          }
+          input.close();
+    }
+}
+</pre>
+</div>
+
+<p>
+Como siempre leemos la entrada del usuario a través del método
+<code>input.nextInt()</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n</span> = input.nextInt();
+</pre>
+</div>
+
+<p>
+Analizamos la condición del while, claramente entramos al cuerpo del
+<code>while</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">while</span> (<span style="color: #a2cd5a;">true</span>) {
+</pre>
+</div>
+
+<p>
+Una vez dentro, leemos la <i>cadena</i> que nos manda el usuario. Puede ser
+incluso la tecla <b>enter</b> también conocida como <span class="underline">salto de
+línea</span>. Guardamos lo que sea que teclee el usuario en la <i>cadena</i> <code>s</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = input.nextLine();
+</pre>
+</div>
+
+<p>
+El método <code>nextLine();</code> de <code>Scanner</code> a su vez es un <i>ciclo infinito</i>
+porque espera hasta que se le de una entrada!. Lee la siguiente línea
+<span class="underline">hasta el final de línea '\n'</span>. Más adelante profundizaremos en las
+<i>cadenas</i> y saltos de línea.
+</p>
+
+<p>
+Después una condicional que verifica si la cadena ingresada del
+usuario es <i>igual</i> a la cadena <code>"q"</code>. Utilizamos <code>"q"</code> de <i>quit</i> pero
+podría ser cualquier otra tecla.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">if</span> (s.equals(<span style="color: #deb887;">"q"</span>))
+</pre>
+</div>
+
+<p>
+Notemos que no estamos utilizando el operador de igualdad <code>==</code> como
+<code>if (s == "q")</code> esto se debe a que las cadenas son <i>objetos</i> y no
+<i>tipos de datos primitivos</i> como lo sería un <code>int, char, double</code>. De
+igual manera profundizaremos sobre el método <code>equals()</code> más
+adelante. Por ahora, utilizaremos la siguiente tabla:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">==</th>
+<th scope="col" class="org-left">int, double, float, long, short, byte, boolean, char, referencias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">equals()</td>
+<td class="org-left">String, Objetos. Personalizable</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+También notamos que el <code>if</code> no tiene llaves de cuerpo <code>{ }</code>. Cuando se
+tiene una sola instrucción como cuerpo de una estructura de control
+como <code>if, while, for, else</code> etc. es posible <i>no escribir llaves</i>. Si
+hay 2 o más instrucciones como cuerpo, forzosamente debemos utilizar
+las llaves.
+</p>
+
+<p>
+Regresando, si se cumple esta condición, entonces se ejecuta la única
+instrucción
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">break</span>;
+</pre>
+</div>
+
+<p>
+Que interrumpe el ciclo más cercano, no importa en qué iteración vaya,
+siempre sale del cuerpo inmediatamente.
+</p>
+
+<p>
+Finalmente, si no nos salimos todavía, creamos un número aleatorio y
+lo imprimimos.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">random</span> = Math.random() * n;
+</pre>
+</div>
+
+<p>
+El método <code>Math.random()</code> nos genera un número con decimal aleatorio
+en el intervalo \([0, 1]\); al multiplicarlo por \(n\) estamos <i>escalando</i>
+o <i>agrandando</i> este número aleatorio en proporción <i>n</i> por lo que
+básicamente tenemos números aleatorios entre \([0, n]\).
+</p>
+
+<p>
+No olvidemos cerrar nuestra entrada
+</p>
+<div class="org-src-container">
+<pre class="src src-java">input.close();
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org10828ae" class="outline-3">
+<h3 id="org10828ae"><span class="section-number-3">1.4.</span> El problema del paro</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+El problema del paro, (en inglés como <i>The halting problem</i>) no se refiere a los paros estudiantiles o del
+sindicato. Fue propuesto y resuelto por el primer computólogo del
+mundo <i>Alan Turing</i> y dice lo siguiente:
+</p>
+
+<p class="verse">
+<i>¿Será posible crear un programa que determine si otro programa con una entrada específica termine o no?</i><br />
+</p>
+
+
+<p>
+Este problema que suena muy complicado de entender, no lo es tanto.
+Todos alguna vez hemos usado <i>Windows</i> y eventualmente existe alguna
+aplicación <i>X</i> que <i>se traba</i> al hacer alguna operación o recibir
+cierta entrada <i>I</i>. Se pone el cursor en modo <i>cargando</i> por algunos
+segundos. ¿Cómo sabemos que esa aplicación sigue trabajando o se
+quedará plasmada para siempre?
+</p>
+
+<p>
+Decidimos esperar unos minutos, la aplicación sigue trabada. Nos
+preguntamos nuevamente ¿será que termine o no? Supongamos que dejamos
+la computadora trabajando por una semana y <i>termina</i> la operación que
+estaba haciendo. ¿Cómo pudieramos haber sabido si iba a terminar
+después de una semana? ¿O qué tal y terminaba dentro de 10 años o un
+siglo?
+</p>
+
+<p>
+Como humanos es <b>imposible determinar</b> si un programa terminará o
+no. Más aún, crear un programa que <i>determine</i> si un programa termina
+o no es <b>imposible</b>. En windows existe el <i>administrador de tareas</i>
+que nos ayuda un poco al poner una etiqueta que dice <i>No responde</i>,
+<b>pero no puede decidir si terminará o no ese programa!</b>
+</p>
+
+<p>
+Regresando a la definición teórica, ¿será posible crear un
+<i>administrador de tareas</i> que nos diga si una <i>aplicación</i> que le
+dijimos algo que <i>hiciera</i>, terminará o no? La definición es general
+para cualquier programa P, incluyendo a el mismo.
+</p>
+
+<p>
+<i>Alan Turing</i> demostró por contradiccioń que <b>no existe ni existirá</b>
+tal programa nunca, ya que si existirera tal programa, un programa P
+que sí termina podría no terminar nunca lo cual es una contradicción.
+</p>
+
+<p>
+El problema del paro es un primer clavado a lo que es la <i>Complejidad
+Computacional</i> y nos ayuda a entender las diferentes clases de
+problemas como <i>NP</i> los cuales son problemas que a día de hoy se
+siguen estudiando para encontrar soluciones más rápidas.
+</p>
+</div>
+</div>
+<div id="outline-container-org3834fc0" class="outline-3">
+<h3 id="org3834fc0"><span class="section-number-3">1.5.</span> Problema 3: Adivina adivinador.</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Crear un programa que genere un número aleatorio entre 1 y 1000, y
+pregunte a  lo más 10 veces al usuario que adivine el número que está
+pensando la computadora. Un ejemplo de salida sería:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">Adivina el n&#250;mero entre 1 y 1,000. Tienes 10 intentos.
+Intento 1: 229
+Demasiado chico
+Intento 2: 732
+Demasiado grande
+Intento 3: 500
+Demasiado chico
+...
+Intento 10: 512
+Adivinaste el n&#250;mero!
+</pre>
+</div>
+
+<p>
+Un dato curioso es que podemos adivinar cualquier número entre 0 y <i>N</i>
+en \(log_2(N)\) intentos, si hacemos las preguntas correctas.
+</p>
+</div>
+</div>
+<div id="outline-container-org179b894" class="outline-3">
+<h3 id="org179b894"><span class="section-number-3">1.6.</span> Ciclos anidados</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Es muy común en programación que hagamos ciclos <i>dentro</i> de ciclos.
+Por ejemplo, queremos imprimir en la terminal la siguiente pantalla de
+\(M*N\), con \(N = 10, M = 5\)
+</p>
+<p class="verse">
+##########<br />
+##########<br />
+##########<br />
+##########<br />
+##########<br />
+</p>
+
+<p>
+Podríamos fácilmente hacer un <code>System.out.println("######....");</code> pero
+si nos cambian el valor de \(N\) o \(M\) valió nuestro código. Un mejor
+enfoque es utilizar ciclos anidados como se sigue; omitiremos inicio y fin.
+</p>
+
+
+<div id="org756d65b" class="figure">
+<p><img src="../img/icc/nested_loop.svg" alt="nested_loop.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+La idea es tener 2 contadores, uno para las filas y otro para las
+columnas de tal forma que por cada fila, imprimamos 10 veces la
+<i>almohadilla, hashtag o gato</i> <code>#</code> como columnas, luego imprimir <code>\n</code>
+que significa <i>terminar esa línea</i> y continuar abajo con una nueva
+línea.
+</p>
+
+<p>
+Para la siguiente fila, imprimimos nuevamente 10 veces <code>#</code> y un <code>\n</code>,
+y así sucesivamente para las demás líneas hasta tener un total de 10*5
+<i>almohadillas</i> .
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Pantalla</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">m</span> = 5;
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n</span> = 10;
+        <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">fila</span> = 0; fila &lt; <span style="color: #98f5ff;">m</span>; fila++){
+            <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">columna</span> = 0; columna &lt; <span style="color: #98f5ff;">n</span>; columna++){
+                System.out.print(<span style="color: #deb887;">"#"</span>);
+            }
+            System.out.print(<span style="color: #deb887;">"\n"</span>);
+        }
+    }
+}
+</pre>
+</div>
+
+<p>
+Utilizamos <code>for</code> para escribir menos que con un <code>while</code>, pero se
+podría con <code>for</code>. Claramente podemos utilizar \(n, m\) valores
+arbitrarios que pueden cambiar <i>en tiempo de ejecución</i>
+</p>
+
+<p>
+Usualmente se refiere a <code>i</code> como fila y <code>j</code> como columna.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc863a9c" class="outline-3">
+<h3 id="orgc863a9c"><span class="section-number-3">1.7.</span> Problema 4: Pascal</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Dada una entrada \(N\) por el usuario, dibujar un triángulo como el
+siguiente con \(N\) filas.
+</p>
+<pre class="example" id="orgcff5b13">
+*
+* * 
+* * * 
+* * * *
+* * * * *
+</pre>
+
+<p>
+<b>Nota</b>: Utiliza la cadena <code>"* "</code> para cada iteración
+</p>
+
+<p>
+<b>Extra</b>: Crea las otras 3 variaciones del problema anterior, es decir que
+se imprima:
+</p>
+
+<pre class="example" id="orgea4a333">
+* * * * *
+* * * *
+* * * 
+* *
+*
+</pre>
+
+<pre class="example" id="orgb9eaf40">
+        *
+      * * 
+    * * * 
+  * * * *
+* * * * *
+</pre>
+
+<pre class="example" id="org089462f">
+* * * * *
+  * * * *
+    * * * 
+      * *
+        *
+</pre>
+
+<p>
+y finalmente un cuadrado como
+</p>
+
+<pre class="example" id="org521373f">
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+</pre>
+</div>
+</div>
+<div id="outline-container-org4b17649" class="outline-3">
+<h3 id="org4b17649"><span class="section-number-3">1.8.</span> Problema 5: Dibujo</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Crea un dibujo de \(NxN\) donde cada <i>pixel</i> se dibuja como
+</p>
+
+<ol class="org-ol">
+<li><code>"* "</code> si \(i \mod j = 0\) y \(j \mod i = 0\)</li>
+<li><code>"  "</code> en caso contrario.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org23e0c06" class="outline-3">
+<h3 id="org23e0c06"><span class="section-number-3">1.9.</span> Problema 6: Tablas de multiplicación</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Crea la tabla de multiplicación de todos los valores entre \([1, N], 
+[1, M]\)  para \(N, M\) dados por el usuario.
+</p>
+
+<p>
+Ej: \(N = 3\), \(M = 4\).
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">N</th>
+<th scope="col" class="org-right">M</th>
+<th scope="col" class="org-right">\(N*M\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">4</td>
+<td class="org-right">8</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">2</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+<td class="org-right">9</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">4</td>
+<td class="org-right">12</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgc33e333" class="outline-3">
+<h3 id="orgc33e333"><span class="section-number-3">1.10.</span> Problema 7: Criba de eratóstenes</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Dado una cota superior positivo \(N\), imprimir <b>todos</b> los números
+primos que existen entre \([0, N]\) incluyendo a N y el total de números
+primos encontrados.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc9773b4" class="outline-3">
+<h3 id="orgc9773b4"><span class="section-number-3">1.11.</span> Recursión</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+Todavía nos falta ver una última estructura repetitiva, que más que
+estructura es un concepto matemático basado en el <i>cálculo
+lambda</i>. Gracias a la tesis <i>Church-Turing</i> las máquinas de turing y
+el cálculo lambda son equivalentes.
+</p>
+
+<p>
+Dejaremos pendiente este tema para más adelante ya que primero debemos
+entender qué es un método y los valores de retorno, así como
+argumentos y parámetros.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-17 Thu 14:52</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

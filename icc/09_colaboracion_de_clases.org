@@ -1,0 +1,217 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Colaboración de clases
+
+En programación, normalmente no se programa solamente una función o
+una clase; siempre se programan módulos que utilizan varias clases que
+se comunican y trabajan en conjunto para resolver un problema en
+común.
+
+El siguiente ejemplo separa funcionalidad de actividades en
+clases. Simularemos un pequeño /Banco/. En un banco, hay /Clientes/
+donde cada /Cliente/ tiene su cuenta /independiente/. Un cliente puede
+/retirar/ y /abonar/ a su cuenta la cantidad que desee. Por otra
+parte, el banco maneja las operaciones de los clientes y puede
+observar /su cuenta/. Omitiremos la completitud de los métodos por
+espacio, pero solo tendremos los necesarios.
+
+Clase /Cliente.java/
+#+begin_src java
+  public class Cliente {
+      /* Nombre del cliente */
+      private String nombre;
+      /* Dinero en la cuenta */
+      private int cuenta;
+
+      public Cliente(String nombre){
+  	this.nombre = nombre;
+  	// cuenta se inicializa en 0 automáticamente
+      }
+
+      public void abonar(int cantidad){
+  	cuenta = cuenta + cantidad;
+      }
+
+      public void retirar(int cantidad){
+  	cuenta = cuenta - cantidad;
+      }
+
+      public int getCuenta(){
+  	return cuenta;
+      }
+
+      public String toString(){
+  	return nombre + " tiene " + cuenta + " en su cuenta.";
+      }
+  }
+#+end_src
+
+Clase /Banco.java/
+
+#+begin_src java
+  public class Banco {
+
+      /* Total de valor del banco */
+      private int banca;
+      /* 3 clientes en este banco */
+      private Cliente cliente1, cliente2, cliente3;
+
+      /* Crearemos por omisión a los clientes */
+      public Banco(){
+  	cliente1 = new Cliente("Aureliano");
+  	cliente2 = new Cliente("Gabriela");
+  	cliente3 = new Cliente("Canek");
+  	// banca = 0; se inicializa automáticamente
+      }
+
+      /* Simularemos que estas operaciones fueron hechas por lo usuarios */
+      public void operar(){
+  	cliente1.abonar(1422);
+  	cliente2.abonar(2339);
+  	cliente3.abonar(2149);
+  	cliente3.retirar(390);
+  	actualizaBanca();
+      }
+
+      /* Suma el total que hay en la banca */
+      public void actualizaBanca(){
+  	banca = cliente1.getCuenta() + cliente2.getCuenta() + cliente3.getCuenta();
+      }
+
+      public String toString(){
+  	return "El valor total del banco es: " + banca;
+      }
+  }
+#+end_src
+
+Clase /Main.java/
+
+#+begin_src java
+  public class Main {
+      public static void main (String[] args){
+  	Banco banco1 = new Banco();
+  	banco1.operar();
+  	banco1.toString();
+      }
+  }
+#+end_src
+
+Anteriormente vimos cómo crear varias clases y utilizarlas en la misma
+carpeta, además de tener el método ~main~ separado en otra
+clase. Analizaremos cada clase.
+
+La clase /Cliente/ se centra solamente en representar un /Cliente/ del
+banco, sus métodos y atributos son tales que /no se preocupa por los
+demás clientes/, solo por abonar e ingresar dinero a su cuenta. Este
+/objeto/ su funcion es de un /cliente/ y no más.
+
+Por otro lado, la clase /Banco/ *requiere* de la clase /Cliente/ para
+poder trabajar. Ya no guardamos dentro del banco a los /Clientes/ como
+un /String/ o número, ya es un objeto de tipo /Cliente/ y como tales,
+ya pueden /operar/ como /clientes/.
+
+#+begin_src java
+  private Cliente cliente1, cliente2, cliente3;
+#+end_src
+En /Java/ podemos declarar varias variables en una misma línea.
+
+Así, el banco /como objeto/ o /entidad/ puede leer y manipular /otros
+objetos/, en este caso clientes que han sido previamente definidos por
+nosostros mismos; claramente una _colaboración de clases_.
+
+#+begin_src java
+  public void operar(){
+      cliente1.abonar(1422);
+      cliente2.abonar(2339);
+      cliente3.abonar(2149);
+      cliente3.retirar(390);
+      actualizaBanca();
+  }
+
+  public void actualizaBanca(){
+      banca = cliente1.getCuenta() + cliente2.getCuenta() + cliente3.getCuenta();
+  }
+#+end_src
+
+Obviamente, un banco no tiene 3 clientes, ni 1000, Cada día va
+cambiando el número de clientes, y como no podemos cambiar el código
+/mientras se ejecuta/ no podemos añadir más (o quitar) variables como
+
+#+begin_src java
+  private Cliente cliente1, cliente2, cliente3, cliente4, cliente5 ...;
+#+end_src
+
+Además de que sería muy tedioso hacer esto 1 x 1. Las /Estructuras de
+datos/ se centran en poder almacenar datos de manera que podamos
+almacenar muchos objetos en una sola variable. Estas se estudiarán en
+el curso de /Estructuras de datos/.
+
+
+El ~99.1421323%~ de veces tendremos clases que /ocupan otras clases/,
+más en general, programas crean programas. De hecho cada vez que
+utilizamos una /String/ o /Scanner/, estamos utilizando /otras clases/
+que servirán para lo que queramos hacer. El otro ~0.8578676999999999 %~
+crearemos código desde 0, si estamos programando en /Ensamblador/ o
+/lenguaje de máquina/ ~0, 1~.
+
+
+Por esta razón, el código hagamos debemos hacerlo con /calidad/ y
+/buenas prácticas/ para que pueda ser utilizado por /otros
+programadores/ ya que somos hijos del /código libre/ y licencias GNU.
+
+** Problema 1: Dados
+Crear una colaboración de clases que nos permita tirar 3 dados. Si la
+suma de la tirada sale igual a 10, la casa gana, de otra forma gana el
+jugador. Las clases son
+
++ Dado:
+  - Atributos:
+    - valorTirado: No puede ser más de 6
+  - Métodos:
+    - Constructor vacío.
+    - getters y setters
+    - ~tirar()~
+    - ~toString()~
++ Tirada:
+  - Atributos:
+    - 3 Dados
+  - Métodos:
+    - Constructor: Crea los dados solamente.
+    - Tirar:  Debe imprimirse también lo que salió del dado para
+      evitar sospechas.
++ Main:
+  Crear un objeto /Tirada/ ejecutar el método ~tirar()~
+      
+   
+** Problema 2: Granja
+Crear una colaboración de clases para crear una ~Granja~. La granja
+deberá contener las clases: /Vaca, Pollo, Oveja, Puerco, Gato, y
+Perro/. Cada uno de los animales deberá de tener los atributos:
+
++ Animal:
+  - Atributos:
+    - Nombre
+    - Edad
+    - Sexo
+  - Métodos:
+    - Constructor: Incializa ~nombre~. La edad es /aleatoria/ entre
+      $[0, 10]$ y el sexo también. 
+    - getters y setters
+    - toString
+    - ~sonido()~ Imprimir cómo /hace/ el animal en cuestión.
+    - ~reproducir(Animal pareja)~: Regresa una cria de esta especie,
+      cuyo nombre es la mitad del primero con la mitad restante del
+      segundo, edad es 0 y el ~sexo~ es aleatorio. Ej:
+      #+begin_src java
+	public Pollo reproducir(Pollo p){
+	    // ... reproducción xd
+	    // Nombre de Ferna-nda y Pa-blo
+	    return new Pollo("Ferna-blo", 0, sexo);
+	}
+      #+end_src
+  
+
+En la granja deben haber al menos 3 animales de cada especie. La
+/Granja/ nos debe localizar a los animales que son mayores a *4 años* y
+si existen al menos un /macho/ y una /hembra/, deben procrear
+utilizando el método ~reproducir()~. Imprimir al nuevo descendiente
+con un mensaje de bienvenida al mundo.

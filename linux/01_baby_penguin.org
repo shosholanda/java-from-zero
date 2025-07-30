@@ -1,0 +1,1160 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Comandos básicos
+
+Usar /Linux/ se traduce en /usar la terminal/. La terminal es una
+/interfaz de usuario/ que es la conexión directa entre un /usuario/ y
+el /hardware de la computadora/. Tiene el poder de hackear grandes
+corporaciones o simplemente mover un archivo de texto. En ambos casos,
+se utilizan *comandos* que son muy específicos del sistema operativo.
+
+
+/Todo lo que se hace con mouse, se puede hacer con terminal/. Y
+/utilizar el teclado/ es mucho más rápido que utilizar el /mouse/
+(100+ botones vs 3). Nunca ningun hacker utiliza el /mouse/ y una
+ventana con botoncitos para /hackear/, todo es teclado duro pero
+poderoso; obviamente no puede ser aleatorio. Los famosos servidores se
+administran desde /una terminal/ remotamente; y solo se escriben
+comandos. *Un click es un /comando/ al final del día para la
+computadora.*
+
+Si queremos comunicarnos con la computadora, *debemos aprender su
+idioma*, memorizar comandos para hacer Y o Z cosa. Con el paso del
+tiempo aprenderás de memoria muscular, así como /aprendemos a hablar
+sin saber gramática/ cuando somos bebos; mientras más tiempo repases
+los comandos más rápido podrás escalar a nivel /hacker/ y usar /arch
+linux/ para poder decir: *I use arch btw*.
+
+Muchas distribuciones usan la combinacion de teclas ~Ctrl Alt t~ para
+abrir un nuevo shell; si no simplemente busca en las aplicaciones algo
+como /Terminal, Console, Shell/, un cuadro negro. Abrelo.
+
+** Salida estándar
+
+Tenemos la terminal abierta, y tenemos algo como
+
+#+begin_export html
+<pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~</b></font>$</pre>
+#+end_export
+
+Donde
+
++ ~pichu~ es el nombre del usuario,
++ ~@~ es un separador
++ ~ubuntu~ es el nombre de la computadora
++ ~:~ es otro separador
++ ~~~ significa /la carpeta home/, donde se encuentran las carpetas
+  /Documentos, Videos, Imágenes etc/, es equivalente a la ruta ~/home/usuario/~
++ ~$~ significa /privilegios de usuario/.
+
+
+En tu caso puede que ~pichu~ y ~ubuntu~ puede ser diferente. El
+símbolo ~~~ nos indica que estamos /adentro de una carpeta/. Así, para
+ejecutar /cualquier comando/ debemos estar /en una carpeta del sistema
+de archivos/, o con vocabulario /Windows/, en una subcarpeta del
+explorador de archivos, en este caso en ~/home/pichu/~ que es
+equivalente a ~~~.
+
+Procedemos a escribir lo siguiente y damos enter:
+
+ * ~love~
+ * ~friends~
+ * ~kill~
+
+
+Como podras ver, la computadora no conoce el amor, ni tiene amigos,
+pero sí puede matar jaja. Esto es solo un chiste. Cada vez que damos
+~ENTER~ se ejecuta la instrucción que acabamos de escribir, si el
+comando lo reconoce está de perlas, si no dirá algo como ~Command not
+found~. Debes de meterle a ese inglés pero en fa compadre.
+
+Lo que nos /responde/ la computadora en la terminal se le conoce como
+*salida estándar* y es muy importante ya que es /texto procesable/ y
+podemos copiar, pasar a otros programas, guardar como TXT etc.
+
+A continuación más /salida estandar/. Ingresa los siguientes comandos
+en tu terminal.
+
+*** echo
+~echo~ responde con el mismo mensaje que le pasemos.
+
+#+begin_src bash
+  $ echo "Hola, soy un baby penguin"
+#+end_src
+
+Intenta cambiar el texto entre comillas.
+
+*** top
+~top~ nos da información del uso de la memoria de nuestra computadora,
+y es un poco arcaica.
+
+#+begin_src bash
+  $ top
+#+end_src
+
+Existe una versión mejorada de este /administrador de tareas/ conocido
+como ~htop~. Es posible que debas instalarlo. Para salir de este
+/programa/ solo debes apretar la tecla ~q~
+
+
+*** df
+~df~ nos muestra el espacio usado de nuestras particiones
+#+begin_src bash
+  $ df
+#+end_src
+
+*** ip addr
+~ip addr~ nos muestra el estado de nuestras interfaces de red así como
+nuestra dirección IP si es que estamos conectados a internet.
+#+begin_src bash
+  $ ip addr 
+#+end_src
+
+*** clear
+A veces, queremos /limpiar/ nuestra terminal porque ya se llenó el
+espacio. ~clear~ nos deja el cursor en la primera línea de la
+terminal, listo para volver a escribir.
+
+#+begin_src bash
+  $ clear
+#+end_src
+
+Otro atajo de teclado es con la combinación de teclas ~Ctrl l~
+
+*** tabulador
+Muchas veces queremos ahorrar el tiempo de escribir comandos.  por
+ejemplo ~clear~ podemos escribir solamente ~cle~ y apretar la tecla
+~TABULADOR~ para poder /completar el comando/. 
+
+#+begin_src bash
+  $ cle[TABULADOR]
+#+end_src
+
+También sirve para completar rutas, o desambiguar comandos. por
+ejemplo podemos simplemente poner la primera letra como
+#+begin_src bash
+  $ y[TABULADORx2]
+#+end_src
+y nos aparecerán los comandos que empiecen con ~y~. Intenta para cada
+letra del abecedario.
+
+*** AYUDA
+Muchas veces se nos olvida cómo /funciona/ un comando; supongamos que
+es ~top~ Tenemos 3 opciones.
+
++ ~whatis~ nos dirá rápidamente /qué hace el comando/.
+  #+begin_src bash
+    $ whatis top
+  #+end_src
++ ~man~ nos abrirá un /manual/ del comando, así como a detalle su uso
+  y descripcion. Para salir simplemente oprime ~q~
+  #+begin_src bash
+    $ man top
+  #+end_src
++ la opción ~--help~ nos dará rápidamente ayuda de cómo /ejecutar el comando/.
+  #+begin_src bash
+    $ top --help
+  #+end_src
+
+
+Recuerda que todo lo que aparezca en la pantalla como respuesta es /salida estándar/.
+
+** Sistema de archivos
+Si hay terminal, hay carpetas. Siempre /vamos a estar/ dentro de una
+carpeta. Navega desde la interfaz gráfica con el mouse al explorador
+de archivos y, cuando estés en /Escritorio/ da click con /botón
+derecho/ y /abrir en terminal/. Deberás tener algo como.
+
+#+begin_export html
+<pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~/Escritorio</b></font>$</pre>
+#+end_export
+
+
+*** pwd
+/print working directory/ nos dice la ruta /real/ de la carpeta
+en donde estamos.
+#+begin_src bash
+  $ pwd
+#+end_src
+
+*** cd
+/change directory/ nos cambia de directorio a la ruta específicada.
+
+#+begin_src bash
+  $ cd .
+#+end_src
+Siempre hay 2 carpetas especiales en /cualquier carpeta/.
+
+ * ~.~ se refiere a *la carpeta actual*
+ * ~..~ se refiere a *la carpeta padre*
+Por lo que el comando anterior nos /deja en la misma carpeta/. Cambia
+a la carpeta padre.
+
+Para cualquier otra carpeta que se encuentre *dentro de esta carpeta*,
+escribimos el nombre de la carpeta. Si tuvieramos una carpeta llamada
+/Facultad/ accederíamos como
+
+#+begin_src bash
+  $ cd Facultad/
+#+end_src
+
+
+*Nota* Podemos no solo cambiar en 1 nivel, si conocemos /toda la
+ruta/, podemos meternos hasta la cocina, por ejemplo, escribr la carpeta
+donde esta la práctica1 (en orden jerárquico)
+
+#+begin_src bash
+  $ cd Documentos/ICC/practicas/practica1/src/java/
+#+end_src
+
+~cd~ es de los comandos que usaras /diario/, te acostumbrarás rápido.
+
+*** ls
+/list directory contents/ nos muestra los contenidos de la carpeta, ya
+sean más carpetas o archivos.
+
+#+begin_src bash
+  $ ls
+#+end_src
+
+Para ver más información sobre los archivos como su fecha de creación,
+permisos, u archivos ocultos utilizamos las /banderas/ ~lah~ de /long
+listing, all, human readable/
+
+#+begin_src bash
+  $ ls -lah
+#+end_src
+
+También de los comandos de cada día. Es hora de crear cosas.
+
+*** mkdir
+/make directory/ crea un directorio con el nombre que le pasemos.
+#+begin_src bash
+  $ mkdir linux
+#+end_src
+Si quieremos usar /espacios/, ponemos entre comillas el nombre como
+#+begin_src bash
+  $ mkdir "linux y penny"
+#+end_src
+
+Podemos revisar que efectivamente /se creó la carpeta/ con el comando
+~ls~; debe aparecer la carpeta. 
+#+begin_src bash
+  $ ls
+#+end_src
+Luego podemos cambiarnos /dentro/ de esa carpeta con ~cd~
+#+begin_src bash
+  $ cd linux
+#+end_src
+
+*Ejercicio* Crea la siguiente estructura de carpetas /dentro/ de la
+carpeta ~~/Documentos/~
+
+
+#+begin_example
+1er sem/
+├── algebra1
+│   └── examenes
+├── discretas
+│   ├── material
+│   └── practicas
+├── icc
+│   ├── practicas
+│   └── proyectos
+├── ingles1
+│   └── ejercicios
+└── mates1
+    └── tareas
+
+#+end_example
+
+
+*** tree
+como su nombre lo indica, es ~ls~ pero en un formato de árbol
+jerárquico. Puede ser que tengas que instalarlo, pero es un comando
+extremadamente útil; genera el árbol del ejercicio.
+
+#+begin_src bash
+  $ tree
+#+end_src
+
+*** touch
+~touch~ crea archivos de cualquier tipo, normalmente /archivos de
+texto/. Al igual que las carpetas, si necesitamos espacios lo
+escribimos "entre comillas".
+
+#+begin_src bash
+  $ touch "temario.txt"
+#+end_src
+
+Si tratamos de abrirlo estará vacío. 
+
+*** redireccionamiento
+Muchas veces es necesario /guardar/ la salida de un comando, por
+ejemplo ~df~. Podríamos ejecutar el comando, /seleccionar con el
+mouse/ la salida que querramos, crear un archivo con ~touch~, abrir un
+editor de textos, /pegar/ lo seleccionado, guardar archivo y
+/cerrar/. Son muchos pasos a seguir. El *pico-paréntesis* ~>~ hace
+todo esto automáticamente
+
+#+begin_src bash
+  $ df > "informacion sistema.txt"
+#+end_src
+
+En otras palabras, en lugar de /imprimir/ en /salida estándar/ el
+comando ~df~, *redirecciona* la salida estándar y escribe a un archivo
+llamado /informacion sistema.txt/, o el nombre que queramos.
+
+
+La operación /reescribe completamente/ sobre el archivo eliminando los
+contenidos anteriores por lo que si queremos /agregar/ a un archivo ya
+existente debemos usar doble /pico-parentesis/ ~>>~.
+
+#+begin_src bash
+  $ ip addr >> "informacion sistema.txt"
+#+end_src
+
+Así, tendremos la información de ~df~ y la información de ~ip addr~ en
+el mismo archivo /informacion sistema.txt/ uno debajo del otro.
+
+
+
+*Ejercicio*: Redirecciona la salida de los comandos, puedes guardar el
+ nombre como gustes.
+ 
++ pwd
++ echo "You will never know hunger."
++ ip addr
++ whoami
++ ls -lah
++ tree
+
+*** cat
+/concatenate files and print/ muestra los contenidos de un archivo
+*tal cual es internamente.*
+
+#+begin_src bash
+  $ cat "informacion sistema.txt"
+#+end_src
+
+*Ejercicio* Descarga una imagen de internet y usa ~cat~ sobre la
+imagen. ¿Qué aparece?
+
+/UNIX/ tiene la filosofía donde *todo* es un archivo, lo cual hace más
+simple el funcionamiento del sistema operativo. Los símbolos raros son
+exactamente /bytes/ ya que una imagen no se representa por letras,
+sino por /bytes/ y es la representación más cercana que se tiene.
+
+** Administracion de archivos
+Ya sabemos crear archivos y directorios; veremos cómo operar sobre
+ellos con /mover, copiar y eliminar/ archivos y directorios.
+
+*** cp
+/copy/ copia los archivos de la ruta $A$ a la ruta $B$
+
+#+begin_src bash
+  $ cp /home/pichu/Descargas/perrito.jpg ~/Escritorio/perrito.jpg
+#+end_src
+
+En el ejemplo, ~perrito.jpg~ de /Descargas/ es el origen y *debe de
+existir*; es la ruta $A$. Por otra parte, ~perrito.jpg~ de
+/Escritorio/ es la /nueva ruta/ o a donde se copiará el archivo; es la
+ruta $B$ y puedes cambiar el nombre incluso. Recordemos que
+~/home/pichu/~ y ~~~ *son rutas equivalentes*.
+
+Para copiar directorios, es /casi lo mismo/; tenemos el directorio $A$
+origen y queremos copiar al dierctorio $B$ destino.
+
+#+begin_src bash
+  $ cp ~/Escritorio/prueba/ ~/Videos/prueba/ -r
+#+end_src
+
+Mucho ojo con
+1. Para copiar archivos es importante poner /la extensión/ del
+   archivo, o su terminación como ~.jpg, .txt~ etc.
+2. Para copiar *carpetas* es importante poner ~/~ al final, de hecho
+   el símbolo ~/~ significa /directorio/.
+3. Necesitamos utilizar la /bandera/ ~-r~ /recursive/ para copiar
+   /recursivamente/ los contenidos de la carpeta. Básicamente si hay
+   subcarpetas, copiar /también/ esas subcarpetas con sus respectivos
+   subarchivos hasta tocar fondo.
+
+
+*Ejercicio* Descarga 3 imágenes de lo que tu quieras. Crea una carpeta
+en ~~/Imagenes~ que se llame /Descargadas/, luego crea una carpeta
+/que se identifique a cada imagen/. Finalmente, copia cada imagen
+descargada a su respectiva carpeta. *No puedes utilizar para nada el
+mouse* solo para descargarlas de internet.
+
+
+*** mv
+/move/ mueve rutas de la ruta $A$ a la ruta $B$. A diferencia de ~cp~
+que crea duplicados, ~mv~ elimina el archivo original, es como un
+/cortar y pegar/.
+
+#+begin_src bash
+  $ mv ~/Escritorio/prueba/ ~/Documentos/linux/
+#+end_src
+
+De hecho, sirve tambien para /renombrar/ archivos. Recordemos que si
+queremos utilizar espacios para nombres o archivos debemos encerrar el
+texto "entre comillas".
+
+#+begin_src bash
+  $ mv ~/Escritorio/perrito.jpg "~/Escritorio/perrito bonito.jpg"
+#+end_src
+
+*Ejercicio*: Renombra todos las imagenes que descargaste y moviste a
+un nombre más /descriptivo/.
+
+
+*** rm
+/remove/ elimina el archivo para siempre /sin confirmacion
+alguna/. Ten mucho cuidado si no estas seguro de eliminarlo ya que no
+habrá forma de recuperarlo.
+
+#+begin_src bash
+  $ rm ~/Documentos/perrito.jpg
+#+end_src
+
+Utilizando la /bandera/ ~-r~ podemos eliminar directorios,
+/recursivamente/ eliminar sus subdirectorios si es que los tiene.
+
+#+begin_src bash
+  $ rm ~/Documentos/prueba/ -r
+#+end_src
+
+En servidores no existe el concepto de /papelera de reciclaje/, *todo
+siempre se guarda* a menos que /ya no se quiera para nunca más/.
+
+*Ejercicio*: Copia la carpeta de imagenes que has creado a otra
+ubicación, luego elimina la original utilizando ~rm~. *No puedes
+utilizar para nada el mouse*.
+
+** Filtros
+Los filtros ~|~ (en ingles /pipe/) sirven para reenviar la salida de un
+programa *a otro programa*.  A diferencia del redireccionamiento ~>~
+que reenvia la salida /a un archivo final/. Es muy útil para hacer
+tareas rápidas. Como seguramente no tengamos nada en nuestra
+computadora de archivos o algo, vamos a necesitar escribir *texto
+procesable*
+
+*** nano
+~nano~ es un editor de textos /extremadamente básico/ que se apoya de
+la línea de comandos y será util para ejemplificar los filtros; más
+adelante veremos /Emacs/ que es el último editor de textos que usarás,
+si lo usas bien.
+
+#+begin_src bash
+  $ nano
+#+end_src
+
+Nos aparecerá una ventana como la siguiente.
+#+begin_export html
+<pre><span style="background-color:#D0CFCC"><font color="#171421">  GNU nano 7.2                                                               New Buffer                                                                         </font></span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="background-color:#D0CFCC"><font color="#171421">^G</font></span> Help         <span style="background-color:#D0CFCC"><font color="#171421">^O</font></span> Write Out    <span style="background-color:#D0CFCC"><font color="#171421">^W</font></span> Where Is     <span style="background-color:#D0CFCC"><font color="#171421">^K</font></span> Cut          <span style="background-color:#D0CFCC"><font color="#171421">^T</font></span> Execute      <span style="background-color:#D0CFCC"><font color="#171421">^C</font></span> Location     <span style="background-color:#D0CFCC"><font color="#171421">M-U</font></span> Undo        <span style="background-color:#D0CFCC"><font color="#171421">M-A</font></span> Set Mark    <span style="background-color:#D0CFCC"><font color="#171421">M-]</font></span> To Bracket  <span style="background-color:#D0CFCC"><font color="#171421">M-Q</font></span> Previous
+<span style="background-color:#D0CFCC"><font color="#171421">^X</font></span> Exit         <span style="background-color:#D0CFCC"><font color="#171421">^R</font></span> Read File    <span style="background-color:#D0CFCC"><font color="#171421">^\</font></span> Replace      <span style="background-color:#D0CFCC"><font color="#171421">^U</font></span> Paste        <span style="background-color:#D0CFCC"><font color="#171421">^J</font></span> Justify      <span style="background-color:#D0CFCC"><font color="#171421">^/</font></span> Go To Line   <span style="background-color:#D0CFCC"><font color="#171421">M-E</font></span> Redo        <span style="background-color:#D0CFCC"><font color="#171421">M-6</font></span> Copy        <span style="background-color:#D0CFCC"><font color="#171421">^Q</font></span> Where Was    <span style="background-color:#D0CFCC"><font color="#171421">M-W</font></span> Next
+</pre>
+#+end_export
+
+Y podemos empezar a escribir lo que queramos dentro de ~nano~. Abajo
+podemos ver las opciones que tenemos disponibles que es una
+combinacion de teclas. Por ejemplo podemos salir si apretamos la
+combinación de teclas ~Ctrl X~
+
++ ~^~ significa la tecla ~Ctrl~
++ ~M~ significa la tecla ~Alt~
+
+Procedemos a escribir /lo que sea/ dentro de ~nano~, ya sea un poema,
+una noticia, un [[https://www.lipsum.com/][Lorem ipsum]] *divido en varias líneas*. Guardamos con
+el nombre de /texto.txt/. Para los ejercicios se usará el siguinte texto.
+
+#+begin_example
+I've touch'd the highest point of all my greatness;
+And from that full meridian of my glory
+I haste now to my setting.  I shall fall,
+Like a bright exhalation in the evening
+And no man see me more.
+		-- Shakespeare
+#+end_example
+
+*** pipe
+~|~  se utiliza para pasar información de un programa a otro. Su forma
+general es como sigue
+
+#+begin_src bash
+  $ origen | destino
+#+end_src
+
+Si ~origen~ produce /salida estandar/ esta será *entrada estándar* del
+comando ~destino~.
+
+*** sort
+~sort~ es un comando que ordena /líneas de texto/ alfabéticamente e
+*imprime* el texto ordenado. Podemos ejecutarlo sobre el archivo de
+texto que creamos anteriormente como
+
+#+begin_src bash
+  $ sort texto.txt
+#+end_src
+
+Sin embargo, ~sort~ también puede leer archivos *desde entrada
+estandar* a través del redireccionamiento de la siguiente manera
+
+#+begin_src bash
+  $ cat texto.txt | sort
+#+end_src
+
+Esto es posible porque ~cat~ imprime /tal cual es texto.txt/, luego el
+~|~ pasa lo impreso directamente como entrada a ~sort~ para finalmente
+que ~sort~ ordene las líneas de texto; por lo que los dos comandos
+/son equivalentes/. A su vez, la salida de ~sort~ lo podemos usar en
+otro programa como ~wc~. 
+
+*** wc
+/word count/ nos cuenta cuantos caractéres o líneas hay en un
+archivo.
+
+#+begin_src bash
+  $ wc texto.txt
+#+end_src
+
+Debemos usar /banderas/ para especificar el resultado que
+queremos
+
++ ~-l~ muestra cuantas /líneas/ hay en el texto.
++ ~-m~ muestra cuantos /caracteres/ hay en el texto.
++ ~-c~ muestra cuantos /bytes/ hay en el texto.
++ ~-w~ muestra cuantas /palabras/ hay en el texto.
+
+También lee de entrada estándar, entonces podríamos saber cuántas
+líneas tiene el texto /después de haber ordenado/ con ~sort~ tipo
+
+#+begin_src bash
+  $ cat texto.txt | sort | wc -l
+#+end_src
+
+Recuerda que la información se pasa de un comando a otro a través del
+~|~ 
+
+*** grep
+~grep~ nos busca una palabra clave dentro de una salida estándar. Por
+ejemplo, el comando ~ip addr~ saca muchas cosas, pero solo queremos la
+dirección IP.
+
+#+begin_src bash
+  $ ip addr | grep inet
+#+end_src
+~inet~ es la palabra clave que buscaremos en la salida de ~ip
+addr~. Podemos poner /expresiones regulares/ para buscar más
+especificamente como ~".*ether"~ que significa /lo que sea que este
+antes de ether, hasta ether/
+
+En nuestro poema podemos encontrar todas las líneas que contengan
+~ll~
+
+#+begin_src bash
+  $ cat texto.txt | grep "ll"
+#+end_src
+
+*** uniq
+
+~uniq~ nos da una serie de líneas /únicas/ que no se repiten.  Es muy
+útil creando diccionarios.
+
+#+begin_src bash
+  $ cat texto.txt | sort | uniq 
+#+end_src
+
+
+*** Ejercicio
+Todos alguna vez hemos jugado /Basta!/. Consiste en llenar una tabla
+donde cada fila debe ser un sustantivo empezando con cierta letra, por
+ejemplo si toca la /a/, un juego de basta quedaría como.
+
+| Nombre | Apellido | Objeto | Flor o fruto | Color    | Animal  | Ciudad o país | Total |
+|--------+----------+--------+--------------+----------+---------+---------------+-------|
+| Andrea | Ávila    | Arco   | Amapola      | Amarillo | Ardilla | Australia     |   700 |
+
+
+Puede ser que a veces sea muy difícil encontrar palabras con cierto
+nombre; pero nos acordamos cuando no estamos jugando.
+
+Crea un archivo de texto para cada /columna/ del juego e ingresa al
+menos una palabra con cada nombre, por ejemplo para /Color/ sería
+
+#+begin_example
+# color.txt
+rojo
+amarillo
+verde
+azul
+morado
+café
+negro
+rosa
+...
+#+end_example
+
+Luego ejecuta el siguiente comando /después de haber hecho un archivo
+txt para cada columna/.
+#+begin_src bash
+  $ cat *.txt | grep "^a." -i | sort | uniq
+#+end_src
+
+¿Qué hace el comando anterior? Respuesta al pie de página [fn:0]
+
+
+
+*** find
+~find~ es un comando muy poderoso para poder encontrar /archivos/ o
+/carpetas/ de manera rápida sin utilizar una interfaz gráfica. Debemos
+specificar en qué ruta, tipo de archivo y nombre.
+
+#+begin_src bash
+  $ find . -type f -name "*.jpg"
+#+end_src
+
+Recuerda que ~.~ significa /carpeta en la que estoy parado/. El
+argumento ~f~ de ~type~ significa que lo que busca son /archivos/ o
+/files/, mientras ~d~ significa directorios. Luego en ~-name~ tenemos
+la expresión regular ~"*.jpg"~ que significa /todos los archivos que
+terminen con/ ~jpg~. Podemos hacer más personalizada la búsqueda con
+los argumentos.
+
++ ~-size 4K~ nos busca todos los archivos /menores o iguales a 4 kilobytes/.
++ ~-newermt 20130801 ! -newermt 20150831~  busca entre el rango de
+  fecha ~01/08/2013~ a ~31/08/2015~
++ ~-delete~ si encuentra el archivo, lo borra automaticamente. Muy
+  útil para eliminar archivitos basura como ~*.class~
++ -exec cat {} \;~ ejecuta el comando ~cat~ sobre el archivo
+  encontrado. De hecho puede ser /cualquier otro comando/ no
+  exactamente ~cat~
+
+Existen más opciones que puedes revisar en el manual de ~find~
+
+
+¿Qué hace el siguiente comando?
+#+begin_src bash
+  $ find ~ -type d -name "icc" | sort 
+#+end_src
+
+Respuesta al pie de página [fn:1]
+
+¿Qué hace el siguiente comando?
+
+#+begin_src bash
+  $ find . -type f -name "*.org" -size 4k -exec cat {} \; | grep "java" |  wc -l
+#+end_src
+
+Respuesta en [fn:2]
+
+
+** Procesos
+Vimos anteriormente que con ~top~ podemos ver los programas que están
+corriendo en la computadora. Muchos de estos /procesos/ están
+corriendo en segundo plano, o en primer plano. Es un evento canónico
+que vean que su programa /no termine/ y se quede en un ciclo
+infinito. En /Linux/ podemos *matar* procesos. Veamos un ejemplo
+
+*** yes
+~yes~ es un comando que imprime /infinitamente/ y.
+
+#+begin_src bash
+  $ yes
+#+end_src
+
+*** Ctrl C
+
+Para matar un proceso /dentro del proceso/ usamos la combinación de
+teclas ~Ctrl C~. Mata a ~yes~
+
+*** Ctrl Z
+
+Por otra parte, podemos /pausar/ procesos, si utilizamos la
+combinación de teclas ~Ctrl Z~. Manda a dormir a ~yes~
+
+#+begin_example
+y
+^Z
+[1]+  Stopped                 yes
+#+end_example
+
+*** fg y bg
+
+En este estado el programa esta /durmiendo/. Podemos despertarlo de 2
+maneras:
+1. Utilizamos ~fg~ /foreground/ para despertarlo y que siga
+   ejecutandose en primer plano.
+   
+2. Utilizamos ~bg~ /background/ para despertarlo y que se ejecute en
+   segundo plano.
+
+   *Nota*: Al utilizar ~bg~ seguirán imprimendose líneas infinitas, y
+   podemos escribir /a ciegas/ porque las muchas /"y"/ ocupan la
+   pantalla. Esto es porque *por omisión* si un programa /imprime en
+   segundo plano/ lo imprimirá en la terminal, así esté en segundo
+   plano. Para que /tampoco imprima/ estando en segundo plano debemos
+   cambiar la configuración por omisión antes como
+   #+begin_src bash
+     $ stty tostop
+   #+end_src
+
+
+Un mejor ejemplo sería con ~nano~. Mientras ~nano~ está activo,
+estamos usando la terminal.
+
+#+begin_src bash
+  $ nano
+#+end_src
+
+Supenderlo significa /minimizar/ el programa, pudiendo hacer más cosas
+en la terminal teniendo /pausado/ el ~nano~
+
+*** sleep
+~sleep~ pausa el programa por /N/ cantidad de segundos
+#+begin_src bash
+  $ sleep 10
+#+end_src
+
+*** &
+Podemos enviar directamente un programa a dormir utilizando ~&~, en
+lugar de ejecutarlo, oprimir ~Ctrl z~ y luego ~bg~
+
+#+begin_src bash
+  $ sleep 100 &
+#+end_src
+
+Que significa, ejecuta el proceso /sleep/ en segundo plano. El
+programa /sleep/ seguirá ejecutandose hasta terminar con la ventaja de
+que podemos seguir usando la terminal.
+   
+*** jobs
+
+~jobs~ nos muestra los procesos que hemos dormido.
+
+#+begin_src bash
+  $ jobs
+  [1]-  Stopped                 nano
+  [2]+  Stopped                 yes
+#+end_src
+
+Y nos da un /identificador/ para despertar a cierto programa dormido.
+Por ejemplo si queremos despertar ~yes~, utilizamos ~fg~ con 2
+#+begin_src bash
+  $ fg 2
+#+end_src
+
+*** ps
+/process snapshot/ nos da información de los procesos en formato de
+lista. Teniendo los trabajos de /nano/ y /yes/ dormidos, ejecutarlo
+nos da.
+
+#+begin_src bash
+    PID TTY          TIME CMD
+ 239697 pts/2    00:00:00 bash
+ 240246 pts/2    00:00:00 nano
+ 240860 pts/2    00:00:00 yes
+ 241322 pts/2    00:00:00 ps
+#+end_src
+
+Donde
++ ~PID~ es el /Process ID/ que identifica a cada proceso de manera única
++ ~TTY~ es la /ventana de terminal/ donde se esta ejecutando. Yo tengo
+  en este momento abierta 2 ventanas de una terminal, por eso es la segunda.
++ ~TIME~ nos da información de cuanto tiempo ha estado consumiendo recursos
++ ~CMD~ es el comando que ejecuta ese proceso.
+
+
+Podemos ver tambien *todos los procesos* de todo el sistema con ~-e~
+de /everything/
+#+begin_src bash
+  $ ps -e
+#+end_src
+
+¿Qué hace el siguiente comando?
+#+begin_src bash
+  $ ps -e | grep nano 
+#+end_src
+
+*** kill
+Finalmente, podemos matar procesos más alla de nuestra terminal
+utilizando ~kill~ ya que ~Ctrl C~ se limita a solo /procesos
+ejecutados en primer plano en la terminal actual/.
+
+#+begin_src bash
+  $ kill 241322
+#+end_src
+
+~kill~ requiere de un /PID/ para poder matar. Es muy útil para
+finalizar programas /atascados/ como ~yes~ o que no responden. Mata a
+~nano~ y ~yes~.
+
+** Permisos
+Para poder un entendimiento básico de /linux/ es necesario ver su
+sistema de permisos ya que esto hace /Linux/ superior a otros sistemas
+operativos como /Windows/ y no necesita de /antivirus/. Tenemos 3
+personajes con 3 tipos de permisos que se pueden combinar de cualquier forma
+
+*** ugo
+
+En /UNIX/ tenemos 3 tipos de personajes para manipular achivos.
+
+1. /user/ es el usuario con el que se inició sesión la
+   cuenta. Normalmente somos /nosotros/.
+2. /group/ es el grupo al que pertenece el usuario. Por ejemplo si hay
+   un nuevo trabajador en un departamento que tiene ciertos permisos,
+   añadirlo sería darle todos los permisos que el departamento
+   goza. No solo es para departamentos, sino para configuraciones del
+   sistema, uso de ciertos dispositivos o permisos de super usuario
+   como ~sudo~ que veremos más adelante.
+3. /other/  es /cualquier otro usuario/ que no sea uno de los 2
+   anteriores. Por ejemplo, cuando se conecta una /USB/ usada en
+   /windows/ ocupa el personaje de /other/.
+
+
+Cada personaje es importante para la delegación de permisos; que
+básicamente son las *acciones* que puede hacer uno de estos 3
+personajes en archivos.
+
+
+*** rwx
+
+En /UNIX/ tenemos 3 tipos de acciones sobre un archivo:
+
+1. /read/: Leer los contenidos de un archivo.
+2. /write/: Escribir sobre los contenidos de un archivo.
+3. /execute/: Ejecutar los contenidos de un archivo /si es
+   ejecutable/.
+
+Por ejemplo, para visualizar una foto usamos el permiso de /read/. Si
+queremos hacer una modificación a un documento ocupamos el permiso
+/write/ y finalmente si queremos jugar ocupamos el permiso
+/execute/. Estos 3 permisos se pueden intercambiar y configurar *para
+cualquier personaje*.
+
+Por ejemplo solo quiero que mis fotos sean vistas, activaría el
+permiso de /read/ y /write/ para mí, o sea /user/. Pero para cualquier
+otra persona como /group/ u /other/ solo activo el permiso de /read/,
+así solo *yo* puedo modificar mis fotos y los demás solo pueden
+/verlas/.
+
+Desactivar un permiso de /rwx/ se denota con ~-~
+
+*** chmod
+
+/change file mode bits/ cambia los permisos de los personajes con sus
+respectivas acciones.
+
+Recordemos el comando ~ls -lah~, que nos da una lista como la
+siguiente. Estando en la carpeta clonada del repositorio
+[[https://github.com/shosholanda/java-from-zero.git]] (si tienes acceso a
+este material, es claro que ya lo clonaste lol)
+
+#+begin_export html
+<pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~/Documents/Proyectos/java-from-zero</b></font>$ ls -lah
+total 64K
+drwxrwxr-x  9 pichu pichu 4.0K Jul 29 21:09 <font color="#12488B"><b>.</b></font>
+drwxrwxr-x 11 pichu pichu 4.0K Jun 12 16:57 <font color="#12488B"><b>..</b></font>
+drwxrwxr-x  2 pichu pichu 4.0K Jul 16 22:13 <font color="#12488B"><b>edd</b></font>
+drwxrwxr-x  8 pichu pichu 4.0K Jul 25 17:21 <font color="#12488B"><b>.git</b></font>
+-rw-rw-r--  1 pichu pichu  335 Jul 13 17:35 .gitignore
+drwxrwxr-x  2 pichu pichu 4.0K Jul 28 19:56 <font color="#12488B"><b>icc</b></font>
+drwxrwxr-x  5 pichu pichu 4.0K Jul 26 15:08 <font color="#12488B"><b>img</b></font>
+-rw-rw-r--  1 pichu pichu  13K Jul 28 19:47 inicio.html
+-rw-rw-r--  1 pichu pichu 2.7K Jul 28 21:30 inicio.org
+drwxrwxr-x  2 pichu pichu 4.0K Jul 17 09:40 <font color="#12488B"><b>java-basics</b></font>
+drwxrwxr-x  2 pichu pichu 4.0K Jul 29 21:10 <font color="#12488B"><b>linux</b></font>
+-rw-rw-r--  1 pichu pichu 2.8K Jul 11 21:15 README.md
+drwxrwxr-x  2 pichu pichu 4.0K Jul 23 19:45 <font color="#12488B"><b>test</b></font>
+</pre>
+#+end_export
+
+Solo nos centraremos en las primeras 4 columnas.
+
+1. ~d/-~ El primer caracter. Significa si es directorio ~d~ o si es un
+   archivo comun ~-~
+2. ~rwx~ son los permisos dados para ~ugo~ en ese orden. Es decir los
+   primeros 3 ~rwx~ son de /user/, los siguientes ~rwx~ son de /group/
+   y finalmente los últimos ~rwx~ son de /other/. Si tenemos ~-~
+   significa que /no se dió el permiso de esa acción para esa
+   persona/.
+3. ~N~ es el número de /links simbólicos/. Cuantas carpetas y/o
+   accesos directos existen /dentro/ de esa carpeta, o si es un
+   archivo, solo tiene 1. Esto va más alla del alcance del /baby penguin/.
+4. ~pichu~, el primero de izquierda a derecha es el nombre /del
+   usuario/ de quien es dueño este archivo o carpeta. En tu caso sería
+   tu usuario pues al copiar el repositorio /tú lo creaste/ por lo que
+   tienes acceso a todo el contenido sín límites.
+5. ~pichu~, el segundo de izquierda a derecha es el nombre del grupo
+   que tiene los permisos de /group/, es un poco redundante. En el
+   caso que no sea tuyo el archivo, pero pertenezcas al grupo, puedes
+   hacer lo que /group/ pueda hacer, sin necesidad de ser el dueño.
+
+
+Los demás campos ya los vimos anteriormente o son muy intuitivos. Con
+~chmod~ podemos cambiar los permisos. Por ejemplo, quiero darle a
+/todos/ el permiso de hacer /todo/ en ~inicio.org~ (mala idea pero es
+un ejemplo)
+
+#+begin_src bash
+  $ chmod ugo+rwx inicio.org
+#+end_src
+
+ * ~ugo~ se refiere a todos los /personajes/.
+ * ~+~ significa /añadir/ las acciones que están delante del
+   ~+~. También existe el ~-~
+ * ~rwx~ se refiere a todas las /acciones/.
+
+Si queremos quitar /todos/ los permisos de /todos los personajes/
+(mala idea) podemos hacerlo como
+
+#+begin_src bash
+  $ chmod ugo-rwx inicio.org
+#+end_src
+
+Ahora, nadie /ni siquiera el mismo usuario/ puede abrir el
+archivo. Debe cambiar los permisos para poder leerlo /al menos/.
+
+Lo mejor es que podemos hacer una combinación de estas. Siguiendo el
+anterior ejemplo de la foto, donde *solo yo* puedo modificar mis
+fotos, pero nadie más mi cambio de permisos sería como
+
+#+begin_src bash
+  $ chmod ugo+r perrito.jpg
+  $ chmod u+rw  perrito.jpg
+  $ chmod go-wx perrito.jpg
+#+end_src
+
+
+*Extra* Podemos hacer el cambio de permisos usando la notacion binaria
+para los permisos
+
+| read | write | execute | numero |
+|------+-------+---------+--------|
+|    1 |     1 |       1 |      7 |
+|    1 |     1 |       0 |      6 |
+|    1 |     0 |       1 |      5 |
+|    1 |     0 |       0 |      4 |
+|    0 |     1 |       1 |      3 |
+|    0 |     1 |       0 |      2 |
+|    0 |     0 |       1 |      1 |
+|    0 |     0 |       0 |      0 |
+
+Así, si podemos hacer lo de ~perrito.jpg~ en una sola línea como
+
+#+begin_src bash
+  $ chmod 644 perrito.jpg
+#+end_src
+
+Que significa, para el /user/ da permiso de 6 /read, write/. para
+/group y user/ da permiso de 4 /read/.
+
+Recuerda, la palabra clave hoy es ~ugo+rwx~.
+
+*** sudo
+
+~sudo~ es un /grupo de usuarios/ que permite elevar
+privilegios. Nuestra terminal es más como
+
+#+begin_export html
+<pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~</b></font>$</pre>
+#+end_export
+
+El símbolo ~$~ significa que tenemos privilegios de /usuario/. Pero
+para algunas operaciones como instalar programas o modificar archivos
+del sistema operativo, necesitamos escalar a ~root~.  ~sudo~ nos
+permite ejecutar el comando como un usuario ~root~ por única vez.
+
+Casi siempre, utilizarás ~sudo~ para instalar, actualizar o eliminar
+paquetes (programas)
+
+#+begin_src bash
+  $ sudo apt update && sudo apt upgrade
+#+end_src
+
+~&&~ significa /ejecuta el comando siguiente solo sí el comando
+anterior se ejecutó correctamente/.
+
+Por ejemplo para instalar los /paquetes/ git y emacs.
+#+begin_src bash
+  $ sudo apt install git emacs
+#+end_src
+
+Hay veces que no es posible elimiar ciertos archivos debido a
+permisos o matar ciertos procesos. ~sudo~ lo resuelve.
+#+begin_src bash
+  $ sudo rm carpeta/ -r
+  $ sudo kill 1111
+#+end_src
+
+*Debes tener cuidado ya que ~sudo~ va con todo menos con miedo y puede
+que los resultados sean catastróficos si haces algo de lo que no estas
+seguro*
+
+Aquí una lista de programas recomendados que debes instalar y probar:
+
+1. emacs
+2. git
+3. tree
+4. neofetch
+5. htop
+6. ssh
+7. brave
+8. flatpak
+9. fortune
+10. toilet
+11. cowsay
+12. 2048
+13. oneko
+14. net-tools
+15. python3-pip
+16. okular
+
+*** root
+
+Finalmente, ~root~ es el usuario /más poderoso/ que siempre existe en
+cualquier sistema /UNIX/. Este tipo de usuario puede modificar
+/cualquier cosa/ incluyendo archivos del /kernel de linux/. Tener un
+poder muy grande conlleva una gran responsabilidad.
+
+Normalmente no es necesario utilizar tanta cantidad de privilegios,
+pero a veces es necesario /escalar privilegios/ como ~root~
+
+Dependiendo la distribución, tenemos 2 opciones
+
+1. ~su -~
+2. ~sudo -i~
+
+Nos pedirá nuestra contraseña de usuario. La colocamos y ahora tenemos
+una ventana como al siguiente
+
+#+begin_export html
+<pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~/Documents/Proyectos/java-from-zero</b></font>$ sudo -i
+root@ubuntu:~# 
+</pre>
+#+end_export
+
+Notamos que estamos como usuario ~root~ en la máquina ~ubuntu~ y el
+símbolo final ha cambiado a ~#~ que justamente significa: permisos de
+/superusuario/.
+
+*** exit
+
+Para salir del modo /root/ escribimos ~exit~, o más en general, para
+terminar /cualquier programa/ que esté recibiendo una entrada (una
+terminal está recibiendo una entrada tambien) usamos ~Ctrl D~ que en
+sistemas /UNIX/ significa *fin de línea*.
+
+** Bash
+
+Bash es un /lenguaje de programación/ por lo que podemos crear
+algoritmos y scripts. Los scripts *deben* tener el permiso de
+/ejecutarse/ de lo contrario así sea el virus más pesado, no puede
+hacer nada, es solo un archivo. Haremos un pequeño script
+
+Dicen por ahí que el /mejor año de tu vida/ es la suma de tu
+cumpleaños. Por ejemplo si naciste en ~23/09/1998~ entonces el mejor
+año será en $23 + 9 + 1998 = 2030$.
+
+1. Creamos un archivo con ~touch~ que se llame /script.sh/
+2. Escribimos lo siguiente
+   #+begin_src bash
+     #!/bin/bash
+     echo "Este es un script para saber cuál es el mejor año de tu vida"
+     echo "Ingresa el año en que naciste"
+     read year
+     echo "Ingresa el mes en que naciste"
+     read month
+     echo "Ingresa el día en que naciste"
+     read day
+     best_year=$(($year + $month + $day))
+     echo "El mejor año de tu vida fue/es/será en $best_year"
+   #+end_src
+3. Guardamos el archivo.
+4. Damos permisos de ejecución con ~chmod~
+   #+begin_src bash
+     $ chmod ugo+x script.sh
+   #+end_src
+   Es decir, damos el permiso de ejecución para el /usuario, grupo y
+   other/.
+5. Ejecutamos el script
+   * Usando ~bash~
+     #+begin_src bash
+       $ bash script.sh
+     #+end_src
+   * Abriendo el archivo con la terminal
+     #+begin_src bash
+       $ ./script.sh
+     #+end_src
+6. Contestamos las preguntas y disfrutamos el resultado.
+
+
+Los scripts sirven para ahorrar escribir comandos largo con mucha
+información. Por ejemplo el siguiente script busca todos los archivos
+~.mp4~ en todos los directorios que empiecen con ~vid~ y los mueve a
+un directorio que queramos. 
+
+#+begin_src bash
+  #!/bin/bash
+
+  source_dirs=( $(find . -type d -name "vid*"))
+  destin_dir="./videos"
+
+  for dir in "${source_dirs[@]}"; do
+      if [ -d "$dir" ]; then
+  	find "$dir" -type f -name "*.mp4" -exec mv {} "$destin_dir" \;
+  	rm -rf "$dir"
+  	echo "Moved mp4 files from $dir to $destin_dir"
+      else
+  	echo "Directory $dir does not exist, skipping..."
+      fi
+  done
+#+end_src
+
+
+
+Los scripts son la base del sistema operativo de /Linux/ y podemos
+/cambiarlos a nuestra conveniencia/; en Windows no podemos hacer nada
+más que el sistema nos permita. Así en lugar de que primero se carge
+el /Wi-fi/ y luego la pantalla, podemos cambiar que primero /se cargue
+el sistema de archivos/ y luego el /Wi-fi/ por ejemplo. Obviamente
+esto requiere de más conocimientos; solo debes saber que este es el
+lenguaje de /linux/.
+
+
+* Footnotes
+
+[fn:0] Concatena /todos/ los archivos /.txt/ en una sola salida
+estándar, luego filtra toda esa salida únicamente por las líneas *que
+empiecen con la letra A*, ignorando si es /a, A/ por la opción
+~-i~. Tenemos todas las palabras que empiezan con /a/ y luego las
+ordenamos en orden alfabético /ignorando si es minúscula o mayúscula/
+por la opción ~-f~ para finalmente quedarnos con un texto sin
+repetidos de solamente la letra a, lo cual es perfecto para rellenar
+un basta.
+
+[fn:1] Busca en la carpeta ~/home/usuario/~ todas las carpetas que
+contengan ~icc~, 
+
+
+[fn:2] Cuenta cuantas veces aparece la palabra /java/ en el directorio
+actual, obviamente revisando el contenido de los archivos ~.org~
+menores a 4 /kilobytes/.

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-17 Thu 09:28 -->
+<!-- 2025-07-21 Mon 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -195,172 +195,110 @@
 </style>
 </head>
 <body>
-<div id="org-div-home-and-up">
- <a accesskey="h" href=""> UP </a>
- |
- <a accesskey="H" href="../inicio.html"> HOME </a>
-</div><div id="content" class="content">
+<div id="content" class="content">
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org21b9311">1. Creación de programas en <i>Java</i></a></li>
+<li><a href="#orgcdddb1c">1. Temas para icc</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org21b9311" class="outline-2">
-<h2 id="org21b9311"><span class="section-number-2">1.</span> Creación de programas en <i>Java</i></h2>
+<div id="outline-container-orgcdddb1c" class="outline-2">
+<h2 id="orgcdddb1c"><span class="section-number-2">1.</span> Temas para icc</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<b>TODOS</b> los programas y aplicaciones son escritos en texto plano
- (abrir bloc de notas y escribir código). Hay algunas aplicaciones
- llamadas <i>IDE</i> que se especializan en facilitar el entorno de trabajo
- de proyectos de cientos de miles de líneas de código.
+HOla
+</p>
+
+<ul class="org-ul">
+<li>Programación lineal
+<ul class="org-ul">
+<li>Estructura condicional
+<ul class="org-ul">
+<li>if</li>
+<li>if-else</li>
+<li>ifs anidados</li>
+<li>switch</li>
+</ul></li>
+<li>Estructura repetitiva
+<ul class="org-ul">
+<li>while</li>
+<li>for</li>
+<li>do while</li>
+<li>ciclos infinitos</li>
+</ul></li>
+</ul></li>
+<li>Clases y objetos
+<ul class="org-ul">
+<li>string</li>
+<li>clases  y objetos</li>
+<li>metodos
+<ul class="org-ul">
+<li>estatico vs no estatico</li>
+<li>void vs return</li>
+<li>getters y setters</li>
+<li>constructor</li>
+<li>toString</li>
+</ul></li>
+<li>main</li>
+<li>enumeraciones</li>
+</ul></li>
+<li>Herencia
+<ul class="org-ul">
+<li>reutilizando código</li>
+<li>clases abstractas</li>
+<li>extends</li>
+<li>Object</li>
+</ul></li>
+<li>Estructuras de datos
+<ul class="org-ul">
+<li>Arreglos</li>
+<li>Lista simple</li>
+<li>complejidad computacional</li>
+<li>interfaces</li>
+<li>Casting</li>
+<li>Genéricos</li>
+<li>ordenamientos</li>
+<li>búsquedas</li>
+<li>iteradores</li>
+</ul></li>
+<li>Entrada y salida
+<ul class="org-ul">
+<li>Archivos</li>
+<li>Entrada estándar</li>
+<li>WEB</li>
+<li>Excepciones</li>
+</ul></li>
+<li>Interfaces gráficas
+<ul class="org-ul">
+<li>JAVA FX</li>
+<li>MVC</li>
+<li>sockets</li>
+</ul></li>
+<li>Programación concurrente
+<ul class="org-ul">
+<li>synchronized</li>
+<li><p>
+variables atomicas
 </p>
 
 <p>
-Lo que buscamos es poder escribir código sin preocuparnos por el tipo
-de letra o colores y preocuparnos más por el programa que sea rápido,
-resistente a fallos y de resultados correctos. Por lo que <span class="underline">nunca</span>
-usaremos editores de texto como <i>Word</i> o <i>Bloc de Notas</i> ya que estos
-se especializan más en la presentación del texto. Normalmente se usa
-el formato de texto <code>monoespaciado</code> que todos los caracteres ocupan
-el mismo espacio.
-</p>
-
-<p>
-En esta guía utilizaremos <b>emacs</b> como nuestro editor de texto ya que
-es con el que se esta escribiendo esta guía.
-</p>
-
-<p>
-<b>Nota:</b> Es importante estar en la carpeta correcta antes y mientras se
-  cree, compile y ejecute el programa. Puedes usar el comando.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ pwd  
-</pre>
-</div>
-
-<p>
-Para saber cómo moverte de carpeta / crear carpetas <b>desde la
-terminal</b> puedes consultar la parte de <a href="../linux/comandos.html">comandos</a>. Una vez estando en la
-carpeta deseada creamos el archivo con nombre <span class="underline">HolaMundo.java</span>.
-</p>
-
-<p>
-Lo podemos hacer de muchas
-formas. Como abrir nuestro editor favorito de textos y dar en <code>Archivo
-&gt; Nuevo archivo</code> y especificamos el nombre de arriba. Si estamos en
-emacs, podemos usar <code>C-x C-f</code> y seguidamente escribir el nombre de
-archivo, o desde la terminal como
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Crear documento
-</span>$ touch HolaMundo.java
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Crear y abrir el documento directamente
-</span>$ emacs HolaMundo.java
-</pre>
-</div>
-
-<p>
-Abrimos este archivo con cualquier editor de texto y procederemos a
-anotar lo siguiente, con cuidado y sin que se nos vaya ningún
-símbolo. Los espacios de la izquierda son extremadamente
-importantes. No se te olvide guardar al final el archivo, en <code>emacs</code>
-es con <code>C-x C-s</code>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">HolaMundo</span> {
-
-    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>) {
-        System.out.println(<span style="color: #deb887;">"Hola mundo! :)"</span>);
-    }
-}
-</pre>
-</div>
-
-<p>
-Ya tenemos nuestro primer programa escrito en Java. Es muy <i>simple</i>,
-pero todos empezamos siempre por algo ¿no?
-</p>
-
-<p>
-Como mencionamos anteriormente, la computadora debe traducir este
-<i>idioma</i> a algo que la misma computadora pueda entender. Para esto
-debemos utilizar el compilador de Java (<code>javac</code>) y nos generará un archivo
-binario, exactamente un bytecode que tiene una extensión .class.
-</p>
-
-<p>
-Para compilar el archivo escribimos lo siguiente en la
-terminal.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ javac HolaMundo.java
-</pre>
-</div>
-
-<p>
-<code>javac</code> viene de <i>java compiler</i>. Si no tenemos errores de
-"<b>ortografía</b>" (sintáxis o semántica) el compilador debería gener el
-archivo compilado, de lo contrario habría que ver en qué pudimos
-habernos equivocado a la hora de copiar el código de <i>Java</i>.
-</p>
-
-<p>
-Podemos ver la traducción que generó el compilador si utilizamos el
-siguiente comando
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ cat HolaMundo.class
-</pre>
-</div>
-
-<p>
-Nos aparecerá algo que no podemos encontrar ningún sentido, símbolos
-raros que solamente la computadora entiende. <code>cat</code> sirve para mostrar un
-archivo <i>tal cual es internamente</i>. ¿Qué pasa si hacemos <code>cat</code> al
-archivo <code>HolaMundo.java</code>?
-</p>
-
-
-<p>
-Finalmente, ejecutaremos nuestro programa utilizando el ejecutador de
-aplicaciones de java, que es con el comando:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ java HolaMundo
-</pre>
-</div>
-
-<p>
-En la terminal debería aparecernos un mensaje de <b>Hola mundo</b> que
-escribimos anteriormente en el código; estamos <i>imprimiendo</i> en pantalla el
-texto.
-</p>
-
-<p>
-Lo importante es que quede claro cómo crear, compilar y ejecutar un
-programa. El código como tal será explicado a medida que se vaya
-avanzando en la guía.
-</p>
+"El cielo nocturno contiene más estrellas de las que puedo contar,
+aunque menos de cinco mil son visibles a simple vista. El universo
+observable contiene alrededor de setenta billones de
+estrellas. Pero el número de estrellas es finito, mientras que los
+números naturales son infinitos. Cuenta todas las estrellas y aún
+te quedarán tantos números naturales como al principio."
+</p></li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-17 Thu 09:28</p>
+<p class="date">Created: 2025-07-21 Mon 21:40</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

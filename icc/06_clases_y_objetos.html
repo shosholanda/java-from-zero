@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-17 Thu 14:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org41686dc">1. Clases y objetos</a>
+<ul>
+<li><a href="#org2db35d1">1.1. Definición de POO</a></li>
+<li><a href="#org61130b5">1.2. Definición de Objeto</a></li>
+<li><a href="#org6049938">1.3. Clase vs Objeto</a></li>
+<li><a href="#org06fe7c0">1.4. Personificando objetos</a></li>
+<li><a href="#org25758c3">1.5. Problema 1: Triangulo</a></li>
+<li><a href="#org5b0f833">1.6. Problema 2: Coordenadas</a></li>
+<li><a href="#orga35e262">1.7. Problema 3: Cuadrado</a></li>
+<li><a href="#org62f448e">1.8. Problema 4: Calculadora</a></li>
+<li><a href="#org6e62a1e">1.9. Problema 5: Gatos</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org41686dc" class="outline-2">
+<h2 id="org41686dc"><span class="section-number-2">1.</span> Clases y objetos</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org2db35d1" class="outline-3">
+<h3 id="org2db35d1"><span class="section-number-3">1.1.</span> Definición de POO</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Recordemos que la programación orientada a objetos se basa en abstraer
+objetos del mundo real (o no) a valores procesables por una
+computadora como lo son tipos de dato primitivos, y así crear
+<i>objetos</i>.
+</p>
+
+<p>
+La programación orientada a objetos (POO) requiere que se cumpla
+</p>
+<ul class="org-ul">
+<li>Abstracción</li>
+<li>Encapsulamiento</li>
+<li>Herencia</li>
+<li>Polimorfismo</li>
+</ul>
+
+<p>
+El objetivo de tener <i>objetos</i> es poder <span class="underline">separar</span> funcionalidades en
+objetos, donde cada uno cumple con cierta parte de un programa para
+que en conjunto creen un sistema robusto. A su vez, cada objeto separa
+su comportamiento en <i>métodos</i>, así es mucho más fácil leer y entender
+secciones de código, divididos en métodos que si todo estuviera en el
+<code>main</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org61130b5" class="outline-3">
+<h3 id="org61130b5"><span class="section-number-3">1.2.</span> Definición de Objeto</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+La definición de <i>objeto</i> es la siguiente.
+</p>
+
+<p class="verse">
+Un objeto es un <i>ente</i> que tiene<br />
+- Identidad<br />
+- Propiedades o atributos<br />
+- Comportamiento<br />
+</p>
+
+
+<p>
+En <i>Java</i>, la primera propiedad solo existe <i>cuando el objeto existe
+en tiempo de ejecución</i>, que es donde aplica el concepto de
+<i>programación orientada a objetos</i>.  Las otras dos propiedades se
+definen <i>a través de una clase</i>, y se <i>añaden</i> al objeto cuando este
+existe. Cada objeto tendrá sus propios valores, pero compartirán la
+misma categoría con sus similares.
+</p>
+</div>
+</div>
+<div id="outline-container-org6049938" class="outline-3">
+<h3 id="org6049938"><span class="section-number-3">1.3.</span> Clase vs Objeto</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Todo esto es muy teórico, veamos un objeto práctico. Piensa por un
+momento en el concepto de <i>persona</i>. Trata de visualizarlo en tu
+mente. ¿Lo puedes ver a detalle? ¿Qué rostro tiene? ¿Es hombre o
+mujer? ¿Qué color de piel tiene? ¿Qué color es el cabello? ¿Qué idioma
+habla? ¿Cuál es la complexión de la persona?
+</p>
+
+<p>
+Muchas de estas preguntas <b>no tienen respuesta</b>, ya que el concepto es
+<i>una idea</i> y las ideas <i>no están totalmente aterrizadas</i>. Esto
+justamente es lo que representa una <span class="underline">clase</span>, una idea, un concepto,
+una clase, que <b>no tiene exactamente definido su versión final</b>, pero
+que define <b>qué es lo que va a tener</b>, en particular propiedades y
+comportamiento.
+</p>
+
+<p>
+Claramente sabemos que todas las personas comparten <i>ciertas</i>
+características entre ellas, como extremidades, órganos vitales, sexo
+entre otros; estas características comunes se definen para todos los
+objetos. Y una clase crea un objeto, algo que ya existe y es
+palpable.
+</p>
+
+<p>
+Tomando el ejemplo de la clase Persona, piensa ahora en <i>Linus
+Torvalds</i>. Todas las preguntas incógnitas ahora tienen respuesta. Esto
+<b>ya es un objeto</b>. Puedes buscar quién es si todavía no sabes.
+</p>
+
+<ul class="org-ul">
+<li>Nombre: "Linus Benedict Torvalds"</li>
+<li>Rostro: "Pinguino"</li>
+<li>Sexo: "Hombre</li>
+<li>Nacionalidad: "Finlandia"</li>
+<li>Edad: 55+
+etc&#x2026;</li>
+</ul>
+
+<p>
+Similarmente, una clase en <i>Java</i> solo define <i>atributos</i> y <i>métodos</i>.
+Y aterriza estos atributos creando o <i>instanciando</i> el objeto con el
+operador <code>new</code> donde no queda duda de quíen o qué es el objeto.
+</p>
+</div>
+</div>
+<div id="outline-container-org06fe7c0" class="outline-3">
+<h3 id="org06fe7c0"><span class="section-number-3">1.4.</span> Personificando objetos</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<i>Java</i> nos permite crear nuestros propias clases para poder crear
+nuestros propios objetos que pueden hacer <i>cualquier cosa que
+imaginemos</i>, pero que aterricemos. En <i>Java</i>, las clases se crean
+siguiendo la siguiente estructura
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">class</span> [Nombre de la clase]{
+
+    [Atributos de la clase]
+
+    [M&#233;todos de la clase]
+
+    [M&#233;todo main (opcional)]
+
+}
+</pre>
+</div>
+
+<p>
+Veamos un ejemplo a detalle:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Persona</span> {
+
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+        input = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+        System.out.print(<span style="color: #deb887;">"Ingresar nombre:"</span>);
+        nombre = input.nextLine();
+        System.out.print(<span style="color: #deb887;">"Ingresar edad:"</span>);
+        edad = input.nextInt();
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">imprimir</span>(){
+        System.out.println(<span style="color: #deb887;">"Nombre: "</span> + nombre);
+        System.out.println(<span style="color: #deb887;">"Edad: "</span> + edad);
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">esMayorDeEdad</span>(){
+        <span style="color: #00bfff;">if</span> (edad &gt;= 18){
+            System.out.println(nombre + <span style="color: #deb887;">" es mayor de edad"</span>);
+        } <span style="color: #00bfff;">else</span> {
+            System.out.println(nombre + <span style="color: #deb887;">" no es mayor de edad"</span>);
+        }
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span>(<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Persona</span> <span style="color: #4eee94;">persona1</span>;
+        persona1 = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Persona</span>();
+        persona1.inicializar();
+        persona1.imprimir();
+        persona1.esMayorDeEdad();
+    }
+}
+</pre>
+</div>
+
+<p>
+El nombre de la clase <b>debe hacer referencia</b> al concepto que plasma
+la clase. En este caso, es el concepto de persona.  Una clase <i>debería
+ser siempre pública</i> para que cualquier otro objeto pueda interactuar
+con éste.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Persona</span> {
+</pre>
+</div>
+
+<p>
+Los atributos (o variables de clase) los definimos dentro de la clase,
+pero afuera del <code>main</code>. Los atributos <i>siempre</i> son <b>privados</b> por la
+propiedad de <i>encapsulación</i>. Nos dicen qué propiedades tendrá el
+<i>objeto</i> pero no definen cuál es el valor final que tendrán. Son las
+características en común que comparten todos los objetos de esta <i>clase</i>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+</pre>
+</div>
+
+<p>
+Estas variables <b>siempre</b> podrán ser accedidas desde cualquier función
+o método <i>dentro</i> de la clase (salvo la función <code>main</code>).
+</p>
+
+<p>
+Luego definimos los métodos, que es sinónimo de <i>comportamiento</i>. Son
+muy parecidos al método <code>main</code> excepto que no tiene la cláusula
+<code>static</code> y es por una buena razón que veremos más adelante.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+    input = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+    System.out.print(<span style="color: #deb887;">"Ingresar nombre:"</span>);
+    nombre = input.nextLine();
+    System.out.print(<span style="color: #deb887;">"Ingresar edad:"</span>);
+    edad = input.nextInt();
+}
+</pre>
+</div>
+
+<p>
+En el método <code>inicializar()</code>, que será el primero en ejecutar después
+de crear el objeto, creamos un objeto de tipo <code>Scanner</code> a través de
+<i>entrada estándar</i>, que es la que tecleamos en la terminal, y
+asignamos un valor para <i>nombre</i> y <i>edad</i> <span class="underline">en tiempo de ejecución</span>, no
+antes, ni aquí en la clase. <b>Notamos que todas las variables de clase
+ya tienen un valor definido al terminar este método</b>.
+</p>
+
+<p>
+El siguiente método <code>imprimir()</code>, imprimirá en pantalla el contenido
+de los atributos de la clase, los cuales son <i>nombre</i> y <i>edad</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">imprimir</span>(){
+    System.out.println(<span style="color: #deb887;">"Nombre: "</span> + nombre);
+    System.out.println(<span style="color: #deb887;">"Edad: "</span> + edad);
+}
+</pre>
+</div>
+
+<p>
+El tercer método tiene por objetivo saber si, dada la <i>edad</i> cargada
+anteriormente corresponde a una persona mayor de edad o no.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">esMayorDeEdad</span>(){
+    <span style="color: #00bfff;">if</span> (edad &gt;= 18){
+        System.out.println(nombre + <span style="color: #deb887;">" es mayor de edad"</span>);
+    } <span style="color: #00bfff;">else</span> {
+        System.out.println(nombre + <span style="color: #deb887;">" no es mayor de edad"</span>);
+    }
+}
+</pre>
+</div>
+
+<p>
+Finalmente, tenemos el método <code>main</code> que siempre hemos puesto. Como
+estamos <i>al alcance</i> de la clase <code>Persona</code>, podemos <i>instanciar</i>
+objetos de la misma (estamos en el mismo archivo). Veamos línea por
+línea
+</p>
+
+
+<p>
+La declaración (también conocido como <i>firma</i>) del método es la de
+siempre; indica el punto de entrada del programa.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span>(<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+</pre>
+</div>
+
+<p>
+Declaramos un objeto <b>de tipo</b> <code>Persona</code>. No hay nada concretado, pero
+sí un <span class="underline">identificador</span> al objeto mientras esté en ejecución el
+programa, en este caso es el nombre de la variable <code>persona1</code>, y debe
+ser único.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">Persona</span> <span style="color: #4eee94;">persona1</span>;
+</pre>
+</div>
+
+<p>
+Y luego <i>instanciamos</i> el objeto, concretando sus atributos a valores
+que se puedan leer y escribir.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">persona1 = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Persona</span>();
+</pre>
+</div>
+
+<p>
+En principio, todos los atributos de <code>Persona</code> tienen un valor por
+<i>omisión</i> que <i>Java</i> asigna automáticamente, pero son valores
+mínimos. La siguiente tabla muestra a qué valores asigna
+automáticamente java
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Tipo de dato</th>
+<th scope="col" class="org-left">valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">int</td>
+<td class="org-left">0</td>
+</tr>
+
+<tr>
+<td class="org-left">boolean</td>
+<td class="org-left">false</td>
+</tr>
+
+<tr>
+<td class="org-left">double</td>
+<td class="org-left">0.0</td>
+</tr>
+
+<tr>
+<td class="org-left">String</td>
+<td class="org-left">null</td>
+</tr>
+
+<tr>
+<td class="org-left">Scanner</td>
+<td class="org-left">null</td>
+</tr>
+
+<tr>
+<td class="org-left">byte</td>
+<td class="org-left">0x00</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>Nota</b>: El valor <code>null</code> es equivalente a la definición de <i>vacío</i>,
+existe solo para decir que no hay nada, y es usado ampliamente en las
+estructuras de datos.
+</p>
+
+<p>
+Así que nuestro objeto <code>persona1</code> tiene <code>nombre = null</code> y <code>edad =
+0</code>, por eso el método <code>incializar()</code> asigna valores no vacíos. A
+través del objeto <code>persona1</code> <i>mandamos llamar al método</i> <code>inicializar()</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">persona1.inicializar();
+</pre>
+</div>
+
+<p>
+El operador <code>.</code> <i>punto</i>, busca el <i>identificador</i> del método o
+atributo <i>dentro</i> de la clase y si lo encuentra, lo ejecuta.  Por eso,
+en la clase <code>String</code> utilizamos <i>métodos sobre el objeto cadena</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s1</span> = <span style="color: #deb887;">"hola!"</span>;
+System.out.println(s1.length()); <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">5</span>
+</pre>
+</div>
+<p>
+Más adelante veremos cómo al momento de crear un objeto podemos
+asignar valores no vacíos en lugar que <i>Java</i> los asigne
+automáticamente.
+</p>
+
+<p>
+El siguiente método <i>imprime</i> los valores cargados por el método
+<code>inicializar()</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">persona1.imprimir();
+</pre>
+</div>
+
+<p>
+Y finalmente, saber si esta persona (<code>persona1</code>) es mayor de edad aún
+cuando la variable <code>edad</code> fue definida <i>en tiempo de ejecución</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">persona1.mayorDeEdad();
+</pre>
+</div>
+
+<p>
+Es de suma importancia que queden claro el concepto de <i>clase</i> y
+<i>objeto</i> ya que es la base de toda la <i>programación orientada a
+objetos</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org25758c3" class="outline-3">
+<h3 id="org25758c3"><span class="section-number-3">1.5.</span> Problema 1: Triangulo</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Crear una clase que, carge los lados de un triángulo a través de un
+método <code>inicializar()</code>. Además, debe imprimirse los atributos del
+triángulo a través de un método <code>imprimir()</code> , así como los métodos
+<code>ladoMayor(), ladoMenor()</code> y <code>esEquilatero()</code> que imprime <i>lo que
+describe el método</i>. El método <code>main</code> deberá ser el siguiente:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+    <span style="color: #98f5ff;">Triangulo</span> <span style="color: #4eee94;">triangulo1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Triangulo</span>();
+    triangulo1.inicializar();
+    triangulo1.imprimir();
+    triangulo1.ladoMayor();
+    triangulo1.ladoMenor();
+    triangulo1.esEquilatero();
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5b0f833" class="outline-3">
+<h3 id="org5b0f833"><span class="section-number-3">1.6.</span> Problema 2: Coordenadas</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Crear una clase que, reciba dos números enteros \(x, y\) como
+coordenadas del plano cartesiano a través del método <code>inicializar()</code>.
+El método <code>imprime()</code> deberá imprimir las coordenadas en la forma \((x,
+y)\). Crear un método que nos imprima estas coordenadas \(x, y\) a
+coordenadas polares \((r, \theta)\); otro método que nos diga en qué
+cuadrante del plano cartesiano se encuentra y finalmente otro método
+que imprima el punto reflejado sobre el eje X y eje Y.
+</p>
+
+<p>
+Recordemos que para transformar a coordenadas polares utilizamos
+</p>
+\begin{align}
+r &= \sqrt{x^2 + y^2}\\
+\theta &= \arctan{\frac{y}{x}}
+\end{align}
+</div>
+</div>
+<div id="outline-container-orga35e262" class="outline-3">
+<h3 id="orga35e262"><span class="section-number-3">1.7.</span> Problema 3: Cuadrado</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Crear una clase que incluya el siguiente comportamiento:
+</p>
+<ul class="org-ul">
+<li>Cargar el tamaño de un lado del cuadrado.</li>
+<li>Imprimir perímetro</li>
+<li>Imprimir área</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org62f448e" class="outline-3">
+<h3 id="org62f448e"><span class="section-number-3">1.8.</span> Problema 4: Calculadora</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Crear un programa que cargue 2 valores decimales. Luego, imprimir:
+</p>
+<ul class="org-ul">
+<li>suma</li>
+<li>diferencia (valor absoluto de la resta)</li>
+<li>multiplicación</li>
+<li>división</li>
+<li>exponenciación</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6e62a1e" class="outline-3">
+<h3 id="org6e62a1e"><span class="section-number-3">1.9.</span> Problema 5: Gatos</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Crea una clase que contenga los atributos que creas necesarios para
+definir a un gato; estos atributos deberán ser inicializados con el
+método <code>inicializar()</code>. También crea los métodos que creas necesarios
+para <i>expresar</i> la funcionalidad del gato. Deben ser al menos 5
+atributos de clase y 3 métodos <i>sin incluir</i> <code>inicializar()</code> e
+<code>imprimir()</code>. Manda a llamar cada uno de los métodos en el orden
+correcto.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-17 Thu 14:52</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

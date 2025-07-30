@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-11 Fri 17:49 -->
+<!-- 2025-07-22 Tue 20:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -227,30 +227,35 @@
 </script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5a0d6bb">1. Programación secuencial</a>
+<li><a href="#org678faa6">1. Programación secuencial</a>
 <ul>
-<li><a href="#org2e354b3">1.1. Problema 1</a>
+<li><a href="#org7daa9d7">1.1. Problema 1: Raices de una ecuación cuadrática</a>
 <ul>
-<li><a href="#orgb87040b">1.1.1. Tabla de pruebas</a></li>
+<li><a href="#org8869262">1.1.1. Tabla de pruebas</a></li>
 </ul>
 </li>
-<li><a href="#orgd3ca1d9">1.2. Problema 2</a></li>
-<li><a href="#orgc62f5f4">1.3. Problema 3</a></li>
-<li><a href="#org2d4bc65">1.4. Problema 4</a></li>
-<li><a href="#org19f36f5">1.5. Problema 5</a></li>
-<li><a href="#org6d0aebe">1.6. Problema 6</a></li>
+<li><a href="#org60780ad">1.2. Problema 2: El mejor año de tu vida.</a></li>
+<li><a href="#orgd909dc0">1.3. Problema 3: Promedio edades</a></li>
+<li><a href="#org873bda7">1.4. Problema 4: Volumen esfera</a></li>
+<li><a href="#org0ec24f6">1.5. Problema 5: Interés simple</a></li>
+<li><a href="#orgedea8f9">1.6. Problema 6: Interés compuesto</a></li>
+<li><a href="#org6b6d712">1.7. Problema 7: Distancia entre 2 puntos</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5a0d6bb" class="outline-2">
-<h2 id="org5a0d6bb"><span class="section-number-2">1.</span> Programación secuencial</h2>
+<div id="outline-container-org678faa6" class="outline-2">
+<h2 id="org678faa6"><span class="section-number-2">1.</span> Programación secuencial</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Programar es como escribir un libro. Tiene un inicio, cosas
@@ -265,8 +270,8 @@ programar y ejecutar <i>linea por línea</i> sin saltar absolutamente nada
 como hemos hecho los problemas anteriores.
 </p>
 </div>
-<div id="outline-container-org2e354b3" class="outline-3">
-<h3 id="org2e354b3"><span class="section-number-3">1.1.</span> Problema 1</h3>
+<div id="outline-container-org7daa9d7" class="outline-3">
+<h3 id="org7daa9d7"><span class="section-number-3">1.1.</span> Problema 1: Raices de una ecuación cuadrática</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Realizar un programa que calcule las soluciones de una ecuación
@@ -289,14 +294,16 @@ es como sigue:
 </p>
 
 
-<div id="org3c3e66f" class="figure">
+<div id="org2fe1bab" class="figure">
 <p><img src="../img/icc/problem01.svg" alt="problem01.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Diagrama de flujo para encontrar las raíces de una ecuación cuadrática</p>
 </div>
 
 <p>
-Código
+Podemos ver que el programa sigue un solo camino, no hay bifurcaciones
+por lo que es <i>secuencial</i>. Cada algoritmo contiene partes
+secuenciales donde hacen operaciones fijas como fórmulas o funciones.
 </p>
 
 <div class="org-src-container">
@@ -353,8 +360,8 @@ y potencia
 </pre>
 </div>
 </div>
-<div id="outline-container-orgb87040b" class="outline-4">
-<h4 id="orgb87040b"><span class="section-number-4">1.1.1.</span> Tabla de pruebas</h4>
+<div id="outline-container-org8869262" class="outline-4">
+<h4 id="org8869262"><span class="section-number-4">1.1.1.</span> Tabla de pruebas</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -409,18 +416,36 @@ y potencia
 </div>
 </div>
 </div>
-<div id="outline-container-orgd3ca1d9" class="outline-3">
-<h3 id="orgd3ca1d9"><span class="section-number-3">1.2.</span> Problema 2</h3>
+<div id="outline-container-org60780ad" class="outline-3">
+<h3 id="org60780ad"><span class="section-number-3">1.2.</span> Problema 2: El mejor año de tu vida.</h3>
 <div class="outline-text-3" id="text-1-2">
+<p>
+Dicen por ahí, que si sumas tu fecha de cumpleaños, obtendrás el mejor
+año de tu vida. Por ejemplo:
+</p>
+
+<p>
+23/09/1998 \(\Rightarrow\) \(23 + 9 + 1998 = 2030\)
+</p>
+
+<p>
+Crea un programa que reciba una fecha de nacimiento en <i>dígitos</i> y nos
+diga cuál es el mejor año esperado de ese <i>cumpleaños</i>. 
+</p>
+</div>
+</div>
+<div id="outline-container-orgd909dc0" class="outline-3">
+<h3 id="orgd909dc0"><span class="section-number-3">1.3.</span> Problema 3: Promedio edades</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 Crear un programa que reciba 5 edades de personas y nos regrese el
 promedio de esas edades.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc62f5f4" class="outline-3">
-<h3 id="orgc62f5f4"><span class="section-number-3">1.3.</span> Problema 3</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org873bda7" class="outline-3">
+<h3 id="org873bda7"><span class="section-number-3">1.4.</span> Problema 4: Volumen esfera</h3>
+<div class="outline-text-3" id="text-1-4">
 <p>
 Crear un programa que dado el radio de una esfera, calcule su
 volumen. La fórmula está dada por
@@ -430,9 +455,9 @@ volumen. La fórmula está dada por
 \end{equation}
 </div>
 </div>
-<div id="outline-container-org2d4bc65" class="outline-3">
-<h3 id="org2d4bc65"><span class="section-number-3">1.4.</span> Problema 4</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org0ec24f6" class="outline-3">
+<h3 id="org0ec24f6"><span class="section-number-3">1.5.</span> Problema 5: Interés simple</h3>
+<div class="outline-text-3" id="text-1-5">
 <p>
 Crear un programa que calcule el <i>interés simple</i> a partir de los
 parámetros:
@@ -448,9 +473,9 @@ parámetros:
 \end{equation}
 </div>
 </div>
-<div id="outline-container-org19f36f5" class="outline-3">
-<h3 id="org19f36f5"><span class="section-number-3">1.5.</span> Problema 5</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgedea8f9" class="outline-3">
+<h3 id="orgedea8f9"><span class="section-number-3">1.6.</span> Problema 6: Interés compuesto</h3>
+<div class="outline-text-3" id="text-1-6">
 <p>
 Crear un programa que calcule el interés compuesto a partir de los
 valores:
@@ -465,9 +490,9 @@ valores:
 \end{equation}
 </div>
 </div>
-<div id="outline-container-org6d0aebe" class="outline-3">
-<h3 id="org6d0aebe"><span class="section-number-3">1.6.</span> Problema 6</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-org6b6d712" class="outline-3">
+<h3 id="org6b6d712"><span class="section-number-3">1.7.</span> Problema 7: Distancia entre 2 puntos</h3>
+<div class="outline-text-3" id="text-1-7">
 <p>
 Crear un programa que dadas 2 coordenadas en el plano cartesiano
 \((x_1, y_1), (x_2, y_2)\) nos de la distancia que hay entre estos dos puntos
@@ -478,7 +503,7 @@ Crear un programa que dadas 2 coordenadas en el plano cartesiano
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-11 Fri 17:49</p>
+<p class="date">Created: 2025-07-22 Tue 20:41</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

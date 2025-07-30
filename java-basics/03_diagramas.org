@@ -1,3 +1,4 @@
+#+HTML_LINK_HOME: ../inicio.html
 * Diagramas de flujo
 
 Ya que *TODOS* los programas son algoritmos, y un algoritmo es básicamente una
@@ -6,7 +7,7 @@ visualmente usando figuras conocidas como diagramas de flujo que
 conectamos su /siguiente/ y /anterior/ paso con líneas o flechas.
 
 #+CAPTION: Simbología básica de un diagrama de flujo
-[[../img/intro/diagramfigures.svg]]
+[[../img/java-basics/diagramfigures.svg]]
 
 
 ** Planteamiento de problemas con diagramas de flujo
@@ -77,7 +78,7 @@ fácilmente en un diagrama de flujo para entender cómo es que funciona
 /paso a paso/. El del anterior problema sería como:
 
 #+CAPTION: Diagrama de flujo del problema 1
-[[../img/intro/problem01.svg]]
+[[../img/java-basics/problem01.svg]]
 
 Así nuestro programa lo aterrizamos a un inicio, un proceso y un
 final. Podemos ver el orden en el que se ejecuta el programa, esto es
@@ -112,7 +113,8 @@ visual para poder saber qué es lo que vamos a programar.*
 Ahora sí programaremos. Creamos un archivo que se llame ~Ahorro.java~;
 lo abrimos para escribir lo siguiente. *TODO* símbolo por mínimo que
 parezca es de suma importancia. *NO SE PERIMTE COPIAR Y PEGAR ESTE
-CÓDIGO* NI NINGUN OTRO A MENOS QUE SE INDIQUE LO CONTRARIO.
+CÓDIGO CON CTRL-C CTRL-V* NI NINGUN OTRO A MENOS QUE SE INDIQUE LO
+CONTRARIO.
 
 #+BEGIN_SRC java
   import java.util.Scanner;
@@ -302,7 +304,7 @@ realizado. Algunas partes están en el programa tal cual y otras no se
 especifican:
 
 #+CAPTION: Diagrama vs código
-[[../img/intro/code-diagram.svg]]
+[[../img/java-basics/code-diagram.svg]]
 
 Por ejemplo, en el diagrama nunca se especificó la definición de
 variables.

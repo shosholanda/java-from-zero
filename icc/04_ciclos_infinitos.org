@@ -1,0 +1,372 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Más sobre ciclos
+** Ciclos infinitos
+Como mencionamos anteriomente, existen ciclos infinitos dentro de la
+programación que pueden ser un /error/ o una /funcionalidad/ del
+programa.
+
+Un ejemplo de un ciclo infinito es tener la computadora prendida. Este
+ciclo no terminará hasta que el usuario decida, que potencialmente es
+nunca. Y mientras esté prendida, se harán ciertas operaciones como
+conectar a internet, escuchar música etc. Cada aplicación abierta es
+un ciclo infinito a su vez.
+
+#+Caption: Ciclo infinito con escape.
+[[../img/icc/while_break.svg]]
+
+En la terminal de linux, podemos ejecutar el programa ~yes~, un ciclo
+infinito de impresión de ~y~.
+#+begin_src bash
+  $ yes
+#+end_src
+
+Podemos forzar la detención del ciclo utilizando la combinación
+especial de teclas ~Ctrl-c~ en UNIX.
+
+Por otra parte si queremos calcular el factorial de un número /y no
+termina nunca/ significa que tenemos un error ya que un algoritmo debe
+terminar siempre.
+
+Para simular un ciclo infinito en /Java/ solo debemos tener una
+condición que siempre sea verdadera, por ejemplo
+
+#+begin_src java
+  while (true) {
+      ...
+  }
+#+end_src
+
+o utilizando un ~for~
+#+begin_src java
+  for (;;){
+      ...
+  }
+#+end_src
+
+Normalmente se utiliza siempre la primera opción.
+
+** Problema 1: Yes en Java
+Crea una copia del programa de UNIX ~yes~ en /Java/.
+
+** Problema 2: Generador de números aleatorios
+Dado un número entero positivo como cota superior /N/, generar números
+aleatorios entre 0 y /N/; salir del programa cuando se ingrese la
+tecla ~q~
+
+No hay necesidad de diagrama de flujo ya que es identico a los
+diagramas anteriores pero analizaremos las sutilezas que hay del
+código.
+
+#+begin_src java
+  import java.util.Scanner;
+
+  public class Problema1 {
+      public static void main (String[] args) {
+    	Scanner input = new Scanner(System.in);
+
+  	  System.out.print("Ingrese la cota superior: ");
+  	  int n = input.nextInt();
+
+  	  while (true){
+  	      String s = input.nextLine();
+  	      if (s.equals("q"))
+  		  break;
+
+  	      double random = Math.random() * n;
+  	      System.out.print(random);
+  	  }
+  	  input.close();
+      }
+  }
+#+end_src
+
+Como siempre leemos la entrada del usuario a través del método
+~input.nextInt()~
+
+#+begin_src java
+  int n = input.nextInt();
+#+end_src
+
+Analizamos la condición del while, claramente entramos al cuerpo del
+~while~
+#+begin_src java
+  while (true) {
+#+end_src
+
+Una vez dentro, leemos la /cadena/ que nos manda el usuario. Puede ser
+incluso la tecla *enter* también conocida como _salto de
+línea_. Guardamos lo que sea que teclee el usuario en la /cadena/ ~s~.
+#+begin_src java
+  String s = input.nextLine();
+#+end_src
+
+El método ~nextLine();~ de ~Scanner~ a su vez es un /ciclo infinito/
+porque espera hasta que se le de una entrada!. Lee la siguiente línea
+_hasta el final de línea '\n'_. Más adelante profundizaremos en las
+/cadenas/ y saltos de línea.
+
+Después una condicional que verifica si la cadena ingresada del
+usuario es /igual/ a la cadena ~"q"~. Utilizamos ~"q"~ de /quit/ pero
+podría ser cualquier otra tecla.
+
+#+begin_src java
+  if (s.equals("q"))
+#+end_src
+
+Notemos que no estamos utilizando el operador de igualdad ~==~ como
+~if (s == "q")~ esto se debe a que las cadenas son /objetos/ y no
+/tipos de datos primitivos/ como lo sería un ~int, char, double~. De
+igual manera profundizaremos sobre el método ~equals()~ más
+adelante. Por ahora, utilizaremos la siguiente tabla:
+
+|----------+-------------------------------------------------------------------|
+| ==       | int, double, float, long, short, byte, boolean, char, referencias |
+|----------+-------------------------------------------------------------------|
+| equals() | String, Objetos. Personalizable                                   |
+|----------+-------------------------------------------------------------------|
+
+También notamos que el ~if~ no tiene llaves de cuerpo ~{ }~. Cuando se
+tiene una sola instrucción como cuerpo de una estructura de control
+como ~if, while, for, else~ etc. es posible /no escribir llaves/. Si
+hay 2 o más instrucciones como cuerpo, forzosamente debemos utilizar
+las llaves.
+
+Regresando, si se cumple esta condición, entonces se ejecuta la única
+instrucción
+#+begin_src java
+  break;
+#+end_src
+
+Que interrumpe el ciclo más cercano, no importa en qué iteración vaya,
+siempre sale del cuerpo inmediatamente.
+
+Finalmente, si no nos salimos todavía, creamos un número aleatorio y
+lo imprimimos.
+
+#+begin_src java
+  double random = Math.random() * n;
+#+end_src
+
+El método ~Math.random()~ nos genera un número con decimal aleatorio
+en el intervalo $[0, 1]$; al multiplicarlo por $n$ estamos /escalando/
+o /agrandando/ este número aleatorio en proporción /n/ por lo que
+básicamente tenemos números aleatorios entre $[0, n]$.
+
+No olvidemos cerrar nuestra entrada
+#+begin_src java
+  input.close();
+#+end_src
+
+** El problema del paro
+El problema del paro, (en inglés como /The halting problem/) no se refiere a los paros estudiantiles o del
+sindicato. Fue propuesto y resuelto por el primer computólogo del
+mundo /Alan Turing/ y dice lo siguiente:
+
+#+begin_verse
+/¿Será posible crear un programa que determine si otro programa con una entrada específica termine o no?/
+#+end_verse
+
+
+Este problema que suena muy complicado de entender, no lo es tanto.
+Todos alguna vez hemos usado /Windows/ y eventualmente existe alguna
+aplicación /X/ que /se traba/ al hacer alguna operación o recibir
+cierta entrada /I/. Se pone el cursor en modo /cargando/ por algunos
+segundos. ¿Cómo sabemos que esa aplicación sigue trabajando o se
+quedará plasmada para siempre?
+
+Decidimos esperar unos minutos, la aplicación sigue trabada. Nos
+preguntamos nuevamente ¿será que termine o no? Supongamos que dejamos
+la computadora trabajando por una semana y /termina/ la operación que
+estaba haciendo. ¿Cómo pudieramos haber sabido si iba a terminar
+después de una semana? ¿O qué tal y terminaba dentro de 10 años o un
+siglo?
+
+Como humanos es *imposible determinar* si un programa terminará o
+no. Más aún, crear un programa que /determine/ si un programa termina
+o no es *imposible*. En windows existe el /administrador de tareas/
+que nos ayuda un poco al poner una etiqueta que dice /No responde/,
+*pero no puede decidir si terminará o no ese programa!*
+
+Regresando a la definición teórica, ¿será posible crear un
+/administrador de tareas/ que nos diga si una /aplicación/ que le
+dijimos algo que /hiciera/, terminará o no? La definición es general
+para cualquier programa P, incluyendo a el mismo.
+
+/Alan Turing/ demostró por contradiccioń que *no existe ni existirá*
+tal programa nunca, ya que si existirera tal programa, un programa P
+que sí termina podría no terminar nunca lo cual es una contradicción.
+
+El problema del paro es un primer clavado a lo que es la /Complejidad
+Computacional/ y nos ayuda a entender las diferentes clases de
+problemas como /NP/ los cuales son problemas que a día de hoy se
+siguen estudiando para encontrar soluciones más rápidas.
+
+** Problema 3: Adivina adivinador.
+Crear un programa que genere un número aleatorio entre 1 y 1000, y
+pregunte a  lo más 10 veces al usuario que adivine el número que está
+pensando la computadora. Un ejemplo de salida sería:
+
+#+begin_src bash
+  Adivina el número entre 1 y 1,000. Tienes 10 intentos.
+  Intento 1: 229
+  Demasiado chico
+  Intento 2: 732
+  Demasiado grande
+  Intento 3: 500
+  Demasiado chico
+  ...
+  Intento 10: 512
+  Adivinaste el número!
+#+end_src
+
+Un dato curioso es que podemos adivinar cualquier número entre 0 y /N/
+en $log_2(N)$ intentos, si hacemos las preguntas correctas.
+
+** Ciclos anidados
+Es muy común en programación que hagamos ciclos /dentro/ de ciclos.
+Por ejemplo, queremos imprimir en la terminal la siguiente pantalla de
+$M*N$, con $N = 10, M = 5$
+#+begin_verse
+##########
+##########
+##########
+##########
+##########
+#+end_verse
+
+Podríamos fácilmente hacer un ~System.out.println("######....");~ pero
+si nos cambian el valor de $N$ o $M$ valió nuestro código. Un mejor
+enfoque es utilizar ciclos anidados como se sigue; omitiremos inicio y fin.
+
+[[../img/icc/nested_loop.svg]]
+
+La idea es tener 2 contadores, uno para las filas y otro para las
+columnas de tal forma que por cada fila, imprimamos 10 veces la
+/almohadilla, hashtag o gato/ ~#~ como columnas, luego imprimir ~\n~
+que significa /terminar esa línea/ y continuar abajo con una nueva
+línea.
+
+Para la siguiente fila, imprimimos nuevamente 10 veces ~#~ y un ~\n~,
+y así sucesivamente para las demás líneas hasta tener un total de 10*5
+/almohadillas/ .
+
+#+begin_src java
+  public class Pantalla {
+      public static void main (String[] args){
+  	int m = 5;
+  	int n = 10;
+  	for (int fila = 0; fila < m; fila++){
+  	    for (int columna = 0; columna < n; columna++){
+  		System.out.print("#");
+  	    }
+  	    System.out.print("\n");
+  	}
+      }
+  }
+#+end_src
+
+Utilizamos ~for~ para escribir menos que con un ~while~, pero se
+podría con ~for~. Claramente podemos utilizar $n, m$ valores
+arbitrarios que pueden cambiar /en tiempo de ejecución/
+
+Usualmente se refiere a ~i~ como fila y ~j~ como columna.
+
+** Problema 4: Pascal
+Dada una entrada $N$ por el usuario, dibujar un triángulo como el
+siguiente con $N$ filas.
+#+begin_example
+,*
+,* * 
+,* * * 
+,* * * *
+,* * * * *
+#+end_example
+
+*Nota*: Utiliza la cadena ~"* "~ para cada iteración
+
+*Extra*: Crea las otras 3 variaciones del problema anterior, es decir que
+se imprima:
+
+#+begin_example
+,* * * * *
+,* * * *
+,* * * 
+,* *
+,*
+#+end_example
+
+#+begin_example
+        *
+      * * 
+    * * * 
+  * * * *
+,* * * * *
+#+end_example
+
+#+begin_example
+,* * * * *
+  * * * *
+    * * * 
+      * *
+        *
+#+end_example
+
+y finalmente un cuadrado como
+
+#+begin_example
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+,* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+#+end_example
+
+** Problema 5: Dibujo
+Crea un dibujo de $NxN$ donde cada /pixel/ se dibuja como
+
+1. ~"* "~ si $i \mod j = 0$ y $j \mod i = 0$
+2. ~"  "~ en caso contrario.
+
+** Problema 6: Tablas de multiplicación
+Crea la tabla de multiplicación de todos los valores entre $[1, N], 
+[1, M]$  para $N, M$ dados por el usuario.
+
+Ej: $N = 3$, $M = 4$.
+
+|---+---+-------|
+| N | M | $N*M$ |
+|---+---+-------|
+| 1 | 1 |     1 |
+| 1 | 2 |     2 |
+| 1 | 3 |     3 |
+| 1 | 4 |     4 |
+|   |   |       |
+| 2 | 1 |     2 |
+| 2 | 2 |     4 |
+| 2 | 3 |     6 |
+| 2 | 4 |     8 |
+|   |   |       |
+| 3 | 1 |     3 |
+| 3 | 2 |     6 |
+| 3 | 3 |     9 |
+| 3 | 4 |    12 |
+|---+---+-------|
+
+** Problema 7: Criba de eratóstenes
+Dado una cota superior positivo $N$, imprimir *todos* los números
+primos que existen entre $[0, N]$ incluyendo a N y el total de números
+primos encontrados.
+
+** Recursión
+Todavía nos falta ver una última estructura repetitiva, que más que
+estructura es un concepto matemático basado en el /cálculo
+lambda/. Gracias a la tesis /Church-Turing/ las máquinas de turing y
+el cálculo lambda son equivalentes.
+
+Dejaremos pendiente este tema para más adelante ya que primero debemos
+entender qué es un método y los valores de retorno, así como
+argumentos y parámetros.

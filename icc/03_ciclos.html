@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-17 Thu 14:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf703bc9">1. Estructuras repetitivas</a>
+<ul>
+<li><a href="#org275f7f3">1.1. Problema 1: Primeros N naturales.</a></li>
+<li><a href="#orgd3b5883">1.2. Estructura while</a></li>
+<li><a href="#orge3c533c">1.3. Problema 2: Suma N naturales</a></li>
+<li><a href="#org5b0f3cc">1.4. Problema 3: Promedio</a></li>
+<li><a href="#orgd4bb631">1.5. Estructura for</a></li>
+<li><a href="#orgb49c1b5">1.6. Problema 4: Pares</a></li>
+<li><a href="#org743e1ce">1.7. Problema 5: Promedio estaturas</a></li>
+<li><a href="#orgaf571d7">1.8. Problema 6: Tablas de multiplicar</a></li>
+<li><a href="#org5267115">1.9. Estructura do-while</a></li>
+<li><a href="#orgbcb0cc0">1.10. Problema 7: Factorial</a></li>
+<li><a href="#org224f485">1.11. Problema 8: Edades</a></li>
+<li><a href="#org9a79c56">1.12. Problema 9: Sucesion</a></li>
+<li><a href="#orgd9783e3">1.13. Problema 10: Contar dígitos</a></li>
+<li><a href="#orgad0cfbc">1.14. Problema 11: Primos</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf703bc9" class="outline-2">
+<h2 id="orgf703bc9"><span class="section-number-2">1.</span> Estructuras repetitivas</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Hasta ahora solo hemos utilizado estructuras <i>secuenciales</i> y
+<i>condicionales</i>. Existe la última estructura de programación
+<i>esencial</i> que son las estructuras <i>repetitivas</i>.
+</p>
+</div>
+<div id="outline-container-org275f7f3" class="outline-3">
+<h3 id="org275f7f3"><span class="section-number-3">1.1.</span> Problema 1: Primeros N naturales.</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Crear un programa que imprima los primeros <i>1000</i> naturales.
+</p>
+
+<p>
+Utilizando programación secuencial, podemos solucionar el problema con
+el siguiente diagrama de flujo&#x2026;
+</p>
+
+
+<div id="org46a72e5" class="figure">
+<p><img src="../img/icc/while_0.svg" alt="while_0.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Podemos ocupar otras 5 páginas y no terminar el diagrama de
+flujo. Claramente se ve que es mala idea escribir 1000 líneas de
+código; más aún si queremos cambiar el número a 2147483648; peor
+aún si es un valor que <i>cambia durante la ejecución del programa</i> como
+un valor arbitrario <i>N</i> que el usuario ingrese (no sabemos qué número
+ingresará el usuario de antemano). Una vez escrito el código no hay
+forma de que <i>pueda cambiar el código en tiempo de ejecución.</i>
+</p>
+
+<p>
+Una estructura repetitiva, repetirá cierto código <span class="underline">mientras se cumpla
+una condición</span>. Así no es necesario escribir 100 líneas de código; más
+aún podemos repetir tantas veces como se necesite <i>en tiempo de
+ejecución</i>.
+</p>
+
+<p>
+Existen 4 formas diferentes de repetir código con 4 estructuras
+repetitivas, pero todas siguen la misma lógica.
+</p>
+
+
+<div id="org354ea13" class="figure">
+<p><img src="../img/icc/while_1.svg" alt="while_1.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Diagrama de flujo de estructura repetitiva general.</p>
+</div>
+
+<p>
+Una estructura repetitiva revisa primero si se cumple una condición,
+si <b>sí</b> se cumple entonces ejecuta las operaciones que yacen dentro de
+su cuerpo. Si <b>no</b> se cumple, simplemente ignora lo que haya dentro de
+su cuerpo y prosigue el programa. No confundir con la estructura <code>if</code>,
+ya que el <code>if</code> no se repite nunca.
+</p>
+
+<p>
+<b>Nota importante</b>: En cada vuelta del ciclo, debe haber un cambio en
+los valores a los que se evalúa la condición, ya que si nunca cambia
+la condición, el ciclo se repetirá <i>infinitamente</i> lo cual es un
+<i>error</i> a menos que <i>es lo que se desee programar</i>.
+</p>
+
+<p>
+Utilizando esta pequeña estructura podemos resolver nuestro problema
+de los 1000 números en 4 líneas. Es importante que quede claro el
+funcionamiento de esta estructura.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Problema1</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0;
+        <span style="color: #00bfff;">while</span> (i &lt; 1000){
+            System.out.println(i);
+            i = i + 1;
+        }
+    }
+}       
+</pre>
+</div>
+
+
+<p>
+Primero, creamos una variable <code>i</code> con valor <code>0</code>, esto para que
+tengamos un valor <i>que cambie en cada vuelta del ciclo</i>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0;
+</pre>
+</div>
+
+<p>
+Luego, tomando el valor inicial <code>i</code>, verificamos la condición del
+<code>while</code>. Claramente si \(i=0\) entonces \(i < 1000\), por lo que el
+resultado es verdadero <b>y</b> ejecuta el código que contiene.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">while</span> (i &lt; 1000){
+</pre>
+</div>
+
+<p>
+El código es, imprimir la variable <code>i</code>, en este caso 0. 
+</p>
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(<span style="color: #98f5ff;">i</span>);
+</pre>
+</div>
+
+<p>
+E <span class="underline">incrementar la variable <code>i</code> en 1</span>. Este último paso es de <b>suma</b>
+importancia ya que si no hacemos un cambio/incremento en alguna
+variable de la condición, la condición será la misma <b>y</b> siempre
+evaluará a <i>verdadero</i> por lo que siempre se ejecutará el código
+dentro del cuerpo y estaremos en un ciclo <i>infinito</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">i = i + 1;
+</pre>
+</div>
+
+<p>
+Así, después de esta línea, \(i = 1\) y <i>ya tenemos un cambio en nuestra
+condición</i>. Luego, termina el cuerpo del <code>while</code>, se vuelve nuevamente
+a la condición y evalúa si \(i < 1000\), lo cual claramente es cierto
+porque \(1 < 1000\) y se ejecutará nuevamente el código del ciclo.
+</p>
+
+<p>
+Eventualmente llegaremos al valor de \(i = 1000\), que al evaluar \(1000
+< 1000\) nos da falso, así solo imprimiremos hasta el valor 999.
+</p>
+
+<p>
+Podemos fácilmente cambiar el valor del límite a 2147483648, o mejor
+aún si el valor del límite <i>cambia en tiempo de ejecución</i>, como por
+ejemplo si es la entrada de usuario.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd3b5883" class="outline-3">
+<h3 id="orgd3b5883"><span class="section-number-3">1.2.</span> Estructura while</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Esta estructura ya la hemos visto en el problema anterior, su
+funcionamiento es identico al diagrama de flujo. Se necesita de una
+<i>variable externa</i> que cambie la condición en cada repetición y de un
+<i>cambio u incremento</i> para cada ciclo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">x</span> = 0;
+<span style="color: #00bfff;">while</span> (x cumpla una condici&#243;n){
+    ...
+    cambio en x;
+}
+</pre>
+</div>
+
+<p>
+Normalmente el <i>while</i> se utiliza cuando no sabemos el límite de
+antemano en <i>tiempo de ejecución</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-orge3c533c" class="outline-3">
+<h3 id="orge3c533c"><span class="section-number-3">1.3.</span> Problema 2: Suma N naturales</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Dado un número por el usuario, sumar los primeros <b>N</b> números
+naturales. Ej: Si \(N = 100\), entonces
+</p>
+
+\begin{equation}
+1 + 2 + 3 + \ldots + 98 + 99 + 100 = 5050
+\end{equation}
+
+<p>
+Lo primero que tenemos que notar es que <i>vamos a acarrear un número</i>
+ya que en cada ciclo debemos mantener el valor de la suma guardado. El
+diagrama de flujo correspondiente sería:
+</p>
+
+
+<div id="orgc4493de" class="figure">
+<p><img src="../img/icc/while_2.svg" alt="while_2.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Notemos que <code>suma</code> <b>no</b> se evalúa en la condición, este trabajo
+corresponde a la variable <code>x</code>. Aprovecharemos el incremento en <code>x</code>
+para obtener los números consecutivos \(1, 2, 3 \ldots 98, 99, 100\), y
+sumar el número en cada vuelta a la variable <code>suma</code> que irá guardando
+las sumas como queremos.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Problema2</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+        System.out.print(<span style="color: #deb887;">"Ingresa hasta qu&#233; n&#250;mero sumar: "</span>);
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n</span> = input.nextInt();
+        input.close();
+
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">x</span> = 1;
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">suma</span> = 0;
+        <span style="color: #00bfff;">while</span> (x &lt;= n){
+            suma = suma + x;
+            x++;
+        }
+        System.out.printf(<span style="color: #deb887;">"La suma de los primeros %i naturales es %i"</span>, n, suma);
+    }
+}
+</pre>
+</div>
+
+<p>
+En el caso que \(n = 10\), entonces en el primer ciclo, la condición \(x
+\leq n = 1 \leq 10\) evalúa a verdadero, por lo que <code>suma</code> será la suma
+de \(0 + 1\), lo cual <code>suma = 1</code>. Aumentamos <code>x</code> en uno, entonces \(x =
+2\). Repetimos el ciclo y la evaluación; es cierto que \(2 \leq
+10\). Entramos al cuerpo y <code>suma</code> que vale 1, su nuevo valor será la
+suma \(1 + 2 = 3\). Aumentamos x en uno y repetimos. Nuevamente, \(3
+\leq 10\), por lo que <code>suma</code> tiene el valor de \(3 + 3 = 6\) e incrementa
+\(x = 4\) y así sucesivamente hasta tener 55.
+</p>
+
+<p>
+<b>Nota</b>: Utilizamos la inicialización de \(x = 1\) porque estamos sumando
+<i>empezando</i> desde el 1, no desde el 0. Además, utilizamos el \(\leq\) y
+no \(<\) ya que <i>también queremos sumar cuando llegamos a N</i>, y no
+excluir a N, o sea 10 también se suma.
+</p>
+
+<p>
+Es muy común ver este tipo de instrucciones en programación. Es fácil
+de entender ya que <code>suma = suma;</code> deja la variable <code>suma</code> exactamente
+igual, solo notamos que aumenta adicionalmente en x.
+</p>
+<div class="org-src-container">
+<pre class="src src-java">suma = suma + x;
+</pre>
+</div>
+
+<p>
+la instrucción
+</p>
+<div class="org-src-container">
+<pre class="src src-java">x++;
+</pre>
+</div>
+
+<p>
+es exactamente igual a la instrucción:
+</p>
+<div class="org-src-container">
+<pre class="src src-java">x = x + 1;
+</pre>
+</div>
+
+<p>
+Estamos diciendo lo mismo pero con menos palabras. A esta reducción de
+código también se le conoce como <span class="underline">azúcar sintáctica</span>.
+</p>
+</div>
+</div>
+<div id="outline-container-org5b0f3cc" class="outline-3">
+<h3 id="org5b0f3cc"><span class="section-number-3">1.4.</span> Problema 3: Promedio</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Dado un número por el usuario, sumar los primeros <b>N</b> números naturales y sacar
+el promedio. Ej: \(N = 10\) el resultado es
+</p>
+
+\begin{align*}
+1 + 2 + 3 + \ldots + 9 + 10 &= 55 \\
+&= \frac{55}{10} \\
+&= 5.5
+\end{align*}
+</div>
+</div>
+<div id="outline-container-orgd4bb631" class="outline-3">
+<h3 id="orgd4bb631"><span class="section-number-3">1.5.</span> Estructura for</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+La estructura con <code>for</code> es identica lógicamente a la estructura
+<code>while</code>, solo que tanto como inicialización, condición e incremento
+van sobre la misma línea. Así no <i>regamos</i> variables en el código.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">for (int x = 0; x cumpla una condición; cambio en x){ ...
+</pre>
+</div>
+
+
+<p>
+Por ejemplo el problema de la suma de los primeros <i>N</i> naturales es:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+    <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; 1000; i++) {
+        System.out.println(i);
+    }
+}
+</pre>
+</div>
+
+<p>
+Es mucho más compacto y fácil de leer ya que todo lo que necesita el
+ciclo se encuentra en la misma línea.
+</p>
+
+<p>
+La estructura <code>for</code> se utiliza normalmente cuando <i>ya se sabe el
+límite de la condición</i> aunque también puede utilizar valores
+arbitrarios en tiempo de ejecución. <span class="underline">No hay nada que pueda hacer con
+una estructura <code>for</code> que no pueda hacer con una estructura <code>while</code></span>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb49c1b5" class="outline-3">
+<h3 id="orgb49c1b5"><span class="section-number-3">1.6.</span> Problema 4: Pares</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Crear un programa que dado un número <i>N</i> de usuario, imprima todos los
+números pares de 0 a <i>N</i> (inclusivo). Ej: \(N=4\), imprime <code>0, 2, 4,</code>
+</p>
+
+<p>
+Se proporciona el diagrama de flujo para ayudar al lector con la
+codificación del mismo.
+</p>
+
+
+<div id="org816c47b" class="figure">
+<p><img src="../img/icc/while_3.svg" alt="while_3.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+<b>Nota</b>: Se puede realizar este mismo ejercicio <span class="underline">sin utilizar un <code>if</code></span>
+dentro del <code>while</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org743e1ce" class="outline-3">
+<h3 id="org743e1ce"><span class="section-number-3">1.7.</span> Problema 5: Promedio estaturas</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Crear un programa donde se reciban <i>N</i> estaturas, y luego leer
+cada una de las estaturas por separado. Una vez terminado de leer
+<i>N</i> estaturas, se muestra el promedio de las mismas.
+</p>
+
+<p>
+<b>Hint</b>: <code>Scanner</code> dentro del <code>for/while</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaf571d7" class="outline-3">
+<h3 id="orgaf571d7"><span class="section-number-3">1.8.</span> Problema 6: Tablas de multiplicar</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Crea un programa que imprima las tablas de multiplicar del 0 al 10
+del 0 al 13. Por ejemplo la tabla del 1 sería
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(n\)</td>
+<td class="org-right">\(m\)</td>
+<td class="org-right">\(n*m\)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">6</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">7</td>
+<td class="org-right">7</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">8</td>
+<td class="org-right">8</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">9</td>
+<td class="org-right">9</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">10</td>
+<td class="org-right">10</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">11</td>
+<td class="org-right">11</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">12</td>
+<td class="org-right">12</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">13</td>
+<td class="org-right">13</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org5267115" class="outline-3">
+<h3 id="org5267115"><span class="section-number-3">1.9.</span> Estructura do-while</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Finalmente, la última estructura de repetición no se utiliza mucho ya
+que puede simularse fácilmente cambiando el orden de la
+condicional.
+</p>
+
+
+<div id="org61354f4" class="figure">
+<p><img src="../img/icc/do-while.svg" alt="do-while.svg" class="org-svg" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Estructura do-while</p>
+</div>
+
+<p>
+Notamos que <i>antes</i> de verificar la condición se ejecutan las
+operaciones que existen dentro del while, lo que implica que un
+<i>do-while</i> siempre se ejecuta al menos una vez.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">do</span> {
+    ...
+} <span style="color: #00bfff;">while</span> (condici&#243;n);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbcb0cc0" class="outline-3">
+<h3 id="orgbcb0cc0"><span class="section-number-3">1.10.</span> Problema 7: Factorial</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+En matemáticas el factorial de un número (\(N!\)) se define como la
+multiplicación desde 1 hasta ese número. Ej: \(N = 10\)
+</p>
+
+\begin{equation}
+1 * 2 * 3 * \ldots * 8 * 9 * 10 = 362880
+\end{equation}
+
+<p>
+Crea un programa que dada una entrada de usuario calcule el factorial
+de ese número.
+</p>
+
+<p>
+<b>Nota</b>: Factorial es una función que crece <i>sumamente</i> rápido, por lo
+que para valores mayores a 25, se convierte a complemento a 2 el
+resultado, es decir, negativo. Si queremos obtener todos los dígitos
+debemos utilizar la clase <code>BigInteger</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org224f485" class="outline-3">
+<h3 id="org224f485"><span class="section-number-3">1.11.</span> Problema 8: Edades</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+Escribir un programa donde se ingresen 10 edades aleatorias. Contar
+cuántas edades son <i>menores</i> a 18, y <i>mayores</i> a 50.
+</p>
+</div>
+</div>
+<div id="outline-container-org9a79c56" class="outline-3">
+<h3 id="org9a79c56"><span class="section-number-3">1.12.</span> Problema 9: Sucesion</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+Escribir un programa que imprima la suma (<del>sumatoria</del>) desde \(i=0\)
+hasta un entero \(N\) de \(\frac{1}{2^i}\)
+</p>
+
+\begin{equation}
+\sum_{i=0}^{N}{\frac{1}{2^i}}
+\end{equation}
+
+<p>
+Por ejemplo, para \(N=4\), la suma se separa en:
+</p>
+\begin{equation*}
+\frac{1}{1} + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} = 1.9375
+\end{equation*}
+
+<p>
+Por si te lo preguntas, cuando \(x \implies \infty\), el resultado es 2.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd9783e3" class="outline-3">
+<h3 id="orgd9783e3"><span class="section-number-3">1.13.</span> Problema 10: Contar dígitos</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+Crea un programa donde dado <i>N</i> del usuario, nos diga cuántos
+dígitos tiene. <i>N</i> puede ser cualquier número.
+</p>
+
+<p>
+<b>Hint</b>: Recuerda que los números se escriben en base 10
+</p>
+\begin{equation}
+5341 = 5 * 10^3 + 3*10^2 + 4*10^1 + 1*10^0
+\end{equation}
+<p>
+No se permite usar condicionales.
+</p>
+</div>
+</div>
+<div id="outline-container-orgad0cfbc" class="outline-3">
+<h3 id="orgad0cfbc"><span class="section-number-3">1.14.</span> Problema 11: Primos</h3>
+<div class="outline-text-3" id="text-1-14">
+<p>
+Dado un entero positivo \(N \geq 2\)  por el usuario, decir si ese número es
+<i>primo</i> o no. Recordemos que \(x\) es primo si y solo si para todos los
+números de 2 a \(x-1\), \(x\) no es divisible por ninguno excepto por 1 y
+sí mismo. 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-17 Thu 14:48</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

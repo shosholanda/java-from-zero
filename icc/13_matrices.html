@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-17 Thu 09:28 -->
+<!-- 2025-07-23 Wed 20:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -193,174 +193,232 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
-<div id="org-div-home-and-up">
- <a accesskey="h" href=""> UP </a>
- |
- <a accesskey="H" href="../inicio.html"> HOME </a>
-</div><div id="content" class="content">
+<div id="content" class="content">
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org21b9311">1. Creación de programas en <i>Java</i></a></li>
+<li><a href="#orgabf511d">1. Matrices</a></li>
+<li><a href="#org0f7a92e">2. Programa 1: Identidad</a></li>
+<li><a href="#org51b3b67">3. toString</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org21b9311" class="outline-2">
-<h2 id="org21b9311"><span class="section-number-2">1.</span> Creación de programas en <i>Java</i></h2>
+<div id="outline-container-orgabf511d" class="outline-2">
+<h2 id="orgabf511d"><span class="section-number-2">1.</span> Matrices</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<b>TODOS</b> los programas y aplicaciones son escritos en texto plano
- (abrir bloc de notas y escribir código). Hay algunas aplicaciones
- llamadas <i>IDE</i> que se especializan en facilitar el entorno de trabajo
- de proyectos de cientos de miles de líneas de código.
+Ya que un arreglo puede contener <i>lo que sea</i>, puede incluir también
+<i>más arreglos</i>, creando <i>dimensiones</i> de arreglos. La primera
+dimensión es la que hemos visto que un arreglo tiene elementos.
+</p>
+
+
+<div id="orga5ed5da" class="figure">
+<p><img src="../img/icc/array.svg" alt="array.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Un arreglo <i>con arreglos</i> es tener un arreglo de tamaño <i>N</i>, con otro
+arreglo tamaño <i>M</i> en <code>a[0]</code>, luego otro arreglo en <code>a[1]</code> y así
+sucesivamente&#x2026; Claramente <i>M</i> puede ser de diferente tamaño, no es
+necesariamente <i>cuadrada</i>, y más importante aún, <b>todos los elementos
+son del mismo tipo</b>
+</p>
+
+
+<div id="orgbb7d662" class="figure">
+<p><img src="../img/icc/matrix.svg" alt="matrix.svg" class="org-svg" />
+</p>
+</div>
+
+
+<p>
+Muchos programadores se refieren a una matriz por filas y columnas.
+</p>
+
+
+<div id="org54c57da" class="figure">
+<p><img src="../img/icc/matrix2.svg" alt="matrix2.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Donde el primer índice representa las <i>filas</i> y el segundo índice
+representa a las <i>columnas</i>. Por ejemplo el número 9 se encuentra en
+fila 4, columna 1. Y el 60 en fila 2, columna 3. <b>El 0 también cuenta
+como una fila/columna</b>
 </p>
 
 <p>
-Lo que buscamos es poder escribir código sin preocuparnos por el tipo
-de letra o colores y preocuparnos más por el programa que sea rápido,
-resistente a fallos y de resultados correctos. Por lo que <span class="underline">nunca</span>
-usaremos editores de texto como <i>Word</i> o <i>Bloc de Notas</i> ya que estos
-se especializan más en la presentación del texto. Normalmente se usa
-el formato de texto <code>monoespaciado</code> que todos los caracteres ocupan
-el mismo espacio.
-</p>
-
-<p>
-En esta guía utilizaremos <b>emacs</b> como nuestro editor de texto ya que
-es con el que se esta escribiendo esta guía.
-</p>
-
-<p>
-<b>Nota:</b> Es importante estar en la carpeta correcta antes y mientras se
-  cree, compile y ejecute el programa. Puedes usar el comando.
+En <i>Java</i> la declaración de matrices es utilizar la notación de
+arreglo de arreglos como:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">$ pwd  
+<pre class="src src-java"><span style="color: #98f5ff;">int</span>[][] <span style="color: #4eee94;">matriz</span>;
 </pre>
 </div>
 
 <p>
-Para saber cómo moverte de carpeta / crear carpetas <b>desde la
-terminal</b> puedes consultar la parte de <a href="../linux/comandos.html">comandos</a>. Una vez estando en la
-carpeta deseada creamos el archivo con nombre <span class="underline">HolaMundo.java</span>.
+El número de <code>[]</code> indica la dimensión; con 2 significa que estamos en
+un plano <i>2D</i>, con 3 <i>3D</i> y así sucesivamente. Es muy raro de hecho
+encontrar arreglos de dimension <i>mayor a 2</i>.
 </p>
-
-<p>
-Lo podemos hacer de muchas
-formas. Como abrir nuestro editor favorito de textos y dar en <code>Archivo
-&gt; Nuevo archivo</code> y especificamos el nombre de arriba. Si estamos en
-emacs, podemos usar <code>C-x C-f</code> y seguidamente escribir el nombre de
-archivo, o desde la terminal como
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Crear documento
-</span>$ touch HolaMundo.java
-</pre>
 </div>
-
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Crear y abrir el documento directamente
-</span>$ emacs HolaMundo.java
-</pre>
 </div>
-
+<div id="outline-container-org0f7a92e" class="outline-2">
+<h2 id="org0f7a92e"><span class="section-number-2">2.</span> Programa 1: Identidad</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-Abrimos este archivo con cualquier editor de texto y procederemos a
-anotar lo siguiente, con cuidado y sin que se nos vaya ningún
-símbolo. Los espacios de la izquierda son extremadamente
-importantes. No se te olvide guardar al final el archivo, en <code>emacs</code>
-es con <code>C-x C-s</code>.
+Crear un programa que imprima la identidad de una matriz de tamaño
+\(5\times 7\)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">HolaMundo</span> {
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+<span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Arrays</span>;
 
-    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>) {
-        System.out.println(<span style="color: #deb887;">"Hola mundo! :)"</span>);
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Matriz5x7</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+        <span style="color: #98f5ff;">int</span>[][] <span style="color: #4eee94;">matriz</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">int</span>[5][7];
+
+        <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; matriz.<span style="color: #98f5ff;">length</span>; i++){
+            <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">j</span> = 0; j &lt; <span style="color: #98f5ff;">matriz</span>[i].length; j++){
+                System.out.printf(<span style="color: #deb887;">"Ingresar la coordenada [%d][%d]: "</span>, i, j);
+                matriz[i][j] = input.nextInt();
+            }
+        }
+
+        System.out.println(Arrays.deepToString(matriz));
+
+        <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; 5; i++)
+            System.out.println(matriz[i][i]);
     }
 }
 </pre>
 </div>
 
 <p>
-Ya tenemos nuestro primer programa escrito en Java. Es muy <i>simple</i>,
-pero todos empezamos siempre por algo ¿no?
-</p>
-
-<p>
-Como mencionamos anteriormente, la computadora debe traducir este
-<i>idioma</i> a algo que la misma computadora pueda entender. Para esto
-debemos utilizar el compilador de Java (<code>javac</code>) y nos generará un archivo
-binario, exactamente un bytecode que tiene una extensión .class.
-</p>
-
-<p>
-Para compilar el archivo escribimos lo siguiente en la
-terminal.
+Lo primero que hay que decir es que, cada <i>pixel</i> de la matriz se debe
+rellenar, ya sea a manita o a través de filas completas; por eso
+utilizamos <code>Scanner</code>, para que sea más interactiva la entrada. Luego
+<i>creamos una matriz</i> de \(5\times7\), 5 filas por 7 columnas de tipo
+<code>int</code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">$ javac HolaMundo.java
+<pre class="src src-java"><span style="color: #98f5ff;">int</span>[][] <span style="color: #4eee94;">matriz</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">int</span>[5][7];
 </pre>
 </div>
 
 <p>
-<code>javac</code> viene de <i>java compiler</i>. Si no tenemos errores de
-"<b>ortografía</b>" (sintáxis o semántica) el compilador debería gener el
-archivo compilado, de lo contrario habría que ver en qué pudimos
-habernos equivocado a la hora de copiar el código de <i>Java</i>.
+Luego viene la parte turbulenta; la primera representación de <i>matriz</i>
+ayuda a entender mejor esta parte. Vamos a <i>recorrer</i> con el <code>for</code>
+externo el arreglo de tamaño <i>N</i> o el arreglo <i>que contiene a los
+demás arreglos</i>, iterando espacio por espacio hasta antes de
+<code>matriz.length</code>.
 </p>
 
 <p>
-Podemos ver la traducción que generó el compilador si utilizamos el
-siguiente comando
+El segundo <code>for</code> recorrerá el arreglo <i>que está adentro</i> en la
+posición <code>a[i]</code>, por eso utilizamos <code>matriz[i].length</code> porque es el
+tamaño del <i>subarreglo</i> de tamaño <i>M</i> que está en la posición <i>i</i>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">$ cat HolaMundo.class
+<pre class="src src-java"><span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; matriz.<span style="color: #98f5ff;">length</span>; i++){
+    <span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">j</span> = 0; j &lt; <span style="color: #98f5ff;">matriz</span>[i].length; j++){
 </pre>
 </div>
 
 <p>
-Nos aparecerá algo que no podemos encontrar ningún sentido, símbolos
-raros que solamente la computadora entiende. <code>cat</code> sirve para mostrar un
-archivo <i>tal cual es internamente</i>. ¿Qué pasa si hacemos <code>cat</code> al
-archivo <code>HolaMundo.java</code>?
-</p>
-
-
-<p>
-Finalmente, ejecutaremos nuestro programa utilizando el ejecutador de
-aplicaciones de java, que es con el comando:
+Para cada <i>i</i>, vamos a recorrer <i>j</i> veces de \(0\) a \(M-1\), así que estas líneas se
+repiten \(i\times j\) que rellena todos los espacios de matriz 1x1.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bash">$ java HolaMundo
+<pre class="src src-java">System.out.printf(<span style="color: #deb887;">"Ingresar la coordenada [%d][%d]: "</span>, <span style="color: #98f5ff;">i</span>, <span style="color: #98f5ff;">j</span>);
+matriz[i][j] = input.nextInt();
 </pre>
 </div>
 
 <p>
-En la terminal debería aparecernos un mensaje de <b>Hola mundo</b> que
-escribimos anteriormente en el código; estamos <i>imprimiendo</i> en pantalla el
-texto.
+Casi siempre por lo general, recorrer una matriz es por memoria más
+que por <i>razonamiento</i>. Solo memoriza los 2 <code>fors</code> y no tendrás miedo
+de recorrer ninguna matriz.
 </p>
 
 <p>
-Lo importante es que quede claro cómo crear, compilar y ejecutar un
-programa. El código como tal será explicado a medida que se vaya
-avanzando en la guía.
+Después, utilizamos el método <code>Arrays.deepToString()</code> que básicamente
+imprime <i>matrices</i> como la representación de arreglo de arreglos.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #deb887;">"[[1, 2, 3, 4, 5, 6, 1], [2, 3, 4, 5, 6, 1, 2], [3, 4, 5, 5, 6, 7, 1], [2, 3, 4, 4, 5, 5, 6], [6, 1, 2, 3, 4, 6, 6]]"</span>
+</pre>
+</div>
+
+<p>
+Y finalmente imprimir la <i>identidad</i>. La identidad de una matriz se
+define como las entradas
+</p>
+
+\begin{equation}
+A_{ij} \text{, donde } i = j
+\end{equation}
+</div>
+</div>
+<div id="outline-container-org51b3b67" class="outline-2">
+<h2 id="org51b3b67"><span class="section-number-2">3.</span> toString</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Replica el método <code>Arrays.deepToString()</code> para matrices con un método
+<i>estático</i> que regrese el valor de la matriz.
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-17 Thu 09:28</p>
+<p class="date">Created: 2025-07-23 Wed 20:13</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

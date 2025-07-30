@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-17 Thu 15:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgebc1827">1. Métodos y tipos de retorno</a>
+<ul>
+<li><a href="#org74a7d2d">1.1. Static vs NO Static</a></li>
+<li><a href="#orga7f3058">1.2. Parámetros y argumentos de un método</a></li>
+<li><a href="#org0f74ec2">1.3. Tipos de regreso</a></li>
+<li><a href="#orga1ed67e">1.4. Problema 1: Calculadora</a></li>
+<li><a href="#orgbc2890a">1.5. Problema 2: Lógica</a></li>
+<li><a href="#org8d6b94e">1.6. Problema 3: Calculadora++</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgebc1827" class="outline-2">
+<h2 id="orgebc1827"><span class="section-number-2">1.</span> Métodos y tipos de retorno</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Hasta ahora, sabemos que un objeto cumple con
+</p>
+
+<ul class="org-ul">
+<li>Identidad</li>
+<li>Atributos</li>
+<li>Comportamiento</li>
+</ul>
+
+<p>
+Claramente el comportamiento corresponde a los <i>métodos</i>. Hasta ahora
+solo hemos visto el método <code>main</code> y métodos de <code>inicializar()</code> o
+<code>imprimir()</code>, que son un caso particular de toda una familia.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">[<span style="color: #00bfff;">public</span>/<span style="color: #00bfff;">private</span>/<span style="color: #00bfff;">protected</span>] [<span style="color: #00bfff;">static</span>] [tipo de retorno] [nombre m&#233;todo]([par&#225;metros]){
+    [algoritmo]
+        ...
+    <span style="color: #00bfff;">return</span> [tipo de retorno];
+}
+</pre>
+</div>
+
+<p>
+Ya que el comportamiento es de las cosas <i>más importantes</i> en un
+objeto, debemos entender todos los diferentes variaciones que puede
+tener un método. Por ahora solo utilizaremos el tipo de acceso como
+<code>public</code>, pero veremos más adelante las otras dos variaciones. <b>Todos
+los métodos, al igual que las variables empiezan con minúscula.</b>
+</p>
+</div>
+<div id="outline-container-org74a7d2d" class="outline-3">
+<h3 id="org74a7d2d"><span class="section-number-3">1.1.</span> Static vs NO Static</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+El método <code>main()</code> lo hemos escrito como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+</pre>
+</div>
+
+<p>
+Los métodos que tienen la cláusula <code>static</code> son métodos que <i>existen
+sin crear un objeto de esa clase</i>. Por otro lado, los métodos que no
+tienen <code>static</code>, <b>necesitan forzosamente</b> tener un objeto creado para
+poder ejecutar dicho método.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+</pre>
+</div>
+
+<p>
+Por ejemplo, ejecutamos el método <code>inicializar</code> como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">Gato</span> <span style="color: #4eee94;">gato1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Gato</span>();
+gato1.inicializar();
+...
+</pre>
+</div>
+
+<p>
+No podemos llamar al método <code>inicializar</code> <b>sin antes haber creado al
+gato</b>, por lo que es <i>no estático</i>.
+</p>
+
+<p>
+Por otra parte, podemos tener el siguiente código
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Ejemplo1</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>) {
+        System.out.println(<span style="color: #deb887;">"Hola, estoy en el main"</span>);
+        Ejemplo1.foo();
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">foo</span>(){
+        System.out.println(<span style="color: #deb887;">"Hola, estoy en el fooo"</span>);
+    }
+}
+</pre>
+</div>
+
+<p>
+A diferencia del método <i>no estático</i>, no requerimos crear ningún
+objeto de tipo <i>Ejemplo1</i>, simplemente llamamos al método <code>foo</code> <b>desde
+la clase</b>. Como estamos <i>dentro</i> de la clase (estamos al alcance de
+<i>Ejemplo1</i>), no es necesario llamar como <code>Ejemplo1.foo()</code>, simplemente <code>foo()</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>) {
+    System.out.println(<span style="color: #deb887;">"Hola, estoy en el main"</span>);
+    foo();
+}
+</pre>
+</div>
+
+<p>
+Un método estático normalmente se utiliza para comportamiento que
+provea la clase que no necesite de un objeto previo.  En la clase
+<code>Math</code> se utilizan varios métodos estáticos como <code>Math.random()</code> o
+<code>Math.sqrt()</code> ya que son funciones generales.
+</p>
+</div>
+</div>
+<div id="outline-container-orga7f3058" class="outline-3">
+<h3 id="orga7f3058"><span class="section-number-3">1.2.</span> Parámetros y argumentos de un método</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Muchas veces, un método necesita información extra para poder realizar
+el algoritmo. Un método recibe estos datos en medio de los <code>()</code> que
+tiene.
+</p>
+
+<p>
+Los <i>parámetros</i> es la definición de los datos que recibe. Debemos
+especificar en los parámetros el tipo de dato y una variable que
+refiera a este valor. Por otro lado los <i>argumentos</i> es el valor que
+se pasa por los parámetros <i>en tiempo de ejecución</i>.
+</p>
+
+
+<p>
+Crearemos un programa que sume dos números. No usamos diagrama de
+flujo ya que no es palpable en un diagrama el siguiente código.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Programa1</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+        System.out.print(<span style="color: #deb887;">"N&#250;mero 1: "</span>);
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n1</span> = input.nextInt();
+        System.out.print(<span style="color: #deb887;">"N&#250;mero 2: "</span>);
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n2</span> = input.nextInt();
+
+        suma(n1, n2);
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">suma</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">b</span>){
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">suma</span> = a + b;
+        System.out.println(<span style="color: #deb887;">""</span> + a + <span style="color: #deb887;">" + "</span> + b + <span style="color: #deb887;">" = "</span> + suma);
+    }
+}
+</pre>
+</div>
+
+<p>
+Notamos la <i>firma del método estático</i> <code>suma</code>, recibe 2 <i>parámetros</i>
+los cuales son <code>a</code> y <code>b</code> de tipo <code>int</code>. El orden de los parámetros es
+importante cuando los mandemos llamar.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">suma</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">b</span>){
+</pre>
+</div>
+
+<p>
+Los <i>argumentos</i> son los valores que se pasan al método <i>en tiempo de
+ejecución</i> o con lo que es llamado el método, en este caso son los
+valores \(n_1, n_2\).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">suma(<span style="color: #98f5ff;">n1</span>, <span style="color: #98f5ff;">n2</span>);
+</pre>
+</div>
+
+<p>
+Notemos que la variable \(n_1\) (o \(n_2\)) cambia por la variable \(a\) (o
+\(b\)). Esto no significa que la variable \(n_1\) tenga otro
+<i>identificador</i>, sino que se hace una <i>copia del valor</i> \(n_1\) a \(a\),
+por lo que en tiempo de ejecución existen \(n_1, a\) con el mismo
+valor. En lenguajes de programación esto se le conoce como <i>paso por
+valor</i>; si cambia el valor de \(a\) dentro del método <code>suma()</code> <b>NO
+cambia</b> el valor de \(n_1\) original. Otros lenguajes utilizan el <i>paso
+por referencia</i> que literalmente <i>pasa el lugar donde se encuentra</i> el
+valor, y si cambia <i>internamente</i> \(a\), también cambia el valor \(n_1\)
+<i>fuera de ese método</i>. Java es totalmente team <i>paso por valor</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org0f74ec2" class="outline-3">
+<h3 id="org0f74ec2"><span class="section-number-3">1.3.</span> Tipos de regreso</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Casi todos los métodos, regresan un valor. Por la definición de
+algoritmo, hay una entrada (argumentos) y una salida (return). En un
+lenguaje como <code>C</code>, incluso el mismisimo método <code>main</code> tiene valor de
+retorno.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c"><span style="color: #98f5ff;">int</span> <span style="color: #daa520;">main</span>(){
+  ...
+  <span style="color: #00bfff;">return</span> 0; <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">El programa finaliz&#243; correctamente
+</span>}
+</pre>
+</div>
+
+
+<p>
+De hecho, ya hemos usado los <i>tipo de regreso</i>, cuando
+asignamos a una variable el valor de algún método; ese método esta
+<span class="underline">regresando</span> un valor, el cual es asignado a la variable que queremos.
+</p>
+
+<p>
+El método <code>nextInt()</code> regresa el entero ingresado por el usuario en la
+terminal.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span> = input.nextInt();
+</pre>
+</div>
+
+
+<p>
+El método <code>length()</code> de una <code>String</code> nos regresa la longitud de la
+cadena.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">"Ohana significa familia"</span>;
+<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n</span> = s.length(); <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">n = 23</span>
+</pre>
+</div>
+
+<p>
+Incluso el operador <code>new</code> <i>regresa</i> una nueva instancia de la clase!
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">Gato</span> <span style="color: #4eee94;">gato1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Gato</span>();
+</pre>
+</div>
+
+<p>
+Si lo puedo asignar, entonces regresa un valor. El tipo de retorno del
+método <b>debe ser el mismo</b> que el de la variable que lo contendrá.
+Por ejemplo, obtenemos un número aleatorio con el método
+<code>Math.random()</code>  como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">aleatorio</span> = Math.random();
+</pre>
+</div>
+
+<p>
+El tipo de dato de <code>aleatorio</code> es el mismo tipo de dato que el de la
+firma del método.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">double</span> <span style="color: #daa520;">random</span>() {
+    <span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">random</span>;
+    ... algoritmo para generar un n&#250;mero
+        pseudo-aleatorio entre [0, 1).
+    <span style="color: #00bfff;">return</span> random;
+}
+</pre>
+</div>
+
+
+<p>
+En la firma del método tenemos un salvaje <code>double</code>, que indica el tipo
+de regreso, esto es, de todo lo que haga el método <i>solo habrá un
+valor final de tipo <code>double</code>, y este será el que salga de este
+método</i>.
+</p>
+
+<p>
+Es claro que, debemos crear algo del mismo tipo de regreso <i>dentro del
+método</i>. No podemos hacer algo como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">toUpperCase</span>(){
+    <span style="color: #00bfff;">return</span> -1;
+}
+</pre>
+</div>
+
+<p>
+Esto es un error de <i>sintaxis</i> porque mezclamos <i>peras con manzanas</i>.
+Podemos mejorar nuestro programa suma añadiendo el tipo de retorno
+<code>int</code> como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Programa1</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+
+        System.out.print(<span style="color: #deb887;">"N&#250;mero 1: "</span>);
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n1</span> = input.nextInt();
+        System.out.print(<span style="color: #deb887;">"N&#250;mero 2: "</span>);
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n2</span> = input.nextInt();
+
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">suma</span> = suma(n1, n2);
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">suma</span>(<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">b</span>){
+        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">resultado</span> = a + b;
+        <span style="color: #00bfff;">return</span> resultado;
+    }
+}
+</pre>
+</div>
+
+<p>
+Notamos que cambiamos nuestro tipo de retorno de <code>void</code> a <code>int</code>. 
+</p>
+
+<p>
+Esta forma de escribir nuestro método es la más <i>óptima</i>, ya que
+estamos delegando todo el comportamiento (y todo el trabajo) al método
+<i>suma</i>, y así despreocuparnos por complementar el método suma <i>fuera
+del método suma</i>; solo obtenemos el resultado y ya.
+</p>
+
+<p>
+<code>void</code> también es un tipo de regreso, pero es el regreso <i>vacío</i>, por
+lo que no regresa nada el método. En otras palabras, no podemos
+asignar a una variable un método <code>void</code>.
+</p>
+
+<p>
+Por ejemplo <code>inicializar()</code> es de tipo <code>void</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">inicializar</span>(){
+    ...
+}
+</pre>
+</div>
+
+<p>
+Y al no regresar <i>nada</i>, no podemos asignar ese <i>nada</i> a una variable como.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">Gato</span> <span style="color: #4eee94;">gato1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Gato</span>();
+<span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">c</span> = gato1.inicializar(); <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">???</span>
+</pre>
+</div>
+
+<p>
+Lo cual es un error en <i>sintaxis</i>. Los métodos <code>void</code> normalmente se
+utilizar para <i>cambiar el estado</i> del programa, <i>asignar variables</i> o
+<i>imprimir</i>. Todo método que no tenga un <code>=</code> de su lado izquierdo es
+<code>void</code> como el método.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">System.out.println();
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga1ed67e" class="outline-3">
+<h3 id="orga1ed67e"><span class="section-number-3">1.4.</span> Problema 1: Calculadora</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Complementa el <code>Programa1</code> con las siguientes operaciones aritméticas:
+</p>
+<ul class="org-ul">
+<li>Multiplicación</li>
+<li>División</li>
+<li>Resta</li>
+<li>Exponeciación</li>
+</ul>
+
+
+<p>
+Utilizando métodos <i>estáticos</i> con el tipo de retorno adecuado. El
+método <code>main</code> deberá ejecutarse como sigue:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">n1</span>, <span style="color: #4eee94;">n2</span>;
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Leer la entrada de usuario en n1 y n2
+</span>    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">...
+</span>    <span style="color: #7f7f7f;">//</span><span style="color: #7f7f7f;">
+</span>    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">suma</span> = suma(n1, n2);
+    System.out.printf(<span style="color: #deb887;">"%i + %i = %i\n"</span>, n1, n2, suma);
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">resta</span> = resta(n1, n2);
+    System.out.printf(<span style="color: #deb887;">"%i - %i = %i\n"</span>, n1, n2, resta);
+    <span style="color: #98f5ff;">double</span> <span style="color: #4eee94;">division</span> = division(n1, n2);
+    System.out.printf(<span style="color: #deb887;">"%i / %i = %i\n"</span>, n1, n2, division);
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">multiplicacion</span> = multiplicacion(n1, n2);
+    System.out.printf(<span style="color: #deb887;">"%i * %i = %i\n"</span>, n1, n2, multiplicacion);
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">exponenciacion</span> = exponenciacion(n1, n2);
+    System.out.printf(<span style="color: #deb887;">"%i ^ %i = %i\n"</span>, n1, n2, exponenciacion);
+}
+</pre>
+</div>
+
+<p>
+Y cambia el nombre de la clase a <code>Calculadora</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc2890a" class="outline-3">
+<h3 id="orgbc2890a"><span class="section-number-3">1.5.</span> Problema 2: Lógica</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Crear un programa que reciba 2 booleanos \(b_1, b_2\) con posibles
+valores <code>true, false</code>. Luego evaluar cada una de los valores leídos en
+los siguientes métodos <i>estáticos</i> con el tipo de retorno
+adecuado.
+</p>
+
+<ul class="org-ul">
+<li><code>not</code> (negación, recibe un solo parámetro)</li>
+<li><code>and</code></li>
+<li><code>or</code></li>
+<li><code>implies</code> (implicación)</li>
+<li><code>iff</code> (si y solo si)</li>
+</ul>
+
+<p>
+Recuerda que podemos utilizar equivalencias lógicas para los
+operadores <i>implica</i> y <i>syss</i>. El método <code>not</code> se haría como sigue:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">boolean</span> <span style="color: #daa520;">not</span>(<span style="color: #98f5ff;">boolean</span> <span style="color: #4eee94;">b</span>){
+    <span style="color: #00bfff;">return</span> !b;
+}
+</pre>
+</div>
+
+<p>
+<b>Nota</b>: Es posible que <code>return</code> evalúe una expresión, en lugar de
+ asignarla a una variable nueva y luego regresar esa variable.
+</p>
+</div>
+</div>
+<div id="outline-container-org8d6b94e" class="outline-3">
+<h3 id="org8d6b94e"><span class="section-number-3">1.6.</span> Problema 3: Calculadora++</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Añade a la clase <code>Calculadora</code> del <i>Problema1</i> los métodos estáticos:
+</p>
+
+<ul class="org-ul">
+<li><code>abs(n)</code> Valor absoluto de n</li>
+<li><code>mayor(a, b)</code> El mayor entre a, b</li>
+<li><code>menor(a, b)</code> El menor entre a, b</li>
+<li><code>log_2(n)</code> Logaritmo base 2 de n</li>
+<li><code>esPar(n)</code> Si n es par</li>
+<li><code>esPrimo(n)</code> Si n es primo</li>
+<li><code>chicharronera(a, b, c)</code> la chicharronera. Regresar las soluciones
+exactamente como <code>[x1, x2]</code>, con el tipo de regreso <code>double[]</code></li>
+<li><code>noDigitos(n)</code> el número de dígitos de n</li>
+<li><code>binario(n)</code> convierte n a número binario, regresa un <code>String</code></li>
+<li><code>inv_add(a, m)</code> Nos da el inverso aditivo de <code>a</code> módulo <code>m</code> tal
+que \(((a + i) \mod m) = 0\)</li>
+<li><code>inv_mult(a, m)</code> Nos da el inverso multiplicativo de <code>a</code> módulo <code>m</code>
+tal que \(((a * i) \mod m) = 1\)</li>
+</ul>
+
+<p>
+<b>Hint para inv_</b>: Debes iterar i en el intervalo \([0, m)\) y regresar
+<b>i</b> cuando se cumpla la condición que iguala a 0.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-17 Thu 15:00</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

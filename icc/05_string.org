@@ -1,0 +1,220 @@
+#+HTML_LINK_HOME: ../inicio.html
+* La clase String
+Hemos visto rápidamente que si quieremos guardar texto utilizamos el
+/objeto/ llamado ~String~ como
+
+#+begin_src java
+  String s = input.nextLine();
+#+end_src
+
+Sin embargo, una /string/ no se limita a solo recibir cadenas. Es más,
+_cualquier información que contenga 0 o más caracteres ya sean letras
+números o símbolos_ podemos guardarlos en un /string/ y no hay límites
+cercanos para su longitud.
+
+#+begin_src java
+  String s = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam, metus ac rutrum cursus, nunc libero imperdiet sapien, vel venenatis purus magna sed mi."
+#+end_src
+
+Datos de diferente índole son guardados como cadenas
+
++ Correo electrónico
++ Nombres, apellidos
++ Países
++ CURP, RFC
++ Contraseñas (hashes)
++ Descripciones, libros
++ Páginas WEB
++ Comentarios de redes sociales
++ y mucho más!
+
+
+Porque eso es lo que es, una *cadena de caractéres*, es decir un
+*grupo de símbolos* que llevan un orden. Y cada /elemento/ de la
+cadena es un cáracter de tipo /char/
+
+| L | o | r | e | m |   | i | p | s | u | m |   | d | o | l | o | r |   | s | i | t |   | a | m | e | t | ... |
+
+En esta sección veremos los métodos más utilizados de la clase
+~String~.  Es de suma importancia escribir el ~.~ (punto) y los ~()~,
+así como su argumento.
+
+
+** Concatenación
+
+Dadas 2 cadenas, podemos crear una nueva cadena con la información de
+ambas utilizando el operador ~+~
+
+#+begin_src java
+  String s1 = "Tacos";
+  String s2 = "Dorados";
+  String s3 = s1 + " " + s2;
+  System.out.println(s3); // Tacos Dorados
+#+end_src
+
+** To Lower/Upper Case
+Convierte todos los caracteres a mayúsculas/minúsculas respectivamente
+
+#+begin_src java
+  String s = "Quien busca siempre encuentra";
+  String m = s.toUpperCase();
+  System.out.println(m); //QUIEN BUSCA SIEMPRE ENCUENTRA
+#+end_src
+
+** Equals
+Una cadena es igual /en contenido/ a otra cadena utilizando el método
+equals
+
+#+begin_src java
+  String s1 = "almeja";
+  String s2 = "ALMEJA";
+  System.out.println(s1.equals(s2)); //False
+
+  s1 = s1.toUpperCase();
+  System.out.println(s1.equals(s2)); //True
+#+end_src
+
+No utilizamos el operador ~==~, ya que ~s1~ y ~s2~ son dos /objetos/
+que ocupan diferentes direcciones en memoria, por lo que /no son
+*exactamente* el mismo/, pero sí pueden contener el mismo nombre.
+
+** Length
+
+Nos dice el número de caracteres que hay en una cadena.
+#+begin_src java
+  String s = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam, metus ac rutrum cursus, nunc libero imperdiet sapien, vel venenatis purus magna sed mi.";
+  System.out.println(s.length()); //160
+#+end_src
+
+** Char at
+Nos da el /char/ que está en la posición /i/.
+
+#+begin_src java
+  String s = "Hoy no fío, mañana sí";
+  char c = s.charAt(0);
+  System.out.println(c); //H
+  c = s.charAt(14);
+  System.out.println(c); //ñ
+#+end_src
+
+Si el índice está fuera de la longitud de la cadena, o es negativo
+dará un error, por ejemplo
+
+#+begin_src java
+  String s = "Hoy no fío, mañana sí";
+  char c = s.charAt(100);
+  System.out.println(c); //????
+
+#+end_src
+
+*Nota*: La posición de caracteres empieza en 0 hasta la longitud-1
+
+** Substring
+Dados dos índices $i, f$ en el rango de la longitud de la cadena, nos
+corta la cadena desde el indice inicio hasta el índice final-1.
+
+#+begin_src java
+  String s = "Pepe pecas pica papas con un pico";
+  String t = s.substring(7, 19);
+  System.out.println(t); //"cas pica pap"
+#+end_src
+
+Si el índice está fuera de la longitud de la cadena, o es negativo
+dará un error, además el primer índice debe ser /menor o igual/ que el
+segundo índice.
+
+** Index Of
+Nos dice si /esta/ cadena contiene la cadena /pasada como argumento/.
+Si sí está, nos da el índice del lugar donde se encuentra, si no, nos
+da ~-1~
+#+begin_src java
+  String esta = "Todo lo ideal es irreal";
+  int indice = esta.indexOf("ideal");
+  System.out.println(indice); //8
+  indice = esta.indexOf("peaches");
+  System.out.println(indice); //-1
+#+end_src
+
+** Split
+Nos divide la cadena, separado por la cadena que queramos separar y lo
+guarda en un /Arreglo/ donde cada elemento es guardado en un índice.
+
+#+begin_src java
+  String data = "Lorenzo,Gaitán,12,2003,9.9"
+  String[] separado = data.split(",");
+  System.out.printl(java.util.Arrays.toString(separado));
+  // ["Lorenzo", "Gaitán", "12", "2003", "9.9"] 
+#+end_src
+
+Más adelante profundizaremos qué son los arreglos así como las
+estructuras de datos, y por qué necesitamos escribir todo eso para
+poder visualizarlo.
+
+** Starts/Ends with
+Nos dice si esta cadena /empieza/ o /termina/ con la cadena segunda.
+#+begin_src java
+  String esta = "Hola planeta tierra, eres un gran planeta";
+  boolean s = esta.startsWith("Hola");
+  System.out.println(s); //True
+  s = esta.endsWith("planet");
+  System.out.println(s); //False
+#+end_src
+
+** Replace
+Elimina todas las apariciones en esta cadena del primer parámetro para
+reemplazarlas por la cadena del segundo parámetro.
+
+#+begin_src java
+  String esta = "Una mosca pegada en la pared";
+  String r = esta.replace("a", "e");
+  System.out.println("Une mosce pegede en le pered");
+  r = esta.replace(" ", "");
+  System.out.println("Unemoscepegedeenlepered");
+#+end_src
+
+La cadena ~""~ es conocida como la /cadena vacía/, y es una cadena
+válida, de longitud 0.
+
+** Problema 1: Correo
+Crear un programa que reciba una cadena por el usuario y nos diga si
+contiene el caracter ~@~ y termine con el nombre de dominio ~.com~
+
+
+** Problema 2: Reversa
+Dada una cadena por el usuario, imprimir la reversa de la misma cadena.
+
+** Problema 3: Palíndromo
+Una palabra es palíndromo si y solo si la palabra puede leerse igual
+al derecho y al revés. Debes de hacer un /pre-procesamiento/ de la
+palabra ingresada como:
+
+1. Debes quitar todos los espacios que contenga
+2. Debes pasar todo a minúsculas
+3. Debes comprobar que al derecho y al revés sean lo mismo.
+
+   Ej: /Anita la gorda lagartona NO traga la droga latina/ es
+   palíndromo
+  
+** Problema 4: Contraseña
+Pedir al usuario que ingrese su nombre de usuario y su contraseña. La
+contraseña debe coincidir con ~123abc~.
+
+** Problema 5: Conteo
+Pedir al usuario un texto de más de 100 palabras. Contar el número de
+palabras que existen en el texto.
+
+Puedes encontrar texto generado aleatoriamente en la página de [[https://www.lipsum.com/][Lorem ipsum]]
+
+** Problema 6: Versos
+Leer una oración a través de la entrada, luego mostrar cada palabra
+ingresada en una línea diferente.
+
+Ej: /La mañana está fría./
+
+#+begin_verse
+La
+mañana
+está
+fría.
+#+end_verse
+

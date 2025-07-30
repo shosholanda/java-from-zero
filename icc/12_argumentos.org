@@ -1,0 +1,170 @@
+* Argumentos del main
+
+Si eres un buen observador, habrás notado que el parámetro del método
+~main()~ es un /arreglo de String/ llamado ~args~.
+
+#+begin_src java
+  public static voi main (String[] args){
+#+end_src
+
+Lo que significa que podemos acceder a el y pasar a nuestro programa
+los parámetros que queramos /sin utilizar/ ~Scanner~.
+
+** Paso de argumentos
+Cuando compilamos /y ejecutamos/ el programa, siempre utilizamos como
+
+#+begin_src bash
+  $ java Problema1
+#+end_src
+
+Pero muchos programas como ~cowthink~ podemos pasarle directamente la
+entrada por /argumentos/ como
+
+#+begin_src bash
+  $ cowthink "MMmmmmuuuu estoy pensando"
+#+end_src
+
+Mejor aún, podemos modificar configuraciones del programa para poder
+/ejecutarlo de diferente manera/
+
+#+begin_src bash
+  $ cowthink -e xx -T U "Moricion"
+#+end_src
+
+El texto ~-e xx -T U "Moricion"~ son los /argumentos/ que pasamos al
+programa directamente. En /Java/, estos argumentos podemos pasarlos a
+nuestro programa utilizando ~args~.
+
+
+** Paso de parametros
+
+Imprimir todos los argumentos pasados a nuestro programa en /Java/.
+#+begin_src java
+  public class Parametros {
+      public static void main(String[] args) {
+  	for (int i = 0; i < args.length; i++)
+  	    System.out.println(args[i]);
+      }
+  }
+#+end_src
+
+Ejecutamos nuestro programa por ejemplo
+
+#+begin_src bash
+  $ java Parametros Lol soy varios argumentos en tu programa 
+#+end_src
+
+El código es sencillo de entender, /Java/ hace todo el trabajo detrás
+de cámaras, y separa cada /palabra/ en un /cajón/ del arreglo
+~args[]~; los valores /son *siempre* de tipo String/. Internamente args es como
+
+#+begin_src java
+  args = ["Lol", "soy", "varios", "argumentos", "en", "tu", "programa"];
+#+end_src
+
+Así, el for /recorre/ el arreglo *hasta antes* de ~args.length~ porque
+empieza en la posición 0 y los imprime.
+
+
+** Leyendo bien
+Los datos guardados en ~args[]~ son de tipo ~String~. Esto significa
+que incluso si le pasamos un número como argumento, /Java/ lo
+detectará como una /String/. Debemos entonces convertir esa /String/ a
+un número.
+
+El siguiente programa lee dos números por terminal, y muestra su
+concatenacion y su suma.
+
+#+begin_src java
+  public class Suma {
+      public static void main (String[] args) {
+  	// Cuidado!
+  	String s1 = args[0];
+  	String s2 = args[1];
+
+  	System.out.println(s1 + s2);
+
+  	int i1 = Integer.parseInt(s1);
+  	int i2 = Integer.parseInt(s2);
+
+  	System.out.println(i1 + i2);
+#+end_src
+Debemos tener cuidado /si no pasamos argumentos a nuestro programa/ ya
+que estamos accediendo a los dos primeros cajones, pero podríamos
+pasar ningún argumento y entonces el arreglo es de tamaño 0, no 2. Esto
+genera una ~IndexOutOfBoundException()~ que indica que accedemos a una
+posición que no existe en el arreglo.
+#+begin_src java
+  // Cuidado!
+  String s1 = args[0];
+  String s2 = args[1];
+#+end_src
+
+Como sea, pasamos dos números como argumento y los leemos en las
+variables ~s1, s2~.
+
+Si las /sumamos/, estamos /concatenamos/ la cadena ~"5" + "3" = "53"~.
+#+begin_src java
+  System.out.println(s1 + s2);
+#+end_src
+
+Sin embargo, utilzando el método /estático/ ~Integer.parseInt()~,
+convertimos el *texto que contiene los carácteres 5 y 3* a los números 5
+y 3. No es lo mismo "5" que 5.
+
+#+begin_src java
+  int i1 = Integer.parseInt(s1);
+  int i2 = Integer.parseInt(s2);
+#+end_src
+
+Finalmente, $5+3 = 8$ /ya como número/. Existe también el método
+~Double.parseDouble()~ para convertir a números decimales.
+** Problema 1: Años perro
+La vida de un perro pasa más rápido comparando con la vida humana. Si
+bien su calendario es diferente, podemos aproximarlo utilizando la
+siguiente fórmula según
+/Pedigree/.
+
+\begin{equation}
+edad = \begin{cases}
+  \frac{21n}{2} & \text{si } n \leq 2\\
+  4n + 13 & \text{en otro caso}
+\end{cases}
+\end{equation}
+
+Donde /n/ es el número de años /humanos/ que el perro ha vivido. Crea
+un programa que pueda calcular por /argumentos/ la edad de un perro.
+
+
+
+
+** Problema 2: Multiplos
+Crea un programa que reciba 2 números ~n, m~ enteros como argumentos, y nos
+diga si el primer número es múltiplo del otro. Que sea múltiplo
+significa que existe un número ~k~ tal que: 
+
+\begin{equation}
+n * k = m
+\end{equation}
+En otras palabras, ~m~ es /divisible/ por ~n~. Por ejemplo ~2~ es
+múltiplo de 16, pero ~2~ no es múltiplo de ~17~
+
+** Problema 3: Paradoja de cumpleaños
+La [[https://www.youtube.com/watch?v=7uzx6D_0V7M][paradoja del cumpleaños]] es un resultado matemático que dice que en
+un grupo de 23 personas, hay más del 50% de probablilidad que 2
+personas cumplan el mismo mes y día. Mira el video para entender
+mejor.
+
+La probabilidad está dada por:
+
+\begin{equation}
+P(coincidir) = 1 - \frac{(365-0) * (365-1) * (365-2) *
+(365 - 3) * \ldots * (365- (n-1))}{ 365^n} 
+\end{equation}
+
+Donde 365 son los días del año y /n/ el número de personas en el mismo
+grupo. Crea un programa que reciba la entrada *n* /por argumentos/ y
+nos regrese la probabilidad de que 2 personas cumplan años el mismo
+mes y día.
+
+

@@ -1,0 +1,253 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Más condicionales
+
+** Condicionales anidadas
+
+A veces, es necesario dividir un camino todavía en otro camino. Una
+condición anidada es hacer una condicional /simple/ o /compuesta/
+dentro de otra /simple/ o compuesta. La representación gráfica es la
+siguiente:
+
+#+CAPTION: Condicion simple anidada
+[[../img/icc/nested_cond.svg]]
+
+Observamos que en caso de que no se cumpla /condicion1/ tenemos otras
+2 opciones para continuar, que deberemos evaluar para decidir qué
+camino seguir, así tenemos al menos 3 caminos diferentes y no solo 2.
+
+
+*Nota*: Podemos anidar /cuantas veces queramos/ estructuras condicionales.
+
+** Problema 1: Tricotomía
+
+La /tricotomía/ nos dice que para dos números cualquiera *a* y
+*b* pasa /siempre/ una de las siguientes.
++ a es mayor que b $a > b$
++ b es mayor que a $b > a$
++ a es igual a b $a = b$
+
+Crear un programa que reciba 2 números y nos diga cual de los 3
+posibles casos pasa entre estos 2 números.
+
+[[../img/icc/tricotomy.svg]]
+
+#+begin_src java
+  import java.util.Scanner;
+
+  public class Problema1 {
+      public static void main (String[] args){
+  	Scanner input = new Scanner(System.in);
+
+  	int a, b;
+  	System.out.print("Ingresa el primer valor: ");
+  	a = input.nextInt();
+  	
+  	System.out.print("Ingresa el segundo valor: ");
+  	b = input.nextInt();
+
+  	input.close();
+
+  	if (a > b) {
+  	    System.out.print(a);
+  	    System.out.print(" es mayor a ");
+  	    System.out.println(b);
+  	} else {
+  	    if (b > a) {
+  		System.out.println("" + b + " es mayor a " + a);
+  	    } else {
+  		System.out.printf("%i es igual a %i", a, b);
+  	    }
+  	}
+      }
+  }
+#+end_src
+
+Algunas cosas nuevas es que podemos definir varias variables en una
+sola línea
+
+#+begin_src java
+  int a, b;
+#+end_src
+
+También que podemos ahorrarnos varios ~System.out.print~ si
+/concatenamos/ el texto.
+#+begin_src java
+  System.out.println("" + b + " es mayor a " + a);
+#+end_src
+
+Empezamos con la cadena vacía ~""~ ya que si empezamos con ~b~ el
+operador ~+~ buscará otro número para sumar y dará error. En cambio si
+el primer operando es /texto/ el segundo operando lo tratará como
+texto.
+
+Finalmente podemos escribir todo en una solo texto utilizando los
+/colocadores/, donde el símbolo ~%~ significa que se va a _reemplazar_
+por los argumentos que le pasemos en orden.
+
+#+begin_src java
+  System.out.printf("%i es igual a %i", a, b);
+#+end_src
+
+Existen otros reemplazadores
+- ~%i~ para números enteros.
+- ~%.2f~ para decimales con 2 digitos después del punto.
+- ~%s~ para texto /cadenas de caracteres/.
+- ~%b~ para booleanos.
+- ~%c~ para caracteres.
+- ~%t~ para tiempo.
+
+
+** Problema 2: Mayor entre 4 números.
+Dados 4 números enteros, decidir cuál es el mayor de ellos.
+
+** Operadores lógicos
+Cuando queremos evaluar una condición a verdadero o falso, debemos de
+utilizar los operadores lógicos, que básicamente son operadores de
+proposiciones.
+
+- AND: Ocurre si ambas condiciones se cumplen.
+  
+  Ej: Si me manda mensaje y contesta mi estado, entonces quiere conmigo.
+  |-----+-----+----------|
+  | ~A~ | ~B~ | ~A && B~ |
+  |-----+-----+----------|
+  |   0 |   0 |        0 |
+  |   0 |   1 |        0 |
+  |   1 |   0 |        0 |
+  |   1 |   1 |        1 |
+  |-----+-----+----------|
+- OR: Ocurre si al menos una de las 2 condiciones ocurre.
+  Ej: Tengo tiempo libre, puedo jugar Halo o Minecraft, pero también
+  puedo jugar ambos ¿por qué no?
+  |-----+-----+----------|
+  | ~A~ | ~B~ | ~A v B~  |
+  |-----+-----+----------|
+  |   0 |   0 |        0 |
+  |   0 |   1 |        1 |
+  |   1 |   0 |        1 |
+  |   1 |   1 |        1 |
+  |-----+-----+----------|
+- NOT: Niega lo que sea.
+  Ejemplo: El contrario de volar es /no volar/, no /caminar/ o
+  /nadar/. La negación de /soy estudiante/, no es /soy nini/, sino /No
+  soy estudiante/.
+  |-----+------|
+  | ~A~ | ~!A~ |
+  |-----+------|
+  |   0 |    1 |
+  |   1 |    0 |
+  |-----+------|
+
+  
+** Problema 3: Año bisiesto
+Un año es bisiesto si tiene al 29 de febrero. Podemos saber
+rápidamente si un año es bisiesto si:
+
+1. El año es un múltiplo de 4.
+2. El año no es un centenario. (El año 200 no fue bisiesto)
+3. El año es un cuarto centenario, es decir múltiplo de 400 (pero 1200
+   sí).
+
+Podemos utilizar la fórmula con el año a calcular.
+
+\begin{equation}
+B = (A \bmod 4 = 0 \land A \bmod 100 \neq 0) \lor (A \bmod 400 == 0)
+\end{equation}
+Crea un programa que dado un año /D.C/ nos diga si es bisiesto o no.
+
+** Problema 4:
+Un programa de gobierno dará beneficios a ciertas personas de ciertas
+edades. Crea un programa que dada la edad y sexo de la persona le de
+los siguientes beneficios:
+
+|----------+------+--------------------------------------------|
+| Edad     | sexo | beneficio                                  |
+|----------+------+--------------------------------------------|
+| < 18     | H    | Desayuno: Café, pan y chilaquiles          |
+| < 18     | M    | Desayuno: Té, fruta y enchiladas           |
+| 18 - 30  | H    | Comida: Sopa, arroz y milanesa             |
+| 18 - 30  | M    | Comida: Consomé, spaguetti y tacos dorados |
+| 31 - 50  | H    | Bono: $100 al día                          |
+| 31 - 50  | M    | Bono: $150 al día                          |
+| 51 - 100 | H    | Descuento: 50% en todas las compras        |
+| 51 - 100 | M    | Descuento: 60% en todas las compras        |
+|----------+------+--------------------------------------------|
+
+*Nota*: puedes usar ~1~ si es el sexo es mujer y ~0~ si es hombre.
+
+** Problema 5: PIN
+Crea un programa que reciba un identificador (entero) y un PIN
+(entero) y si coincide exactamente con los valores de la tabla,
+imprimir /Acceso concedido/, en caso contrario /ID o PIN incorrectos/
+
+|------+------|
+|   id |  PIN |
+|------+------|
+| 2821 | 8831 |
+|------+------|
+
+** Problema 6: Menú
+Un programa en /terminal/ requiere de una accion a
+realizar. Dependiendo de lo que seleccione el usuario hará una
+funcionalidad diferente. Las acciones son las siguientes:
+
+|--------+---------------------------------------|
+| opcion | Funcion                               |
+|--------+---------------------------------------|
+|      0 | Salir del programa                    |
+|      1 | Crear un nuevo laberinto              |
+|      2 | Leer laberinto desde entrada estandar |
+|      3 | Leer un laberinto desde disco         |
+|      4 | Crear un laberinto personalizado      |
+|      5 | Modificar la semilla de generación    |
+|      6 | Visualizar laberinto cargado          |
+|      7 | Exportar laberinto a formato SVG      |
+|--------+---------------------------------------|
+
+ Imprimir la funcion que realizará el programa y terminar.
+
+** Switch Case
+Muchas veces tenemos un /subconjunto/ de opciones, y queremos ver si
+un valor dado coincide con alguna de esas opciones. Podríamos utilizar
+~if-else~ hasta el aburrimiento como
+
+#+begin_src java
+  // Calificacion de servicio de 1 al 5
+  if (a == 1) { ... }
+  else if (a == 2) { ... }
+  else if (a == 3) { ... }
+  else if (a == 4) { ... }
+  else if (a == 5) { ... }
+  else { ... }
+#+end_src
+
+El ~switch-case~ es útil cuando tenemos un conjunto de
+opciones definidas, es como tener una ramificación de varios caminos
+/exclusivos/.
+
+[[../img/icc/switch.svg]]
+
+#+begin_src java
+  switch(a) {
+  case 1: ...
+      break;
+  case 2: ...
+      break;
+  case 3: ...
+      break;
+  case 4: ...
+      break;
+  case 5: ...
+      break;
+  default: ...
+      break;
+  }		    
+#+end_src
+
+*Nota*: El caso /default/ es lo que se ejecuta si no entra antes a
+ningun ~case~. Por temas históricos es necesario escribir el ~break;~
+al final del código en cada caso. Podemos tener tantos casos como queramos.
+
+
+** Problema 6: Switch case
+Reescribe el problema del /Menú/ utilizando solamente la estructura ~switch case~

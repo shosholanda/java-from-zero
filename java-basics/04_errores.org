@@ -1,3 +1,4 @@
+#+HTML_LINK_HOME: ../inicio.html
 * Errores en programación
 
 Es probable que el programa anterior no te haya funcionado a la
@@ -116,7 +117,7 @@ detectarlos!  El programa calculará el área de un triángulo, el
 diagrama de flujo será como el siguiente.
 
 #+CAPTION: Diagrama de flujo para sacar un área de un triángulo.
-[[../img/intro/problem02.svg]]
+[[../img/java-basics/problem02.svg]]
 
 Esta es una excepción y puedes /copiar/ el código. Creamos un archivo
 que se llame ~Triangulo.java~.
@@ -190,7 +191,7 @@ señala la flechita ~^~. Por ejemplo, el error
 Dice que en el archivo ~Triangulo.java~, en la línea 9 está el error y nos
 dice que se esperaba un ~;~
 
-[[../img/intro/lines.png]]
+[[../img/java-basics/lines.png]]
 
 Corregimos esa línea agregando ~;~ al final de la línea y lo
 guardamos. Volvemos a compilar.

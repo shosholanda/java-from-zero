@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-19 Sat 21:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgbd15b17">1. Herencia</a>
+<ul>
+<li><a href="#orgcde5983">1.1. Clases y métodos abstractos</a></li>
+<li><a href="#org468325e">1.2. super vs this</a></li>
+<li><a href="#orgcc2cb57">1.3. Object</a></li>
+<li><a href="#org9a20e02">1.4. Problema 1: Operacion</a></li>
+<li><a href="#orga503ab3">1.5. Problema 2: Personas</a></li>
+<li><a href="#org19fdf6a">1.6. Problema 3: Figura.</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbd15b17" class="outline-2">
+<h2 id="orgbd15b17"><span class="section-number-2">1.</span> Herencia</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Por más que no queramos aceptarlo, nosotros no somos <i>dueños</i> de
+nuestro código. Más del 90% de código es código <i>reutilizado</i> de otros
+programadores con licencia GNU. Incluso un mismo programador <b>debe</b> de
+<i>reutilizar</i> su propio código porque embeces se vuelve engorroso
+copiar/pegar el mismo código pero con alguna <i>pequeña</i> modificación.
+</p>
+
+<p>
+En 1987, <i>Bárbara Liskov</i> definió lo que hoy se conoce como herencia
+en lenguajes de programación que básicamente es <i>Si un programa B
+hereda de un programa A, B debe funcionar igual que A <b>sin modificar
+el código</b></i>
+</p>
+
+<p>
+La programación orientada a objetos <i>requiere</i> que se pueda <i>heredar</i>
+<b>comportamiento</b> que junto con la <i>encapsulación</i> crean la base para
+este paradigma de programación. La herencia es <i>similar</i> a la herencia
+natural. Tenemos características similares y poco diferentes a
+nuestros padres. En el caso de programación, podemos tener una clase
+<i>padre</i> del cual derivan características y atributos a las clases
+<i>hijas</i> o subclases, con la ventaja de definir nuevos atributos y
+métodos <i>aparte de los ya heredados</i>.
+</p>
+
+<p>
+Todo esto es muy téorico, crearemos un ejemplo sencillo. Queremos
+crear un zoológico, donde habrán diferentes tipos de animales;
+usaremos la <a href="https://zootycoon.fandom.com/wiki/List_of_Animals_in_Zoo_Tycoon">siguiente tabla</a> para no tener datos aleatorios.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Nombre</th>
+<th scope="col" class="org-left">Bioma</th>
+<th scope="col" class="org-left">Vegetacion Favorita</th>
+<th scope="col" class="org-left">Costo</th>
+<th scope="col" class="org-left">Lugar de origen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Beluga</td>
+<td class="org-left">Acuático</td>
+<td class="org-left">Kelp</td>
+<td class="org-left">$850</td>
+<td class="org-left">Oceanos árticos</td>
+</tr>
+
+<tr>
+<td class="org-left">Narval</td>
+<td class="org-left">Acuático</td>
+<td class="org-left">Lechuga de mar</td>
+<td class="org-left">$1,200</td>
+<td class="org-left">Oceanos árticos</td>
+</tr>
+
+<tr>
+<td class="org-left">Orca</td>
+<td class="org-left">Acuático</td>
+<td class="org-left">Hierba marina</td>
+<td class="org-left">$2,500</td>
+<td class="org-left">Todos los oceanos</td>
+</tr>
+
+<tr>
+<td class="org-left">Oso Grizzly</td>
+<td class="org-left">Bosque de coníferas</td>
+<td class="org-left">Cedro amarillo</td>
+<td class="org-left">1,000</td>
+<td class="org-left">Norteamérica</td>
+</tr>
+
+<tr>
+<td class="org-left">Tigre siberiano</td>
+<td class="org-left">Bosque de coníferas</td>
+<td class="org-left">Ficus chino</td>
+<td class="org-left">$1,000</td>
+<td class="org-left">Siberia</td>
+</tr>
+
+<tr>
+<td class="org-left">Alce</td>
+<td class="org-left">Bosque de hoja caduca</td>
+<td class="org-left">Sauce llorón</td>
+<td class="org-left">$700</td>
+<td class="org-left">Norteamérica</td>
+</tr>
+
+<tr>
+<td class="org-left">Oso negro</td>
+<td class="org-left">Bosque de hoja caduca</td>
+<td class="org-left">Álamo temblón</td>
+<td class="org-left">$850</td>
+<td class="org-left">Norteamérica</td>
+</tr>
+
+<tr>
+<td class="org-left">Órix</td>
+<td class="org-left">Desierto</td>
+<td class="org-left">Arbusto espinoso</td>
+<td class="org-left">$900</td>
+<td class="org-left">Africa</td>
+</tr>
+
+<tr>
+<td class="org-left">Bisonte Americano</td>
+<td class="org-left">Pradera</td>
+<td class="org-left">Planifolio</td>
+<td class="org-left">$1,500</td>
+<td class="org-left">Norteamérica</td>
+</tr>
+
+<tr>
+<td class="org-left">Avesturz</td>
+<td class="org-left">Sabana</td>
+<td class="org-left">Hierba alta</td>
+<td class="org-left">$1,100</td>
+<td class="org-left">Africa</td>
+</tr>
+
+<tr>
+<td class="org-left">Elefante Africano</td>
+<td class="org-left">Sabana</td>
+<td class="org-left">Baobao</td>
+<td class="org-left">$2,500</td>
+<td class="org-left">Africa</td>
+</tr>
+
+<tr>
+<td class="org-left">Jirafa</td>
+<td class="org-left">Sabana</td>
+<td class="org-left">Acacia de copa plana</td>
+<td class="org-left">$1,600</td>
+<td class="org-left">Africa</td>
+</tr>
+
+<tr>
+<td class="org-left">León</td>
+<td class="org-left">Sabana</td>
+<td class="org-left">Acacia de copa plana</td>
+<td class="org-left">$700</td>
+<td class="org-left">Africa</td>
+</tr>
+
+<tr>
+<td class="org-left">Gorila</td>
+<td class="org-left">Selva tropical</td>
+<td class="org-left">Oreja de elefante</td>
+<td class="org-left">$2,500</td>
+<td class="org-left">Africa</td>
+</tr>
+
+<tr>
+<td class="org-left">Tigre de bengala</td>
+<td class="org-left">Selva tropical</td>
+<td class="org-left">Mangle</td>
+<td class="org-left">$1,500</td>
+<td class="org-left">India</td>
+</tr>
+
+<tr>
+<td class="org-left">Panda gigante</td>
+<td class="org-left">Tierras altas</td>
+<td class="org-left">Bamboo</td>
+<td class="org-left">$5,000</td>
+<td class="org-left">China</td>
+</tr>
+
+<tr>
+<td class="org-left">Puma</td>
+<td class="org-left">Tierras altas</td>
+<td class="org-left">Arbusto sage</td>
+<td class="org-left">$700</td>
+<td class="org-left">Norteamérica</td>
+</tr>
+
+<tr>
+<td class="org-left">Oso polar</td>
+<td class="org-left">Tundra</td>
+<td class="org-left">Cueva de rocas nevadas</td>
+<td class="org-left">$1,500</td>
+<td class="org-left">Artico</td>
+</tr>
+
+<tr>
+<td class="org-left">Pinguino emperador</td>
+<td class="org-left">Tundra</td>
+<td class="org-left">Cueva de hielo</td>
+<td class="org-left">$1,100</td>
+<td class="org-left">Antartida</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Observamos que, todas las especies comparten atributos en común; las
+columnas. Podemos definir una <i>superclase</i> con estos atributos y
+métodos para todos los animales para que cada <i>subclase</i> los herede,
+tipo:
+</p>
+
+
+<div id="orgd615b2f" class="figure">
+<p><img src="../img/icc/inheritance.svg" alt="inheritance.svg" class="org-svg" />
+</p>
+</div>
+
+
+<p>
+La <i>superclase</i> <b>abstrae</b> a un nivel superior las <i>subclases</i>, con la
+principal ventaja que es, en lugar de <i>copiar y pegar los atributos y
+métodos 1 x 1 a cada subclase</i>, <i>Java</i> lo hace de manera automática,
+solo hay que usar la cláusula <code>extends</code>
+</p>
+
+<p>
+Básicamente podemos crear una <i>superclase</i> de un objeto sustituyendo
+la frase <span class="underline">es un</span> entre la <i>sublcase</i> y <i>superclase</i>; en este caso, un
+<i>Pinguino</i> <span class="underline">es un</span> Animal, un <i>Elefante</i> <span class="underline">es un</span> Animal. De hecho,
+podemos abstraer a un nivel <i>medio</i> entre las clases, por ejemplo:
+<i>Beluga</i> <span class="underline">es un</span> <i>Animal Marino</i>, que a su vez <span class="underline">es un</span> Animal.
+</p>
+
+
+<div id="org68e4f70" class="figure">
+<p><img src="../img/icc/inheritance_2.svg" alt="inheritance_2.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Cada nivel en la jerarquía de clases, <i>hacia abajo</i> va <i>aterrizando</i> a
+algo más fijo la clase, mientras que <i>hacia arriba</i> va <i>abstrayendo</i> a
+algo más general la clase. Es claro que todas las <i>subclases</i> tienen
+el mismo <i>comportamiento</i> que sus <i>superclases</i>, heredando <span class="underline">por
+nivel</span>. No existe un método de cómo <i>clasificar</i> nuestros objetos, y
+de hecho no es una tarea trivial; sin embargo la práctica hace lo suyo.
+</p>
+
+<p>
+Veamos ahora la implementación en <i>Java</i>, queremos reutilizar cosas
+así que conviene <i>escribir bien una sola vez</i> y luego solo
+<i>copiar-pegar</i> usando <code>extends</code>. Por motivos de longitud de texto,
+solo se hará el subarbol izquiero
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Animal.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">abstract</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Animal</span> {
+
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">bioma</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">vegetacion</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">costo</span>;
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">origen</span>;
+
+    <span style="color: #00bfff;">public</span> Animal(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>,
+                  <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">bioma</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">vegetacion</span>,
+                  <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">costo</span>, String origen){
+        <span style="color: #00bfff;">this</span>.nombre = nombre;
+        <span style="color: #00bfff;">this</span>.edad = edad;
+        <span style="color: #00bfff;">this</span>.bioma = bioma;
+        <span style="color: #00bfff;">this</span>.vegetacion = vegetacion;
+        <span style="color: #00bfff;">this</span>.costo = costo;
+        <span style="color: #00bfff;">this</span>.origen = origen;
+    }
+
+
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">abstract</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">sonido</span>();
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">dormir</span>(){
+        edad++;
+        System.out.println(<span style="color: #deb887;">"Durmiendo... zZz"</span>);
+    }
+
+    <span style="color: #a2cd5a;">@Override</span>
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">toString</span>(){
+        <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">"Soy un "</span> + <span style="color: #00bfff;">this</span>.getClass().getSimpleName() + <span style="color: #deb887;">"!"</span>;
+        <span style="color: #00bfff;">return</span> s;
+    }
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Terrestre.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">abstract</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Terrestre</span> <span style="color: #00bfff;">extends</span> <span style="color: #98f5ff;">Animal</span> {
+
+    <span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">boolean</span> <span style="color: #4eee94;">esCarnivoro</span>;
+
+    <span style="color: #00bfff;">public</span> Terrestre(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>,
+                  <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">bioma</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">vegetacion</span>,
+                  <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">costo</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">origen</span>, <span style="color: #98f5ff;">boolean</span> <span style="color: #4eee94;">esCarnivoro</span>){
+        <span style="color: #00bfff;">super</span>(nombre, edad, bioma, vegetacion, costo, origen);
+        <span style="color: #00bfff;">this</span>.esCarnivoro = esCarnivoro;
+    }
+
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">caminar</span>(){
+        System.out.println(<span style="color: #deb887;">"Estoy caminando!"</span>);
+    }
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Elefante.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Elefante</span> <span style="color: #00bfff;">extends</span> <span style="color: #98f5ff;">Terrestre</span> {
+
+    <span style="color: #a2cd5a;">@Override</span>
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">sonido</span>(){
+        <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Un berrido
+</span>        System.out.println(<span style="color: #deb887;">"Brrrrffff!"</span>);       
+    }
+
+    <span style="color: #a2cd5a;">@Override</span>
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">caminar</span>(){
+        System.out.println(<span style="color: #deb887;">"Camino a 2 km/h"</span>);
+    }
+}   
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Panda.java</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Panda</span> <span style="color: #00bfff;">extends</span> <span style="color: #98f5ff;">Terrestre</span> {
+
+    <span style="color: #a2cd5a;">@Override</span>
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">sonido</span>(){
+        System.out.println(<span style="color: #deb887;">"Mnnneee heheheheh"</span>);
+        <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">https://www.youtube.com/watch?v=8yqqanhjJuc
+</span>        <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">ES dificil escribir la onomatopeya
+</span>    }
+
+    <span style="color: #a2cd5a;">@Override</span>
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">caminar</span>(){
+        System.out.println(<span style="color: #deb887;">"Doy rodadas de pandita"</span>);
+    }
+
+    <span style="color: #a2cd5a;">@Override</span>
+    <span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">dormir</span>(){
+        edad -=2;
+        System.out.println(<span style="color: #deb887;">"zzzZZZZzzz"</span>);
+}
+</pre>
+</div>
+
+<p>
+Y finalmente el <i>Main</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Main</span> {
+    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+        <span style="color: #98f5ff;">Elefante</span> <span style="color: #4eee94;">e</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Elefante</span>(<span style="color: #deb887;">"Dumbo"</span>, 23, <span style="color: #deb887;">"Sabana"</span>, <span style="color: #deb887;">"Baobao"</span>, 2500, <span style="color: #deb887;">"&#193;frica"</span>, <span style="color: #a2cd5a;">false</span>);
+        <span style="color: #98f5ff;">Panda</span> <span style="color: #4eee94;">p</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Panda</span>(<span style="color: #deb887;">"Joaqu&#237;n"</span>, 12, <span style="color: #deb887;">"Tierras altas"</span>, <span style="color: #deb887;">"Bamb&#250;"</span>, 5000, <span style="color: #deb887;">"China"</span>, <span style="color: #a2cd5a;">false</span>);
+
+        System.out.println(e.toString());
+        e.caminar();
+        e.sonido();
+        e.dormir();
+
+        System.out.println();
+
+        System.out.println(e.toString());
+        p.caminar();
+        p.sonido();
+        p.dormir();
+    }
+}
+</pre>
+</div>
+<p>
+Salida
+</p>
+<pre class="example" id="org83cf9b8">
+"Soy un Elefante!"
+"Camino a 2 km/h"
+"Brrrrffff!"
+"Durmiendo... zZz"
+""
+"Soy un Panda!"
+"Doy rodadas de pandita"
+"Mnnneee heheheheh"
+"zzzZZZZzzz"
+</pre>
+
+<p>
+Este ejemplo contiene varios <b>conceptos clave</b> de la herencia que son
+bastante utilizados en <i>Java</i>, analizaremos el código a detalle.
+</p>
+</div>
+<div id="outline-container-orgcde5983" class="outline-3">
+<h3 id="orgcde5983"><span class="section-number-3">1.1.</span> Clases y métodos abstractos</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Lo primero que notamos es que tenemos la cláusula <code>abstract</code> en la
+firma de la clase <i>Animal</i>. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">abstract</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Animal</span> {
+</pre>
+</div>
+
+<p>
+Una clase <i>abstracta</i> significa que no puede instanciar objetos de
+ninguna forma ya que es <i>abstracto</i> y no existe en la vida real, lo
+cual es bastante lógico ya que no <i>existe</i> un animal que se llame
+<i>Animal</i>, sino que este es un grupo que hemos creado <i>mentalmente</i>.
+</p>
+
+<p>
+La siguiente línea truena como ejote:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">Animal</span> <span style="color: #4eee94;">a</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Animal</span>();
+</pre>
+</div>
+
+<p>
+Además, más abajo tenemos el método abstracto <code>sonido()</code>. Es abstracto
+porque sabemos que todos los animales (o bueno la mayoría) <i>emiten un
+sonido</i>, PERO <b>no podemos implementar el código</b> ya que necesitamos
+saber el animal para escribir su <i>sonido</i>; por esta razón es
+<i>abstracto</i>. En lugar de tener cuerpo <code>{}</code>, se define como una
+variable, terminando en <code>;</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">abstract</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">sonido</span>();
+</pre>
+</div>
+
+<p>
+Es claro que una clase instanciada debe tener listos todos sus métodos
+para ejecutar, en el imposible caso que se pudiera crear al animal, y
+quisieramos ejecutar el método <code>sonido()</code> tronaría 2 veces como ejote
+porque <i>no hay código para ejecutar</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">Animal</span> <span style="color: #4eee94;">a</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Animal</span>();
+a.sonido() <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">????</span>
+</pre>
+</div>
+
+
+<p>
+Por otro lado, tenemos un método <i>no abstracto</i> común y corriente que
+cada vez que duerme el animal se le va un año de vida. Este método
+pasará a todas las clases <i>igualito</i> a menos que lo sobrecarguemos.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">dormir</span>(){
+    edad++;
+    System.out.println(<span style="color: #deb887;">"Durmiendo... zZz"</span>);
+}
+</pre>
+</div>
+
+<p>
+Una clase abstracta <i>puede</i> tener métodos abstractos y un método
+abstracto debe estar en una clase abstracta, pero también puede no
+tenerlos los cuales se heredan a sus <i>subclases</i>. De hecho, no existe
+<i>una clase abstracta</i> que no tenga <i>subclases</i>, no tiene sentido ya
+que no se pueden implementar.
+</p>
+
+<p>
+Luego siguen las variables de clase, atributos que compartirán todas
+las subclases que hereden de <i>Animal</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">bioma</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">vegetacion</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">costo</span>;
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">origen</span>;
+</pre>
+</div>
+
+<p>
+Los <i>getters y setters</i> se omiten por cuestión de espacio.
+</p>
+</div>
+</div>
+<div id="outline-container-org468325e" class="outline-3">
+<h3 id="org468325e"><span class="section-number-3">1.2.</span> super vs this</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Esta parte tiene que ver con <i>Constructores</i>.  Tenemos un constructor
+general el cual inicializa el valor de las variables.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> Animal(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>,
+              <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">bioma</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">vegetacion</span>,
+              <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">costo</span>, String origen){
+    <span style="color: #00bfff;">this</span>.nombre = nombre;
+    <span style="color: #00bfff;">this</span>.edad = edad;
+    <span style="color: #00bfff;">this</span>.bioma = bioma;
+    <span style="color: #00bfff;">this</span>.vegetacion = vegetacion;
+    <span style="color: #00bfff;">this</span>.costo = costo;
+    <span style="color: #00bfff;">this</span>.origen = origen;
+}
+</pre>
+</div>
+
+<p>
+Es un constructor un poco grande, pero no hay otra manera de rellenar
+una <i>fila</i> de la tabla si no es <i>1 x 1</i>, o generados aleatoriamente.
+</p>
+
+
+<p>
+En la <i>subclase</i> <code>Terrestre.java</code>, también tenemos un constructor, que
+añade la variable de clase <i>esCarnivoro</i> que es una particularidad de
+los animales terrestres (igual no tuve mucha imaginación).
+<b>Literalmente</b> es como si tuvieramos las variables de la <i>superclase</i>
+<b>copiadas y pegadas</b> dentro de esta clase <i>invisibles</i>, las podemos
+usar como si de verdad estuvieran ahí! Justo la palabra <code>extends</code> hace
+esto posible. Para los métodos es exactamente lo mismo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Tenemos estas variables ocultas autom&#225;ticamente!</span><span style="color: #7f7f7f;"> */</span>
+
+<span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">private String nombre;
+</span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">private int edad;
+</span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">private String bioma;
+</span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">private String vegetacion;
+</span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">private int costo;
+</span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">private String origen;
+</span>
+<span style="color: #00bfff;">private</span> <span style="color: #98f5ff;">boolean</span> <span style="color: #4eee94;">esCarnivoro</span>;
+
+<span style="color: #00bfff;">public</span> Terrestre(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>,
+                 <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">bioma</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">vegetacion</span>,
+                 <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">costo</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">origen</span>, <span style="color: #98f5ff;">boolean</span> <span style="color: #4eee94;">esCarnivoro</span>){
+    <span style="color: #00bfff;">super</span>(nombre, edad, bioma, vegetacion, costo, origen);
+    <span style="color: #00bfff;">this</span>.esCarnivoro = esCarnivoro;
+}
+</pre>
+</div>
+
+<p>
+Notamos que el <i>constructor</i> de <i>Terrestre</i> es todavía más largo
+porque <i>también debe inicializar todas esas variables</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> Terrestre(<span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">nombre</span>, <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">edad</span>,
+                 <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">bioma</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">vegetacion</span>,
+                 <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">costo</span>, <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">origen</span>, <span style="color: #98f5ff;">boolean</span> <span style="color: #4eee94;">esCarnivoro</span>){
+</pre>
+</div>
+
+<p>
+Es claro que si queremos construir a un animal terrestre que tenga
+además el atributo <code>esCarnivoro</code>, <i>debemos también inicializar los
+atributos</i> como <code>nombre, edad etc</code>. En <i>Java</i> esto es lo primero que
+debe pasar, inicializar los atributos <i>de sus superclases</i>. Esto lo
+logramos con <code>super()</code>; básicamente <i>estamos llamando al constructor
+<b>padre</b></i> ya que no podemos llamarlo <i>normal</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">super</span>(nombre, edad, bioma, vegetacion, costo, origen);
+<span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">No jala en java.
+</span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Animal(nombre, edad, bioma, vegatcion, costo, origen);
+</span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Siguientes asignaciones.
+</span><span style="color: #00bfff;">this</span>.esCarnivoro = esCarnivoro;
+</pre>
+</div>
+
+<p>
+Por otra parte, <code>this</code> se utiliza para llamar <i>constructores hermanos</i>
+dentro de la misma clase, al igual que <code>super()</code> debe ser lo primero
+que mande a llamar. Ojo que solo estamos usando métodos estáticos y
+valores fijos.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Constructor de animal aleatorio, solo recibe nombre</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">public</span> Terrestre(String nombre){
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Llama al constructor que recibe todos los par&#225;metros
+</span>    <span style="color: #00bfff;">this</span>(nombre, (<span style="color: #98f5ff;">int</span>)(Math.random() * 50),
+         Bioma.aleatorio(),
+         Vegetacion.aleatoria(),
+         (<span style="color: #98f5ff;">int</span>)(Math.random() * 6000),
+         Bioma.origen(),
+         <span style="color: #a2cd5a;">true</span>);
+}   
+</pre>
+</div>
+
+<p>
+Finalmente tenemos los métodos de clase <i>Animal</i> que serán heredado a
+todas las demás <i>subclases</i> que extiendan a <i>Animal</i>. El hecho de que
+el método <code>sonido()</code> sea abstracto, significa que <b>debemos</b>
+implementarlo en alguna subclase; si no lo implementamos nunca no
+compilará nuestro objeto. Es como tenerlo en <i>stand by</i>.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">abstract</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">sonido</span>();
+
+<span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">dormir</span>(){
+    edad++;
+    System.out.println(<span style="color: #deb887;">"Durmiendo... zZz"</span>);
+}
+
+<span style="color: #a2cd5a;">@Override</span>
+<span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">toString</span>(){
+    <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">"Soy un "</span> + <span style="color: #00bfff;">this</span>.getClass().getSimpleName() + <span style="color: #deb887;">"!"</span>;
+    <span style="color: #00bfff;">return</span> s;
+}
+
+</pre>
+</div>
+
+<p>
+El otro método <code>dormir()</code> sí está implementado, y no es necesario
+<i>reimplementarlo</i> en subclases, si queremos tener funcionalidad de la
+clase padre.
+</p>
+
+<p>
+<code>toString()</code> es un caso de <i>Object</i> que veremos más adelante.
+</p>
+</div>
+</div>
+<div id="outline-container-orgcc2cb57" class="outline-3">
+<h3 id="orgcc2cb57"><span class="section-number-3">1.3.</span> Object</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+<i>Object</i>, como su nombre indica, es un Objeto <b>padre de todos los
+objetos</b>. Cualquier clase que exista en <i>Java</i> (sí, incluso las que
+creamos) heredan de <i>Object</i>. La <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">documentación de <i>Java</i></a> indica que
+todos los objetos implementan los métodos.
+</p>
+
+<ul class="org-ul">
+<li>clone()</li>
+<li><b>equals(Object obj)</b></li>
+<li>finalize()</li>
+<li><b>getClass()</b></li>
+<li>hashCode()</li>
+<li>notify()</li>
+<li>notifyAll()</li>
+<li><b>toString()</b></li>
+<li>wait()</li>
+</ul>
+
+
+<p>
+por cuanto <i>Animal</i> hereda de <i>Object</i>, podemos <i>sobrecargar</i>
+utilizando la anotación <code>@Override</code> el método <code>toString()</code>; de hecho
+utilizamos también el método de <code>getClass()</code> y aunque nunca lo hayamos
+definido, siempre está disponible.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a2cd5a;">@Override</span>
+<span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">String</span> <span style="color: #daa520;">toString</span>(){
+    <span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">s</span> = <span style="color: #deb887;">"Soy un "</span> + <span style="color: #00bfff;">this</span>.getClass().getSimpleName() + <span style="color: #deb887;">"!"</span>;
+    <span style="color: #00bfff;">return</span> s;
+}
+</pre>
+</div>
+
+<p>
+El funcionamiento de <code>getClass().getSimpleName()</code> es simplemente tomar
+el objeto en memoria el objeto <code>Animal@4ef41afc</code> y obtener su nombre
+en <i>String</i>. De nuevo, <code>this</code> hace referencia a este objeto <i>desde
+dentro del objeto</i>.
+</p>
+
+<p>
+La biblioteca estándar de java con más de <a href="https://docs.oracle.com/javase/8/docs/api/overview-tree.html">100,000 clases</a> utiliza la
+herencia para reutilizar código, por ejemplo del paquete <code>java.io</code> que
+solo se dedica a <i>leer y escribir</i> su árbol jerárquico es como
+</p>
+
+
+<div id="org99acd7f" class="figure">
+<p><img src="../img/icc/object.gif" alt="object.gif" />
+</p>
+</div>
+
+<p>
+En conclusión, la herencia es una de las herramientas <i>más poderosas</i>
+de la programación orientada a objetos, entenderlo es simple: <i>copiar
+y pegar código del padre al hijo</i> utilizando <code>extends</code>.
+</p>
+
+<p>
+Sin embargo, saber cuándo utilizar herencia (y cómo plantear el arbol
+jerárquico) no es una tarea trivial, y es una habilidad que solamente
+se aprende <i>programando mucho</i>; muchos programadores fallan en usar
+mal este poder resultado en <i>sistemas defectuosos</i>.
+</p>
+
+<p>
+Por eso siempre antes de extender o abstraer una clase <b>debemos</b>
+pensar en <i>Bárbara Liskov</i>, ¿se cumple que todo el funcionamiento del
+padre pasa al hijo?  y no solo para nuestros programas en este
+momento; más importante a <i>futuro</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org9a20e02" class="outline-3">
+<h3 id="org9a20e02"><span class="section-number-3">1.4.</span> Problema 1: Operacion</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Se necesita implementar una clase que resuelva operaciones
+<i>binarias</i>. Operaciones como <code>suma(), multiplicacion(), resta(),
+division(), exponenciacion()</code> deben realizarse con el método
+<code>operar()</code> el cual regresará el resultado de la operación. La relación
+de herencia es la siguiente.
+</p>
+
+
+<div id="orgb9f82e9" class="figure">
+<p><img src="../img/icc/operacion.svg" alt="operacion.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+En una clase <i>Main</i> deberás probar cada una de las operaciones,
+creando el objeto de su operación por ejemplo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">Resta</span> <span style="color: #4eee94;">resta1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Resta</span>(valor1, valor2);
+System.out.printf(<span style="color: #deb887;">"%i - %i = %f"</span>, valor1, valor2, resta1.operar());
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga503ab3" class="outline-3">
+<h3 id="orga503ab3"><span class="section-number-3">1.5.</span> Problema 2: Personas</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Crear una clase <i>Persona</i> que tenga como atributos el <code>nombre</code> y la
+<code>edad</code>, siguiendo las mejores prácticas de programación.
+</p>
+
+<p>
+Plantear una segunda clase que sea <i>Empleado</i> que añada el atributo
+<code>sueldo</code> y el método <code>cobrar()</code>
+</p>
+
+<p>
+Plantear una tercera clase que sea <i>Director</i> que añada el atributo
+<code>puesto</code> y el método <code>viajar()</code>
+</p>
+
+<p>
+Finalmente una cuarta clase que sea <i>Cliente</i> que añada el atributo
+<code>presupuesto</code> y el método <code>gastar()</code>.
+</p>
+
+<p>
+Todas las clases deben de estar relacionadas. No necesitas idear un
+algoritmo para poder cobrar, solamente imprime un mensaje de lo que
+hace ese método. En la clase <i>Main</i> deberás llamar a <b>todos</b> los
+métodos de cada objeto.
+</p>
+</div>
+</div>
+<div id="outline-container-org19fdf6a" class="outline-3">
+<h3 id="org19fdf6a"><span class="section-number-3">1.6.</span> Problema 3: Figura.</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Un programa de dibujo para niños (TuxPaint) requiere de construir
+figuras a través de un lienzo. Existen varios tipos de figura 
+</p>
+
+
+<div id="org5127eb7" class="figure">
+<p><img src="../img/icc/figuras.png" alt="figuras.png" />
+</p>
+</div>
+
+<p>
+Todas las figuras, al ser en <code>2D</code> podemos sacarle su <code>area()</code> y
+<code>perímetro()</code>; sin embargo, no todas las áreas se calculan igual así
+como tampoco todos las figuras ocupan los mismos parámetros para su
+construcción. Por ejemplo, Círculo solo ocupamos su <code>radio</code>, mientras
+que el Triángulo ocupamos el <code>tamaño</code> de sus 3 lados.
+</p>
+
+<p>
+Crea la jerarquía de clases utilizando herencia como lo muestra el
+dibujo. 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-19 Sat 21:12</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

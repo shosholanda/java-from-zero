@@ -1,0 +1,74 @@
+#+TITLE: Aprende JAVA desde 0
+
+* Introducción
+
+Aprende /Java/ desde 0 es una guía desarrollada por una persona /que
+no sabía absolutamente nada de programación/, inspirado por la
+aplicación /Aprende java desde cero/ de ~tu.mentor.tutoz~
+
+
+La única forma de aprender a programar es /programando/, la forma de
+aprender a jugar /futbol/ es /jugando futbol/, aprender a /cocinar/ es
+/cocinando/; en general la forma de aprender /lo que sea/ es
+/haciendolo/.
+
+#+begin_quote
+Lo escuché y lo olvidé,
+lo ví y lo entendí,
+lo hice y lo aprendí.
+
+--- Proverbio Chino
+#+end_quote
+
+
+Cada tema contiene ejemplos de código los cuales *se exhorta a copiar
+línea por línea* si es que no se tiene /ninguna/ experiencia con la
+programación, siguiendo con la explicación. No se puede _copiar
+código_ (Ctrl c, Ctrl v), no se pueden saltar temas y se deben
+realizar *TODOS* los ejercicios en el orden propuesto. El estudiante
+*debe* de entender cada tema y poder realizar los ejercicios por su
+propia cuenta. Los ejercicios normalmente no tienen código escrito.
+
+
+Cuando ya se tenga un conocimiento de la /Programación orientada a
+objetos/, se pueden omitir ciertos ejercicios y/o temas. 
+
+#+OPTIONS: TOC:2
+
+* Linux
++ [[file:linux/00_introduccion.org][Introducción a Linux]]
++ [[file:linux/01_baby_penguin.org][Comandos básicos]]
+# #+INCLUDE: "./linux/00_introduccion.org" :minlevel 2
+
+* Java Basics
++ [[./java-basics/00_introduccion.org][Introducción a java]]
++ [[./java-basics/01_instalacion.org][Instalación]]
++ [[./java-basics/02_hello_world.org][Hola mundo!]]
++ [[./java-basics/03_diagramas.org][Diagramas de flujo]]
++ [[./java-basics/04_errores.org][Errores]]
+
+* Introducción a Ciencias de la computación
++ [[./icc/00_programacion_secuencial.org][Programación secuencial]]
++ [[./icc/01_condicionales.org][Condicionales]]
++ [[file:icc/02_condicionales_switch.org][Condicionales++]]
++ [[file:icc/03_ciclos.org][Ciclos]]
++ [[file:icc/04_ciclos_infinitos.org][Ciclos++]]
++ [[file:icc/05_string.org][Strings]]
++ [[file:icc/06_clases_y_objetos.org][Clases y objetos]]
++ [[file:icc/07_metodos.org][Métodos]]
++ [[file:icc/08_encapsulamiento.org][Encapsulamiento]]
++ [[file:icc/09_colaboracion_de_clases.org][Colaboración de clases]]
++ [[file:icc/10_herencia.org][Herencia]]
++ [[file:icc/11_arreglos.org][Arreglos]]
++ [[file:icc/12_argumentos.org][Argumentos]]
++ [[file:icc/13_matrices.org][Matrices]]
+# #+INCLUDE: "./icc/00_programacion_secuencial.org" :minlevel 
+
+* Estructuras de datos
+# #+INCLUDE: "./edd/00_arreglos.org" :minlevel 2
+
+* Criptografía y Seguridad
+# #+INCLUDE: "./cys/00_introduccion.org" :minlevel 2
+
+* Graficación por computadora
+# #+INCLUDE: "./graf/00_introduccion.org"

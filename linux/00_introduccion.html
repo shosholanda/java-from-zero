@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-29 Tue 22:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgea31835">1. Introducción a Linux</a>
+<ul>
+<li><a href="#org63a896f">1.1. ¿Qué es linux?</a></li>
+<li><a href="#org15c560a">1.2. ¿Por qué usar Linux?</a></li>
+<li><a href="#org4a5cb13">1.3. Historia de Linux</a>
+<ul>
+<li><a href="#orgc00e4f6">1.3.1. 1939</a></li>
+<li><a href="#org8ceb685">1.3.2. 1940</a></li>
+<li><a href="#org07ee715">1.3.3. 1969</a></li>
+<li><a href="#org1f5374d">1.3.4. 1989</a></li>
+<li><a href="#org9a9951d">1.3.5. 1991</a></li>
+</ul>
+</li>
+<li><a href="#orgda5e1c3">1.4. Actualidad</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgea31835" class="outline-2">
+<h2 id="orgea31835"><span class="section-number-2">1.</span> Introducción a Linux</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Linux es el sistema operativo <i>por excelencia</i> de los programadores,
+por lo que debes de aprender desde hoy mismo.
+</p>
+</div>
+<div id="outline-container-org63a896f" class="outline-3">
+<h3 id="org63a896f"><span class="section-number-3">1.1.</span> ¿Qué es linux?</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Linux es un <i>sistema operativo</i> así como Windows y Mac OS bajo la
+licencia de <i>GNU</i>, que básicamente es lo mejor que te pasará en tu
+vida y te explicaremos por qué.
+</p>
+
+<p>
+Cuando compras una computadora nueva, viene con <i>Windows</i> o <i>Mac</i>
+instalado por omisión. No lo vemos pero el precio del sistema
+operativo viene incluido en el producto. Y hace algunos años, debías
+comprar licencias de <i>Windows</i> para poder usarlo además que <i>no puedes
+saber</i> cómo funciona el sistema a nivel de <i>software</i>. Linux siempre
+ha sido <i>y será</i> totalmente gratis, significa que
+</p>
+
+<ol class="org-ol">
+<li>No pagas nada por el software del sistema base, solo fierros
+(hardware)</li>
+<li>Sabes cómo funciona <i>instrucción por instrucción</i> el sistema
+operativo lo cual es útil para aprender el funcionamiento a bajo
+nivel</li>
+<li>Es muy <i>ligero y rápido</i> ya que no existen programas basura (como
+un antivirus) consumiendo recursos; incluso si existen puedes
+quitarlos</li>
+<li>El código es <i>abierto</i> para el público, puedes modificarlo a tu
+antojo. Existen más de <a href="https://distrowatch.com/">120 distribuciones</a> de linux.</li>
+<li>Puedes <i>vender</i> software hecho en linux (con algunas reglas)</li>
+<li>La mayoria de Smart TV, Alexas, teléfonos (Android por supuesto),
+consolas de videojuegos son software basado en Linux.</li>
+<li>Al ser código abierto, si existe <i>software malicioso</i> este se
+reporta a la comunidad, dejando solamente <i>software puro</i>, por lo
+que <i>es más probable que te caiga un rayo</i> a que encuentres
+<b>virus</b>, incluso si insertas <i>USB infectadas</i>.</li>
+<li>Más del 90% de servidores en el mundo utiliza <i>Linux</i>, pues se
+ahorran un buen dinero y aparte funciona <b>tan bien</b> que incluso el
+mismo <i>Windows</i> utiliza servidores en Linux.</li>
+<li>Hecho por programadores <b>para programadores</b>.</li>
+</ol>
+
+
+<p>
+La única desventaja es que <i>nunca</i> nos enseñan a utilizarlo, sigue
+oculto entre las sombras, pero el mundo tal y como lo conocemos
+(internet en particular) no exisitiría si no existiera <i>Linux</i>. En los
+últimos años ha tenido un mayor crecimiento; tanto que ya existe
+muchos soportes para <i>videojuegos</i> y programas ejecutables en
+<i>Windows</i> como <code>wine</code>.
+</p>
+
+<p>
+En esta carrera, usar Linux es <i>pan de cada día</i>, ya que utilizamos la
+programación como una herramienta más para nuestra carrera.
+</p>
+</div>
+</div>
+<div id="outline-container-org15c560a" class="outline-3">
+<h3 id="org15c560a"><span class="section-number-3">1.2.</span> ¿Por qué usar Linux?</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+La principal razón importante es porque <b>no somos usuarios de
+la computadora</b>, somos <b><span class="underline">los que dominan las computadoras</span></b>. Un <i>hacker</i>
+usa la computadora con el poder de sus dedos a una velocidad
+impresionante utilizando <i>pantallas llenas de números random</i>; <b>no
+usan</b> <i>mouse</i> e <i>interfaz gráfica</i>. Mi tío Aurelio que estudió contaduría
+sí, él es un usuario de la computadora y consume <i>programas</i> que
+nosotros <i>computologos</i> desarrollamos.
+</p>
+
+<p>
+Un piloto de <i>fórmula 1</i> no es un <i>piloto como yo</i> que uso el coche
+cada fin de semana. Un piloto de fórmula <b>debe</b> conocer a su auto a
+detalle para poder aprovechar al máximo su capacidad. El punto es: Si
+queremos utilizar todo el <i>potencial</i> de la computadora, <b>debemos</b>
+conocer a las <i>computadoras</i> y qué mejor lugar que viendo el código
+que ejecutan gracias al software libre Linux.
+</p>
+
+<p>
+Otras buenas razones son:
+</p>
+
+<ul class="org-ul">
+<li>Aprendes inglés</li>
+<li>Aprender a <i>nivel servidores</i>. Es fácil adaptarse a lo que se
+utiliza <i>en el mundo real</i>.</li>
+<li>Es libre y gratuito, no te metes en problemas legales (hackers)</li>
+<li>Se complementa bien con la programación</li>
+<li>Tienes ventaja sobre los <span class="underline">usuarios finales</span></li>
+<li>No jala el VALORANT. (ya, deja el vicio y a estudiar xd)</li>
+</ul>
+
+<p>
+Al final del día, es tu decisión, ¿en qué vas a invertir tu tiempo a
+futuro?, ¿seguir con lo mismo o <i>conocer más alla de lo que te puedas
+imaginar</i>?. 
+</p>
+</div>
+</div>
+<div id="outline-container-org4a5cb13" class="outline-3">
+<h3 id="org4a5cb13"><span class="section-number-3">1.3.</span> Historia de Linux</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Tal vez nunca veas esto nunca, pero es interesante entender cómo es
+que surgió la idea de tener una computadora. Te cuento la historia
+como un cuento.
+</p>
+</div>
+<div id="outline-container-orgc00e4f6" class="outline-4">
+<h4 id="orgc00e4f6"><span class="section-number-4">1.3.1.</span> 1939</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Todos sabemos que existió una segunda guerra mundial; suena aburrido,
+pero el hecho de tener una <i>guerra</i> es algo que nos afecta a
+todos. Hoy en día se habla de una <i>tercera guerra</i> con el problema de
+<i>Israel</i>.
+</p>
+
+<p>
+Siempre en las guerras, existen avances tecnológicos, tristemente como
+la bomba nuclear. En este caso, tocó pelear contra una máquina alemana
+(del bando de los <i>Hail Hydra</i>) llamada <i>Enigma</i> que era como una maquina
+de escribir pero mamadísima hija de su ptm que <b>cifraba</b> mensajes en
+una clave casi imposible de descifrar. <i>Casi imposible</i> porque sí fue
+posible, gracias al primer computólogo y padre de las Ciencias de la
+computación <i>Alan Turing</i>; me pregunto si los chocolates son en su honor.
+</p>
+</div>
+</div>
+<div id="outline-container-org8ceb685" class="outline-4">
+<h4 id="org8ceb685"><span class="section-number-4">1.3.2.</span> 1940</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Alan turing tenía la idea de que una <i>máquina</i> puede ganarle a otra
+<i>máquina</i> por lo que este genio desarrolló primero <i>una máquina
+teórica</i> conocida como <i>Máquina de turing</i> para después implementarla
+en una máquina física llamada <i>Bombe</i>. Alan Turing no lo sabía, pero
+creo todo el campo de la <i>computación</i> por accidente al tratar de
+salvar el pellejo a miles de personas; mezclando matemáticas,
+ingeniería eléctica y aterrizando temas como la <i>inteligencia
+artificial</i>.
+</p>
+
+<p>
+Tristemente tenía apego con los hombres, por lo que se suició al ser
+descubierto por el gobierno británico y ya no pudo aportarnos más;
+pero sin duda una de las mentes maestras de este siglo.
+</p>
+
+<p>
+<a href="https://drive.google.com/file/d/1djUGb6SvDZqzL1ZwPkioQOTUBrlZA1sg/view?usp=sharing"><b>Aquí</b></a> puedes ver la película sobre Turing
+</p>
+</div>
+</div>
+<div id="outline-container-org07ee715" class="outline-4">
+<h4 id="org07ee715"><span class="section-number-4">1.3.3.</span> 1969</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+Después de que Turing dejara el camino trazado sobre esta nueva área
+del conocimiento, muchas universidades, empresas y personas creaban
+sus propios <i>sistemas operativos</i>. Fue hasta este año donde se
+<i>unifica</i> el código para que sea <i>portable</i>, creando así el sistema
+<b>UNIX</b>, que después de él seguirían muchas más versiones.
+</p>
+</div>
+</div>
+<div id="outline-container-org1f5374d" class="outline-4">
+<h4 id="org1f5374d"><span class="section-number-4">1.3.4.</span> 1989</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p>
+Richard Stallman, fue un hacker y activista de su tiempo. El creía que
+un programador <i>debía poder</i> modificar software a su convenciencia, ya
+que eventos como <i>bloqueaar el acceso a la impresora de su escuela</i> o
+<i>poner un virus en un programa si no se pagaba</i> lo motivaron a crear
+el concepto de <i>código libre</i>. Como hacker <i>hackeaba</i> estos programas
+pero lucho por algo más grande.
+</p>
+
+<p>
+Las licencias de <b>GNU</b> (General Public License) es una filosofía de
+software donde nadie es dueño del código y a la vez de todos. Su
+tirada principal fue hacer una versión de <i>UNIX</i> con esta licencia,
+junto con otro grupo de <i>hackers</i>, clonando el programa en sí.
+</p>
+</div>
+</div>
+<div id="outline-container-org9a9951d" class="outline-4">
+<h4 id="org9a9951d"><span class="section-number-4">1.3.5.</span> 1991</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<p>
+No fue hasta este año que el famoso <i>Pinguino</i> Linus Torvalds, un
+estudiante filandes crea su <i>kernel</i> basado en <i>UNIX</i> para un sistema
+operativo que el llamó <b>Linux</b>. Ya tenían un sistema operativo que
+podía funcionar casi en cualquier computadora, y libre de reglas
+comerciales ya que todo fue desarrollado por ellos.
+</p>
+
+<p>
+En una ocasión, Linus escuchó hablar del software libre por el mismo
+<i>Stallman</i> y le agradó tanto esta idea de <i>que el código debía ser
+libre</i> por lo que decidió dejar su propio sistema operativo bajo esta
+licencia. Así nació Linux, un sistema operativo gratuito para todos,
+tirando a las empresas que se querían apropiar del software y
+monopolizarlo.
+</p>
+
+<p>
+En resumen, Linux se conforma de
+</p>
+
+<ol class="org-ol">
+<li>UNIX, que es la base del sistema operativo de Linux, el corazón.</li>
+<li>Licencia GNU, para todo el público.</li>
+</ol>
+
+
+<p>
+Por lo que Linux es también llamado <b>GNU/Linux</b>. Si no fuera por estos
+dos personajes, hoy en día estudiar computación costaría demasiado,
+como cuesta software de diseño como <i>Autocad, Adobe</i> o <i>Microsoft
+Office*</i>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgda5e1c3" class="outline-3">
+<h3 id="orgda5e1c3"><span class="section-number-3">1.4.</span> Actualidad</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Hoy en día, maś del 90% de dispositivos electrónicos corren una
+<i>versión</i> de linux
+</p>
+
+<div class="org-center">
+
+<div id="orgef1307e" class="figure">
+<p><img src="../img/linux/linux-supremacy.png" alt="linux-supremacy.png" />
+</p>
+</div>
+</div>
+
+
+
+<p>
+Y <b>UNIX</b> es quien más varaciones tiene, lo que significa que es
+flexible para adaptarse a cualquier necesidad. <i>Windows</i> solo está
+enfocado en el usuario por ejemplo. 
+</p>
+
+
+<div id="orgad128cc" class="figure">
+<p><img src="../img/linux/distros.jpg" alt="distros.jpg" />
+</p>
+</div>
+
+
+<p>
+Puedes notar <i>iOS</i> está basado en <b>UNIX</b>, lo que significa que puedes
+usar MAC como si fuera <i>Linux</i> (más o menos). Xbox utiliza una
+ramificación de <i>FreeBSD</i>, y grandes corporaciones utliizan <i>redhat</i>
+como sistema base. Android es básicamente el <i>linux para teléfonos</i>.
+</p>
+
+<p>
+La mala noticia es que <i>Windows</i> domina el mercado de los usuarios, y
+más del 70% de programas estan hechas para su arquitectura, pero no
+hay problema,  el gigante <i>Linux</i> avanza lento, y eventualmente
+alcanzará a <i>Windows</i>. Viva el software libre!
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-29 Tue 22:33</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

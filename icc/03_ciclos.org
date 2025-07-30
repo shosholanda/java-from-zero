@@ -1,0 +1,343 @@
+#+HTML_LINK_HOME: ../inicio.html
+* Estructuras repetitivas
+
+Hasta ahora solo hemos utilizado estructuras /secuenciales/ y
+/condicionales/. Existe la última estructura de programación
+/esencial/ que son las estructuras /repetitivas/.
+
+** Problema 1: Primeros N naturales.
+Crear un programa que imprima los primeros /1000/ naturales.
+
+Utilizando programación secuencial, podemos solucionar el problema con
+el siguiente diagrama de flujo...
+
+[[../img/icc/while_0.svg]]
+
+Podemos ocupar otras 5 páginas y no terminar el diagrama de
+flujo. Claramente se ve que es mala idea escribir 1000 líneas de
+código; más aún si queremos cambiar el número a 2147483648; peor
+aún si es un valor que /cambia durante la ejecución del programa/ como
+un valor arbitrario /N/ que el usuario ingrese (no sabemos qué número
+ingresará el usuario de antemano). Una vez escrito el código no hay
+forma de que /pueda cambiar el código en tiempo de ejecución./
+
+Una estructura repetitiva, repetirá cierto código _mientras se cumpla
+una condición_. Así no es necesario escribir 100 líneas de código; más
+aún podemos repetir tantas veces como se necesite /en tiempo de
+ejecución/.
+
+Existen 4 formas diferentes de repetir código con 4 estructuras
+repetitivas, pero todas siguen la misma lógica.
+
+#+CAPTION: Diagrama de flujo de estructura repetitiva general.
+[[../img/icc/while_1.svg]]
+
+Una estructura repetitiva revisa primero si se cumple una condición,
+si *sí* se cumple entonces ejecuta las operaciones que yacen dentro de
+su cuerpo. Si *no* se cumple, simplemente ignora lo que haya dentro de
+su cuerpo y prosigue el programa. No confundir con la estructura ~if~,
+ya que el ~if~ no se repite nunca.
+
+*Nota importante*: En cada vuelta del ciclo, debe haber un cambio en
+los valores a los que se evalúa la condición, ya que si nunca cambia
+la condición, el ciclo se repetirá /infinitamente/ lo cual es un
+/error/ a menos que /es lo que se desee programar/.
+
+Utilizando esta pequeña estructura podemos resolver nuestro problema
+de los 1000 números en 4 líneas. Es importante que quede claro el
+funcionamiento de esta estructura.
+
+#+begin_src java
+  public class Problema1 {
+      public static void main (String[] args){
+  	int i = 0;
+  	while (i < 1000){
+  	    System.out.println(i);
+  	    i = i + 1;
+  	}
+      }
+  }	
+#+end_src
+
+
+Primero, creamos una variable ~i~ con valor ~0~, esto para que
+tengamos un valor /que cambie en cada vuelta del ciclo/.
+#+begin_src java
+  int i = 0;
+#+end_src
+
+Luego, tomando el valor inicial ~i~, verificamos la condición del
+~while~. Claramente si $i=0$ entonces $i < 1000$, por lo que el
+resultado es verdadero *y* ejecuta el código que contiene.
+#+begin_src java
+  while (i < 1000){
+#+end_src
+
+El código es, imprimir la variable ~i~, en este caso 0. 
+#+begin_src java
+  System.out.println(i);
+#+end_src
+
+E _incrementar la variable ~i~ en 1_. Este último paso es de *suma*
+importancia ya que si no hacemos un cambio/incremento en alguna
+variable de la condición, la condición será la misma *y* siempre
+evaluará a /verdadero/ por lo que siempre se ejecutará el código
+dentro del cuerpo y estaremos en un ciclo /infinito/.
+
+#+begin_src java
+  i = i + 1;
+#+end_src
+
+Así, después de esta línea, $i = 1$ y /ya tenemos un cambio en nuestra
+condición/. Luego, termina el cuerpo del ~while~, se vuelve nuevamente
+a la condición y evalúa si $i < 1000$, lo cual claramente es cierto
+porque $1 < 1000$ y se ejecutará nuevamente el código del ciclo.
+
+Eventualmente llegaremos al valor de $i = 1000$, que al evaluar $1000
+< 1000$ nos da falso, así solo imprimiremos hasta el valor 999.
+
+Podemos fácilmente cambiar el valor del límite a 2147483648, o mejor
+aún si el valor del límite /cambia en tiempo de ejecución/, como por
+ejemplo si es la entrada de usuario.
+
+** Estructura while
+
+Esta estructura ya la hemos visto en el problema anterior, su
+funcionamiento es identico al diagrama de flujo. Se necesita de una
+/variable externa/ que cambie la condición en cada repetición y de un
+/cambio u incremento/ para cada ciclo.
+
+#+begin_src java
+  int x = 0;
+  while (x cumpla una condición){
+      ...
+      cambio en x;
+  }
+#+end_src
+
+Normalmente el /while/ se utiliza cuando no sabemos el límite de
+antemano en /tiempo de ejecución/.
+
+** Problema 2: Suma N naturales
+Dado un número por el usuario, sumar los primeros *N* números
+naturales. Ej: Si $N = 100$, entonces
+
+\begin{equation}
+1 + 2 + 3 + \ldots + 98 + 99 + 100 = 5050
+\end{equation}
+
+Lo primero que tenemos que notar es que /vamos a acarrear un número/
+ya que en cada ciclo debemos mantener el valor de la suma guardado. El
+diagrama de flujo correspondiente sería:
+
+[[../img/icc/while_2.svg]]
+
+Notemos que ~suma~ *no* se evalúa en la condición, este trabajo
+corresponde a la variable ~x~. Aprovecharemos el incremento en ~x~
+para obtener los números consecutivos $1, 2, 3 \ldots 98, 99, 100$, y
+sumar el número en cada vuelta a la variable ~suma~ que irá guardando
+las sumas como queremos.
+
+#+begin_src java
+  import java.util.Scanner;
+
+  public class Problema2 {
+      public static void main (String[] args){
+  	Scanner input = new Scanner(System.in);
+
+  	System.out.print("Ingresa hasta qué número sumar: ");
+  	int n = input.nextInt();
+  	input.close();
+
+  	int x = 1;
+  	int suma = 0;
+  	while (x <= n){
+  	    suma = suma + x;
+  	    x++;
+  	}
+  	System.out.printf("La suma de los primeros %i naturales es %i", n, suma);
+      }
+  }
+#+end_src
+
+En el caso que $n = 10$, entonces en el primer ciclo, la condición $x
+\leq n = 1 \leq 10$ evalúa a verdadero, por lo que ~suma~ será la suma
+de $0 + 1$, lo cual ~suma = 1~. Aumentamos ~x~ en uno, entonces $x =
+2$. Repetimos el ciclo y la evaluación; es cierto que $2 \leq
+10$. Entramos al cuerpo y ~suma~ que vale 1, su nuevo valor será la
+suma $1 + 2 = 3$. Aumentamos x en uno y repetimos. Nuevamente, $3
+\leq 10$, por lo que ~suma~ tiene el valor de $3 + 3 = 6$ e incrementa
+$x = 4$ y así sucesivamente hasta tener 55.
+
+*Nota*: Utilizamos la inicialización de $x = 1$ porque estamos sumando
+/empezando/ desde el 1, no desde el 0. Además, utilizamos el $\leq$ y
+no $<$ ya que /también queremos sumar cuando llegamos a N/, y no
+excluir a N, o sea 10 también se suma.
+
+Es muy común ver este tipo de instrucciones en programación. Es fácil
+de entender ya que ~suma = suma;~ deja la variable ~suma~ exactamente
+igual, solo notamos que aumenta adicionalmente en x.
+#+begin_src java
+  suma = suma + x;
+#+end_src
+
+la instrucción
+#+begin_src java
+  x++;
+#+end_src
+
+es exactamente igual a la instrucción:
+#+begin_src java
+  x = x + 1;
+#+end_src
+
+Estamos diciendo lo mismo pero con menos palabras. A esta reducción de
+código también se le conoce como _azúcar sintáctica_.
+
+** Problema 3: Promedio
+
+Dado un número por el usuario, sumar los primeros *N* números naturales y sacar
+el promedio. Ej: $N = 10$ el resultado es
+
+\begin{align*}
+1 + 2 + 3 + \ldots + 9 + 10 &= 55 \\
+&= \frac{55}{10} \\
+&= 5.5
+\end{align*}
+
+** Estructura for
+La estructura con ~for~ es identica lógicamente a la estructura
+~while~, solo que tanto como inicialización, condición e incremento
+van sobre la misma línea. Así no /regamos/ variables en el código.
+
+#+begin_src 
+  for (int x = 0; x cumpla una condición; cambio en x){ ...
+#+end_src
+
+
+Por ejemplo el problema de la suma de los primeros /N/ naturales es:
+#+begin_src java
+  public static void main (String[] args){
+      for (int i = 0; i < 1000; i++) {
+  	System.out.println(i);
+      }
+  }
+#+end_src
+
+Es mucho más compacto y fácil de leer ya que todo lo que necesita el
+ciclo se encuentra en la misma línea.
+
+La estructura ~for~ se utiliza normalmente cuando /ya se sabe el
+límite de la condición/ aunque también puede utilizar valores
+arbitrarios en tiempo de ejecución. _No hay nada que pueda hacer con
+una estructura ~for~ que no pueda hacer con una estructura ~while~_
+
+** Problema 4: Pares
+Crear un programa que dado un número /N/ de usuario, imprima todos los
+números pares de 0 a /N/ (inclusivo). Ej: $N=4$, imprime ~0, 2, 4,~
+
+Se proporciona el diagrama de flujo para ayudar al lector con la
+codificación del mismo.
+
+[[../img/icc/while_3.svg]]
+
+*Nota*: Se puede realizar este mismo ejercicio _sin utilizar un ~if~_
+dentro del ~while~.
+
+** Problema 5: Promedio estaturas
+Crear un programa donde se reciban /N/ estaturas, y luego leer
+cada una de las estaturas por separado. Una vez terminado de leer
+/N/ estaturas, se muestra el promedio de las mismas.
+
+*Hint*: ~Scanner~ dentro del ~for/while~.
+
+** Problema 6: Tablas de multiplicar
+Crea un programa que imprima las tablas de multiplicar del 0 al 10
+del 0 al 13. Por ejemplo la tabla del 1 sería
+
+|-----+-----+-------|
+| $n$ | $m$ | $n*m$ |
+|   1 |   0 |     0 |
+|   1 |   1 |     1 |
+|   1 |   2 |     2 |
+|   1 |   3 |     3 |
+|   1 |   4 |     4 |
+|   1 |   5 |     5 |
+|   1 |   6 |     6 |
+|   1 |   7 |     7 |
+|   1 |   8 |     8 |
+|   1 |   9 |     9 |
+|   1 |  10 |    10 |
+|   1 |  11 |    11 |
+|   1 |  12 |    12 |
+|   1 |  13 |    13 |
+|-----+-----+-------|
+
+** Estructura do-while
+Finalmente, la última estructura de repetición no se utiliza mucho ya
+que puede simularse fácilmente cambiando el orden de la
+condicional.
+
+#+CAPTION: Estructura do-while
+[[../img/icc/do-while.svg]]
+
+Notamos que /antes/ de verificar la condición se ejecutan las
+operaciones que existen dentro del while, lo que implica que un
+/do-while/ siempre se ejecuta al menos una vez.
+
+#+begin_src java
+  do {
+      ...
+  } while (condición);
+#+end_src
+
+** Problema 7: Factorial
+En matemáticas el factorial de un número ($N!$) se define como la
+multiplicación desde 1 hasta ese número. Ej: $N = 10$
+
+\begin{equation}
+1 * 2 * 3 * \ldots * 8 * 9 * 10 = 362880
+\end{equation}
+
+Crea un programa que dada una entrada de usuario calcule el factorial
+de ese número.
+
+*Nota*: Factorial es una función que crece /sumamente/ rápido, por lo
+que para valores mayores a 25, se convierte a complemento a 2 el
+resultado, es decir, negativo. Si queremos obtener todos los dígitos
+debemos utilizar la clase ~BigInteger~.
+
+** Problema 8: Edades
+Escribir un programa donde se ingresen 10 edades aleatorias. Contar
+cuántas edades son /menores/ a 18, y /mayores/ a 50.
+
+** Problema 9: Sucesion
+Escribir un programa que imprima la suma (+sumatoria+) desde $i=0$
+hasta un entero $N$ de $\frac{1}{2^i}$
+
+\begin{equation}
+\sum_{i=0}^{N}{\frac{1}{2^i}}
+\end{equation}
+
+Por ejemplo, para $N=4$, la suma se separa en:
+\begin{equation*}
+\frac{1}{1} + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} = 1.9375
+\end{equation*}
+
+Por si te lo preguntas, cuando $x \implies \infty$, el resultado es 2.
+
+** Problema 10: Contar dígitos
+Crea un programa donde dado /N/ del usuario, nos diga cuántos
+dígitos tiene. /N/ puede ser cualquier número.
+
+*Hint*: Recuerda que los números se escriben en base 10
+\begin{equation}
+5341 = 5 * 10^3 + 3*10^2 + 4*10^1 + 1*10^0
+\end{equation}
+No se permite usar condicionales.
+
+** Problema 11: Primos
+Dado un entero positivo $N \geq 2$  por el usuario, decir si ese número es
+/primo/ o no. Recordemos que $x$ es primo si y solo si para todos los
+números de 2 a $x-1$, $x$ no es divisible por ninguno excepto por 1 y
+sí mismo. 

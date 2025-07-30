@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-17 Thu 09:28 -->
+<!-- 2025-07-29 Tue 22:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Aprende JAVA desde 0</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -195,172 +195,130 @@
 </style>
 </head>
 <body>
-<div id="org-div-home-and-up">
- <a accesskey="h" href=""> UP </a>
- |
- <a accesskey="H" href="../inicio.html"> HOME </a>
-</div><div id="content" class="content">
+<div id="content" class="content">
+<h1 class="title">Aprende JAVA desde 0</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org21b9311">1. Creación de programas en <i>Java</i></a></li>
+<li><a href="#org1d6a0b1">1. Introducción</a></li>
+<li><a href="#org3f8fd57">2. Linux</a></li>
+<li><a href="#orgb29eb38">3. Java Basics</a></li>
+<li><a href="#org487f9c2">4. Introducción a Ciencias de la computación</a></li>
+<li><a href="#orgf63342c">5. Estructuras de datos</a></li>
+<li><a href="#orgcb3db51">6. Criptografía y Seguridad</a></li>
+<li><a href="#org0b44207">7. Graficación por computadora</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org21b9311" class="outline-2">
-<h2 id="org21b9311"><span class="section-number-2">1.</span> Creación de programas en <i>Java</i></h2>
+<div id="outline-container-org1d6a0b1" class="outline-2">
+<h2 id="org1d6a0b1"><span class="section-number-2">1.</span> Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<b>TODOS</b> los programas y aplicaciones son escritos en texto plano
- (abrir bloc de notas y escribir código). Hay algunas aplicaciones
- llamadas <i>IDE</i> que se especializan en facilitar el entorno de trabajo
- de proyectos de cientos de miles de líneas de código.
+Aprende <i>Java</i> desde 0 es una guía desarrollada por una persona <i>que
+no sabía absolutamente nada de programación</i>, inspirado por la
+aplicación <i>Aprende java desde cero</i> de <code>tu.mentor.tutoz</code>
+</p>
+
+
+<p>
+La única forma de aprender a programar es <i>programando</i>, la forma de
+aprender a jugar <i>futbol</i> es <i>jugando futbol</i>, aprender a <i>cocinar</i> es
+<i>cocinando</i>; en general la forma de aprender <i>lo que sea</i> es
+<i>haciendolo</i>.
+</p>
+
+<blockquote>
+<p>
+Lo escuché y lo olvidé,
+lo ví y lo entendí,
+lo hice y lo aprendí.
 </p>
 
 <p>
-Lo que buscamos es poder escribir código sin preocuparnos por el tipo
-de letra o colores y preocuparnos más por el programa que sea rápido,
-resistente a fallos y de resultados correctos. Por lo que <span class="underline">nunca</span>
-usaremos editores de texto como <i>Word</i> o <i>Bloc de Notas</i> ya que estos
-se especializan más en la presentación del texto. Normalmente se usa
-el formato de texto <code>monoespaciado</code> que todos los caracteres ocupan
-el mismo espacio.
+&#x2014; Proverbio Chino
 </p>
+</blockquote>
+
 
 <p>
-En esta guía utilizaremos <b>emacs</b> como nuestro editor de texto ya que
-es con el que se esta escribiendo esta guía.
+Cada tema contiene ejemplos de código los cuales <b>se exhorta a copiar
+línea por línea</b> si es que no se tiene <i>ninguna</i> experiencia con la
+programación, siguiendo con la explicación. No se puede <span class="underline">copiar
+código</span> (Ctrl c, Ctrl v), no se pueden saltar temas y se deben
+realizar <b>TODOS</b> los ejercicios en el orden propuesto. El estudiante
+<b>debe</b> de entender cada tema y poder realizar los ejercicios por su
+propia cuenta. Los ejercicios normalmente no tienen código escrito.
 </p>
+
 
 <p>
-<b>Nota:</b> Es importante estar en la carpeta correcta antes y mientras se
-  cree, compile y ejecute el programa. Puedes usar el comando.
+Cuando ya se tenga un conocimiento de la <i>Programación orientada a
+objetos</i>, se pueden omitir ciertos ejercicios y/o temas. 
 </p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ pwd  
-</pre>
 </div>
-
-<p>
-Para saber cómo moverte de carpeta / crear carpetas <b>desde la
-terminal</b> puedes consultar la parte de <a href="../linux/comandos.html">comandos</a>. Una vez estando en la
-carpeta deseada creamos el archivo con nombre <span class="underline">HolaMundo.java</span>.
-</p>
-
-<p>
-Lo podemos hacer de muchas
-formas. Como abrir nuestro editor favorito de textos y dar en <code>Archivo
-&gt; Nuevo archivo</code> y especificamos el nombre de arriba. Si estamos en
-emacs, podemos usar <code>C-x C-f</code> y seguidamente escribir el nombre de
-archivo, o desde la terminal como
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Crear documento
-</span>$ touch HolaMundo.java
-</pre>
 </div>
-
-<div class="org-src-container">
-<pre class="src src-bash"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">Crear y abrir el documento directamente
-</span>$ emacs HolaMundo.java
-</pre>
+<div id="outline-container-org3f8fd57" class="outline-2">
+<h2 id="org3f8fd57"><span class="section-number-2">2.</span> Linux</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><a href="linux/00_introduccion.html">Introducción a Linux</a></li>
+<li><a href="linux/01_baby_penguin.html">Comandos básicos</a></li>
+</ul>
 </div>
-
-<p>
-Abrimos este archivo con cualquier editor de texto y procederemos a
-anotar lo siguiente, con cuidado y sin que se nos vaya ningún
-símbolo. Los espacios de la izquierda son extremadamente
-importantes. No se te olvide guardar al final el archivo, en <code>emacs</code>
-es con <code>C-x C-s</code>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">HolaMundo</span> {
-
-    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>) {
-        System.out.println(<span style="color: #deb887;">"Hola mundo! :)"</span>);
-    }
-}
-</pre>
 </div>
-
-<p>
-Ya tenemos nuestro primer programa escrito en Java. Es muy <i>simple</i>,
-pero todos empezamos siempre por algo ¿no?
-</p>
-
-<p>
-Como mencionamos anteriormente, la computadora debe traducir este
-<i>idioma</i> a algo que la misma computadora pueda entender. Para esto
-debemos utilizar el compilador de Java (<code>javac</code>) y nos generará un archivo
-binario, exactamente un bytecode que tiene una extensión .class.
-</p>
-
-<p>
-Para compilar el archivo escribimos lo siguiente en la
-terminal.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ javac HolaMundo.java
-</pre>
+<div id="outline-container-orgb29eb38" class="outline-2">
+<h2 id="orgb29eb38"><span class="section-number-2">3.</span> Java Basics</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><a href="./java-basics/00_introduccion.html">Introducción a java</a></li>
+<li><a href="./java-basics/01_instalacion.html">Instalación</a></li>
+<li><a href="./java-basics/02_hello_world.html">Hola mundo!</a></li>
+<li><a href="./java-basics/03_diagramas.html">Diagramas de flujo</a></li>
+<li><a href="./java-basics/04_errores.html">Errores</a></li>
+</ul>
 </div>
-
-<p>
-<code>javac</code> viene de <i>java compiler</i>. Si no tenemos errores de
-"<b>ortografía</b>" (sintáxis o semántica) el compilador debería gener el
-archivo compilado, de lo contrario habría que ver en qué pudimos
-habernos equivocado a la hora de copiar el código de <i>Java</i>.
-</p>
-
-<p>
-Podemos ver la traducción que generó el compilador si utilizamos el
-siguiente comando
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ cat HolaMundo.class
-</pre>
 </div>
-
-<p>
-Nos aparecerá algo que no podemos encontrar ningún sentido, símbolos
-raros que solamente la computadora entiende. <code>cat</code> sirve para mostrar un
-archivo <i>tal cual es internamente</i>. ¿Qué pasa si hacemos <code>cat</code> al
-archivo <code>HolaMundo.java</code>?
-</p>
-
-
-<p>
-Finalmente, ejecutaremos nuestro programa utilizando el ejecutador de
-aplicaciones de java, que es con el comando:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-bash">$ java HolaMundo
-</pre>
+<div id="outline-container-org487f9c2" class="outline-2">
+<h2 id="org487f9c2"><span class="section-number-2">4.</span> Introducción a Ciencias de la computación</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="./icc/00_programacion_secuencial.html">Programación secuencial</a></li>
+<li><a href="./icc/01_condicionales.html">Condicionales</a></li>
+<li><a href="icc/02_condicionales_switch.html">Condicionales++</a></li>
+<li><a href="icc/03_ciclos.html">Ciclos</a></li>
+<li><a href="icc/04_ciclos_infinitos.html">Ciclos++</a></li>
+<li><a href="icc/05_string.html">Strings</a></li>
+<li><a href="icc/06_clases_y_objetos.html">Clases y objetos</a></li>
+<li><a href="icc/07_metodos.html">Métodos</a></li>
+<li><a href="icc/08_encapsulamiento.html">Encapsulamiento</a></li>
+<li><a href="icc/09_colaboracion_de_clases.html">Colaboración de clases</a></li>
+<li><a href="icc/10_herencia.html">Herencia</a></li>
+<li><a href="icc/11_arreglos.html">Arreglos</a></li>
+<li><a href="icc/12_argumentos.html">Argumentos</a></li>
+<li><a href="icc/13_matrices.html">Matrices</a></li>
+</ul>
 </div>
-
-<p>
-En la terminal debería aparecernos un mensaje de <b>Hola mundo</b> que
-escribimos anteriormente en el código; estamos <i>imprimiendo</i> en pantalla el
-texto.
-</p>
-
-<p>
-Lo importante es que quede claro cómo crear, compilar y ejecutar un
-programa. El código como tal será explicado a medida que se vaya
-avanzando en la guía.
-</p>
+</div>
+<div id="outline-container-orgf63342c" class="outline-2">
+<h2 id="orgf63342c"><span class="section-number-2">5.</span> Estructuras de datos</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+</div>
+<div id="outline-container-orgcb3db51" class="outline-2">
+<h2 id="orgcb3db51"><span class="section-number-2">6.</span> Criptografía y Seguridad</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+</div>
+<div id="outline-container-org0b44207" class="outline-2">
+<h2 id="org0b44207"><span class="section-number-2">7.</span> Graficación por computadora</h2>
+<div class="outline-text-2" id="text-7">
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-17 Thu 09:28</p>
+<p class="date">Created: 2025-07-29 Tue 22:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

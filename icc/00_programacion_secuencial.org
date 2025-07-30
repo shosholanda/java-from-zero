@@ -1,3 +1,4 @@
+#+HTML_LINK_HOME: ../inicio.html
 * Programación secuencial
 
 Programar es como escribir un libro. Tiene un inicio, cosas
@@ -27,7 +28,9 @@ es como sigue:
 #+CAPTION: Diagrama de flujo para encontrar las raíces de una ecuación cuadrática
 [[../img/icc/problem01.svg]]
 
-Código
+Podemos ver que el programa sigue un solo camino, no hay bifurcaciones
+por lo que es /secuencial/. Cada algoritmo contiene partes
+secuenciales donde hacen operaciones fijas como fórmulas o funciones.
 
 #+begin_src java
   import java.util.Scanner;
@@ -89,11 +92,20 @@ y potencia
 |---+----+---+---------------------|
 
 
-** Problema 2: Promedio edades
+** Problema 2: El mejor año de tu vida.
+Dicen por ahí, que si sumas tu fecha de cumpleaños, obtendrás el mejor
+año de tu vida. Por ejemplo:
+
+23/09/1998 $\Rightarrow$ $23 + 9 + 1998 = 2030$
+
+Crea un programa que reciba una fecha de nacimiento en /dígitos/ y nos
+diga cuál es el mejor año esperado de ese /cumpleaños/. 
+
+** Problema 3: Promedio edades
 Crear un programa que reciba 5 edades de personas y nos regrese el
 promedio de esas edades.
 
-** Problema 3: Volumen esfera
+** Problema 4: Volumen esfera
 Crear un programa que dado el radio de una esfera, calcule su
 volumen. La fórmula está dada por
 \begin{equation}
@@ -101,7 +113,7 @@ volumen. La fórmula está dada por
 \end{equation}
 
 
-** Problema 4: Interés simple
+** Problema 5: Interés simple
 Crear un programa que calcule el /interés simple/ a partir de los
 parámetros:
 - $C_0$ corresponde a la cantidad inicial
@@ -113,7 +125,7 @@ parámetros:
 \end{equation}
 
 
-** Problema 5: Interés compuesto
+** Problema 6: Interés compuesto
 Crear un programa que calcule el interés compuesto a partir de los
 valores:
 - $C_0$ corresponde a la cantidad inicial
@@ -123,7 +135,7 @@ valores:
  C_f = C_0 (1 + i) ^ n
 \end{equation}
 
-** Problema 6: Distancia entre 2 puntos
+** Problema 7: Distancia entre 2 puntos
 Crear un programa que dadas 2 coordenadas en el plano cartesiano
 $(x_1, y_1), (x_2, y_2)$ nos de la distancia que hay entre estos dos puntos
 
