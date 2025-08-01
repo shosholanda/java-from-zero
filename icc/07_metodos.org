@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Métodos y tipos de retorno
+#+TITLE: Métodos y tipos de retorno
 
 Hasta ahora, sabemos que un objeto cumple con
 
@@ -25,7 +25,7 @@ tener un método. Por ahora solo utilizaremos el tipo de acceso como
 ~public~, pero veremos más adelante las otras dos variaciones. *Todos
 los métodos, al igual que las variables empiezan con minúscula.*
 
-** Static vs NO Static
+* Static vs NO Static
 
 El método ~main()~ lo hemos escrito como
 
@@ -85,7 +85,7 @@ provea la clase que no necesite de un objeto previo.  En la clase
 ~Math~ se utilizan varios métodos estáticos como ~Math.random()~ o
 ~Math.sqrt()~ ya que son funciones generales.
 
-** Parámetros y argumentos de un método
+* Parámetros y argumentos de un método
 
 Muchas veces, un método necesita información extra para poder realizar
 el algoritmo. Un método recibe estos datos en medio de los ~()~ que
@@ -149,7 +149,7 @@ por referencia/ que literalmente /pasa el lugar donde se encuentra/ el
 valor, y si cambia /internamente/ $a$, también cambia el valor $n_1$
 /fuera de ese método/. Java es totalmente team /paso por valor/.
 
-** Tipos de regreso
+* Tipos de regreso
 Casi todos los métodos, regresan un valor. Por la definición de
 algoritmo, hay una entrada (argumentos) y una salida (return). En un
 lenguaje como ~C~, incluso el mismisimo método ~main~ tiene valor de
@@ -283,7 +283,7 @@ utilizar para /cambiar el estado/ del programa, /asignar variables/ o
   System.out.println();
 #+end_src
 
-
+* Problemas
 ** Problema 1: Calculadora
 
 Complementa el ~Programa1~ con las siguientes operaciones aritméticas:

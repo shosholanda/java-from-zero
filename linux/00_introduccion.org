@@ -1,10 +1,10 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Introducción a Linux
+#+TITLE:Introducción a Linux
 
 Linux es el sistema operativo /por excelencia/ de los programadores,
 por lo que debes de aprender desde hoy mismo.
 
-** ¿Qué es linux?
+* ¿Qué es linux?
 Linux es un /sistema operativo/ así como Windows y Mac OS bajo la
 licencia de /GNU/, que básicamente es lo mejor que te pasará en tu
 vida y te explicaremos por qué.
@@ -49,7 +49,7 @@ muchos soportes para /videojuegos/ y programas ejecutables en
 En esta carrera, usar Linux es /pan de cada día/, ya que utilizamos la
 programación como una herramienta más para nuestra carrera.
 
-** ¿Por qué usar Linux?
+* ¿Por qué usar Linux?
 
 La principal razón importante es porque *no somos usuarios de
 la computadora*, somos *_los que dominan las computadoras_*. Un /hacker/
@@ -80,12 +80,12 @@ Al final del día, es tu decisión, ¿en qué vas a invertir tu tiempo a
 futuro?, ¿seguir con lo mismo o /conocer más alla de lo que te puedas
 imaginar/?. 
 
-** Historia de Linux
+* Historia de Linux
 Tal vez nunca veas esto nunca, pero es interesante entender cómo es
 que surgió la idea de tener una computadora. Te cuento la historia
 como un cuento.
 
-*** 1939
+** 1939
 Todos sabemos que existió una segunda guerra mundial; suena aburrido,
 pero el hecho de tener una /guerra/ es algo que nos afecta a
 todos. Hoy en día se habla de una /tercera guerra/ con el problema de
@@ -99,7 +99,7 @@ una clave casi imposible de descifrar. /Casi imposible/ porque sí fue
 posible, gracias al primer computólogo y padre de las Ciencias de la
 computación /Alan Turing/; me pregunto si los chocolates son en su honor.
 
-*** 1940
+** 1940
 Alan turing tenía la idea de que una /máquina/ puede ganarle a otra
 /máquina/ por lo que este genio desarrolló primero /una máquina
 teórica/ conocida como /Máquina de turing/ para después implementarla
@@ -115,15 +115,14 @@ pero sin duda una de las mentes maestras de este siglo.
 
 [[https://drive.google.com/file/d/1djUGb6SvDZqzL1ZwPkioQOTUBrlZA1sg/view?usp=sharing][*Aquí*]] puedes ver la película sobre Turing
 
-*** 1969
+** 1969
 Después de que Turing dejara el camino trazado sobre esta nueva área
 del conocimiento, muchas universidades, empresas y personas creaban
 sus propios /sistemas operativos/. Fue hasta este año donde se
 /unifica/ el código para que sea /portable/, creando así el sistema
 *UNIX*, que después de él seguirían muchas más versiones.
 
-
-*** 1989
+** 1989
 Richard Stallman, fue un hacker y activista de su tiempo. El creía que
 un programador /debía poder/ modificar software a su convenciencia, ya
 que eventos como /bloqueaar el acceso a la impresora de su escuela/ o
@@ -136,7 +135,7 @@ software donde nadie es dueño del código y a la vez de todos. Su
 tirada principal fue hacer una versión de /UNIX/ con esta licencia,
 junto con otro grupo de /hackers/, clonando el programa en sí.
 
-*** 1991
+** 1991
 No fue hasta este año que el famoso /Pinguino/ Linus Torvalds, un
 estudiante filandes crea su /kernel/ basado en /UNIX/ para un sistema
 operativo que el llamó *Linux*. Ya tenían un sistema operativo que
@@ -161,7 +160,7 @@ dos personajes, hoy en día estudiar computación costaría demasiado,
 como cuesta software de diseño como /Autocad, Adobe/ o /Microsoft
 Office*/.
 
-** Actualidad
+* Actualidad
 
 Hoy en día, maś del 90% de dispositivos electrónicos corren una
 /versión/ de linux

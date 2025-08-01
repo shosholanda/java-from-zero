@@ -1,14 +1,11 @@
 #+HTML_LINK_HOME: ../inicio.html
-# #+HTML_LINK_UP: ../
-
-* Introducción a Java
+#+TITLE:Introducción a Java
 
 Antes de empezar a programar, es escencial entrar en contexto, ya que
 esta información no se volverá a repetir por el resto de la guía (o el
 resto de sus vidas).
 
-
-** ¿Qué es Java?
+* ¿Qué es Java?
 Java es un *lenguaje de programación* /orientado a objetos/ reado en
 1995 por *Oracle*. Es usado por más de 3,000,000,000 de dispositivos
 como:
@@ -27,8 +24,7 @@ Así como del latín nació el español, /Java/ fue creado e inspirado en
 multiplataforma que quiere decir que se puede ejecutar en cualquier
 sistema operativo gracias a la *JVM* (Java Virtual Machine).
 
-
-** ¿Qué es un lenguaje de programación?
+* ¿Qué es un lenguaje de programación?
 
 Un lenguaje de programación es un /idioma/ que nos permite
 comunicarnos de una manera más fácil con la computadora; mientras más
@@ -63,8 +59,7 @@ de manera muy rápida implica que es /inteligente/ lo cual es una obvia
 equivocación ya que las computadoras solo siguen algoritmos y no
 sienten.
 
-
-** ¿Qué es la /programación orientada a objetos/?
+* ¿Qué es la /programación orientada a objetos/?
 
 Este es un concepto que irá quedando más claro conforme vayas
 avanzando en esta guía. Por lo mientras puedes imaginarlo como: meter

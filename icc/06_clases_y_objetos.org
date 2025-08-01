@@ -1,7 +1,7 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Clases y objetos
+#+TITLE: Clases y objetos
 
-** Definición de POO
+* Definición de POO
 
 Recordemos que la programación orientada a objetos se basa en abstraer
 objetos del mundo real (o no) a valores procesables por una
@@ -21,7 +21,7 @@ su comportamiento en /métodos/, así es mucho más fácil leer y entender
 secciones de código, divididos en métodos que si todo estuviera en el
 ~main~.
 
-** Definición de Objeto
+* Definición de Objeto
 
 La definición de /objeto/ es la siguiente.
 
@@ -40,7 +40,7 @@ definen /a través de una clase/, y se /añaden/ al objeto cuando este
 existe. Cada objeto tendrá sus propios valores, pero compartirán la
 misma categoría con sus similares.
 
-** Clase vs Objeto
+* Clase vs Objeto
 
 Todo esto es muy teórico, veamos un objeto práctico. Piensa por un
 momento en el concepto de /persona/. Trata de visualizarlo en tu
@@ -76,7 +76,7 @@ Similarmente, una clase en /Java/ solo define /atributos/ y /métodos/.
 Y aterriza estos atributos creando o /instanciando/ el objeto con el
 operador ~new~ donde no queda duda de quíen o qué es el objeto.
 
-** Personificando objetos
+* Personificando objetos
 
 /Java/ nos permite crear nuestros propias clases para poder crear
 nuestros propios objetos que pueden hacer /cualquier cosa que
@@ -286,6 +286,7 @@ Es de suma importancia que queden claro el concepto de /clase/ y
 /objeto/ ya que es la base de toda la /programación orientada a
 objetos/.
 
+* Problemas
 ** Problema 1: Triangulo
 Crear una clase que, carge los lados de un triángulo a través de un
 método ~inicializar()~. Además, debe imprimirse los atributos del
@@ -327,7 +328,7 @@ Crear una clase que incluya el siguiente comportamiento:
 + Imprimir área
 
 ** Problema 4: Calculadora
-Crear un programa que cargue 2 valores decimales. Luego, imprimir:
+Crear una clase que cargue 2 valores decimales. Luego, imprimir:
 + suma
 + diferencia (valor absoluto de la resta)
 + multiplicación

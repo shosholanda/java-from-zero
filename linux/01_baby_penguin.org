@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Comandos básicos
+#+TITLE:Comandos básicos
 
 Usar /Linux/ se traduce en /usar la terminal/. La terminal es una
 /interfaz de usuario/ que es la conexión directa entre un /usuario/ y
@@ -28,7 +28,7 @@ Muchas distribuciones usan la combinacion de teclas ~Ctrl Alt t~ para
 abrir un nuevo shell; si no simplemente busca en las aplicaciones algo
 como /Terminal, Console, Shell/, un cuadro negro. Abrelo.
 
-** Salida estándar
+* Salida estándar
 
 Tenemos la terminal abierta, y tenemos algo como
 
@@ -74,7 +74,7 @@ podemos copiar, pasar a otros programas, guardar como TXT etc.
 A continuación más /salida estandar/. Ingresa los siguientes comandos
 en tu terminal.
 
-*** echo
+** echo
 ~echo~ responde con el mismo mensaje que le pasemos.
 
 #+begin_src bash
@@ -83,7 +83,7 @@ en tu terminal.
 
 Intenta cambiar el texto entre comillas.
 
-*** top
+** top
 ~top~ nos da información del uso de la memoria de nuestra computadora,
 y es un poco arcaica.
 
@@ -95,21 +95,20 @@ Existe una versión mejorada de este /administrador de tareas/ conocido
 como ~htop~. Es posible que debas instalarlo. Para salir de este
 /programa/ solo debes apretar la tecla ~q~
 
-
-*** df
+** df
 ~df~ nos muestra el espacio usado de nuestras particiones
 #+begin_src bash
   $ df
 #+end_src
 
-*** ip addr
+** ip addr
 ~ip addr~ nos muestra el estado de nuestras interfaces de red así como
 nuestra dirección IP si es que estamos conectados a internet.
 #+begin_src bash
   $ ip addr 
 #+end_src
 
-*** clear
+** clear
 A veces, queremos /limpiar/ nuestra terminal porque ya se llenó el
 espacio. ~clear~ nos deja el cursor en la primera línea de la
 terminal, listo para volver a escribir.
@@ -120,7 +119,7 @@ terminal, listo para volver a escribir.
 
 Otro atajo de teclado es con la combinación de teclas ~Ctrl l~
 
-*** tabulador
+** tabulador
 Muchas veces queremos ahorrar el tiempo de escribir comandos.  por
 ejemplo ~clear~ podemos escribir solamente ~cle~ y apretar la tecla
 ~TABULADOR~ para poder /completar el comando/. 
@@ -137,7 +136,15 @@ ejemplo podemos simplemente poner la primera letra como
 y nos aparecerán los comandos que empiecen con ~y~. Intenta para cada
 letra del abecedario.
 
-*** AYUDA
+** history
+/history/ nos muestra los últimos 2000 comandos ejecutados en esta
+terminal. Es útil para poder reescribir comandos que ya habíamos usado antes.
+
+#+begin_src bash
+  $ history
+#+end_src
+
+** AYUDA
 Muchas veces se nos olvida cómo /funciona/ un comando; supongamos que
 es ~top~ Tenemos 3 opciones.
 
@@ -158,7 +165,7 @@ es ~top~ Tenemos 3 opciones.
 
 Recuerda que todo lo que aparezca en la pantalla como respuesta es /salida estándar/.
 
-** Sistema de archivos
+* Sistema de archivos
 Si hay terminal, hay carpetas. Siempre /vamos a estar/ dentro de una
 carpeta. Navega desde la interfaz gráfica con el mouse al explorador
 de archivos y, cuando estés en /Escritorio/ da click con /botón
@@ -168,15 +175,14 @@ derecho/ y /abrir en terminal/. Deberás tener algo como.
 <pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~/Escritorio</b></font>$</pre>
 #+end_export
 
-
-*** pwd
+** pwd
 /print working directory/ nos dice la ruta /real/ de la carpeta
 en donde estamos.
 #+begin_src bash
   $ pwd
 #+end_src
 
-*** cd
+** cd
 /change directory/ nos cambia de directorio a la ruta específicada.
 
 #+begin_src bash
@@ -208,7 +214,7 @@ donde esta la práctica1 (en orden jerárquico)
 
 ~cd~ es de los comandos que usaras /diario/, te acostumbrarás rápido.
 
-*** ls
+** ls
 /list directory contents/ nos muestra los contenidos de la carpeta, ya
 sean más carpetas o archivos.
 
@@ -226,7 +232,7 @@ listing, all, human readable/
 
 También de los comandos de cada día. Es hora de crear cosas.
 
-*** mkdir
+** mkdir
 /make directory/ crea un directorio con el nombre que le pasemos.
 #+begin_src bash
   $ mkdir linux
@@ -267,8 +273,7 @@ carpeta ~~/Documentos/~
 
 #+end_example
 
-
-*** tree
+** tree
 como su nombre lo indica, es ~ls~ pero en un formato de árbol
 jerárquico. Puede ser que tengas que instalarlo, pero es un comando
 extremadamente útil; genera el árbol del ejercicio.
@@ -277,7 +282,7 @@ extremadamente útil; genera el árbol del ejercicio.
   $ tree
 #+end_src
 
-*** touch
+** touch
 ~touch~ crea archivos de cualquier tipo, normalmente /archivos de
 texto/. Al igual que las carpetas, si necesitamos espacios lo
 escribimos "entre comillas".
@@ -288,7 +293,7 @@ escribimos "entre comillas".
 
 Si tratamos de abrirlo estará vacío. 
 
-*** redireccionamiento
+** redireccionamiento
 Muchas veces es necesario /guardar/ la salida de un comando, por
 ejemplo ~df~. Podríamos ejecutar el comando, /seleccionar con el
 mouse/ la salida que querramos, crear un archivo con ~touch~, abrir un
@@ -328,7 +333,7 @@ el mismo archivo /informacion sistema.txt/ uno debajo del otro.
 + ls -lah
 + tree
 
-*** cat
+** cat
 /concatenate files and print/ muestra los contenidos de un archivo
 *tal cual es internamente.*
 
@@ -344,11 +349,11 @@ simple el funcionamiento del sistema operativo. Los símbolos raros son
 exactamente /bytes/ ya que una imagen no se representa por letras,
 sino por /bytes/ y es la representación más cercana que se tiene.
 
-** Administracion de archivos
+* Administracion de archivos
 Ya sabemos crear archivos y directorios; veremos cómo operar sobre
 ellos con /mover, copiar y eliminar/ archivos y directorios.
 
-*** cp
+** cp
 /copy/ copia los archivos de la ruta $A$ a la ruta $B$
 
 #+begin_src bash
@@ -385,8 +390,7 @@ en ~~/Imagenes~ que se llame /Descargadas/, luego crea una carpeta
 descargada a su respectiva carpeta. *No puedes utilizar para nada el
 mouse* solo para descargarlas de internet.
 
-
-*** mv
+** mv
 /move/ mueve rutas de la ruta $A$ a la ruta $B$. A diferencia de ~cp~
 que crea duplicados, ~mv~ elimina el archivo original, es como un
 /cortar y pegar/.
@@ -406,8 +410,7 @@ texto "entre comillas".
 *Ejercicio*: Renombra todos las imagenes que descargaste y moviste a
 un nombre más /descriptivo/.
 
-
-*** rm
+** rm
 /remove/ elimina el archivo para siempre /sin confirmacion
 alguna/. Ten mucho cuidado si no estas seguro de eliminarlo ya que no
 habrá forma de recuperarlo.
@@ -430,7 +433,7 @@ siempre se guarda* a menos que /ya no se quiera para nunca más/.
 ubicación, luego elimina la original utilizando ~rm~. *No puedes
 utilizar para nada el mouse*.
 
-** Filtros
+* Filtros
 Los filtros ~|~ (en ingles /pipe/) sirven para reenviar la salida de un
 programa *a otro programa*.  A diferencia del redireccionamiento ~>~
 que reenvia la salida /a un archivo final/. Es muy útil para hacer
@@ -438,7 +441,7 @@ tareas rápidas. Como seguramente no tengamos nada en nuestra
 computadora de archivos o algo, vamos a necesitar escribir *texto
 procesable*
 
-*** nano
+** nano
 ~nano~ es un editor de textos /extremadamente básico/ que se apoya de
 la línea de comandos y será util para ejemplificar los filtros; más
 adelante veremos /Emacs/ que es el último editor de textos que usarás,
@@ -495,7 +498,7 @@ And no man see me more.
 		-- Shakespeare
 #+end_example
 
-*** pipe
+** pipe
 ~|~  se utiliza para pasar información de un programa a otro. Su forma
 general es como sigue
 
@@ -506,7 +509,7 @@ general es como sigue
 Si ~origen~ produce /salida estandar/ esta será *entrada estándar* del
 comando ~destino~.
 
-*** sort
+** sort
 ~sort~ es un comando que ordena /líneas de texto/ alfabéticamente e
 *imprime* el texto ordenado. Podemos ejecutarlo sobre el archivo de
 texto que creamos anteriormente como
@@ -528,7 +531,7 @@ que ~sort~ ordene las líneas de texto; por lo que los dos comandos
 /son equivalentes/. A su vez, la salida de ~sort~ lo podemos usar en
 otro programa como ~wc~. 
 
-*** wc
+** wc
 /word count/ nos cuenta cuantos caractéres o líneas hay en un
 archivo.
 
@@ -554,7 +557,7 @@ líneas tiene el texto /después de haber ordenado/ con ~sort~ tipo
 Recuerda que la información se pasa de un comando a otro a través del
 ~|~ 
 
-*** grep
+** grep
 ~grep~ nos busca una palabra clave dentro de una salida estándar. Por
 ejemplo, el comando ~ip addr~ saca muchas cosas, pero solo queremos la
 dirección IP.
@@ -574,7 +577,7 @@ En nuestro poema podemos encontrar todas las líneas que contengan
   $ cat texto.txt | grep "ll"
 #+end_src
 
-*** uniq
+** uniq
 
 ~uniq~ nos da una serie de líneas /únicas/ que no se repiten.  Es muy
 útil creando diccionarios.
@@ -583,8 +586,7 @@ En nuestro poema podemos encontrar todas las líneas que contengan
   $ cat texto.txt | sort | uniq 
 #+end_src
 
-
-*** Ejercicio
+** Ejercicio
 Todos alguna vez hemos jugado /Basta!/. Consiste en llenar una tabla
 donde cada fila debe ser un sustantivo empezando con cierta letra, por
 ejemplo si toca la /a/, un juego de basta quedaría como.
@@ -622,8 +624,7 @@ txt para cada columna/.
 ¿Qué hace el comando anterior? Respuesta al pie de página [fn:0]
 
 
-
-*** find
+** find
 ~find~ es un comando muy poderoso para poder encontrar /archivos/ o
 /carpetas/ de manera rápida sin utilizar una interfaz gráfica. Debemos
 specificar en qué ruta, tipo de archivo y nombre.
@@ -666,27 +667,26 @@ Respuesta al pie de página [fn:1]
 
 Respuesta en [fn:2]
 
-
-** Procesos
+* Procesos
 Vimos anteriormente que con ~top~ podemos ver los programas que están
 corriendo en la computadora. Muchos de estos /procesos/ están
 corriendo en segundo plano, o en primer plano. Es un evento canónico
 que vean que su programa /no termine/ y se quede en un ciclo
 infinito. En /Linux/ podemos *matar* procesos. Veamos un ejemplo
 
-*** yes
+** yes
 ~yes~ es un comando que imprime /infinitamente/ y.
 
 #+begin_src bash
   $ yes
 #+end_src
 
-*** Ctrl C
+** Ctrl C
 
 Para matar un proceso /dentro del proceso/ usamos la combinación de
 teclas ~Ctrl C~. Mata a ~yes~
 
-*** Ctrl Z
+** Ctrl Z
 
 Por otra parte, podemos /pausar/ procesos, si utilizamos la
 combinación de teclas ~Ctrl Z~. Manda a dormir a ~yes~
@@ -697,7 +697,7 @@ y
 [1]+  Stopped                 yes
 #+end_example
 
-*** fg y bg
+** fg y bg
 
 En este estado el programa esta /durmiendo/. Podemos despertarlo de 2
 maneras:
@@ -728,13 +728,13 @@ estamos usando la terminal.
 Supenderlo significa /minimizar/ el programa, pudiendo hacer más cosas
 en la terminal teniendo /pausado/ el ~nano~
 
-*** sleep
+** sleep
 ~sleep~ pausa el programa por /N/ cantidad de segundos
 #+begin_src bash
   $ sleep 10
 #+end_src
 
-*** &
+** &
 Podemos enviar directamente un programa a dormir utilizando ~&~, en
 lugar de ejecutarlo, oprimir ~Ctrl z~ y luego ~bg~
 
@@ -746,7 +746,7 @@ Que significa, ejecuta el proceso /sleep/ en segundo plano. El
 programa /sleep/ seguirá ejecutandose hasta terminar con la ventaja de
 que podemos seguir usando la terminal.
    
-*** jobs
+** jobs
 
 ~jobs~ nos muestra los procesos que hemos dormido.
 
@@ -762,7 +762,7 @@ Por ejemplo si queremos despertar ~yes~, utilizamos ~fg~ con 2
   $ fg 2
 #+end_src
 
-*** ps
+** ps
 /process snapshot/ nos da información de los procesos en formato de
 lista. Teniendo los trabajos de /nano/ y /yes/ dormidos, ejecutarlo
 nos da.
@@ -794,7 +794,7 @@ de /everything/
   $ ps -e | grep nano 
 #+end_src
 
-*** kill
+** kill
 Finalmente, podemos matar procesos más alla de nuestra terminal
 utilizando ~kill~ ya que ~Ctrl C~ se limita a solo /procesos
 ejecutados en primer plano en la terminal actual/.
@@ -807,13 +807,13 @@ ejecutados en primer plano en la terminal actual/.
 finalizar programas /atascados/ como ~yes~ o que no responden. Mata a
 ~nano~ y ~yes~.
 
-** Permisos
+* Permisos
 Para poder un entendimiento básico de /linux/ es necesario ver su
 sistema de permisos ya que esto hace /Linux/ superior a otros sistemas
 operativos como /Windows/ y no necesita de /antivirus/. Tenemos 3
 personajes con 3 tipos de permisos que se pueden combinar de cualquier forma
 
-*** ugo
+** ugo
 
 En /UNIX/ tenemos 3 tipos de personajes para manipular achivos.
 
@@ -834,9 +834,7 @@ Cada personaje es importante para la delegación de permisos; que
 básicamente son las *acciones* que puede hacer uno de estos 3
 personajes en archivos.
 
-
-*** rwx
-
+** rwx
 En /UNIX/ tenemos 3 tipos de acciones sobre un archivo:
 
 1. /read/: Leer los contenidos de un archivo.
@@ -857,8 +855,7 @@ así solo *yo* puedo modificar mis fotos y los demás solo pueden
 /verlas/.
 
 Desactivar un permiso de /rwx/ se denota con ~-~
-
-*** chmod
+** chmod
 
 /change file mode bits/ cambia los permisos de los personajes con sus
 respectivas acciones.
@@ -969,7 +966,7 @@ Que significa, para el /user/ da permiso de 6 /read, write/. para
 
 Recuerda, la palabra clave hoy es ~ugo+rwx~.
 
-*** sudo
+** sudo
 
 ~sudo~ es un /grupo de usuarios/ que permite elevar
 privilegios. Nuestra terminal es más como
@@ -1017,18 +1014,19 @@ Aquí una lista de programas recomendados que debes instalar y probar:
 4. neofetch
 5. htop
 6. ssh
-7. brave
-8. flatpak
-9. fortune
-10. toilet
+7. command-not-found
+8. brave
+9. flatpak
+10. fortune
 11. cowsay
-12. 2048
-13. oneko
-14. net-tools
-15. python3-pip
-16. okular
+12. toilet
+13. 2048
+14. oneko
+15. net-tools
+16. python3-pip
+17. okular
 
-*** root
+** root
 
 Finalmente, ~root~ es el usuario /más poderoso/ que siempre existe en
 cualquier sistema /UNIX/. Este tipo de usuario puede modificar
@@ -1056,14 +1054,14 @@ Notamos que estamos como usuario ~root~ en la máquina ~ubuntu~ y el
 símbolo final ha cambiado a ~#~ que justamente significa: permisos de
 /superusuario/.
 
-*** exit
+** exit
 
 Para salir del modo /root/ escribimos ~exit~, o más en general, para
 terminar /cualquier programa/ que esté recibiendo una entrada (una
 terminal está recibiendo una entrada tambien) usamos ~Ctrl D~ que en
 sistemas /UNIX/ significa *fin de línea*.
 
-** Bash
+* Bash
 
 Bash es un /lenguaje de programación/ por lo que podemos crear
 algoritmos y scripts. Los scripts *deben* tener el permiso de
@@ -1139,7 +1137,70 @@ el sistema de archivos/ y luego el /Wi-fi/ por ejemplo. Obviamente
 esto requiere de más conocimientos; solo debes saber que este es el
 lenguaje de /linux/.
 
+* Otros comandos
 
+Algunos comandos importantes que nunca se ven pero facilitan la vida
+al 1000% en la terminal.
+
+1. ~Ctrl R~  abre un buscador de comandos, solamente escribimos alguna
+   palabra clave del mismo y si /hay coincidencias/ lo pone completo.
+
+   Es equivalente /un poco/ a poner el siguiente comando.
+   #+begin_src bash
+     $ history | grep "comando"
+   #+end_src
+2. ~Ctrl P~ o /fecha hacia arriba/ nos muestra el último comando
+   escrito. Si seguimos pulsando las teclas nos dará comandos
+   anteriores en orden.
+3. ~Ctrl Shift C~ /copia/ una seleccion de la terminal, ya que ~Ctrl
+   C~ es el comando para /matar/ procesos.
+4. ~Ctrl Shift V~ /pega/ algo previamente copiado en la terminal ya
+   que ~Ctrl V~ no hace nada.
+5. ~alias~ define un comando como otro comando. Es útil para no
+   escribir /todo el comando/.
+   #+begin_src bash
+     $ alias ll="ls -lah"
+   #+end_src
+   Así cada vez que ejecutemos ~ll~, se ejecutará ~ls -lah~. La
+   desventaja es que al reinciar la computadora se pierden estos
+   ~alias~. Para que perdure a pesar de un reinicio, debemos de
+   escribirlo al final del archivo ~~/.bashrc~, lo abrimos con ~nano~
+   o lo que sea.
+   #+begin_src bash
+     # ~/.bashrc: executed by bash(1) for non-login shells.
+     # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+     # for examples
+
+     # If not running interactively, don't do anything
+     case $- in
+         ,*i*) ;;
+         ,*) return;;
+     esac
+
+     alias ll="ls -lah";
+   #+end_src
+
+   Podemos definir cualquier comando, por ejemplo ~alias
+   apagar="shutdown --halt now"~
+6. ~Ctrl D~ es fin de línea, lo que significa que /terminamos/ una
+   entrada. por ejemplo
+   #+begin_export html 
+   <pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~/Documents/Proyectos/java-from-zero</b></font>$ wc -w
+   Vamos a contar                             
+   cuantas palabras
+   tiene este texto.
+   [Ctrl D]
+   8
+   </pre>
+   #+end_export
+   
+7. /Navegación/.
+   Podemos navegar con el cursos adelantando por palabra, eliminando,
+   incluso eliminar toda la linea /sin utilizar/ las flechas de
+   navegación. El /95%/ de navegación en terminal es navegeación de
+   *emacs*. Si aprendes a navegar en *emacs*, navegar en la terminal
+   es extremadamente fácil.
+   
 * Footnotes
 
 [fn:0] Concatena /todos/ los archivos /.txt/ en una sola salida

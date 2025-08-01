@@ -1,0 +1,1495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-31 Thu 23:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">Emacs</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3349b57">1. Instalación</a></li>
+<li><a href="#orgb80a1db">2. C, M</a></li>
+<li><a href="#org9cbb1dd">3. Básico</a></li>
+<li><a href="#orge073952">4. Archivos.</a>
+<ul>
+<li><a href="#org74e7e18">4.1. Abrir/crear archivos</a></li>
+<li><a href="#org5766853">4.2. Guardar archivos</a></li>
+</ul>
+</li>
+<li><a href="#orgafb9c2c">5. Navegacion</a>
+<ul>
+<li><a href="#org428c114">5.1. Por caracter</a></li>
+<li><a href="#org6b0606f">5.2. Por palabra</a></li>
+<li><a href="#org59841ee">5.3. Inicio, fin y a línea</a></li>
+<li><a href="#org61cba0e">5.4. Scrollear</a></li>
+</ul>
+</li>
+<li><a href="#org3448c03">6. Edicion de texto</a>
+<ul>
+<li><a href="#orga3f0183">6.1. Deshacer accion.</a></li>
+<li><a href="#org8b409ba">6.2. Seleccionar texto</a></li>
+<li><a href="#org790d16a">6.3. Cut, copy paste</a></li>
+<li><a href="#org4a7e74e">6.4. Eliminacion adelante y atrás</a></li>
+<li><a href="#org691a987">6.5. Buscar y reemplazar</a></li>
+</ul>
+</li>
+<li><a href="#org19cdeb9">7. Ventanas /Buffers</a>
+<ul>
+<li><a href="#orgff0fad7">7.1. Dividir ventana</a></li>
+<li><a href="#org487ce2a">7.2. Cambiar de ventana</a></li>
+<li><a href="#org9867002">7.3. Minimizar / Maximizar ventana</a></li>
+<li><a href="#org8f287aa">7.4. Buffers</a></li>
+</ul>
+</li>
+<li><a href="#orgd981ec2">8. Otros comandos</a></li>
+</ul>
+</div>
+</div>
+<p>
+<i>Emacs</i> (tambien conocido como <i>GNU Emacs</i>) es un gran editor de
+<i>texto</i> que si lo usas bien, no necesitarás ninguno otro. Emacs fue
+creado por <i>Richard Stallman</i> el creador de licencia GNU y está tan
+completo que por más de 30 años se ha mantenido firme frente a todos
+los avances tecnológicos. Y tiene mucho que dar.
+</p>
+
+<p>
+La única desventaja es que <i>es un poco</i> dificil de aprender en un
+inicio, ya que <b>todo</b> se hace utilizando el teclado, a diferencia de
+otros editores como <i>VSCode</i> o <i>NetBeans</i> que necesitan utilizar el
+mouse. Como todo, no necesitas <i>entenderlo todo</i> pero sí debes tener
+en cuenta que <code>emacs</code> puede.
+</p>
+
+<ol class="org-ol">
+<li>Abrir correo electrónico</li>
+<li>Usarse en servidores sin <i>GUI</i>.</li>
+<li>Compilar código</li>
+<li>Abrir terminales</li>
+<li>Consultar calendario</li>
+<li>Tiene un chat bot, tipo <i>chat gpt</i> antiguo</li>
+<li>Crear agendas, eventos</li>
+<li>Personalizar el editor a niveles inimaginales</li>
+<li>Definir <i>macros</i> para tareas repetitivas</li>
+<li>Por supuesto <b>editar código</b></li>
+<li><i>Jugar</i></li>
+<li>Y muchas cosas más que no caben aquí.</li>
+</ol>
+
+
+<p>
+Además de que es <i>extremadamente</i> ligero, y no requiere de gráficos
+avanzados o <i>Memoria RAM</i> como VSCode, que parece Google Chrome; un
+consumidor de RAM sin propósito.
+</p>
+
+<p>
+En este manual veremos los comandos más básicos para que puedas
+utilizarlo y poder programar desde <code>emacs</code> tus primeros programas en
+Java. No necesitas aprenderte todo en un día, con la práctica iras
+adquiriendo la habilidad <i>en tus manos</i> para poder dominar el teclado
+de una forma que no te imaginas.
+</p>
+<div id="outline-container-org3349b57" class="outline-2">
+<h2 id="org3349b57"><span class="section-number-2">1.</span> Instalación</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Como cualquier otro programa en <i>UNIX</i>, se instala desde la terminal
+conectado con el repositorio de software libre como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ sudo apt install emacs
+</pre>
+</div>
+
+<p>
+Si usas otra distribución puede ser que cambie, pero la idea es la
+misma. Te pedirá contraseña para poder instalarlo. Una vez que termine
+puedes ejecutar <code>emacs</code>; o simplemente de la lista de tus aplicaciones
+puedes abrirlo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ emacs  &amp;
+</pre>
+</div>
+
+<p>
+<i>Recuerda que</i> <code>&amp;</code> es equivalente a hacer <code>emacs</code> luego <code>Ctrl Z</code> y
+luego <code>bg</code>. Por propósitos de practicidad, utilizaremos <i>este</i> mismo
+repositorio como ejemplo; por lo que estaremos parados en la carpeta
+<code>/java-from-zero/</code>
+</p>
+
+<p>
+Finalmente, si queremos abrir emacs desde la terminal y sin <i>interfáz
+gráfica de usuario</i> ejecutamos emacs con <i>no-window</i>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ emacs -nw 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb80a1db" class="outline-2">
+<h2 id="orgb80a1db"><span class="section-number-2">2.</span> C, M</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+En emacs hay 2 teclas <i>sumamente</i> importantes, una es <code>C</code>, que refiere
+a la tecla <code>Ctrl</code> o <i>Control</i> (de la izquierda); y la <code>M</code> refiere a la
+tecla <code>Alt</code> o <i>Meta</i>. Cada tecla que pulsemos <i>entrará al editor</i>, por
+lo que para <i>dejar de escribir y hacer otra acción</i> utilizamos estas 2
+teclas especiales, que son una tipo <i>pausa</i> a la edición y realizas
+otras acciones como pegar texto y así. 
+</p>
+
+<p>
+Los comandos descritos por <i>emacs</i> suelen ser de la forma <code>C-u M-y</code>
+que significa <i>presiona <code>Ctrl</code> <b>y sin dejar de presionar <code>Ctrl</code></b>,
+presiona <code>u</code>; soltamos ambas teclas y luego presionamos <code>Meta</code> y <b>sin
+dejar de presionarla</b> presionamos <code>y</code></i>.
+</p>
+
+<p>
+Las <code>-</code> significan que la tecla anterior <b>no se deja de presionar</b>, y
+el " "  (espacio), significa <b>suelta la combinación y ve por la
+siguiente tecla</b>
+</p>
+
+<p>
+Hay una tercera tecla representada con <code>S</code>, que se refiere a la tecla
+<i>Shift</i>, pero no es <i>tan</i> usada con las otras 2 anteriores. Con esto
+en mente vamos a utilizar los comandos más básicos.
+n
+</p>
+</div>
+</div>
+<div id="outline-container-org9cbb1dd" class="outline-2">
+<h2 id="org9cbb1dd"><span class="section-number-2">3.</span> Básico</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Los comandos más básicos para poder utilizar emacs son
+</p>
+
+<ol class="org-ol">
+<li><code>C-x C-c</code>: Salir de emacs.</li>
+<li><code>C-z</code>: Minimizar emacs (como cualquier otro proceso y traerlo con <code>fg</code>)</li>
+<li><code>C-g</code>: Cancelar la escritura en <i>minibuffer</i>, si estamos
+escribiendo un comando y nos arrepentimos o <i>no lo escribimos
+bien</i>.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge073952" class="outline-2">
+<h2 id="orge073952"><span class="section-number-2">4.</span> Archivos.</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Seguramente se te acaba de abrir una venta que te da la bienvenida al
+mundo <i>Emacs</i>. Yo recomiendo ampliamente realizar el tutorial que
+viene en los primeros links. El detalle es que está solo en inglés,
+por lo que si no sabes bastante puedes atorarte un poco. Por eso estas
+en esta guía :)
+</p>
+</div>
+<div id="outline-container-org74e7e18" class="outline-3">
+<h3 id="org74e7e18"><span class="section-number-3">4.1.</span> Abrir/crear archivos</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Ya que <i>Emacs</i> edita archivos, lo primero que debemos de hacer <i>crear
+o abrir un archivo</i>. Recordemos que un <i>archivo</i> es simplemente un
+<i>texto procesable por la computadora</i> (Sí, incluso las imágenes y
+videojuegos).
+</p>
+
+<p>
+Para abrir un archivo pulsamos <code>C-x C-f</code>. Hasta abajo se nos aparecerá
+un texto como
+</p>
+
+<pre><span style="background-color:#BFBFBF"><font color="#171421">-UUU:---  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>*scratch*   </b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L4     (Lisp Interaction WK yas ElDoc) -------------------------</font></span>
+<span style="background-color:#181A26"><font color="#98F5FF">Find file: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">~/Documents/Proyectos/java-from-zero/                                                  </font></span>
+</pre>
+
+<p>
+Este pequeña ventana se llama <i>mini buffer</i>, de hecho, toda pantalla
+<i>dentro de emacs</i> es un <b>buffer</b>. Nuestro cursos se mueve
+automáticamente para el <i>mini buffer</i> donde podemos completar la ruta
+para poder abrir el archivo. Tal vez tengas <code>java-from-zero</code> en otro
+lado, pero no importa, trabajaremos en este directorio.
+</p>
+
+
+<p>
+Siempre podemos usar <code>TABULADOR</code> para poder <i>autocompletar</i> nuestras
+rutas, incluso si apretamos 2 veces seguidas <code>TABULADOR</code>, nos aparece
+una pequeña ventana donde nos aparece una vista previa de los archivos
+que existen en la carpeta.
+</p>
+
+<pre><span style="background-color:#BFBFBF"><font color="#171421">-UUU:---  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>*scratch*   </b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L4     (Lisp Interaction WK yas ElDoc) -------------------------</font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 1 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">In this buffer, type </font></span><span style="background-color:#303030"><font color="#ADD8E6">RET</font></span><span style="background-color:#181A26"><font color="#CCCCCC"> to select the completion near point.                                   </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 2 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                                </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 3 12 possible completions: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                       </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 4 </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">./             </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">/              </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">git/           </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">gitignore      </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>R</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">EADME.md       </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>e</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">dd/            </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 5 </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">cc/            </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">mg/            </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">nicio.html     </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">nicio.org      </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>j</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">ava-basics/    </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>l</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">inux/          </font></span>
+<span style="background-color:#666666"><font color="#171421">-UUU:%*-  F1  </font></span><span style="background-color:#666666"><font color="#00008B"><b>*Completions*</b></font></span><span style="background-color:#666666"><font color="#171421">   All   L1     (Completion List WK yas) -------------------------------</font></span>
+<span style="background-color:#181A26"><font color="#98F5FF">Find file: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">~/Documents/Proyectos/java-from-zero/                                                  </font></span>
+</pre>
+
+
+<p>
+Así que colocamos la ruta del archivo, en este ejemplo la ruta es el
+tema de <code>00_introducción.org</code>
+</p>
+
+<pre><span style="background-color:#BFBFBF"><font color="#171421">-UUU:---  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>*scratch*   </b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L4     (Lisp Interaction WK yas ElDoc) -------------------------</font></span>
+<span style="background-color:#181A26"><font color="#98F5FF">Find file: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">~/Documents/Proyectos/java-from-zero/linux/00_introduccion.org                         </font></span>
+</pre>
+
+
+<p>
+Completada la ruta, abrimos la ruta con <code>RET</code>, que significa
+<i>Return</i>. Se nos abrirá en primera pantalla el código de
+<code>00_introduccion.org</code>.
+</p>
+
+<p>
+Adicionalmente, si no existe el nombre de archivo, este archivo <i>se
+creará</i>. Utiliza otra vez <code>C-x C-f</code> y pon la siguiente ruta
+<code>java-from-zero/linux/ejercicio.txt</code>. Nos aparece una ventana en
+"blanco".
+</p>
+
+<pre><span style="background-color:#CCCCCC"><font color="#181A26">File Edit Options Buffers Tools Text YASnippet Debug Help                                          </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#BFBFBF"><font color="#171421">-UUU:---  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>ejercicio.txt</b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L1     (Text Helm WK yas Fill) --------------------------------</font></span>
+<span style="background-color:#181A26"><font color="#CCCCCC">                                                                                                  </font></span>
+</pre>
+
+<p>
+Significa que <i>hemos creado un archivo desde emacs</i>. Resumiendo, <code>C-x
+C-f</code> puede abrir o crear archivos.
+</p>
+</div>
+</div>
+<div id="outline-container-org5766853" class="outline-3">
+<h3 id="org5766853"><span class="section-number-3">4.2.</span> Guardar archivos</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Procedemos a escribir <i>lo que sea</i> en el buffer vacío; palabras
+claramente. Para guardar este archivo utilizamos <code>C-x C-s</code>. Abajo nos
+aparecerá 
+</p>
+
+<pre><span style="background-color:#BFBFBF"><font color="#171421">-UUU:---  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>ejercicio.txt</b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L1     (Text Helm WK yas Fill) --------------------------------</font></span>
+<span style="background-color:#181A26"><font color="#CCCCCC">Wrote /home/pichu/Documentos/Proyectos/java-from-zero/linux/ejercicio.txt                         </font></span>
+</pre>
+
+<p>
+No cabe duda que el archivo <i>ha sido guardado</i> en la ruta que aparece,
+lo cual es perfecto. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgafb9c2c" class="outline-2">
+<h2 id="orgafb9c2c"><span class="section-number-2">5.</span> Navegacion</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Una de las principales características de editar un <i>texto</i> es poder
+<b>moverse</b> en el mismo, ya sea por letras, palabras, líneas o ventanas.
+Para una correcta navegacion, debes colocar tus dedos índices en las
+teclas <i>F</i> y <i>J</i>, que tienen una pequeña muesta. Desde ahí debes poder
+oprimir <i>Control</i> con tu dedo meñique.
+</p>
+
+<p>
+Abre nuevamente el archivo de <code>00_introduccion.org</code>. Notamos que el
+cursor (la cosa que parpadea) está hasta arriba.
+</p>
+</div>
+<div id="outline-container-org428c114" class="outline-3">
+<h3 id="org428c114"><span class="section-number-3">5.1.</span> Por caracter</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+En emacs podemos navegar hacia adelante del cursos y hacia atrás del
+cursos, el equivalente a las teclas de navegacion son las siguientes:
+</p>
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Flechas navegacion</th>
+<th scope="col" class="org-left">emacs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">UP</td>
+<td class="org-left"><code>C-p</code></td>
+</tr>
+
+<tr>
+<td class="org-left">DOWN</td>
+<td class="org-left"><code>C-n</code></td>
+</tr>
+
+<tr>
+<td class="org-left">LEFT</td>
+<td class="org-left"><code>C-b</code></td>
+</tr>
+
+<tr>
+<td class="org-left">RIGHT</td>
+<td class="org-left"><code>C-f</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Sé que parece <i>extremadamente contraintuitivo</i> esta combinacion de
+teclas, sin embargo es lo mejor para nuestras manos a largo plazo ya
+que <i>cambiarse a flechas de navegacion</i> cambia la posición de la mano
+unos centímetros y esto genera <i>un retraso</i> que a la larga es
+incómodo.
+</p>
+
+<p>
+Navega libremente por el archivo, explorando todo el código.
+</p>
+</div>
+</div>
+<div id="outline-container-org6b0606f" class="outline-3">
+<h3 id="org6b0606f"><span class="section-number-3">5.2.</span> Por palabra</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Podemos adelantar por <i>palabra</i> en lugar de ir <i>caracter por caracter</i>
+utilizando la tecla <i>Meta</i>.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>M-f</code></td>
+<td class="org-left">Avanza a la siguiente palabra</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-b</code></td>
+<td class="org-left">Retrocede a la anterior palabra</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org59841ee" class="outline-3">
+<h3 id="org59841ee"><span class="section-number-3">5.3.</span> Inicio, fin y a línea</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Podemos ir al <i>inicio</i> y <i>fin</i> de la <b>linea</b> donde se encuentra el
+cursor. También al <i>inicio</i> y <i>final</i> de <b>oracion</b> con.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>C-a</code></td>
+<td class="org-left">Mueve el cursor al inicio de la linea.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-e</code></td>
+<td class="org-left">Mueve el cursor al final de la linea.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-a</code></td>
+<td class="org-left">Mueve el cursor al inicio de la oración.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-e</code></td>
+<td class="org-left">Mueve el cursor al final de la oración.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Una oración para emacs es donde hay un punto <code>.</code>. Puedes notar que <code>M</code>
+es utilizada <i>para avanzar más</i> y con <code>C</code> avanzas poco, en particular
+cuando usas <code>f, b</code>.
+</p>
+
+<p>
+Para ir a una línea en específico utilizamos <code>M-g g</code> y nos saldrá en
+el <i>mini buffer</i> un mensaje como este.
+</p>
+
+<pre><span style="background-color:#BFBFBF"><font color="#171421">-UUU:---  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>00_introduccion.org</b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   39%   L77   Git:main  (Org Helm WK yas Fill) ------------------</font></span>
+<span style="background-color:#181A26"><font color="#98F5FF">Goto line: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                       </font></span>
+</pre>
+
+<p>
+Colocamos el número de línea a la que queremos ir, por ejemplo 77 y
+nos lleva directo a esa línea.
+</p>
+</div>
+</div>
+<div id="outline-container-org61cba0e" class="outline-3">
+<h3 id="org61cba0e"><span class="section-number-3">5.4.</span> Scrollear</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Cuando el texto es muy largo, no cabe en un solo <i>buffer</i>, sino que
+debemos bajar. Podemos utilizar el cursos, bajando <i>línea por línea</i> o
+podemos utilizar
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>C-v</code></td>
+<td class="org-left">Avanza a la siguiente pantalla <i>hacia abajo</i></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-v</code></td>
+<td class="org-left">Retrocede la pantalla <i>hacia arriba</i></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-l</code></td>
+<td class="org-left">Ubica al cursos <i>en medio</i> del buffer</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Cuando <i>baja</i> la pantalla, en realidad <i>sube</i> el texto, dejandonos con
+una nueva pantalla que es la continuación, y viceversa cuando <i>sube</i>.
+</p>
+
+<p>
+Llega al final del documento y regresa.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3448c03" class="outline-2">
+<h2 id="org3448c03"><span class="section-number-2">6.</span> Edicion de texto</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Para editar texto se necesita escribir texto <i>(lo más fácil lol)</i> y
+también borrar texto. Veremos las operaciones básicas de edición.
+</p>
+</div>
+<div id="outline-container-orga3f0183" class="outline-3">
+<h3 id="orga3f0183"><span class="section-number-3">6.1.</span> Deshacer accion.</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+En cualquier otro programa <code>Ctrl Z</code> se utiliza para poder <i>deshacer</i>
+algo hecho. Emacs es una excepcion ya que <code>C-z</code> <i>suspende</i> el
+programa, por directivas de <i>UNIX</i>.
+</p>
+
+<p>
+Tenemos 3 formas diferentes de deshacer una accion
+</p>
+
+<ol class="org-ol">
+<li><code>C-x u</code></li>
+<li><code>C-/</code></li>
+<li><code>C-_</code></li>
+</ol>
+
+
+<p>
+En lo personal, recomiendo <i>fuertemente</i> la última combinación, ya
+que se traduce a hacer <code>C-S-_</code>, donde <code>S</code> es la tecla <i>Shift</i> porque
+el guión bajo se escribe con <code>Shift</code> y podemos abusar del <i>deshacer</i>
+como haríamos con <code>Ctrl Z</code>
+</p>
+
+<p>
+Si crees que ha sido mucho emacs por hoy, puedes dejarlo unos días, y
+retomarlo cuando estes listo para aprender nuevos comandos. Hasta aquí
+ya puedes editar tus primeros textos utilizando <code>DEL</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org8b409ba" class="outline-3">
+<h3 id="org8b409ba"><span class="section-number-3">6.2.</span> Seleccionar texto</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Podemos seleccionar <i>porciones de texto</i> utilizando <code>C-SPC</code>, (<i>SPC</i>
+significa barra espaciadora). Abajo veremos un mensaje como
+</p>
+
+
+<pre><span style="background-color:#BFBFBF"><font color="#171421">-UUU:---  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>ejercicio.txt</b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L1     (Text Helm WK yas Fill) --------------------------------</font></span>
+<span style="background-color:#181A26"><font color="#CCCCCC">Mark set                                                                                           </font></span>
+</pre>
+
+<p>
+Mientras este <i>Mark set</i> aparezca, significa que estamos
+<i>seleccionando texto</i>. Ahora, utilizamos la teclas de navegacion de
+texto para mover el cursor y notaremos que la seleccion aparece de un
+color <i>ligeramente</i> diferente al del fondo, significa que estamos
+seleccionando. Para <i>deseleccionar</i> pulsamos nuevamente <code>C-SPC</code>.
+</p>
+
+<p>
+Normalmente seleccionamos texto para poder <i>cortar o copiar</i>, por lo
+que la seleccion <b>termina</b> cuando realizamos una de esas acciones
+siguientes.
+</p>
+</div>
+</div>
+<div id="outline-container-org790d16a" class="outline-3">
+<h3 id="org790d16a"><span class="section-number-3">6.3.</span> Cut, copy paste</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Otra excepcion a todos los demás programas son estos comandos. Ponemos
+los equivalente en <code>emacs</code>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">otros programas</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>M-w</code></td>
+<td class="org-left"><code>Ctrl C</code></td>
+<td class="org-left">Copiar</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-y</code></td>
+<td class="org-left"><code>Ctrl V</code></td>
+<td class="org-left">Pegar</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-w</code></td>
+<td class="org-left"><code>Ctrl K</code></td>
+<td class="org-left">Cortar</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Una vez más, estos comandos son <i>contraintuitivos</i> ya que
+probablemente estemos familiarizados a los normales, pero la
+recompensa es grande y te costará en un inicio aprenderlo, y después
+nadie te detendrá.
+</p>
+
+
+<p>
+Selecciona porciones de texto y copia, pega, corta en donde
+quieras. No te preocupes por el texto original, <i>siempre se puede
+recuperar con GIT</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org4a7e74e" class="outline-3">
+<h3 id="org4a7e74e"><span class="section-number-3">6.4.</span> Eliminacion adelante y atrás</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+Podemos eliminar por adelante del cursor y por detrás del cursor; de
+hecho probablmente ya has usado estas opciones. La tabla de
+equivalencias a continuación. <code>DEL</code> y <code>SUPR</code> son las teclas
+<i>Retroceso</i> y <i>Suprimir</i>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">otros programas</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">DEL</td>
+<td class="org-left">DEL</td>
+<td class="org-left">Borra un caracter <i>detrás</i> del cursor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-d</code></td>
+<td class="org-left">SUPR</td>
+<td class="org-left">Borra un carácter <i>delante</i> del cursor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-DEL</code></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Borra una palabra <i>detrás</i> del cursor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-d</code></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Borra una palabra <i>delante</i> del cursos</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-k</code></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Borra desde el cursos hasta <i>el final de línea</i></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-y</code></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Nos da acceso al historial de <i>borrados</i></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Intenta borrar de esta forma algunas palabras.
+</p>
+
+<p>
+Las teclas de <code>DEL</code> y <code>SUPR</code> eliminan el caracter sin más. Las demás
+opciones "borran" <b>entre comillas</b>, ya que en realidad se guardan en
+<i>portapapeles</i> listas para pegarse, como si las <i>cortaramos</i> en lugar
+de eliminarlas totalmente.
+</p>
+
+<p>
+Así podemos <i>recuperar</i> estas <i>palabras/líneas/selecciones</i> de texto que
+hemos "borrado" anteriormente. Utilizando <code>M-y</code> nos aparece un listado
+de <i>todas las palabras</i> que fueron "borradas" sin <code>DEL</code> y <code>SUPR</code>, que
+podemos pegar seleccionandolos. Cuesta trabajo entenderlo, pero es muy
+poderoso. Ahora puedes borrar de <i>5</i> maneras diferentes.
+</p>
+</div>
+</div>
+<div id="outline-container-org691a987" class="outline-3">
+<h3 id="org691a987"><span class="section-number-3">6.5.</span> Buscar y reemplazar</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+En emacs, podemos buscar una palabra en un texto utilizando como
+referencia al cursos, buscando hacia adelante y hacia atrás del
+cursor. En el <i>minibuffer</i> deberemos poner la palabra a buscar y
+presionar el mismo comando que inició esta búsqueda.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>C-s</code></td>
+<td class="org-left">Busca coincidencias <i>hacia adelante</i> del cursor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-r</code></td>
+<td class="org-left">Busca coincidencias <i>hacia atrás</i> del cursor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-S-5</code></td>
+<td class="org-left">Busca palabras para después reemplazarlas por otra</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+Podemos cambiar de <i>direccion</i> cambiado el sentido con <code>s</code> o con <code>r</code>
+para buscar <i>atrás y adelante</i>. Si presionamos muchas veces <i>y se
+encuentran coincidencias</i> eventualmente regresaremoso a la primer
+palabra que apareció, como que <b>da vuelta la búsqueda</b>. Esto en Emacs
+se le conoce como <i>RING</i>, y es un ciclo.
+</p>
+
+<p>
+El reemplazo es un poco más complicado, ya que son varias cosas que
+considerar.
+</p>
+
+<ol class="org-ol">
+<li>Debemos empezar una búsqueda</li>
+<li>Debemos decir por qué palabra vamos a reemplazar</li>
+<li>Debemos seleccionar qué palabras reemplazar.</li>
+</ol>
+
+
+<p>
+Presionando <code>M-S-5</code> <i>Meta-Shift-5</i>, nos aparecerá un menú como este.
+</p>
+
+<pre><span style="background-color:#BFBFBF"><font color="#171421">-UUU:**-  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>ejercicio.txt</b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L1     (Text Helm WK yas Fill) --------------------------------</font></span>
+<span style="background-color:#181A26"><font color="#98F5FF">Query replace: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                   </font></span>
+</pre>
+
+<ol class="org-ol">
+<li>En <i>Query Replace</i> ponemos la palabra a buscar. Mientras escribimos
+<b>se buscarán todas las coincidencias y se resaltarán</b>. Damos
+enter</li>
+<li>Ahora nos aparece <i>por qué palabra vamos a reemplazar</i> la primera,
+colocamos la palabra nueva y damos enter.</li>
+<li><p>
+Nos aparecerá en colores la palabra que está seleccionada y que
+puede ser reemplazada por nuestra palabra definida. Si queremos que
+se <i>reemplace</i> escribimos <code>y</code> en el minibuffer, lo cual reemplazará
+la palabra y continuará a la siguiente, donde podemos decidir si
+reemplazar nuevamente o no. 
+</p>
+
+<p>
+En caso de que <b>no</b> queramos reemplazar <i>esa</i> coincidencia,
+simpelemente pulsamos <code>n</code> de <i>No</i> lo que hará que ignore ese
+reemplazo y continue.
+</p></li>
+</ol>
+
+
+<p>
+Es un poco dificil de entender el reemplazo. Intenta de reemplazar
+palabras en textos grandes para que puedas ver como funciona.
+</p>
+
+<p>
+Si crees que ha sido mucho emacs por hoy, puedes dejarlo unos días, y
+retomarlo cuando estes listo para aprender nuevos comandos. Obviamente
+<i>repasando</i> los comandos que has visto y poniendo en práctica.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org19cdeb9" class="outline-2">
+<h2 id="org19cdeb9"><span class="section-number-2">7.</span> Ventanas /Buffers</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Lo último importante para utilizar <i>básicamente</i> emacs, son los
+buffers, saber crear, dividir y cerrar.
+</p>
+
+<p>
+Hasta ahorita solo hemos trabajado con el <i>buffer</i> principal (una sola
+pantalla) y el <i>mini buffer</i>, pero en realidad hay más <i>pantallas
+ocultas</i> que podemos traer o minimizar <i>sin pausar emacs</i>.
+</p>
+</div>
+<div id="outline-container-orgff0fad7" class="outline-3">
+<h3 id="orgff0fad7"><span class="section-number-3">7.1.</span> Dividir ventana</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Podemos dividir nuestra ventana a lo largo y a lo ancho. Abramos 2
+archivos cualquiera. Dependiendo de donde esté el cursor es la
+pantalla que se dividirá
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>C-x 2</code></td>
+<td class="org-left">Divide el buffer <b>a lo largo</b> dejando arriba y abajo pantallas</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-x 3</code></td>
+<td class="org-left">Divide el buffer <b>a lo ancho</b> dejando izquierda y derecha pantallas</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Intenta dividir de ambas formas la ventana.
+</p>
+</div>
+</div>
+<div id="outline-container-org487ce2a" class="outline-3">
+<h3 id="org487ce2a"><span class="section-number-3">7.2.</span> Cambiar de ventana</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+Una vez que tenemos <i>2 o más ventanas</i> podemos cambiarnos utilizando
+<code>C-x o</code>, el cursor pasará a parpadear a la otra ventana.
+</p>
+
+<p>
+Nota que las ventanas <i>llevan un orden</i> y que si sigues avanzando
+regresarás a la ventana original; por ahora <b>solo puedes ir hacia
+"adelante"</b> y no puedes regresar si no <i>pasas por todas las
+demás</i>. Obviamente esto se puede <i>personalizar</i> pero va mas allá del
+alcance de este manual y no es necesario si utilizas pocos buffers.
+</p>
+</div>
+</div>
+<div id="outline-container-org9867002" class="outline-3">
+<h3 id="org9867002"><span class="section-number-3">7.3.</span> Minimizar / Maximizar ventana</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+Podemos <i>abrir</i> y <i>cerrar</i> una ventana en específico de una división
+de pantallas dentro de emacs; las pantallas <i>cerradas</i> se guardan en
+un <i>buffer</i> pero no a la vista.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>C-x 1</code></td>
+<td class="org-left">La pantalla seleccionada ocupa todo el espacio (maximizar)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-x 0</code></td>
+<td class="org-left">La pantalla seleccionada desaparece, dejando espacio para otra pantalla (ocultar)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Claramente si estamos en pantalla completa, ninguno de los dos
+comandos tendrá efecto, uno porque ya esta maximizada y la otra no
+podemos ocultar para ceder espacio a <i>otra ventana</i> porque no hay otra
+ventana.
+</p>
+</div>
+</div>
+<div id="outline-container-org8f287aa" class="outline-3">
+<h3 id="org8f287aa"><span class="section-number-3">7.4.</span> Buffers</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+<code>C-x b</code> nos muestra <i>todos los demás buffers</i> que estan <i>abiertos</i>
+durante la sesion de emacs. Nos aparecerá algo como
+</p>
+
+<pre><span style="background-color:#223377"><font color="#E5E5E5"><b>switch-to-buffer                                                                                   </b></font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  2 </font></span><span style="background-color:#228B22"><font color="#CCCCCC">ejercicio.txt                                                                                  </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  3 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*scratch*                                                                                      </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  4 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*Messages*                                                                                     </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  5 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*Async-native-compile-log*                                                                     </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  6 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*Completions*                                                                                  </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#BFBFBF"><font color="#171421"> </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>*helm-mode-switch-to-buffer*</b></font></span><span style="background-color:#BFBFBF"><font color="#171421"> L1    </font></span><span style="background-color:#CDCD00"><font color="#171421">[5 Candidate(s)]  </font></span><span style="background-color:#BFBFBF"><font color="#171421"> C/M-RET:Empty C-h m:Help TAB:Act RET/f1/f2/f</font></span>
+<span style="background-color:#181A26"><font color="#98F5FF">Switch to buffer: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                </font></span>
+</pre>
+
+<p>
+Y si no aparece la lista de buffers, siempre podemos abusar del
+<code>TABULADOR</code> para que nos diga que otras opciones hay, listando las
+opciones.
+</p>
+
+<p>
+Para abrir otro buffer que esta <i>oculto</i> escribimos el nombre del
+buffer y damos <code>RET</code> (enter). Así no tenemos que mantener todos los
+buffers abiertos, podemos <i>ocultaros</i> y luego recuperarlos.
+</p>
+
+
+<p>
+Sin embargo, si queremos <i>cerrar</i> ya para siempre un buffer, y que
+desaparezca de la lista (básicamente cerrar ese archivo), entonces
+utilizamos <code>C-x k</code>, donde nos aparecerá un menú con la lista de
+buffers <i>para matar</i>. 
+</p>
+
+<pre><span style="background-color:#223377"><font color="#E5E5E5"><b>kill-buffer                                                                                        </b></font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  2 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">00_introduccion.org                                                                            </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  3 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">ejercicio.txt                                                                                  </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  4 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*scratch*                                                                                      </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  5 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*Messages*                                                                                     </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  6 </font></span><span style="background-color:#228B22"><font color="#CCCCCC">*Async-native-compile-log*                                                                     </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  7 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*Completions*                                                                                  </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  8 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">*helm-mode-switch-to-buffer*                                                                   </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                               </font></span>
+<span style="background-color:#BFBFBF"><font color="#171421"> </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>*helm-mode-kill-buffer*</b></font></span><span style="background-color:#BFBFBF"><font color="#171421"> L5    </font></span><span style="background-color:#CDCD00"><font color="#171421">[7 Candidate(s)]  </font></span><span style="background-color:#BFBFBF"><font color="#171421"> C/M-RET:Empty C-h m:Help TAB:Act RET/f1/f2/f-n:Nt</font></span>
+<span style="background-color:#181A26"><font color="#98F5FF">Kill buffer: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                                                                     </font></span>
+</pre>
+
+
+<p>
+Claramente escribimos el buffer que queremos <i>matar</i> y le damos
+enter. Si <code>emacs</code> detecta que hay cambios no guardados en el buffer
+nos preguntará si queremos guardarlo, y contestamos dependiendo.
+</p>
+
+<p>
+Intenta hacer esta acomodación de buffers en emacs, abriendo los
+buffers de <i>Messages, Completions, scratch y otro</i>.
+</p>
+
+<pre><span style="background-color:#CCCCCC"><font color="#181A26">File Edit Options Buffers Tools Text YASnippet Debug Help                                          </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 32 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">Mark set                                     </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">  1 </font></span><span style="background-color:#181A26"><font color="#7F7F7F">;; This buffer is for text that is not saved</font></span><span style="background-color:#181A26"><font color="#CCCCCC">$</font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 33 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">Mark deactivated                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">  2 </font></span><span style="background-color:#181A26"><font color="#7F7F7F">;; To create a file, visit it with C-x C-f a</font></span><span style="background-color:#181A26"><font color="#CCCCCC">$</font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 34 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">Quit [3 times]                               </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">  3 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 35 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">Mark activated                               </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 36 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">Quit [3 times]                               </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3"> 37 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">Quit                                         </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#666666"><font color="#171421">-UUU:%*-  F1  </font></span><span style="background-color:#666666"><font color="#00008B"><b>*Messages*  </b></font></span><span style="background-color:#666666"><font color="#171421">   Bot   L37    (Messag|-UUU:---  F1  </font></span><span style="background-color:#666666"><font color="#00008B"><b>*scratch*   </b></font></span><span style="background-color:#666666"><font color="#171421">   All   L4     (Lisp I</font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  1 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">In this buffer, type </font></span><span style="background-color:#303030"><font color="#ADD8E6">RET</font></span><span style="background-color:#181A26"><font color="#CCCCCC"> to select the compl\</font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">  1 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">Hola mundo                                   </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">etion near point.                            </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  2 </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  3 12 possible completions: </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                    </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  4 </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">./             </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">/              </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">git/       \</font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>.</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">gitignore      </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>R</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">EADME.md       </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>e</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">dd/         </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">  5 </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">cc/            </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">mg/            </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">nicio.html \</font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>i</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">nicio.org      </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>j</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">ava-basics/    </font></span><span style="background-color:#181A26"><font color="#CCCCCC"><b>l</b></font></span><span style="background-color:#181A26"><font color="#CCCCCC">inux/       </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span><span style="background-color:#666666"><font color="#171421">|</font></span><span style="background-color:#181A26"><font color="#B3B3B3">    </font></span><span style="background-color:#181A26"><font color="#CCCCCC">                                             </font></span>
+<span style="background-color:#666666"><font color="#171421">-UUU:%*-  F1  </font></span><span style="background-color:#666666"><font color="#00008B"><b>*Completions*</b></font></span><span style="background-color:#666666"><font color="#171421">   All   L1     (Compl|</font></span><span style="background-color:#BFBFBF"><font color="#171421">-UUU:**-  F1  </font></span><span style="background-color:#BFBFBF"><font color="#00008B"><b>ejercicio.txt</b></font></span><span style="background-color:#BFBFBF"><font color="#171421">   All   L1     (Text </font></span>
+<span style="background-color:#181A26"><font color="#CCCCCC">                                                                                                  </font></span>
+</pre>
+
+<p>
+Con esto ya puedes editar bastante bien tus programas y
+documentos. Recuerda, la práctica hace al maestro.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd981ec2" class="outline-2">
+<h2 id="orgd981ec2"><span class="section-number-2">8.</span> Otros comandos</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Emacs está plagado de comandos para todo, aquí solo vimos los
+escenciales para que puedas programar. A continuación te dejo otros
+comandos interesantes que puedes explorar con el paso del tiempo.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">emacs</th>
+<th scope="col" class="org-left">funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>C-h t</code></td>
+<td class="org-left">Abre el tutorial básico de emacs.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-x h</code></td>
+<td class="org-left">Selecciona todo el buffer</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-q</code></td>
+<td class="org-left">Recorta párrafos a la columna especificada (ver tutorial).</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>TAB</code></td>
+<td class="org-left">Cuando programes, identa tu código correctamente</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-S-,</code></td>
+<td class="org-left">Cuando programes, comenta la línea automaticamente.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-u</code></td>
+<td class="org-left">Convierte a MAYUSCULAS la siguiente palabra</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-l</code></td>
+<td class="org-left">Convierte a minúsculas la siguiente palabra</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>C-t</code></td>
+<td class="org-left">Intercambia de lugar los 2 caracteres anterior y siguiente del cursor</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-&lt;</code></td>
+<td class="org-left">Mueve el cursor al inicio del documento</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-S-&lt;</code></td>
+<td class="org-left">Mueve el cursor al final del documento</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-x</code></td>
+<td class="org-left">Prepara el mini-buffer para poder recibir comandos (M-x doctor por ej)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+De esta última, los comandos más usados son.
+</p>
+
+<ol class="org-ol">
+<li><code>term</code> Abre una terminal</li>
+<li><code>calendar</code> Abre el calendario</li>
+<li><code>list-packages</code> Muestra todos los paquetes disponibles para
+instalar como <i>complementos</i> a emacs</li>
+<li><code>package-install</code> Instala el paquete que escribirás a continuación</li>
+<li><code>customize</code> Personalizar diseño de emacs</li>
+</ol>
+
+
+<p>
+Finalmente, es importante mencionar que puedes customizar tu editor de
+<code>emacs</code> como quieras. <i>Emacs</i> crea un directorio en <code>/home/user/</code>
+oculto llamado <code>.emacs.d/</code> donde encontrarás (o no, y puedes crear) un
+archivo llamado <code>init.el</code>. Este archivo carga la configuración
+personalizada de <i>emacs</i> y puedes definir tus propias configuraciones.
+</p>
+
+<p>
+Una buena configuracion para poder utilizar <i>bien</i> emacs sería la
+siguiente.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Mi configuraci&#243;n b&#225;sica del dios emacs
+</span>
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Display spaces after lines
+</span><span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">(setq-default show-trailing-whitespace t)
+</span><span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Display num-line
+</span>(global-display-line-numbers-mode)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Silly buttons off
+</span>(tool-bar-mode 0)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Auto fill mode
+</span>(add-hook 'text-mode-hook 'turn-on-auto-fill)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">BYE BYE Welcome
+</span>(<span style="color: #00bfff;">setq</span> inhibit-startup-screen t)
+
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Max
+</span>(<span style="color: #00bfff;">setq</span> frame-resize-pixelwise t)
+
+(custom-set-variables
+ <span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Tema oscuro por mi punto en el ojo
+</span> '(custom-enabled-themes '(deeper-blue))
+ '(package-selected-packages
+   '(org-journal htmlize org phps-mode php-mode python-mode treemacs-projectile which-key helm-lsp helm company yasnippet flycheck projectile lsp-ui lsp-java auctex))
+ )
+
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Eliminar autoguardados fuera de la carpeta actual
+</span><span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Write backups to ~/.emacs.d/backup/
+</span>(<span style="color: #00bfff;">setq</span> backup-directory-alist '((<span style="color: #deb887;">"."</span> . <span style="color: #deb887;">"~/.emacs.d/backup"</span>))
+      backup-by-copying      t  <span style="color: #7f7f7f;">; </span><span style="color: #7f7f7f;">Don't de-link hard links
+</span>      version-control        t  <span style="color: #7f7f7f;">; </span><span style="color: #7f7f7f;">Use version numbers on backups
+</span>      delete-old-versions    t  <span style="color: #7f7f7f;">; </span><span style="color: #7f7f7f;">Automatically delete excess backups:
+</span>      kept-new-versions      20 <span style="color: #7f7f7f;">; </span><span style="color: #7f7f7f;">how many of the newest versions to keep
+</span>      kept-old-versions      5) <span style="color: #7f7f7f;">; </span><span style="color: #7f7f7f;">and how many of the old
+</span>
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">MELPA = m&#225;s paquetes
+</span>(package-initialize)
+(<span style="color: #00bfff;">require</span> '<span style="color: #a2cd5a;">package</span>)
+(add-to-list 'package-archives
+             '(<span style="color: #deb887;">"melpa"</span> . <span style="color: #deb887;">"https://melpa.org/packages/"</span>))
+
+
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Project management
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">projectile</span>)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Real-time syntax checking
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">flycheck</span>)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Snippets
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">yasnippet</span> <span style="color: #f08080;">:config</span> (yas-global-mode))
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">language server protocol support = m&#225;s soporte de lenguajes
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">lsp-mode</span> <span style="color: #f08080;">:hook</span> ((lsp-mode . lsp-enable-which-key-integration)))
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Mostrar keybindings
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">hydra</span>)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">textito bonito para lisp
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">lsp-ui</span>)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Posibles combinaciones
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">which-key</span> <span style="color: #f08080;">:config</span> (which-key-mode))
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Soporte para java
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">lsp-java</span> <span style="color: #f08080;">:config</span> (add-hook 'java-mode-hook 'lsp))
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Helm ??
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">helm-lsp</span>)
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">completar comandos
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">helm</span>
+  <span style="color: #f08080;">:config</span> (helm-mode))
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Navegacion f&#225;cil
+</span>(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">lsp-treemacs</span>)
+
+
+
+<span style="color: #7f7f7f;">;; </span><span style="color: #7f7f7f;">Soporte para python
+</span>(<span style="color: #00bfff;">require</span> '<span style="color: #a2cd5a;">lsp-python-ms</span>)
+(<span style="color: #00bfff;">setq</span> lsp-python-ms-auto-install-server t)
+(add-hook 'python-mode-hook #'lsp) <span style="color: #7f7f7f;">; </span><span style="color: #7f7f7f;">or lsp-deferred
+</span>
+(<span style="color: #00bfff;">use-package</span> <span style="color: #a2cd5a;">lsp-python-ms</span>
+  <span style="color: #f08080;">:hook</span> (python-mode . (<span style="color: #00bfff;">lambda</span> ()
+                         (<span style="color: #00bfff;">require</span> '<span style="color: #a2cd5a;">lsp-python-ms</span>)
+                         (lsp))))  <span style="color: #7f7f7f;">; </span><span style="color: #7f7f7f;">or lsp-deferred</span>
+</pre>
+</div>
+
+
+<p>
+Si quieres utilizar esta configuracion, debes copiar y pegar esto en
+el archivo <code>~/.emacs.d/init.el</code> y reiniciar emacs. Las útlimas líneas
+son un ejemplo de definiciones de atajos para poder ejecutar comandos
+con solo una combinación de teclas. Por cierto, emacs está programado
+en <i>LISP</i>.
+</p>
+
+
+<p>
+Puedes consultar tambien en mi repositorio <a href="https://github.com/shosholanda/hello-world/blob/main/init.el">de github</a> el archivo de
+configuración. No está demás decir que todo este proyecto está hecho
+en <i>emacs</i> y que utilizo <i>Org Mode</i> cómo la base de las lecciones, una
+forma de estructurar texto de manera fácil y bonita. Echale un ojo a
+<a href="https://orgmode.org/quickstart.html">Org Mode</a> (compañero de cuna de emacs), muy chido para hacer tus
+apuntes de la uni. :)
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-07-31 Thu 23:04</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

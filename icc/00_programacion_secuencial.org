@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Programación secuencial
+#+TITLE: Programación secuencial
 
 Programar es como escribir un libro. Tiene un inicio, cosas
 interesantes y un final. Programar es todavía más poderoso, ya que
@@ -10,7 +10,7 @@ Cuando hablamos de la programación secuencial, nos referimos a
 programar y ejecutar /linea por línea/ sin saltar absolutamente nada
 como hemos hecho los problemas anteriores.
 
-** Problema 1: Raices de una ecuación cuadrática
+* Problema 1: Raices de una ecuación cuadrática
 Realizar un programa que calcule las soluciones de una ecuación
 cuadrática de la forma $ax^2 + bx + c = 0$
 
@@ -81,7 +81,7 @@ y potencia
   Math.pow(a, b);
 #+end_src
 
-*** Tabla de pruebas
+*Tabla de pruebas*
 |---+----+---+---------------------|
 | a |  b | c | resultado           |
 |---+----+---+---------------------|
@@ -91,7 +91,7 @@ y potencia
 | 8 | 32 | 5 | -0.162882, -3.83711 |
 |---+----+---+---------------------|
 
-
+* Problemas
 ** Problema 2: El mejor año de tu vida.
 Dicen por ahí, que si sumas tu fecha de cumpleaños, obtendrás el mejor
 año de tu vida. Por ejemplo:
@@ -112,7 +112,8 @@ volumen. La fórmula está dada por
  V = \frac{4}{3} \pi r^3
 \end{equation}
 
-
+Puedes usar el valor de /PI/ como ~Math.PI~, como si fuera una
+constante.
 ** Problema 5: Interés simple
 Crear un programa que calcule el /interés simple/ a partir de los
 parámetros:
@@ -123,7 +124,6 @@ parámetros:
 \begin{equation}
  C_f = C_0 (1 + (i * n))
 \end{equation}
-
 
 ** Problema 6: Interés compuesto
 Crear un programa que calcule el interés compuesto a partir de los

@@ -1,5 +1,6 @@
 #+HTML_LINK_HOME: ../inicio.html
-* La clase String
+#+TITLE: La clase String
+
 Hemos visto rápidamente que si quieremos guardar texto utilizamos el
 /objeto/ llamado ~String~ como
 
@@ -40,7 +41,7 @@ En esta sección veremos los métodos más utilizados de la clase
 así como su argumento.
 
 
-** Concatenación
+* Concatenación
 
 Dadas 2 cadenas, podemos crear una nueva cadena con la información de
 ambas utilizando el operador ~+~
@@ -52,7 +53,7 @@ ambas utilizando el operador ~+~
   System.out.println(s3); // Tacos Dorados
 #+end_src
 
-** To Lower/Upper Case
+* To Lower/Upper Case
 Convierte todos los caracteres a mayúsculas/minúsculas respectivamente
 
 #+begin_src java
@@ -61,7 +62,7 @@ Convierte todos los caracteres a mayúsculas/minúsculas respectivamente
   System.out.println(m); //QUIEN BUSCA SIEMPRE ENCUENTRA
 #+end_src
 
-** Equals
+* Equals
 Una cadena es igual /en contenido/ a otra cadena utilizando el método
 equals
 
@@ -78,7 +79,7 @@ No utilizamos el operador ~==~, ya que ~s1~ y ~s2~ son dos /objetos/
 que ocupan diferentes direcciones en memoria, por lo que /no son
 *exactamente* el mismo/, pero sí pueden contener el mismo nombre.
 
-** Length
+* Length
 
 Nos dice el número de caracteres que hay en una cadena.
 #+begin_src java
@@ -86,7 +87,7 @@ Nos dice el número de caracteres que hay en una cadena.
   System.out.println(s.length()); //160
 #+end_src
 
-** Char at
+* Char at
 Nos da el /char/ que está en la posición /i/.
 
 #+begin_src java
@@ -109,7 +110,7 @@ dará un error, por ejemplo
 
 *Nota*: La posición de caracteres empieza en 0 hasta la longitud-1
 
-** Substring
+* Substring
 Dados dos índices $i, f$ en el rango de la longitud de la cadena, nos
 corta la cadena desde el indice inicio hasta el índice final-1.
 
@@ -123,7 +124,7 @@ Si el índice está fuera de la longitud de la cadena, o es negativo
 dará un error, además el primer índice debe ser /menor o igual/ que el
 segundo índice.
 
-** Index Of
+* Index Of
 Nos dice si /esta/ cadena contiene la cadena /pasada como argumento/.
 Si sí está, nos da el índice del lugar donde se encuentra, si no, nos
 da ~-1~
@@ -135,7 +136,7 @@ da ~-1~
   System.out.println(indice); //-1
 #+end_src
 
-** Split
+* Split
 Nos divide la cadena, separado por la cadena que queramos separar y lo
 guarda en un /Arreglo/ donde cada elemento es guardado en un índice.
 
@@ -150,7 +151,7 @@ Más adelante profundizaremos qué son los arreglos así como las
 estructuras de datos, y por qué necesitamos escribir todo eso para
 poder visualizarlo.
 
-** Starts/Ends with
+* Starts/Ends with
 Nos dice si esta cadena /empieza/ o /termina/ con la cadena segunda.
 #+begin_src java
   String esta = "Hola planeta tierra, eres un gran planeta";
@@ -160,7 +161,7 @@ Nos dice si esta cadena /empieza/ o /termina/ con la cadena segunda.
   System.out.println(s); //False
 #+end_src
 
-** Replace
+* Replace
 Elimina todas las apariciones en esta cadena del primer parámetro para
 reemplazarlas por la cadena del segundo parámetro.
 
@@ -175,10 +176,10 @@ reemplazarlas por la cadena del segundo parámetro.
 La cadena ~""~ es conocida como la /cadena vacía/, y es una cadena
 válida, de longitud 0.
 
+* Problemas
 ** Problema 1: Correo
 Crear un programa que reciba una cadena por el usuario y nos diga si
 contiene el caracter ~@~ y termine con el nombre de dominio ~.com~
-
 
 ** Problema 2: Reversa
 Dada una cadena por el usuario, imprimir la reversa de la misma cadena.

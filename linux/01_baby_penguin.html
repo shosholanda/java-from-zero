@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-29 Tue 22:33 -->
+<!-- 2025-07-30 Wed 12:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Comandos básicos</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -232,86 +232,82 @@
  |
  <a accesskey="H" href="../inicio.html"> HOME </a>
 </div><div id="content" class="content">
+<h1 class="title">Comandos básicos</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org59e4a11">1. Comandos básicos</a>
+<li><a href="#orgb6b2620">1. Salida estándar</a>
 <ul>
-<li><a href="#orgd8a97cc">1.1. Salida estándar</a>
-<ul>
-<li><a href="#orgb8f5e17">1.1.1. echo</a></li>
-<li><a href="#org90c38a5">1.1.2. top</a></li>
-<li><a href="#org06436fc">1.1.3. df</a></li>
-<li><a href="#orga5ad9a2">1.1.4. ip addr</a></li>
-<li><a href="#org1d61d96">1.1.5. clear</a></li>
-<li><a href="#org5541711">1.1.6. tabulador</a></li>
-<li><a href="#org9dba397">1.1.7. AYUDA</a></li>
+<li><a href="#org76e34ab">1.1. echo</a></li>
+<li><a href="#orge3ef75a">1.2. top</a></li>
+<li><a href="#orgd2d88c9">1.3. df</a></li>
+<li><a href="#org032befb">1.4. ip addr</a></li>
+<li><a href="#org5afbab2">1.5. clear</a></li>
+<li><a href="#org757c850">1.6. tabulador</a></li>
+<li><a href="#orged5ca71">1.7. history</a></li>
+<li><a href="#org4847c3d">1.8. AYUDA</a></li>
 </ul>
 </li>
-<li><a href="#org4393641">1.2. Sistema de archivos</a>
+<li><a href="#org271669a">2. Sistema de archivos</a>
 <ul>
-<li><a href="#orgbe3c124">1.2.1. pwd</a></li>
-<li><a href="#orgec52ce6">1.2.2. cd</a></li>
-<li><a href="#orgc45b05b">1.2.3. ls</a></li>
-<li><a href="#orgec1d56f">1.2.4. mkdir</a></li>
-<li><a href="#orgec8ceb2">1.2.5. tree</a></li>
-<li><a href="#org87b0e83">1.2.6. touch</a></li>
-<li><a href="#org748dca0">1.2.7. redireccionamiento</a></li>
-<li><a href="#orge4ff0bf">1.2.8. cat</a></li>
+<li><a href="#org0c86c16">2.1. pwd</a></li>
+<li><a href="#org57b092b">2.2. cd</a></li>
+<li><a href="#orgaa16e53">2.3. ls</a></li>
+<li><a href="#orgb00e4bd">2.4. mkdir</a></li>
+<li><a href="#orgafe868d">2.5. tree</a></li>
+<li><a href="#org4b522e1">2.6. touch</a></li>
+<li><a href="#orgf8e3c0b">2.7. redireccionamiento</a></li>
+<li><a href="#org324e6d7">2.8. cat</a></li>
 </ul>
 </li>
-<li><a href="#org05bc427">1.3. Administracion de archivos</a>
+<li><a href="#org6165e79">3. Administracion de archivos</a>
 <ul>
-<li><a href="#org3d1a474">1.3.1. cp</a></li>
-<li><a href="#orgb4e9a19">1.3.2. mv</a></li>
-<li><a href="#org8820424">1.3.3. rm</a></li>
+<li><a href="#orgc4129c0">3.1. cp</a></li>
+<li><a href="#org76da87a">3.2. mv</a></li>
+<li><a href="#org93c2bf8">3.3. rm</a></li>
 </ul>
 </li>
-<li><a href="#orgd16135d">1.4. Filtros</a>
+<li><a href="#org166fd5e">4. Filtros</a>
 <ul>
-<li><a href="#org11f9d93">1.4.1. nano</a></li>
-<li><a href="#org7a6ac53">1.4.2. pipe</a></li>
-<li><a href="#org9460839">1.4.3. sort</a></li>
-<li><a href="#orgff4eede">1.4.4. wc</a></li>
-<li><a href="#org760a88b">1.4.5. grep</a></li>
-<li><a href="#orge6d989a">1.4.6. uniq</a></li>
-<li><a href="#org3c18317">1.4.7. Ejercicio</a></li>
-<li><a href="#orgffc668d">1.4.8. find</a></li>
+<li><a href="#orgddf9db1">4.1. nano</a></li>
+<li><a href="#org838102d">4.2. pipe</a></li>
+<li><a href="#org47c3d25">4.3. sort</a></li>
+<li><a href="#org0d68d13">4.4. wc</a></li>
+<li><a href="#org17b7ea1">4.5. grep</a></li>
+<li><a href="#org254f732">4.6. uniq</a></li>
+<li><a href="#org0d84b07">4.7. Ejercicio</a></li>
+<li><a href="#org3b5836a">4.8. find</a></li>
 </ul>
 </li>
-<li><a href="#orgc77c77a">1.5. Procesos</a>
+<li><a href="#orgbfe7c5a">5. Procesos</a>
 <ul>
-<li><a href="#orgf8ec65a">1.5.1. yes</a></li>
-<li><a href="#org2a61fc6">1.5.2. Ctrl C</a></li>
-<li><a href="#org5840824">1.5.3. Ctrl Z</a></li>
-<li><a href="#org511fb7e">1.5.4. fg y bg</a></li>
-<li><a href="#orgd4805bf">1.5.5. sleep</a></li>
-<li><a href="#org6c3f184">1.5.6. &amp;</a></li>
-<li><a href="#org794b5dd">1.5.7. jobs</a></li>
-<li><a href="#org52c3d0e">1.5.8. ps</a></li>
-<li><a href="#org9b8b2b6">1.5.9. kill</a></li>
+<li><a href="#orgd181a3a">5.1. yes</a></li>
+<li><a href="#orgb79f6d4">5.2. Ctrl C</a></li>
+<li><a href="#org859f759">5.3. Ctrl Z</a></li>
+<li><a href="#org270a917">5.4. fg y bg</a></li>
+<li><a href="#orge5733aa">5.5. sleep</a></li>
+<li><a href="#org39e8754">5.6. &amp;</a></li>
+<li><a href="#org93b9d82">5.7. jobs</a></li>
+<li><a href="#org45eaecc">5.8. ps</a></li>
+<li><a href="#org49cc0ab">5.9. kill</a></li>
 </ul>
 </li>
-<li><a href="#org0b3c067">1.6. Permisos</a>
+<li><a href="#org57b1250">6. Permisos</a>
 <ul>
-<li><a href="#orgedd546d">1.6.1. ugo</a></li>
-<li><a href="#orgbdc25ae">1.6.2. rwx</a></li>
-<li><a href="#org4d111de">1.6.3. chmod</a></li>
-<li><a href="#org821c1a3">1.6.4. sudo</a></li>
-<li><a href="#org02456ea">1.6.5. root</a></li>
-<li><a href="#org5cdb316">1.6.6. exit</a></li>
+<li><a href="#orge59aaf1">6.1. ugo</a></li>
+<li><a href="#org6690a2c">6.2. rwx</a></li>
+<li><a href="#org4f50eaf">6.3. chmod</a></li>
+<li><a href="#org5f7bc81">6.4. sudo</a></li>
+<li><a href="#org3fcd563">6.5. root</a></li>
+<li><a href="#org9add880">6.6. exit</a></li>
 </ul>
 </li>
-<li><a href="#org8ea0e49">1.7. Bash</a></li>
-</ul>
-</li>
+<li><a href="#org2297ea7">7. Bash</a></li>
+<li><a href="#orga583a65">8. Otros comandos</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org59e4a11" class="outline-2">
-<h2 id="org59e4a11"><span class="section-number-2">1.</span> Comandos básicos</h2>
-<div class="outline-text-2" id="text-1">
 <p>
 Usar <i>Linux</i> se traduce en <i>usar la terminal</i>. La terminal es una
 <i>interfaz de usuario</i> que es la conexión directa entre un <i>usuario</i> y
@@ -346,10 +342,9 @@ Muchas distribuciones usan la combinacion de teclas <code>Ctrl Alt t</code> para
 abrir un nuevo shell; si no simplemente busca en las aplicaciones algo
 como <i>Terminal, Console, Shell</i>, un cuadro negro. Abrelo.
 </p>
-</div>
-<div id="outline-container-orgd8a97cc" class="outline-3">
-<h3 id="orgd8a97cc"><span class="section-number-3">1.1.</span> Salida estándar</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgb6b2620" class="outline-2">
+<h2 id="orgb6b2620"><span class="section-number-2">1.</span> Salida estándar</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Tenemos la terminal abierta, y tenemos algo como
 </p>
@@ -410,9 +405,9 @@ A continuación más <i>salida estandar</i>. Ingresa los siguientes comandos
 en tu terminal.
 </p>
 </div>
-<div id="outline-container-orgb8f5e17" class="outline-4">
-<h4 id="orgb8f5e17"><span class="section-number-4">1.1.1.</span> echo</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-org76e34ab" class="outline-3">
+<h3 id="org76e34ab"><span class="section-number-3">1.1.</span> echo</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 <code>echo</code> responde con el mismo mensaje que le pasemos.
 </p>
@@ -427,9 +422,9 @@ Intenta cambiar el texto entre comillas.
 </p>
 </div>
 </div>
-<div id="outline-container-org90c38a5" class="outline-4">
-<h4 id="org90c38a5"><span class="section-number-4">1.1.2.</span> top</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-orge3ef75a" class="outline-3">
+<h3 id="orge3ef75a"><span class="section-number-3">1.2.</span> top</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 <code>top</code> nos da información del uso de la memoria de nuestra computadora,
 y es un poco arcaica.
@@ -447,9 +442,9 @@ como <code>htop</code>. Es posible que debas instalarlo. Para salir de este
 </p>
 </div>
 </div>
-<div id="outline-container-org06436fc" class="outline-4">
-<h4 id="org06436fc"><span class="section-number-4">1.1.3.</span> df</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-orgd2d88c9" class="outline-3">
+<h3 id="orgd2d88c9"><span class="section-number-3">1.3.</span> df</h3>
+<div class="outline-text-3" id="text-1-3">
 <p>
 <code>df</code> nos muestra el espacio usado de nuestras particiones
 </p>
@@ -459,9 +454,9 @@ como <code>htop</code>. Es posible que debas instalarlo. Para salir de este
 </div>
 </div>
 </div>
-<div id="outline-container-orga5ad9a2" class="outline-4">
-<h4 id="orga5ad9a2"><span class="section-number-4">1.1.4.</span> ip addr</h4>
-<div class="outline-text-4" id="text-1-1-4">
+<div id="outline-container-org032befb" class="outline-3">
+<h3 id="org032befb"><span class="section-number-3">1.4.</span> ip addr</h3>
+<div class="outline-text-3" id="text-1-4">
 <p>
 <code>ip addr</code> nos muestra el estado de nuestras interfaces de red así como
 nuestra dirección IP si es que estamos conectados a internet.
@@ -472,9 +467,9 @@ nuestra dirección IP si es que estamos conectados a internet.
 </div>
 </div>
 </div>
-<div id="outline-container-org1d61d96" class="outline-4">
-<h4 id="org1d61d96"><span class="section-number-4">1.1.5.</span> clear</h4>
-<div class="outline-text-4" id="text-1-1-5">
+<div id="outline-container-org5afbab2" class="outline-3">
+<h3 id="org5afbab2"><span class="section-number-3">1.5.</span> clear</h3>
+<div class="outline-text-3" id="text-1-5">
 <p>
 A veces, queremos <i>limpiar</i> nuestra terminal porque ya se llenó el
 espacio. <code>clear</code> nos deja el cursor en la primera línea de la
@@ -491,9 +486,9 @@ Otro atajo de teclado es con la combinación de teclas <code>Ctrl l</code>
 </p>
 </div>
 </div>
-<div id="outline-container-org5541711" class="outline-4">
-<h4 id="org5541711"><span class="section-number-4">1.1.6.</span> tabulador</h4>
-<div class="outline-text-4" id="text-1-1-6">
+<div id="outline-container-org757c850" class="outline-3">
+<h3 id="org757c850"><span class="section-number-3">1.6.</span> tabulador</h3>
+<div class="outline-text-3" id="text-1-6">
 <p>
 Muchas veces queremos ahorrar el tiempo de escribir comandos.  por
 ejemplo <code>clear</code> podemos escribir solamente <code>cle</code> y apretar la tecla
@@ -519,9 +514,23 @@ letra del abecedario.
 </p>
 </div>
 </div>
-<div id="outline-container-org9dba397" class="outline-4">
-<h4 id="org9dba397"><span class="section-number-4">1.1.7.</span> AYUDA</h4>
-<div class="outline-text-4" id="text-1-1-7">
+<div id="outline-container-orged5ca71" class="outline-3">
+<h3 id="orged5ca71"><span class="section-number-3">1.7.</span> history</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+<i>history</i> nos muestra los últimos 2000 comandos ejecutados en esta
+terminal. Es útil para poder reescribir comandos que ya habíamos usado antes.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ history
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4847c3d" class="outline-3">
+<h3 id="org4847c3d"><span class="section-number-3">1.8.</span> AYUDA</h3>
+<div class="outline-text-3" id="text-1-8">
 <p>
 Muchas veces se nos olvida cómo <i>funciona</i> un comando; supongamos que
 es <code>top</code> Tenemos 3 opciones.
@@ -559,9 +568,9 @@ Recuerda que todo lo que aparezca en la pantalla como respuesta es <i>salida est
 </div>
 </div>
 </div>
-<div id="outline-container-org4393641" class="outline-3">
-<h3 id="org4393641"><span class="section-number-3">1.2.</span> Sistema de archivos</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org271669a" class="outline-2">
+<h2 id="org271669a"><span class="section-number-2">2.</span> Sistema de archivos</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Si hay terminal, hay carpetas. Siempre <i>vamos a estar</i> dentro de una
 carpeta. Navega desde la interfaz gráfica con el mouse al explorador
@@ -571,9 +580,9 @@ derecho</i> y <i>abrir en terminal</i>. Deberás tener algo como.
 
 <pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~/Escritorio</b></font>$</pre>
 </div>
-<div id="outline-container-orgbe3c124" class="outline-4">
-<h4 id="orgbe3c124"><span class="section-number-4">1.2.1.</span> pwd</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-org0c86c16" class="outline-3">
+<h3 id="org0c86c16"><span class="section-number-3">2.1.</span> pwd</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 <i>print working directory</i> nos dice la ruta <i>real</i> de la carpeta
 en donde estamos.
@@ -584,9 +593,9 @@ en donde estamos.
 </div>
 </div>
 </div>
-<div id="outline-container-orgec52ce6" class="outline-4">
-<h4 id="orgec52ce6"><span class="section-number-4">1.2.2.</span> cd</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-org57b092b" class="outline-3">
+<h3 id="org57b092b"><span class="section-number-3">2.2.</span> cd</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 <i>change directory</i> nos cambia de directorio a la ruta específicada.
 </p>
@@ -636,9 +645,9 @@ donde esta la práctica1 (en orden jerárquico)
 </p>
 </div>
 </div>
-<div id="outline-container-orgc45b05b" class="outline-4">
-<h4 id="orgc45b05b"><span class="section-number-4">1.2.3.</span> ls</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-orgaa16e53" class="outline-3">
+<h3 id="orgaa16e53"><span class="section-number-3">2.3.</span> ls</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 <i>list directory contents</i> nos muestra los contenidos de la carpeta, ya
 sean más carpetas o archivos.
@@ -665,9 +674,9 @@ También de los comandos de cada día. Es hora de crear cosas.
 </p>
 </div>
 </div>
-<div id="outline-container-orgec1d56f" class="outline-4">
-<h4 id="orgec1d56f"><span class="section-number-4">1.2.4.</span> mkdir</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-orgb00e4bd" class="outline-3">
+<h3 id="orgb00e4bd"><span class="section-number-3">2.4.</span> mkdir</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
 <i>make directory</i> crea un directorio con el nombre que le pasemos.
 </p>
@@ -705,7 +714,7 @@ carpeta <code>~/Documentos/</code>
 </p>
 
 
-<pre class="example" id="orgeb7a1a6">
+<pre class="example" id="orga227a7a">
 1er sem/
 ├── algebra1
 │   └── examenes
@@ -723,9 +732,9 @@ carpeta <code>~/Documentos/</code>
 </pre>
 </div>
 </div>
-<div id="outline-container-orgec8ceb2" class="outline-4">
-<h4 id="orgec8ceb2"><span class="section-number-4">1.2.5.</span> tree</h4>
-<div class="outline-text-4" id="text-1-2-5">
+<div id="outline-container-orgafe868d" class="outline-3">
+<h3 id="orgafe868d"><span class="section-number-3">2.5.</span> tree</h3>
+<div class="outline-text-3" id="text-2-5">
 <p>
 como su nombre lo indica, es <code>ls</code> pero en un formato de árbol
 jerárquico. Puede ser que tengas que instalarlo, pero es un comando
@@ -738,9 +747,9 @@ extremadamente útil; genera el árbol del ejercicio.
 </div>
 </div>
 </div>
-<div id="outline-container-org87b0e83" class="outline-4">
-<h4 id="org87b0e83"><span class="section-number-4">1.2.6.</span> touch</h4>
-<div class="outline-text-4" id="text-1-2-6">
+<div id="outline-container-org4b522e1" class="outline-3">
+<h3 id="org4b522e1"><span class="section-number-3">2.6.</span> touch</h3>
+<div class="outline-text-3" id="text-2-6">
 <p>
 <code>touch</code> crea archivos de cualquier tipo, normalmente <i>archivos de
 texto</i>. Al igual que las carpetas, si necesitamos espacios lo
@@ -757,9 +766,9 @@ Si tratamos de abrirlo estará vacío.
 </p>
 </div>
 </div>
-<div id="outline-container-org748dca0" class="outline-4">
-<h4 id="org748dca0"><span class="section-number-4">1.2.7.</span> redireccionamiento</h4>
-<div class="outline-text-4" id="text-1-2-7">
+<div id="outline-container-orgf8e3c0b" class="outline-3">
+<h3 id="orgf8e3c0b"><span class="section-number-3">2.7.</span> redireccionamiento</h3>
+<div class="outline-text-3" id="text-2-7">
 <p>
 Muchas veces es necesario <i>guardar</i> la salida de un comando, por
 ejemplo <code>df</code>. Podríamos ejecutar el comando, <i>seleccionar con el
@@ -814,9 +823,9 @@ el mismo archivo <i>informacion sistema.txt</i> uno debajo del otro.
 </ul>
 </div>
 </div>
-<div id="outline-container-orge4ff0bf" class="outline-4">
-<h4 id="orge4ff0bf"><span class="section-number-4">1.2.8.</span> cat</h4>
-<div class="outline-text-4" id="text-1-2-8">
+<div id="outline-container-org324e6d7" class="outline-3">
+<h3 id="org324e6d7"><span class="section-number-3">2.8.</span> cat</h3>
+<div class="outline-text-3" id="text-2-8">
 <p>
 <i>concatenate files and print</i> muestra los contenidos de un archivo
 <b>tal cual es internamente.</b>
@@ -841,17 +850,17 @@ sino por <i>bytes</i> y es la representación más cercana que se tiene.
 </div>
 </div>
 </div>
-<div id="outline-container-org05bc427" class="outline-3">
-<h3 id="org05bc427"><span class="section-number-3">1.3.</span> Administracion de archivos</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org6165e79" class="outline-2">
+<h2 id="org6165e79"><span class="section-number-2">3.</span> Administracion de archivos</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Ya sabemos crear archivos y directorios; veremos cómo operar sobre
 ellos con <i>mover, copiar y eliminar</i> archivos y directorios.
 </p>
 </div>
-<div id="outline-container-org3d1a474" class="outline-4">
-<h4 id="org3d1a474"><span class="section-number-4">1.3.1.</span> cp</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-orgc4129c0" class="outline-3">
+<h3 id="orgc4129c0"><span class="section-number-3">3.1.</span> cp</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 <i>copy</i> copia los archivos de la ruta \(A\) a la ruta \(B\)
 </p>
@@ -903,9 +912,9 @@ mouse</b> solo para descargarlas de internet.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb4e9a19" class="outline-4">
-<h4 id="orgb4e9a19"><span class="section-number-4">1.3.2.</span> mv</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-org76da87a" class="outline-3">
+<h3 id="org76da87a"><span class="section-number-3">3.2.</span> mv</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 <i>move</i> mueve rutas de la ruta \(A\) a la ruta \(B\). A diferencia de <code>cp</code>
 que crea duplicados, <code>mv</code> elimina el archivo original, es como un
@@ -934,9 +943,9 @@ un nombre más <i>descriptivo</i>.
 </p>
 </div>
 </div>
-<div id="outline-container-org8820424" class="outline-4">
-<h4 id="org8820424"><span class="section-number-4">1.3.3.</span> rm</h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-org93c2bf8" class="outline-3">
+<h3 id="org93c2bf8"><span class="section-number-3">3.3.</span> rm</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 <i>remove</i> elimina el archivo para siempre <i>sin confirmacion
 alguna</i>. Ten mucho cuidado si no estas seguro de eliminarlo ya que no
@@ -971,9 +980,9 @@ utilizar para nada el mouse</b>.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd16135d" class="outline-3">
-<h3 id="orgd16135d"><span class="section-number-3">1.4.</span> Filtros</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org166fd5e" class="outline-2">
+<h2 id="org166fd5e"><span class="section-number-2">4.</span> Filtros</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Los filtros <code>|</code> (en ingles <i>pipe</i>) sirven para reenviar la salida de un
 programa <b>a otro programa</b>.  A diferencia del redireccionamiento <code>&gt;</code>
@@ -983,9 +992,9 @@ computadora de archivos o algo, vamos a necesitar escribir <b>texto
 procesable</b>
 </p>
 </div>
-<div id="outline-container-org11f9d93" class="outline-4">
-<h4 id="org11f9d93"><span class="section-number-4">1.4.1.</span> nano</h4>
-<div class="outline-text-4" id="text-1-4-1">
+<div id="outline-container-orgddf9db1" class="outline-3">
+<h3 id="orgddf9db1"><span class="section-number-3">4.1.</span> nano</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 <code>nano</code> es un editor de textos <i>extremadamente básico</i> que se apoya de
 la línea de comandos y será util para ejemplificar los filtros; más
@@ -1042,7 +1051,7 @@ una noticia, un <a href="https://www.lipsum.com/">Lorem ipsum</a> <b>divido en v
 el nombre de <i>texto.txt</i>. Para los ejercicios se usará el siguinte texto.
 </p>
 
-<pre class="example" id="org6b5949b">
+<pre class="example" id="org1b73e16">
 I've touch'd the highest point of all my greatness;
 And from that full meridian of my glory
 I haste now to my setting.  I shall fall,
@@ -1052,9 +1061,9 @@ And no man see me more.
 </pre>
 </div>
 </div>
-<div id="outline-container-org7a6ac53" class="outline-4">
-<h4 id="org7a6ac53"><span class="section-number-4">1.4.2.</span> pipe</h4>
-<div class="outline-text-4" id="text-1-4-2">
+<div id="outline-container-org838102d" class="outline-3">
+<h3 id="org838102d"><span class="section-number-3">4.2.</span> pipe</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 <code>|</code>  se utiliza para pasar información de un programa a otro. Su forma
 general es como sigue
@@ -1071,9 +1080,9 @@ comando <code>destino</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org9460839" class="outline-4">
-<h4 id="org9460839"><span class="section-number-4">1.4.3.</span> sort</h4>
-<div class="outline-text-4" id="text-1-4-3">
+<div id="outline-container-org47c3d25" class="outline-3">
+<h3 id="org47c3d25"><span class="section-number-3">4.3.</span> sort</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 <code>sort</code> es un comando que ordena <i>líneas de texto</i> alfabéticamente e
 <b>imprime</b> el texto ordenado. Podemos ejecutarlo sobre el archivo de
@@ -1104,9 +1113,9 @@ otro programa como <code>wc</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgff4eede" class="outline-4">
-<h4 id="orgff4eede"><span class="section-number-4">1.4.4.</span> wc</h4>
-<div class="outline-text-4" id="text-1-4-4">
+<div id="outline-container-org0d68d13" class="outline-3">
+<h3 id="org0d68d13"><span class="section-number-3">4.4.</span> wc</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 <i>word count</i> nos cuenta cuantos caractéres o líneas hay en un
 archivo.
@@ -1145,9 +1154,9 @@ Recuerda que la información se pasa de un comando a otro a través del
 </p>
 </div>
 </div>
-<div id="outline-container-org760a88b" class="outline-4">
-<h4 id="org760a88b"><span class="section-number-4">1.4.5.</span> grep</h4>
-<div class="outline-text-4" id="text-1-4-5">
+<div id="outline-container-org17b7ea1" class="outline-3">
+<h3 id="org17b7ea1"><span class="section-number-3">4.5.</span> grep</h3>
+<div class="outline-text-3" id="text-4-5">
 <p>
 <code>grep</code> nos busca una palabra clave dentro de una salida estándar. Por
 ejemplo, el comando <code>ip addr</code> saca muchas cosas, pero solo queremos la
@@ -1176,9 +1185,9 @@ En nuestro poema podemos encontrar todas las líneas que contengan
 </div>
 </div>
 </div>
-<div id="outline-container-orge6d989a" class="outline-4">
-<h4 id="orge6d989a"><span class="section-number-4">1.4.6.</span> uniq</h4>
-<div class="outline-text-4" id="text-1-4-6">
+<div id="outline-container-org254f732" class="outline-3">
+<h3 id="org254f732"><span class="section-number-3">4.6.</span> uniq</h3>
+<div class="outline-text-3" id="text-4-6">
 <p>
 <code>uniq</code> nos da una serie de líneas <i>únicas</i> que no se repiten.  Es muy
 útil creando diccionarios.
@@ -1190,9 +1199,9 @@ En nuestro poema podemos encontrar todas las líneas que contengan
 </div>
 </div>
 </div>
-<div id="outline-container-org3c18317" class="outline-4">
-<h4 id="org3c18317"><span class="section-number-4">1.4.7.</span> Ejercicio</h4>
-<div class="outline-text-4" id="text-1-4-7">
+<div id="outline-container-org0d84b07" class="outline-3">
+<h3 id="org0d84b07"><span class="section-number-3">4.7.</span> Ejercicio</h3>
+<div class="outline-text-3" id="text-4-7">
 <p>
 Todos alguna vez hemos jugado <i>Basta!</i>. Consiste en llenar una tabla
 donde cada fila debe ser un sustantivo empezando con cierta letra, por
@@ -1256,7 +1265,7 @@ Crea un archivo de texto para cada <i>columna</i> del juego e ingresa al
 menos una palabra con cada nombre, por ejemplo para <i>Color</i> sería
 </p>
 
-<pre class="example" id="org764a71b">
+<pre class="example" id="org9e5afe9">
 # color.txt
 rojo
 amarillo
@@ -1283,9 +1292,9 @@ txt para cada columna</i>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgffc668d" class="outline-4">
-<h4 id="orgffc668d"><span class="section-number-4">1.4.8.</span> find</h4>
-<div class="outline-text-4" id="text-1-4-8">
+<div id="outline-container-org3b5836a" class="outline-3">
+<h3 id="org3b5836a"><span class="section-number-3">4.8.</span> find</h3>
+<div class="outline-text-3" id="text-4-8">
 <p>
 <code>find</code> es un comando muy poderoso para poder encontrar <i>archivos</i> o
 <i>carpetas</i> de manera rápida sin utilizar una interfaz gráfica. Debemos
@@ -1349,9 +1358,9 @@ Respuesta en <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink"
 </div>
 </div>
 </div>
-<div id="outline-container-orgc77c77a" class="outline-3">
-<h3 id="orgc77c77a"><span class="section-number-3">1.5.</span> Procesos</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgbfe7c5a" class="outline-2">
+<h2 id="orgbfe7c5a"><span class="section-number-2">5.</span> Procesos</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Vimos anteriormente que con <code>top</code> podemos ver los programas que están
 corriendo en la computadora. Muchos de estos <i>procesos</i> están
@@ -1360,9 +1369,9 @@ que vean que su programa <i>no termine</i> y se quede en un ciclo
 infinito. En <i>Linux</i> podemos <b>matar</b> procesos. Veamos un ejemplo
 </p>
 </div>
-<div id="outline-container-orgf8ec65a" class="outline-4">
-<h4 id="orgf8ec65a"><span class="section-number-4">1.5.1.</span> yes</h4>
-<div class="outline-text-4" id="text-1-5-1">
+<div id="outline-container-orgd181a3a" class="outline-3">
+<h3 id="orgd181a3a"><span class="section-number-3">5.1.</span> yes</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
 <code>yes</code> es un comando que imprime <i>infinitamente</i> y.
 </p>
@@ -1373,33 +1382,33 @@ infinito. En <i>Linux</i> podemos <b>matar</b> procesos. Veamos un ejemplo
 </div>
 </div>
 </div>
-<div id="outline-container-org2a61fc6" class="outline-4">
-<h4 id="org2a61fc6"><span class="section-number-4">1.5.2.</span> Ctrl C</h4>
-<div class="outline-text-4" id="text-1-5-2">
+<div id="outline-container-orgb79f6d4" class="outline-3">
+<h3 id="orgb79f6d4"><span class="section-number-3">5.2.</span> Ctrl C</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
 Para matar un proceso <i>dentro del proceso</i> usamos la combinación de
 teclas <code>Ctrl C</code>. Mata a <code>yes</code>
 </p>
 </div>
 </div>
-<div id="outline-container-org5840824" class="outline-4">
-<h4 id="org5840824"><span class="section-number-4">1.5.3.</span> Ctrl Z</h4>
-<div class="outline-text-4" id="text-1-5-3">
+<div id="outline-container-org859f759" class="outline-3">
+<h3 id="org859f759"><span class="section-number-3">5.3.</span> Ctrl Z</h3>
+<div class="outline-text-3" id="text-5-3">
 <p>
 Por otra parte, podemos <i>pausar</i> procesos, si utilizamos la
 combinación de teclas <code>Ctrl Z</code>. Manda a dormir a <code>yes</code>
 </p>
 
-<pre class="example" id="org45032ec">
+<pre class="example" id="org44ff6bd">
 y
 ^Z
 [1]+  Stopped                 yes
 </pre>
 </div>
 </div>
-<div id="outline-container-org511fb7e" class="outline-4">
-<h4 id="org511fb7e"><span class="section-number-4">1.5.4.</span> fg y bg</h4>
-<div class="outline-text-4" id="text-1-5-4">
+<div id="outline-container-org270a917" class="outline-3">
+<h3 id="org270a917"><span class="section-number-3">5.4.</span> fg y bg</h3>
+<div class="outline-text-3" id="text-5-4">
 <p>
 En este estado el programa esta <i>durmiendo</i>. Podemos despertarlo de 2
 maneras:
@@ -1444,9 +1453,9 @@ en la terminal teniendo <i>pausado</i> el <code>nano</code>
 </p>
 </div>
 </div>
-<div id="outline-container-orgd4805bf" class="outline-4">
-<h4 id="orgd4805bf"><span class="section-number-4">1.5.5.</span> sleep</h4>
-<div class="outline-text-4" id="text-1-5-5">
+<div id="outline-container-orge5733aa" class="outline-3">
+<h3 id="orge5733aa"><span class="section-number-3">5.5.</span> sleep</h3>
+<div class="outline-text-3" id="text-5-5">
 <p>
 <code>sleep</code> pausa el programa por <i>N</i> cantidad de segundos
 </p>
@@ -1456,9 +1465,9 @@ en la terminal teniendo <i>pausado</i> el <code>nano</code>
 </div>
 </div>
 </div>
-<div id="outline-container-org6c3f184" class="outline-4">
-<h4 id="org6c3f184"><span class="section-number-4">1.5.6.</span> &amp;</h4>
-<div class="outline-text-4" id="text-1-5-6">
+<div id="outline-container-org39e8754" class="outline-3">
+<h3 id="org39e8754"><span class="section-number-3">5.6.</span> &amp;</h3>
+<div class="outline-text-3" id="text-5-6">
 <p>
 Podemos enviar directamente un programa a dormir utilizando <code>&amp;</code>, en
 lugar de ejecutarlo, oprimir <code>Ctrl z</code> y luego <code>bg</code>
@@ -1476,9 +1485,9 @@ que podemos seguir usando la terminal.
 </p>
 </div>
 </div>
-<div id="outline-container-org794b5dd" class="outline-4">
-<h4 id="org794b5dd"><span class="section-number-4">1.5.7.</span> jobs</h4>
-<div class="outline-text-4" id="text-1-5-7">
+<div id="outline-container-org93b9d82" class="outline-3">
+<h3 id="org93b9d82"><span class="section-number-3">5.7.</span> jobs</h3>
+<div class="outline-text-3" id="text-5-7">
 <p>
 <code>jobs</code> nos muestra los procesos que hemos dormido.
 </p>
@@ -1500,9 +1509,9 @@ Por ejemplo si queremos despertar <code>yes</code>, utilizamos <code>fg</code> c
 </div>
 </div>
 </div>
-<div id="outline-container-org52c3d0e" class="outline-4">
-<h4 id="org52c3d0e"><span class="section-number-4">1.5.8.</span> ps</h4>
-<div class="outline-text-4" id="text-1-5-8">
+<div id="outline-container-org45eaecc" class="outline-3">
+<h3 id="org45eaecc"><span class="section-number-3">5.8.</span> ps</h3>
+<div class="outline-text-3" id="text-5-8">
 <p>
 <i>process snapshot</i> nos da información de los procesos en formato de
 lista. Teniendo los trabajos de <i>nano</i> y <i>yes</i> dormidos, ejecutarlo
@@ -1548,9 +1557,9 @@ de <i>everything</i>
 </div>
 </div>
 </div>
-<div id="outline-container-org9b8b2b6" class="outline-4">
-<h4 id="org9b8b2b6"><span class="section-number-4">1.5.9.</span> kill</h4>
-<div class="outline-text-4" id="text-1-5-9">
+<div id="outline-container-org49cc0ab" class="outline-3">
+<h3 id="org49cc0ab"><span class="section-number-3">5.9.</span> kill</h3>
+<div class="outline-text-3" id="text-5-9">
 <p>
 Finalmente, podemos matar procesos más alla de nuestra terminal
 utilizando <code>kill</code> ya que <code>Ctrl C</code> se limita a solo <i>procesos
@@ -1570,9 +1579,9 @@ finalizar programas <i>atascados</i> como <code>yes</code> o que no responden. M
 </div>
 </div>
 </div>
-<div id="outline-container-org0b3c067" class="outline-3">
-<h3 id="org0b3c067"><span class="section-number-3">1.6.</span> Permisos</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-org57b1250" class="outline-2">
+<h2 id="org57b1250"><span class="section-number-2">6.</span> Permisos</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 Para poder un entendimiento básico de <i>linux</i> es necesario ver su
 sistema de permisos ya que esto hace <i>Linux</i> superior a otros sistemas
@@ -1580,9 +1589,9 @@ operativos como <i>Windows</i> y no necesita de <i>antivirus</i>. Tenemos 3
 personajes con 3 tipos de permisos que se pueden combinar de cualquier forma
 </p>
 </div>
-<div id="outline-container-orgedd546d" class="outline-4">
-<h4 id="orgedd546d"><span class="section-number-4">1.6.1.</span> ugo</h4>
-<div class="outline-text-4" id="text-1-6-1">
+<div id="outline-container-orge59aaf1" class="outline-3">
+<h3 id="orge59aaf1"><span class="section-number-3">6.1.</span> ugo</h3>
+<div class="outline-text-3" id="text-6-1">
 <p>
 En <i>UNIX</i> tenemos 3 tipos de personajes para manipular achivos.
 </p>
@@ -1609,9 +1618,9 @@ personajes en archivos.
 </p>
 </div>
 </div>
-<div id="outline-container-orgbdc25ae" class="outline-4">
-<h4 id="orgbdc25ae"><span class="section-number-4">1.6.2.</span> rwx</h4>
-<div class="outline-text-4" id="text-1-6-2">
+<div id="outline-container-org6690a2c" class="outline-3">
+<h3 id="org6690a2c"><span class="section-number-3">6.2.</span> rwx</h3>
+<div class="outline-text-3" id="text-6-2">
 <p>
 En <i>UNIX</i> tenemos 3 tipos de acciones sobre un archivo:
 </p>
@@ -1644,9 +1653,9 @@ Desactivar un permiso de <i>rwx</i> se denota con <code>-</code>
 </p>
 </div>
 </div>
-<div id="outline-container-org4d111de" class="outline-4">
-<h4 id="org4d111de"><span class="section-number-4">1.6.3.</span> chmod</h4>
-<div class="outline-text-4" id="text-1-6-3">
+<div id="outline-container-org4f50eaf" class="outline-3">
+<h3 id="org4f50eaf"><span class="section-number-3">6.3.</span> chmod</h3>
+<div class="outline-text-3" id="text-6-3">
 <p>
 <i>change file mode bits</i> cambia los permisos de los personajes con sus
 respectivas acciones.
@@ -1853,9 +1862,9 @@ Recuerda, la palabra clave hoy es <code>ugo+rwx</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org821c1a3" class="outline-4">
-<h4 id="org821c1a3"><span class="section-number-4">1.6.4.</span> sudo</h4>
-<div class="outline-text-4" id="text-1-6-4">
+<div id="outline-container-org5f7bc81" class="outline-3">
+<h3 id="org5f7bc81"><span class="section-number-3">6.4.</span> sudo</h3>
+<div class="outline-text-3" id="text-6-4">
 <p>
 <code>sudo</code> es un <i>grupo de usuarios</i> que permite elevar
 privilegios. Nuestra terminal es más como
@@ -1920,11 +1929,12 @@ Aquí una lista de programas recomendados que debes instalar y probar:
 <li>neofetch</li>
 <li>htop</li>
 <li>ssh</li>
+<li>command-not-found</li>
 <li>brave</li>
 <li>flatpak</li>
 <li>fortune</li>
-<li>toilet</li>
 <li>cowsay</li>
+<li>toilet</li>
 <li>2048</li>
 <li>oneko</li>
 <li>net-tools</li>
@@ -1933,9 +1943,9 @@ Aquí una lista de programas recomendados que debes instalar y probar:
 </ol>
 </div>
 </div>
-<div id="outline-container-org02456ea" class="outline-4">
-<h4 id="org02456ea"><span class="section-number-4">1.6.5.</span> root</h4>
-<div class="outline-text-4" id="text-1-6-5">
+<div id="outline-container-org3fcd563" class="outline-3">
+<h3 id="org3fcd563"><span class="section-number-3">6.5.</span> root</h3>
+<div class="outline-text-3" id="text-6-5">
 <p>
 Finalmente, <code>root</code> es el usuario <i>más poderoso</i> que siempre existe en
 cualquier sistema <i>UNIX</i>. Este tipo de usuario puede modificar
@@ -1973,9 +1983,9 @@ símbolo final ha cambiado a <code>#</code> que justamente significa: permisos d
 </p>
 </div>
 </div>
-<div id="outline-container-org5cdb316" class="outline-4">
-<h4 id="org5cdb316"><span class="section-number-4">1.6.6.</span> exit</h4>
-<div class="outline-text-4" id="text-1-6-6">
+<div id="outline-container-org9add880" class="outline-3">
+<h3 id="org9add880"><span class="section-number-3">6.6.</span> exit</h3>
+<div class="outline-text-3" id="text-6-6">
 <p>
 Para salir del modo <i>root</i> escribimos <code>exit</code>, o más en general, para
 terminar <i>cualquier programa</i> que esté recibiendo una entrada (una
@@ -1985,9 +1995,9 @@ sistemas <i>UNIX</i> significa <b>fin de línea</b>.
 </div>
 </div>
 </div>
-<div id="outline-container-org8ea0e49" class="outline-3">
-<h3 id="org8ea0e49"><span class="section-number-3">1.7.</span> Bash</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-org2297ea7" class="outline-2">
+<h2 id="org2297ea7"><span class="section-number-2">7.</span> Bash</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 Bash es un <i>lenguaje de programación</i> por lo que podemos crear
 algoritmos y scripts. Los scripts <b>deben</b> tener el permiso de
@@ -2090,6 +2100,88 @@ lenguaje de <i>linux</i>.
 </p>
 </div>
 </div>
+<div id="outline-container-orga583a65" class="outline-2">
+<h2 id="orga583a65"><span class="section-number-2">8.</span> Otros comandos</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Algunos comandos importantes que nunca se ven pero facilitan la vida
+al 1000% en la terminal.
+</p>
+
+<ol class="org-ol">
+<li><p>
+<code>Ctrl R</code>  abre un buscador de comandos, solamente escribimos alguna
+palabra clave del mismo y si <i>hay coincidencias</i> lo pone completo.
+</p>
+
+<p>
+Es equivalente <i>un poco</i> a poner el siguiente comando.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ history | grep <span style="color: #deb887;">"comando"</span>
+</pre>
+</div></li>
+<li><code>Ctrl P</code> o <i>fecha hacia arriba</i> nos muestra el último comando
+escrito. Si seguimos pulsando las teclas nos dará comandos
+anteriores en orden.</li>
+<li><code>Ctrl Shift C</code> <i>copia</i> una seleccion de la terminal, ya que <code>Ctrl
+   C</code> es el comando para <i>matar</i> procesos.</li>
+<li><code>Ctrl Shift V</code> <i>pega</i> algo previamente copiado en la terminal ya
+que <code>Ctrl V</code> no hace nada.</li>
+<li><p>
+<code>alias</code> define un comando como otro comando. Es útil para no
+escribir <i>todo el comando</i>.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">$ alias <span style="color: #4eee94;">ll</span>=<span style="color: #deb887;">"ls -lah"</span>
+</pre>
+</div>
+<p>
+Así cada vez que ejecutemos <code>ll</code>, se ejecutará <code>ls -lah</code>. La
+desventaja es que al reinciar la computadora se pierden estos
+<code>alias</code>. Para que perdure a pesar de un reinicio, debemos de
+escribirlo al final del archivo <code>~/.bashrc</code>, lo abrimos con <code>nano</code>
+o lo que sea.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">~/.bashrc: executed by bash(1) for non-login shells.
+</span><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+</span><span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">for examples
+</span>
+<span style="color: #7f7f7f;"># </span><span style="color: #7f7f7f;">If not running interactively, don't do anything
+</span><span style="color: #00bfff;">case</span> $<span style="color: #4eee94;">-</span><span style="color: #00bfff;"> in</span>
+    *i*) ;;
+    *) <span style="color: #00bfff;">return</span>;;
+<span style="color: #00bfff;">esac</span>
+
+<span style="color: #f08080;">alias</span> <span style="color: #4eee94;">ll</span>=<span style="color: #deb887;">"ls -lah"</span>;
+</pre>
+</div>
+
+<p>
+Podemos definir cualquier comando, por ejemplo <code>alias
+   apagar="shutdown --halt now"</code>
+</p></li>
+<li><p>
+<code>Ctrl D</code> es fin de línea, lo que significa que <i>terminamos</i> una
+entrada. por ejemplo
+</p>
+<pre><font color="#26A269"><b>pichu@ubuntu</b></font>:<font color="#12488B"><b>~/Documents/Proyectos/java-from-zero</b></font>$ wc -w
+Vamos a contar                             
+cuantas palabras
+tiene este texto.
+[Ctrl D]
+8
+</pre></li>
+
+<li><i>Navegación</i>.
+Podemos navegar con el cursos adelantando por palabra, eliminando,
+incluso eliminar toda la linea <i>sin utilizar</i> las flechas de
+navegación. El <i>95%</i> de navegación en terminal es navegeación de
+<b>emacs</b>. Si aprendes a navegar en <b>emacs</b>, navegar en la terminal
+es extremadamente fácil.</li>
+</ol>
+</div>
 </div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
@@ -2122,7 +2214,7 @@ menores a 4 <i>kilobytes</i>.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-29 Tue 22:33</p>
+<p class="date">Created: 2025-07-30 Wed 12:35</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

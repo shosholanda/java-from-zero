@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Errores en programación
+#+TITLE: Errores en programación
 
 Es probable que el programa anterior no te haya funcionado a la
 primera, ¿por qué?
@@ -8,11 +8,11 @@ No hay nada de diferente entre un _lenguaje natural_ como el /español/
 con un _lenguaje de programación_ como /Java/. Ambos deben cumplir
 ciertas reglas para que la comunicación sea efectiva.
 
-** Propiedades del lenguaje
+* Propiedades del lenguaje
 
 En general, hablando de lenguajes tenemos 3 propiedades específicas:
 
-*** Sintaxis
+** Sintaxis
 Son reglas /gramaticales/ para decir cómo se escriben las palabras y
 en qué orden deben ir. Por ejemplo tenemos la estructura /Sujeto,
 verbo y predicado/
@@ -40,7 +40,7 @@ Y donde no:
       }};
 #+end_src
 
-*** Semántica
+** Semántica
 El significado que tiene cada palabra del lenguaje y que tenga sentido
 la idea que se dice. Por ejemplo
 
@@ -78,8 +78,7 @@ Claramente un número de punto decimal no es "Hola mundo", no tiene
 sentido aunque sintácticamente sea correcto.
 
 
-
-*** Pragmática
+** Pragmática
 El significado que se le da a la oración dependiendo del contexto.
 
 #+begin_quote
@@ -152,7 +151,7 @@ public class Triangulo {
 Aquí hay demasiados errores, cubriremos los más comunes. Tratamos de
 compilar con javac.
 
-** Errores sintácticos
+* Errores sintácticos
 Lo primero que verifica /java/ es la _sintaxis_. El compilador de java
 nos muestra al menos un error:
 
@@ -287,7 +286,7 @@ un ~;~, o no pusimos un ~=~. Está decretado que esto les pasará a los
 estudiantes de primeros semestres de /ciencias de la computación/ y es un evento
 canónico :)
 
-** Errores semánticos
+* Errores semánticos
 
 Lo segundo que checa el compilador de /Java/ son errores
 semánticos. No podemos ver errores semánticos sin _antes_ haber
@@ -391,7 +390,7 @@ errores. Compilamos y ejecutamos nuestro programa con:
 cada caso, este mini poder se va adquiriendo a lo largo de la
 programación, así que solamente programa y lo adquirirás!
 
-** Errores lógicos
+* Errores lógicos
 
 Este tipo de errores son los más difíciles de detectar ya que no son
 capturados por el compilador, además tiene que ver que nuestra salida
@@ -427,9 +426,7 @@ hará lo que tiene que hacer pero no lo hace, como por ejemplo ponerle
 /play/ a un video y que no pase nada, o que la suma de nuestros ahorros
 nos de un número negativo!
 
-
-** Errores en tiempo de ejecución
-
+* Errores en tiempo de ejecución
 Todavía hay un último tipo de error y es de esos errores que son
 difíciles de determinar ya que /existen/ hasta que /existen/.
 

@@ -1,6 +1,6 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Más sobre ciclos
-** Ciclos infinitos
+#+TITLE: Más sobre ciclos
+* Ciclos infinitos
 Como mencionamos anteriomente, existen ciclos infinitos dentro de la
 programación que pueden ser un /error/ o una /funcionalidad/ del
 programa.
@@ -48,7 +48,7 @@ Normalmente se utiliza siempre la primera opción.
 ** Problema 1: Yes en Java
 Crea una copia del programa de UNIX ~yes~ en /Java/.
 
-** Problema 2: Generador de números aleatorios
+* Problema 2: Generador de números aleatorios
 Dado un número entero positivo como cota superior /N/, generar números
 aleatorios entre 0 y /N/; salir del programa cuando se ingrese la
 tecla ~q~
@@ -157,7 +157,7 @@ No olvidemos cerrar nuestra entrada
   input.close();
 #+end_src
 
-** El problema del paro
+* El problema del paro
 El problema del paro, (en inglés como /The halting problem/) no se refiere a los paros estudiantiles o del
 sindicato. Fue propuesto y resuelto por el primer computólogo del
 mundo /Alan Turing/ y dice lo siguiente:
@@ -222,7 +222,7 @@ pensando la computadora. Un ejemplo de salida sería:
 Un dato curioso es que podemos adivinar cualquier número entre 0 y /N/
 en $log_2(N)$ intentos, si hacemos las preguntas correctas.
 
-** Ciclos anidados
+* Ciclos anidados
 Es muy común en programación que hagamos ciclos /dentro/ de ciclos.
 Por ejemplo, queremos imprimir en la terminal la siguiente pantalla de
 $M*N$, con $N = 10, M = 5$
@@ -361,7 +361,7 @@ Dado una cota superior positivo $N$, imprimir *todos* los números
 primos que existen entre $[0, N]$ incluyendo a N y el total de números
 primos encontrados.
 
-** Recursión
+* Recursión
 Todavía nos falta ver una última estructura repetitiva, que más que
 estructura es un concepto matemático basado en el /cálculo
 lambda/. Gracias a la tesis /Church-Turing/ las máquinas de turing y

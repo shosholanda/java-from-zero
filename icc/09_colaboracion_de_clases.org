@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Colaboración de clases
+#+TITLE: Colaboración de clases
 
 En programación, normalmente no se programa solamente una función o
 una clase; siempre se programan módulos que utilizan varias clases que
@@ -157,7 +157,7 @@ crearemos código desde 0, si estamos programando en /Ensamblador/ o
 Por esta razón, el código hagamos debemos hacerlo con /calidad/ y
 /buenas prácticas/ para que pueda ser utilizado por /otros
 programadores/ ya que somos hijos del /código libre/ y licencias GNU.
-
+* Problemas
 ** Problema 1: Dados
 Crear una colaboración de clases que nos permita tirar 3 dados. Si la
 suma de la tirada sale igual a 10, la casa gana, de otra forma gana el
@@ -181,7 +181,6 @@ jugador. Las clases son
 + Main:
   Crear un objeto /Tirada/ ejecutar el método ~tirar()~
       
-   
 ** Problema 2: Granja
 Crear una colaboración de clases para crear una ~Granja~. La granja
 deberá contener las clases: /Vaca, Pollo, Oveja, Puerco, Gato, y

@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-17 Thu 14:52 -->
+<!-- 2025-07-30 Wed 13:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>La clase String</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -232,36 +232,34 @@
  |
  <a accesskey="H" href="../inicio.html"> HOME </a>
 </div><div id="content" class="content">
+<h1 class="title">La clase String</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org130acd2">1. La clase String</a>
+<li><a href="#orgdb24dea">1. Concatenación</a></li>
+<li><a href="#orgfa6692a">2. To Lower/Upper Case</a></li>
+<li><a href="#org9f5b63b">3. Equals</a></li>
+<li><a href="#org843f063">4. Length</a></li>
+<li><a href="#org9e07bf7">5. Char at</a></li>
+<li><a href="#org94ba6e2">6. Substring</a></li>
+<li><a href="#orge313656">7. Index Of</a></li>
+<li><a href="#orgee52021">8. Split</a></li>
+<li><a href="#org12a483f">9. Starts/Ends with</a></li>
+<li><a href="#orgeb1b974">10. Replace</a></li>
+<li><a href="#org0a6fe17">11. Problemas</a>
 <ul>
-<li><a href="#org11d3369">1.1. Concatenación</a></li>
-<li><a href="#org0138d9a">1.2. To Lower/Upper Case</a></li>
-<li><a href="#org0fb154f">1.3. Equals</a></li>
-<li><a href="#org66c3531">1.4. Length</a></li>
-<li><a href="#org85c9bd5">1.5. Char at</a></li>
-<li><a href="#org90d774f">1.6. Substring</a></li>
-<li><a href="#orgbce9418">1.7. Index Of</a></li>
-<li><a href="#orgcde9495">1.8. Split</a></li>
-<li><a href="#org755ec56">1.9. Starts/Ends with</a></li>
-<li><a href="#org64a8dac">1.10. Replace</a></li>
-<li><a href="#orgacd82f0">1.11. Problema 1: Correo</a></li>
-<li><a href="#org7a57095">1.12. Problema 2: Reversa</a></li>
-<li><a href="#org7b7fda3">1.13. Problema 3: Palíndromo</a></li>
-<li><a href="#org01e8a99">1.14. Problema 4: Contraseña</a></li>
-<li><a href="#org3daf98f">1.15. Problema 5: Conteo</a></li>
-<li><a href="#org5edf198">1.16. Problema 6: Versos</a></li>
+<li><a href="#orgd8f1c6d">11.1. Problema 1: Correo</a></li>
+<li><a href="#org50bfeaf">11.2. Problema 2: Reversa</a></li>
+<li><a href="#org894b19c">11.3. Problema 3: Palíndromo</a></li>
+<li><a href="#orgbe3c274">11.4. Problema 4: Contraseña</a></li>
+<li><a href="#org6543a43">11.5. Problema 5: Conteo</a></li>
+<li><a href="#orga67dea1">11.6. Problema 6: Versos</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org130acd2" class="outline-2">
-<h2 id="org130acd2"><span class="section-number-2">1.</span> La clase String</h2>
-<div class="outline-text-2" id="text-1">
 <p>
 Hemos visto rápidamente que si quieremos guardar texto utilizamos el
 <i>objeto</i> llamado <code>String</code> como
@@ -403,10 +401,9 @@ En esta sección veremos los métodos más utilizados de la clase
 <code>String</code>.  Es de suma importancia escribir el <code>.</code> (punto) y los <code>()</code>,
 así como su argumento.
 </p>
-</div>
-<div id="outline-container-org11d3369" class="outline-3">
-<h3 id="org11d3369"><span class="section-number-3">1.1.</span> Concatenación</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgdb24dea" class="outline-2">
+<h2 id="orgdb24dea"><span class="section-number-2">1.</span> Concatenación</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Dadas 2 cadenas, podemos crear una nueva cadena con la información de
 ambas utilizando el operador <code>+</code>
@@ -421,9 +418,9 @@ System.out.println(s3); <span style="color: #7f7f7f;">// </span><span style="col
 </div>
 </div>
 </div>
-<div id="outline-container-org0138d9a" class="outline-3">
-<h3 id="org0138d9a"><span class="section-number-3">1.2.</span> To Lower/Upper Case</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgfa6692a" class="outline-2">
+<h2 id="orgfa6692a"><span class="section-number-2">2.</span> To Lower/Upper Case</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Convierte todos los caracteres a mayúsculas/minúsculas respectivamente
 </p>
@@ -436,9 +433,9 @@ System.out.println(m); <span style="color: #7f7f7f;">//</span><span style="color
 </div>
 </div>
 </div>
-<div id="outline-container-org0fb154f" class="outline-3">
-<h3 id="org0fb154f"><span class="section-number-3">1.3.</span> Equals</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org9f5b63b" class="outline-2">
+<h2 id="org9f5b63b"><span class="section-number-2">3.</span> Equals</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Una cadena es igual <i>en contenido</i> a otra cadena utilizando el método
 equals
@@ -461,9 +458,9 @@ que ocupan diferentes direcciones en memoria, por lo que <i>no son
 </p>
 </div>
 </div>
-<div id="outline-container-org66c3531" class="outline-3">
-<h3 id="org66c3531"><span class="section-number-3">1.4.</span> Length</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org843f063" class="outline-2">
+<h2 id="org843f063"><span class="section-number-2">4.</span> Length</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Nos dice el número de caracteres que hay en una cadena.
 </p>
@@ -474,9 +471,9 @@ System.out.println(s.length()); <span style="color: #7f7f7f;">//</span><span sty
 </div>
 </div>
 </div>
-<div id="outline-container-org85c9bd5" class="outline-3">
-<h3 id="org85c9bd5"><span class="section-number-3">1.5.</span> Char at</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-org9e07bf7" class="outline-2">
+<h2 id="org9e07bf7"><span class="section-number-2">5.</span> Char at</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Nos da el <i>char</i> que está en la posición <i>i</i>.
 </p>
@@ -508,9 +505,9 @@ System.out.println(c); <span style="color: #7f7f7f;">//</span><span style="color
 </p>
 </div>
 </div>
-<div id="outline-container-org90d774f" class="outline-3">
-<h3 id="org90d774f"><span class="section-number-3">1.6.</span> Substring</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-org94ba6e2" class="outline-2">
+<h2 id="org94ba6e2"><span class="section-number-2">6.</span> Substring</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 Dados dos índices \(i, f\) en el rango de la longitud de la cadena, nos
 corta la cadena desde el indice inicio hasta el índice final-1.
@@ -530,9 +527,9 @@ segundo índice.
 </p>
 </div>
 </div>
-<div id="outline-container-orgbce9418" class="outline-3">
-<h3 id="orgbce9418"><span class="section-number-3">1.7.</span> Index Of</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-orge313656" class="outline-2">
+<h2 id="orge313656"><span class="section-number-2">7.</span> Index Of</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 Nos dice si <i>esta</i> cadena contiene la cadena <i>pasada como argumento</i>.
 Si sí está, nos da el índice del lugar donde se encuentra, si no, nos
@@ -548,9 +545,9 @@ System.out.println(indice); <span style="color: #7f7f7f;">//</span><span style="
 </div>
 </div>
 </div>
-<div id="outline-container-orgcde9495" class="outline-3">
-<h3 id="orgcde9495"><span class="section-number-3">1.8.</span> Split</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-orgee52021" class="outline-2">
+<h2 id="orgee52021"><span class="section-number-2">8.</span> Split</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 Nos divide la cadena, separado por la cadena que queramos separar y lo
 guarda en un <i>Arreglo</i> donde cada elemento es guardado en un índice.
@@ -571,9 +568,9 @@ poder visualizarlo.
 </p>
 </div>
 </div>
-<div id="outline-container-org755ec56" class="outline-3">
-<h3 id="org755ec56"><span class="section-number-3">1.9.</span> Starts/Ends with</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-org12a483f" class="outline-2">
+<h2 id="org12a483f"><span class="section-number-2">9.</span> Starts/Ends with</h2>
+<div class="outline-text-2" id="text-9">
 <p>
 Nos dice si esta cadena <i>empieza</i> o <i>termina</i> con la cadena segunda.
 </p>
@@ -587,9 +584,9 @@ System.out.println(s); <span style="color: #7f7f7f;">//</span><span style="color
 </div>
 </div>
 </div>
-<div id="outline-container-org64a8dac" class="outline-3">
-<h3 id="org64a8dac"><span class="section-number-3">1.10.</span> Replace</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-orgeb1b974" class="outline-2">
+<h2 id="orgeb1b974"><span class="section-number-2">10.</span> Replace</h2>
+<div class="outline-text-2" id="text-10">
 <p>
 Elimina todas las apariciones en esta cadena del primer parámetro para
 reemplazarlas por la cadena del segundo parámetro.
@@ -610,26 +607,30 @@ válida, de longitud 0.
 </p>
 </div>
 </div>
-<div id="outline-container-orgacd82f0" class="outline-3">
-<h3 id="orgacd82f0"><span class="section-number-3">1.11.</span> Problema 1: Correo</h3>
-<div class="outline-text-3" id="text-1-11">
+<div id="outline-container-org0a6fe17" class="outline-2">
+<h2 id="org0a6fe17"><span class="section-number-2">11.</span> Problemas</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-orgd8f1c6d" class="outline-3">
+<h3 id="orgd8f1c6d"><span class="section-number-3">11.1.</span> Problema 1: Correo</h3>
+<div class="outline-text-3" id="text-11-1">
 <p>
 Crear un programa que reciba una cadena por el usuario y nos diga si
 contiene el caracter <code>@</code> y termine con el nombre de dominio <code>.com</code>
 </p>
 </div>
 </div>
-<div id="outline-container-org7a57095" class="outline-3">
-<h3 id="org7a57095"><span class="section-number-3">1.12.</span> Problema 2: Reversa</h3>
-<div class="outline-text-3" id="text-1-12">
+<div id="outline-container-org50bfeaf" class="outline-3">
+<h3 id="org50bfeaf"><span class="section-number-3">11.2.</span> Problema 2: Reversa</h3>
+<div class="outline-text-3" id="text-11-2">
 <p>
 Dada una cadena por el usuario, imprimir la reversa de la misma cadena.
 </p>
 </div>
 </div>
-<div id="outline-container-org7b7fda3" class="outline-3">
-<h3 id="org7b7fda3"><span class="section-number-3">1.13.</span> Problema 3: Palíndromo</h3>
-<div class="outline-text-3" id="text-1-13">
+<div id="outline-container-org894b19c" class="outline-3">
+<h3 id="org894b19c"><span class="section-number-3">11.3.</span> Problema 3: Palíndromo</h3>
+<div class="outline-text-3" id="text-11-3">
 <p>
 Una palabra es palíndromo si y solo si la palabra puede leerse igual
 al derecho y al revés. Debes de hacer un <i>pre-procesamiento</i> de la
@@ -650,18 +651,18 @@ palíndromo
 </ol>
 </div>
 </div>
-<div id="outline-container-org01e8a99" class="outline-3">
-<h3 id="org01e8a99"><span class="section-number-3">1.14.</span> Problema 4: Contraseña</h3>
-<div class="outline-text-3" id="text-1-14">
+<div id="outline-container-orgbe3c274" class="outline-3">
+<h3 id="orgbe3c274"><span class="section-number-3">11.4.</span> Problema 4: Contraseña</h3>
+<div class="outline-text-3" id="text-11-4">
 <p>
 Pedir al usuario que ingrese su nombre de usuario y su contraseña. La
 contraseña debe coincidir con <code>123abc</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org3daf98f" class="outline-3">
-<h3 id="org3daf98f"><span class="section-number-3">1.15.</span> Problema 5: Conteo</h3>
-<div class="outline-text-3" id="text-1-15">
+<div id="outline-container-org6543a43" class="outline-3">
+<h3 id="org6543a43"><span class="section-number-3">11.5.</span> Problema 5: Conteo</h3>
+<div class="outline-text-3" id="text-11-5">
 <p>
 Pedir al usuario un texto de más de 100 palabras. Contar el número de
 palabras que existen en el texto.
@@ -672,9 +673,9 @@ Puedes encontrar texto generado aleatoriamente en la página de <a href="https:/
 </p>
 </div>
 </div>
-<div id="outline-container-org5edf198" class="outline-3">
-<h3 id="org5edf198"><span class="section-number-3">1.16.</span> Problema 6: Versos</h3>
-<div class="outline-text-3" id="text-1-16">
+<div id="outline-container-orga67dea1" class="outline-3">
+<h3 id="orga67dea1"><span class="section-number-3">11.6.</span> Problema 6: Versos</h3>
+<div class="outline-text-3" id="text-11-6">
 <p>
 Leer una oración a través de la entrada, luego mostrar cada palabra
 ingresada en una línea diferente.
@@ -696,7 +697,7 @@ fría.<br />
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-17 Thu 14:52</p>
+<p class="date">Created: 2025-07-30 Wed 13:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

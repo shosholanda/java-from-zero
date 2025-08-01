@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-17 Thu 14:48 -->
+<!-- 2025-07-30 Wed 13:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Estructuras repetitivas</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -232,43 +232,46 @@
  |
  <a accesskey="H" href="../inicio.html"> HOME </a>
 </div><div id="content" class="content">
+<h1 class="title">Estructuras repetitivas</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf703bc9">1. Estructuras repetitivas</a>
+<li><a href="#org5e252cf">1. Problema 1: Primeros N naturales.</a></li>
+<li><a href="#org57c7290">2. Estructura while</a></li>
+<li><a href="#org07a21ff">3. Problema 2: Suma N naturales</a>
 <ul>
-<li><a href="#org275f7f3">1.1. Problema 1: Primeros N naturales.</a></li>
-<li><a href="#orgd3b5883">1.2. Estructura while</a></li>
-<li><a href="#orge3c533c">1.3. Problema 2: Suma N naturales</a></li>
-<li><a href="#org5b0f3cc">1.4. Problema 3: Promedio</a></li>
-<li><a href="#orgd4bb631">1.5. Estructura for</a></li>
-<li><a href="#orgb49c1b5">1.6. Problema 4: Pares</a></li>
-<li><a href="#org743e1ce">1.7. Problema 5: Promedio estaturas</a></li>
-<li><a href="#orgaf571d7">1.8. Problema 6: Tablas de multiplicar</a></li>
-<li><a href="#org5267115">1.9. Estructura do-while</a></li>
-<li><a href="#orgbcb0cc0">1.10. Problema 7: Factorial</a></li>
-<li><a href="#org224f485">1.11. Problema 8: Edades</a></li>
-<li><a href="#org9a79c56">1.12. Problema 9: Sucesion</a></li>
-<li><a href="#orgd9783e3">1.13. Problema 10: Contar dígitos</a></li>
-<li><a href="#orgad0cfbc">1.14. Problema 11: Primos</a></li>
+<li><a href="#org06d037d">3.1. Problema 3: Promedio</a></li>
+</ul>
+</li>
+<li><a href="#orga9c2e23">4. Estructura for</a>
+<ul>
+<li><a href="#orged58163">4.1. Problema 4: Pares</a></li>
+<li><a href="#org7622428">4.2. Problema 5: Promedio estaturas</a></li>
+<li><a href="#orgc0400a0">4.3. Problema 6: Tablas de multiplicar</a></li>
+</ul>
+</li>
+<li><a href="#org19fbb14">5. Estructura do-while</a></li>
+<li><a href="#org87440e8">6. Problemas</a>
+<ul>
+<li><a href="#orgdc338f5">6.1. Problema 7: Factorial</a></li>
+<li><a href="#orgb723d23">6.2. Problema 8: Edades</a></li>
+<li><a href="#org4625007">6.3. Problema 9: Sucesion</a></li>
+<li><a href="#org552e902">6.4. Problema 10: Contar dígitos</a></li>
+<li><a href="#orgb947659">6.5. Problema 11: Primos</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf703bc9" class="outline-2">
-<h2 id="orgf703bc9"><span class="section-number-2">1.</span> Estructuras repetitivas</h2>
-<div class="outline-text-2" id="text-1">
 <p>
 Hasta ahora solo hemos utilizado estructuras <i>secuenciales</i> y
 <i>condicionales</i>. Existe la última estructura de programación
 <i>esencial</i> que son las estructuras <i>repetitivas</i>.
 </p>
-</div>
-<div id="outline-container-org275f7f3" class="outline-3">
-<h3 id="org275f7f3"><span class="section-number-3">1.1.</span> Problema 1: Primeros N naturales.</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org5e252cf" class="outline-2">
+<h2 id="org5e252cf"><span class="section-number-2">1.</span> Problema 1: Primeros N naturales.</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Crear un programa que imprima los primeros <i>1000</i> naturales.
 </p>
@@ -279,7 +282,7 @@ el siguiente diagrama de flujo&#x2026;
 </p>
 
 
-<div id="org46a72e5" class="figure">
+<div id="org67be631" class="figure">
 <p><img src="../img/icc/while_0.svg" alt="while_0.svg" class="org-svg" />
 </p>
 </div>
@@ -307,7 +310,7 @@ repetitivas, pero todas siguen la misma lógica.
 </p>
 
 
-<div id="org354ea13" class="figure">
+<div id="org030f2a7" class="figure">
 <p><img src="../img/icc/while_1.svg" alt="while_1.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Diagrama de flujo de estructura repetitiva general.</p>
@@ -407,9 +410,9 @@ ejemplo si es la entrada de usuario.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd3b5883" class="outline-3">
-<h3 id="orgd3b5883"><span class="section-number-3">1.2.</span> Estructura while</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org57c7290" class="outline-2">
+<h2 id="org57c7290"><span class="section-number-2">2.</span> Estructura while</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Esta estructura ya la hemos visto en el problema anterior, su
 funcionamiento es identico al diagrama de flujo. Se necesita de una
@@ -432,9 +435,9 @@ antemano en <i>tiempo de ejecución</i>.
 </p>
 </div>
 </div>
-<div id="outline-container-orge3c533c" class="outline-3">
-<h3 id="orge3c533c"><span class="section-number-3">1.3.</span> Problema 2: Suma N naturales</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org07a21ff" class="outline-2">
+<h2 id="org07a21ff"><span class="section-number-2">3.</span> Problema 2: Suma N naturales</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Dado un número por el usuario, sumar los primeros <b>N</b> números
 naturales. Ej: Si \(N = 100\), entonces
@@ -451,7 +454,7 @@ diagrama de flujo correspondiente sería:
 </p>
 
 
-<div id="orgc4493de" class="figure">
+<div id="orge0c98ca" class="figure">
 <p><img src="../img/icc/while_2.svg" alt="while_2.svg" class="org-svg" />
 </p>
 </div>
@@ -536,10 +539,9 @@ Estamos diciendo lo mismo pero con menos palabras. A esta reducción de
 código también se le conoce como <span class="underline">azúcar sintáctica</span>.
 </p>
 </div>
-</div>
-<div id="outline-container-org5b0f3cc" class="outline-3">
-<h3 id="org5b0f3cc"><span class="section-number-3">1.4.</span> Problema 3: Promedio</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org06d037d" class="outline-3">
+<h3 id="org06d037d"><span class="section-number-3">3.1.</span> Problema 3: Promedio</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Dado un número por el usuario, sumar los primeros <b>N</b> números naturales y sacar
 el promedio. Ej: \(N = 10\) el resultado es
@@ -552,9 +554,10 @@ el promedio. Ej: \(N = 10\) el resultado es
 \end{align*}
 </div>
 </div>
-<div id="outline-container-orgd4bb631" class="outline-3">
-<h3 id="orgd4bb631"><span class="section-number-3">1.5.</span> Estructura for</h3>
-<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-orga9c2e23" class="outline-2">
+<h2 id="orga9c2e23"><span class="section-number-2">4.</span> Estructura for</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 La estructura con <code>for</code> es identica lógicamente a la estructura
 <code>while</code>, solo que tanto como inicialización, condición e incremento
@@ -591,10 +594,9 @@ arbitrarios en tiempo de ejecución. <span class="underline">No hay nada que pue
 una estructura <code>for</code> que no pueda hacer con una estructura <code>while</code></span>
 </p>
 </div>
-</div>
-<div id="outline-container-orgb49c1b5" class="outline-3">
-<h3 id="orgb49c1b5"><span class="section-number-3">1.6.</span> Problema 4: Pares</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-orged58163" class="outline-3">
+<h3 id="orged58163"><span class="section-number-3">4.1.</span> Problema 4: Pares</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 Crear un programa que dado un número <i>N</i> de usuario, imprima todos los
 números pares de 0 a <i>N</i> (inclusivo). Ej: \(N=4\), imprime <code>0, 2, 4,</code>
@@ -606,7 +608,7 @@ codificación del mismo.
 </p>
 
 
-<div id="org816c47b" class="figure">
+<div id="org6b4b720" class="figure">
 <p><img src="../img/icc/while_3.svg" alt="while_3.svg" class="org-svg" />
 </p>
 </div>
@@ -617,9 +619,9 @@ dentro del <code>while</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org743e1ce" class="outline-3">
-<h3 id="org743e1ce"><span class="section-number-3">1.7.</span> Problema 5: Promedio estaturas</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-org7622428" class="outline-3">
+<h3 id="org7622428"><span class="section-number-3">4.2.</span> Problema 5: Promedio estaturas</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 Crear un programa donde se reciban <i>N</i> estaturas, y luego leer
 cada una de las estaturas por separado. Una vez terminado de leer
@@ -631,9 +633,9 @@ cada una de las estaturas por separado. Una vez terminado de leer
 </p>
 </div>
 </div>
-<div id="outline-container-orgaf571d7" class="outline-3">
-<h3 id="orgaf571d7"><span class="section-number-3">1.8.</span> Problema 6: Tablas de multiplicar</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-orgc0400a0" class="outline-3">
+<h3 id="orgc0400a0"><span class="section-number-3">4.3.</span> Problema 6: Tablas de multiplicar</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 Crea un programa que imprima las tablas de multiplicar del 0 al 10
 del 0 al 13. Por ejemplo la tabla del 1 sería
@@ -743,9 +745,10 @@ del 0 al 13. Por ejemplo la tabla del 1 sería
 </table>
 </div>
 </div>
-<div id="outline-container-org5267115" class="outline-3">
-<h3 id="org5267115"><span class="section-number-3">1.9.</span> Estructura do-while</h3>
-<div class="outline-text-3" id="text-1-9">
+</div>
+<div id="outline-container-org19fbb14" class="outline-2">
+<h2 id="org19fbb14"><span class="section-number-2">5.</span> Estructura do-while</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Finalmente, la última estructura de repetición no se utiliza mucho ya
 que puede simularse fácilmente cambiando el orden de la
@@ -753,7 +756,7 @@ condicional.
 </p>
 
 
-<div id="org61354f4" class="figure">
+<div id="org86ea30d" class="figure">
 <p><img src="../img/icc/do-while.svg" alt="do-while.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Estructura do-while</p>
@@ -773,12 +776,16 @@ operaciones que existen dentro del while, lo que implica que un
 </div>
 </div>
 </div>
-<div id="outline-container-orgbcb0cc0" class="outline-3">
-<h3 id="orgbcb0cc0"><span class="section-number-3">1.10.</span> Problema 7: Factorial</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-org87440e8" class="outline-2">
+<h2 id="org87440e8"><span class="section-number-2">6.</span> Problemas</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgdc338f5" class="outline-3">
+<h3 id="orgdc338f5"><span class="section-number-3">6.1.</span> Problema 7: Factorial</h3>
+<div class="outline-text-3" id="text-6-1">
 <p>
-En matemáticas el factorial de un número (\(N!\)) se define como la
-multiplicación desde 1 hasta ese número. Ej: \(N = 10\)
+En matemáticas el factorial de un número (\(N!\)) se define como el
+producto (<del>productoria</del>) desde 1 hasta ese número. Ej: \(N = 10\)
 </p>
 
 \begin{equation}
@@ -798,18 +805,18 @@ debemos utilizar la clase <code>BigInteger</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org224f485" class="outline-3">
-<h3 id="org224f485"><span class="section-number-3">1.11.</span> Problema 8: Edades</h3>
-<div class="outline-text-3" id="text-1-11">
+<div id="outline-container-orgb723d23" class="outline-3">
+<h3 id="orgb723d23"><span class="section-number-3">6.2.</span> Problema 8: Edades</h3>
+<div class="outline-text-3" id="text-6-2">
 <p>
 Escribir un programa donde se ingresen 10 edades aleatorias. Contar
 cuántas edades son <i>menores</i> a 18, y <i>mayores</i> a 50.
 </p>
 </div>
 </div>
-<div id="outline-container-org9a79c56" class="outline-3">
-<h3 id="org9a79c56"><span class="section-number-3">1.12.</span> Problema 9: Sucesion</h3>
-<div class="outline-text-3" id="text-1-12">
+<div id="outline-container-org4625007" class="outline-3">
+<h3 id="org4625007"><span class="section-number-3">6.3.</span> Problema 9: Sucesion</h3>
+<div class="outline-text-3" id="text-6-3">
 <p>
 Escribir un programa que imprima la suma (<del>sumatoria</del>) desde \(i=0\)
 hasta un entero \(N\) de \(\frac{1}{2^i}\)
@@ -827,13 +834,13 @@ Por ejemplo, para \(N=4\), la suma se separa en:
 \end{equation*}
 
 <p>
-Por si te lo preguntas, cuando \(x \implies \infty\), el resultado es 2.
+Por si te lo preguntas, cuando \(i \implies \infty\), el resultado es 2.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd9783e3" class="outline-3">
-<h3 id="orgd9783e3"><span class="section-number-3">1.13.</span> Problema 10: Contar dígitos</h3>
-<div class="outline-text-3" id="text-1-13">
+<div id="outline-container-org552e902" class="outline-3">
+<h3 id="org552e902"><span class="section-number-3">6.4.</span> Problema 10: Contar dígitos</h3>
+<div class="outline-text-3" id="text-6-4">
 <p>
 Crea un programa donde dado <i>N</i> del usuario, nos diga cuántos
 dígitos tiene. <i>N</i> puede ser cualquier número.
@@ -850,9 +857,9 @@ No se permite usar condicionales.
 </p>
 </div>
 </div>
-<div id="outline-container-orgad0cfbc" class="outline-3">
-<h3 id="orgad0cfbc"><span class="section-number-3">1.14.</span> Problema 11: Primos</h3>
-<div class="outline-text-3" id="text-1-14">
+<div id="outline-container-orgb947659" class="outline-3">
+<h3 id="orgb947659"><span class="section-number-3">6.5.</span> Problema 11: Primos</h3>
+<div class="outline-text-3" id="text-6-5">
 <p>
 Dado un entero positivo \(N \geq 2\)  por el usuario, decir si ese número es
 <i>primo</i> o no. Recordemos que \(x\) es primo si y solo si para todos los
@@ -865,7 +872,7 @@ sí mismo.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-17 Thu 14:48</p>
+<p class="date">Created: 2025-07-30 Wed 13:03</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

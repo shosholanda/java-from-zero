@@ -1,6 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-
-* Creación de programas en /Java/
+#+TITLE: Creación de programas en /Java/
 
 *TODOS* los programas y aplicaciones son escritos en texto plano
  (abrir bloc de notas y escribir código). Hay algunas aplicaciones
@@ -19,14 +18,14 @@
  es con el que se esta escribiendo esta guía.
 
 *Nota:* Es importante estar en la carpeta correcta antes y mientras se
-  cree, compile y ejecute el programa. Puedes usar el comando.
+  cree, compile y ejecute el programa.
 
 #+BEGIN_SRC bash
 $ pwd  
 #+END_SRC
 
 Para saber cómo moverte de carpeta / crear carpetas *desde la
-terminal* puedes consultar la parte de [[../linux/comandos.org][comandos]]. Una vez estando en la
+terminal* puedes consultar la parte de [[../linux/01_baby_penguin.org][comandos básicos]]. Una vez estando en la
 carpeta deseada creamos el archivo con nombre _HolaMundo.java_.
 
 Lo podemos hacer de muchas

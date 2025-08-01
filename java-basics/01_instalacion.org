@@ -1,9 +1,8 @@
 #+HTML_LINK_HOME: ../inicio.html
+#+TITLE:Instalación de Java
 
-* Instalación de Java
 
-
-** Verificación de instalación
+* Verificación de instalación
 Cuando instalamos nuestro sistema operativo podemos verificar si
 /Java/ está instalado con el comando:
 
@@ -13,12 +12,12 @@ $ java --version ; javac --version
 
 Si nos manda error significa que hay que descargarlo e instalarlo.
 
-*Nota*: Si no sabes absolutamente nada de /Java/ no descargues un IDE
+*Nota*: Si no sabes absolutamente nada de /Java/ *NO* descargues un IDE
 como _Eclipse, NetBeans, VSCode, JetBrains_ ya que debes aprender los
 fundamentos del lenguaje primero. No puedes correr, aunque tengas los
 mejores tenis si no sabes gatear.
 
-** Actualizar paquetes
+* Actualizar paquetes
 
 Hablando desde un sistema /Linux/, antes de instalar cualquier
 programa debemos tener actualizado nuestro gestor de paquetes. El
@@ -33,7 +32,7 @@ $ sudo apt update && sudo apt upgrade
 *Nota:* Si nos pide la contraseña, debemos colocarla aunque no
 aparezca nada en la pantalla, es un sistema de seguridad.
 
-** Instalar Java
+* Instalar Java
 
 Usaremos el siguiente comando para instalar la última version de java;
 existen versiones más recientes pero es más que suficiente para poder

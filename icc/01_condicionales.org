@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Programación condicional simple y compuesta
+#+TITLE: Programación condicional simple y compuesta
 
 No todos los problemas se pueden resolver utilizando programación
 secuencial. Muchas veces en la vida hay que tomar decisiones que de
@@ -12,7 +12,7 @@ una u otra manera afectarán nuestro futuro. Preguntas como
 Son ejemplos de condiciones que nos forzan a seguir un camino u otro
 dependiendo de la respuesta.
 
-** Estructura condicional simple
+* Estructura condicional simple
 Cuando se presenta una elección tenemos la opción de realizar una
 actividad o ignorarla.
 
@@ -26,7 +26,7 @@ no contesto sigo con mi vida.
 Se trata de una condicional /simple/ porque el camino de /verdadero/
 hay actividades mientras que por el otro no hay.
 
-** Estructura condicional compuesta
+* Estructura condicional compuesta
 Esta estructura realiza operaciones _en ambos caminos_ de la
 condición.
 
@@ -46,7 +46,7 @@ En /java/ utilizamos la palabra ~if (condicion)~ para dividir nuestro
 camino en 2 posibles opciones  y ~if - else~ para indicar que los
 caminos son /exclusivos/.
 
-** Operadores de relacion
+* Operadores de relacion
 
 Cuando queremos comparar números usualmente usamos operadores de
 relación.
@@ -63,7 +63,7 @@ relación.
 | ~A % B~  | El residuo entero de dividir A / B | $13 \% 10 = 3$ |
 |----------+------------------------------------+----------------|
 
-** Problema 1: Paridad
+* Problema 1: Paridad
 Crear un programa que dado un número nos diga si es par o impar.
 
 ¿Cómo sabemos si un número es par? Fácil, sabemos que lo podemos
@@ -109,7 +109,7 @@ sobró un cacho.
   }
 
 #+end_src
-
+* Problemas
 ** Problema 2: Valor absoluto
 Crear un programa que dado un número nos diga si es positivo, negativo
 o es cero.

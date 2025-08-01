@@ -1,4 +1,5 @@
-* Argumentos del main
+#+HTML_LINK_HOME: ../inicio.html
+#+TITLE: Argumentos del main
 
 Si eres un buen observador, habrás notado que el parámetro del método
 ~main()~ es un /arreglo de String/ llamado ~args~.
@@ -10,7 +11,7 @@ Si eres un buen observador, habrás notado que el parámetro del método
 Lo que significa que podemos acceder a el y pasar a nuestro programa
 los parámetros que queramos /sin utilizar/ ~Scanner~.
 
-** Paso de argumentos
+* Paso de argumentos
 Cuando compilamos /y ejecutamos/ el programa, siempre utilizamos como
 
 #+begin_src bash
@@ -35,8 +36,7 @@ El texto ~-e xx -T U "Moricion"~ son los /argumentos/ que pasamos al
 programa directamente. En /Java/, estos argumentos podemos pasarlos a
 nuestro programa utilizando ~args~.
 
-
-** Paso de parametros
+* Paso de parametros
 
 Imprimir todos los argumentos pasados a nuestro programa en /Java/.
 #+begin_src java
@@ -65,8 +65,7 @@ de cámaras, y separa cada /palabra/ en un /cajón/ del arreglo
 Así, el for /recorre/ el arreglo *hasta antes* de ~args.length~ porque
 empieza en la posición 0 y los imprime.
 
-
-** Leyendo bien
+* Leyendo bien
 Los datos guardados en ~args[]~ son de tipo ~String~. Esto significa
 que incluso si le pasamos un número como argumento, /Java/ lo
 detectará como una /String/. Debemos entonces convertir esa /String/ a
@@ -119,6 +118,7 @@ y 3. No es lo mismo "5" que 5.
 
 Finalmente, $5+3 = 8$ /ya como número/. Existe también el método
 ~Double.parseDouble()~ para convertir a números decimales.
+* Problemas
 ** Problema 1: Años perro
 La vida de un perro pasa más rápido comparando con la vida humana. Si
 bien su calendario es diferente, podemos aproximarlo utilizando la
@@ -134,9 +134,6 @@ edad = \begin{cases}
 
 Donde /n/ es el número de años /humanos/ que el perro ha vivido. Crea
 un programa que pueda calcular por /argumentos/ la edad de un perro.
-
-
-
 
 ** Problema 2: Multiplos
 Crea un programa que reciba 2 números ~n, m~ enteros como argumentos, y nos

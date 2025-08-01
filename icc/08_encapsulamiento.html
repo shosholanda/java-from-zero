@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-18 Fri 19:57 -->
+<!-- 2025-07-30 Wed 13:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Encapsulación, constructor y toString</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -200,26 +200,26 @@
  |
  <a accesskey="H" href="../inicio.html"> HOME </a>
 </div><div id="content" class="content">
+<h1 class="title">Encapsulación, constructor y toString</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgeba71c9">1. Encapsulación, constructor y toString</a>
+<li><a href="#org858acef">1. Ejemplo 1: Vaca y Pollito</a>
 <ul>
-<li><a href="#org56e7c68">1.1. Ejemplo 1: Vaca y Pollito</a></li>
-<li><a href="#org48573bf">1.2. Problema 1: Gatos++</a></li>
-<li><a href="#org5f84811">1.3. Problema 2: Caja</a></li>
-<li><a href="#org18461ca">1.4. Constructor</a></li>
-<li><a href="#org8e084f2">1.5. ToString</a></li>
-<li><a href="#org5cb960e">1.6. Problema 3 y 4. Cajas++</a></li>
+<li><a href="#orgd59c1de">1.1. Problema 1: Gatos++</a></li>
+<li><a href="#org0afae10">1.2. Problema 2: Caja</a></li>
+</ul>
+</li>
+<li><a href="#orga6ade8d">2. Constructor</a></li>
+<li><a href="#org34529d6">3. ToString</a>
+<ul>
+<li><a href="#org509f9da">3.1. Problema 3 y 4. Cajas++</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeba71c9" class="outline-2">
-<h2 id="orgeba71c9"><span class="section-number-2">1.</span> Encapsulación, constructor y toString</h2>
-<div class="outline-text-2" id="text-1">
 <p>
 Anteriormente vimos que los <i>atributos de clase</i> deben escribirse como
 </p>
@@ -237,10 +237,9 @@ fuera</b>. Esto no tiene nada que ver con <i>proteger los datos de un
 hacker</i>, pero sí protegerlo de <i>otras clases</i> lo cual es parte de los
 principios de la <i>Programación Orientada a Objetos (POO)</i>.
 </p>
-</div>
-<div id="outline-container-org56e7c68" class="outline-3">
-<h3 id="org56e7c68"><span class="section-number-3">1.1.</span> Ejemplo 1: Vaca y Pollito</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org858acef" class="outline-2">
+<h2 id="org858acef"><span class="section-number-2">1.</span> Ejemplo 1: Vaca y Pollito</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Tenemos dos clases, <i>Vaca y Pollito</i> <b>en 2 archivos diferentes</b> como:
 </p>
@@ -552,19 +551,18 @@ obtención y asignación de la variable.</li>
 la clase</i> debemos utilizar ĺos <i>getters y setters</i>.</li>
 </ul>
 </div>
-</div>
-<div id="outline-container-org48573bf" class="outline-3">
-<h3 id="org48573bf"><span class="section-number-3">1.2.</span> Problema 1: Gatos++</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgd59c1de" class="outline-3">
+<h3 id="orgd59c1de"><span class="section-number-3">1.1.</span> Problema 1: Gatos++</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 De la clase <i>Gato</i> programada anteriormente, modifícala para que ahora
 cumpla con el principio de encapsulación.
 </p>
 </div>
 </div>
-<div id="outline-container-org5f84811" class="outline-3">
-<h3 id="org5f84811"><span class="section-number-3">1.3.</span> Problema 2: Caja</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org0afae10" class="outline-3">
+<h3 id="org0afae10"><span class="section-number-3">1.2.</span> Problema 2: Caja</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 Crea una clase <i>Caja</i> que tenga como atributos
 </p>
@@ -580,11 +578,11 @@ con los métodos <i>no estáticos</i>
 </p>
 <ul class="org-ul">
 <li><code>inicializar()</code></li>
-<li><code>getters, setters</code></li>
+<li><code>getters</code> y <code>setters</code></li>
 <li><p>
-<code>imprimir()</code> La cadena impresa debe ser como
+- <code>imprimir()</code> La cadena impresa debe ser como
 </p>
-<pre class="example" id="org727c36a">
+<pre class="example" id="org8c41879">
 +---- ID de la caja ----+
 |-----------------------|
 |  contenido de la caja |
@@ -598,9 +596,10 @@ contenido.
 </ul>
 </div>
 </div>
-<div id="outline-container-org18461ca" class="outline-3">
-<h3 id="org18461ca"><span class="section-number-3">1.4.</span> Constructor</h3>
-<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orga6ade8d" class="outline-2">
+<h2 id="orga6ade8d"><span class="section-number-2">2.</span> Constructor</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Ya que nuestras variables de clase <i>deben inicializarse</i> hay que
 llamar al método <code>inicializar()</code>, donde leemos uno por uno los valores
@@ -723,9 +722,9 @@ se debe de preocupar de cosas de <i>Pollito</i>.
 </div>
 </div>
 </div>
-<div id="outline-container-org8e084f2" class="outline-3">
-<h3 id="org8e084f2"><span class="section-number-3">1.5.</span> ToString</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-org34529d6" class="outline-2">
+<h2 id="org34529d6"><span class="section-number-2">3.</span> ToString</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Todos los objetos en <i>Java</i> tienen un método <i>heredado de Object</i>
 llamado <code>toString()</code>. Sirve para dar una representación en cadena del
@@ -856,10 +855,9 @@ Con esto terminamos <i>parcialmente</i> el uso de métodos  en
 <i>Java</i>. Existen otras variaciones, pero por ahora es más que suficiente.
 </p>
 </div>
-</div>
-<div id="outline-container-org5cb960e" class="outline-3">
-<h3 id="org5cb960e"><span class="section-number-3">1.6.</span> Problema 3 y 4. Cajas++</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-org509f9da" class="outline-3">
+<h3 id="org509f9da"><span class="section-number-3">3.1.</span> Problema 3 y 4. Cajas++</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Modifica las clases de <code>Vaca, Pollito, Gato, Caja</code> para que tengan las
 mejores prácticas de programación, es decir:
@@ -881,7 +879,7 @@ mejores prácticas de programación, es decir:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-18 Fri 19:57</p>
+<p class="date">Created: 2025-07-30 Wed 13:23</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

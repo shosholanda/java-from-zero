@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-23 Wed 18:36 -->
+<!-- 2025-07-30 Wed 13:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Argumentos del main</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -227,27 +227,29 @@
 </script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">Argumentos del main</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb5e5d13">1. Argumentos del main</a>
+<li><a href="#orgecb45b7">1. Paso de argumentos</a></li>
+<li><a href="#org1f3f614">2. Paso de parametros</a></li>
+<li><a href="#org2c440e0">3. Leyendo bien</a></li>
+<li><a href="#orgcdf57f9">4. Problemas</a>
 <ul>
-<li><a href="#org90d015c">1.1. Paso de argumentos</a></li>
-<li><a href="#orgc551667">1.2. Paso de parametros</a></li>
-<li><a href="#org4aa077b">1.3. Leyendo bien</a></li>
-<li><a href="#org5087a68">1.4. Problema 1: Años perro</a></li>
-<li><a href="#org9823147">1.5. Problema 2: Multiplos</a></li>
-<li><a href="#org98fbf02">1.6. Problema 3: Paradoja de cumpleaños</a></li>
+<li><a href="#org4d9eda9">4.1. Problema 1: Años perro</a></li>
+<li><a href="#orgb9d89da">4.2. Problema 2: Multiplos</a></li>
+<li><a href="#orgcb45e83">4.3. Problema 3: Paradoja de cumpleaños</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb5e5d13" class="outline-2">
-<h2 id="orgb5e5d13"><span class="section-number-2">1.</span> Argumentos del main</h2>
-<div class="outline-text-2" id="text-1">
 <p>
 Si eres un buen observador, habrás notado que el parámetro del método
 <code>main()</code> es un <i>arreglo de String</i> llamado <code>args</code>.
@@ -262,10 +264,9 @@ Si eres un buen observador, habrás notado que el parámetro del método
 Lo que significa que podemos acceder a el y pasar a nuestro programa
 los parámetros que queramos <i>sin utilizar</i> <code>Scanner</code>.
 </p>
-</div>
-<div id="outline-container-org90d015c" class="outline-3">
-<h3 id="org90d015c"><span class="section-number-3">1.1.</span> Paso de argumentos</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgecb45b7" class="outline-2">
+<h2 id="orgecb45b7"><span class="section-number-2">1.</span> Paso de argumentos</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Cuando compilamos <i>y ejecutamos</i> el programa, siempre utilizamos como
 </p>
@@ -302,9 +303,9 @@ nuestro programa utilizando <code>args</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc551667" class="outline-3">
-<h3 id="orgc551667"><span class="section-number-3">1.2.</span> Paso de parametros</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org1f3f614" class="outline-2">
+<h2 id="org1f3f614"><span class="section-number-2">2.</span> Paso de parametros</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Imprimir todos los argumentos pasados a nuestro programa en <i>Java</i>.
 </p>
@@ -344,9 +345,9 @@ empieza en la posición 0 y los imprime.
 </p>
 </div>
 </div>
-<div id="outline-container-org4aa077b" class="outline-3">
-<h3 id="org4aa077b"><span class="section-number-3">1.3.</span> Leyendo bien</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org2c440e0" class="outline-2">
+<h2 id="org2c440e0"><span class="section-number-2">3.</span> Leyendo bien</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 Los datos guardados en <code>args[]</code> son de tipo <code>String</code>. Esto significa
 que incluso si le pasamos un número como argumento, <i>Java</i> lo
@@ -419,9 +420,13 @@ Finalmente, \(5+3 = 8\) <i>ya como número</i>. Existe también el método
 </p>
 </div>
 </div>
-<div id="outline-container-org5087a68" class="outline-3">
-<h3 id="org5087a68"><span class="section-number-3">1.4.</span> Problema 1: Años perro</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-orgcdf57f9" class="outline-2">
+<h2 id="orgcdf57f9"><span class="section-number-2">4.</span> Problemas</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org4d9eda9" class="outline-3">
+<h3 id="org4d9eda9"><span class="section-number-3">4.1.</span> Problema 1: Años perro</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 La vida de un perro pasa más rápido comparando con la vida humana. Si
 bien su calendario es diferente, podemos aproximarlo utilizando la
@@ -442,9 +447,9 @@ un programa que pueda calcular por <i>argumentos</i> la edad de un perro.
 </p>
 </div>
 </div>
-<div id="outline-container-org9823147" class="outline-3">
-<h3 id="org9823147"><span class="section-number-3">1.5.</span> Problema 2: Multiplos</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgb9d89da" class="outline-3">
+<h3 id="orgb9d89da"><span class="section-number-3">4.2.</span> Problema 2: Multiplos</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 Crea un programa que reciba 2 números <code>n, m</code> enteros como argumentos, y nos
 diga si el primer número es múltiplo del otro. Que sea múltiplo
@@ -460,9 +465,9 @@ múltiplo de 16, pero <code>2</code> no es múltiplo de <code>17</code>
 </p>
 </div>
 </div>
-<div id="outline-container-org98fbf02" class="outline-3">
-<h3 id="org98fbf02"><span class="section-number-3">1.6.</span> Problema 3: Paradoja de cumpleaños</h3>
-<div class="outline-text-3" id="text-1-6">
+<div id="outline-container-orgcb45e83" class="outline-3">
+<h3 id="orgcb45e83"><span class="section-number-3">4.3.</span> Problema 3: Paradoja de cumpleaños</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 La <a href="https://www.youtube.com/watch?v=7uzx6D_0V7M">paradoja del cumpleaños</a> es un resultado matemático que dice que en
 un grupo de 23 personas, hay más del 50% de probablilidad que 2
@@ -491,7 +496,7 @@ mes y día.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-23 Wed 18:36</p>
+<p class="date">Created: 2025-07-30 Wed 13:32</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

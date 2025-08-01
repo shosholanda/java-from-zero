@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Diagramas de flujo
+#+TITLE: Diagramas de flujo
 
 Ya que *TODOS* los programas son algoritmos, y un algoritmo es básicamente una
 serie de pasos a seguir, podemos representar los algoritmos
@@ -10,7 +10,7 @@ conectamos su /siguiente/ y /anterior/ paso con líneas o flechas.
 [[../img/java-basics/diagramfigures.svg]]
 
 
-** Planteamiento de problemas con diagramas de flujo
+* Planteamiento de problemas con diagramas de flujo
 
 Antes de empezar a escribir /cualquier/ programa es *muy* importante
 tener claro qué es lo que se quiere hacer o resolver.  Un programa
@@ -49,7 +49,7 @@ adivinar. Lo mismo pasa para los nombres de clases.
 
 Empecemos con un primer ejemplo de programación.
 
-*** Problema 1
+* Problema 1
 
 /Crear un programa que calcule el ahorro total de $200 pesos cada mes
 durante 1 año/
@@ -108,8 +108,7 @@ que son los *tests*.
 *Todavía no hemos programado nada, esto es solo una representación
 visual para poder saber qué es lo que vamos a programar.*
 
-
-*** Código problema 1
+* Código problema 1
 Ahora sí programaremos. Creamos un archivo que se llame ~Ahorro.java~;
 lo abrimos para escribir lo siguiente. *TODO* símbolo por mínimo que
 parezca es de suma importancia. *NO SE PERIMTE COPIAR Y PEGAR ESTE
@@ -161,7 +160,7 @@ salida del programa será:
   El ahorro total es de: 2400.0
 #+END_SRC
 
-*** Explicación paso a paso problema 1.
+* Explicación paso a paso problema 1.
 
 Si te estás preguntando, ¿cómo es que el programa funciona?
 
@@ -298,7 +297,7 @@ tiempo.
 Prueba ahora tu programa con otras entradas! ¿Qué pasa si pasamos un
 texto en lugar de número de meses?
 
-*** Relación entre el diagrama de flujo y código
+* Relación entre el diagrama de flujo y código
 Podemos ver una relación entre el código y el diagrama anteriormente
 realizado. Algunas partes están en el programa tal cual y otras no se
 especifican:

@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Encapsulación, constructor y toString
+#+TITLE: Encapsulación, constructor y toString
 
 Anteriormente vimos que los /atributos de clase/ deben escribirse como
 
@@ -14,7 +14,7 @@ fuera*. Esto no tiene nada que ver con /proteger los datos de un
 hacker/, pero sí protegerlo de /otras clases/ lo cual es parte de los
 principios de la /Programación Orientada a Objetos (POO)/.
 
-** Ejemplo 1: Vaca y Pollito
+* Ejemplo 1: Vaca y Pollito
 
 Tenemos dos clases, /Vaca y Pollito/ *en 2 archivos diferentes* como:
 
@@ -275,7 +275,6 @@ Resumiendo, para seguir el principio de encapsulación en /Java/:
 + Cuando se requiera leer u obtener el valor de una variable /fuera de
   la clase/ debemos utilizar ĺos /getters y setters/.
 
-
 ** Problema 1: Gatos++
 
 De la clase /Gato/ programada anteriormente, modifícala para que ahora
@@ -291,8 +290,8 @@ Crea una clase /Caja/ que tenga como atributos
 
 con los métodos /no estáticos/
 - ~inicializar()~
-- ~getters, setters~
-- ~imprimir()~ La cadena impresa debe ser como
+- ~getters~ y ~setters~
+- - ~imprimir()~ La cadena impresa debe ser como
   #+begin_example
   +---- ID de la caja ----+
   |-----------------------|
@@ -303,7 +302,7 @@ con los métodos /no estáticos/
   Nota que la caja deberá ajustarse en tamaño al nombre y al
   contenido. 
 
-** Constructor
+* Constructor
 
 Ya que nuestras variables de clase /deben inicializarse/ hay que
 llamar al método ~inicializar()~, donde leemos uno por uno los valores
@@ -402,7 +401,7 @@ parámetro y no utilizar el objeto  ~Scanner~ en lo absoluto!
   }
 #+end_src
 
-** ToString
+* ToString
 
 Todos los objetos en /Java/ tienen un método /heredado de Object/
 llamado ~toString()~. Sirve para dar una representación en cadena del

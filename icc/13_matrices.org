@@ -1,5 +1,7 @@
 #+HTML_LINK_HOME: ../inicio.html
-** Matrices
+#+TITLE: Matrices
+
+
 Ya que un arreglo puede contener /lo que sea/, puede incluir también
 /más arreglos/, creando /dimensiones/ de arreglos. La primera
 dimensión es la que hemos visto que un arreglo tiene elementos.
@@ -35,7 +37,7 @@ El número de ~[]~ indica la dimensión; con 2 significa que estamos en
 un plano /2D/, con 3 /3D/ y así sucesivamente. Es muy raro de hecho
 encontrar arreglos de dimension /mayor a 2/.
 
-** Programa 1: Identidad
+* Programa 1: Identidad
 Crear un programa que imprima la identidad de una matriz de tamaño
 $5\times 7$
 
@@ -125,17 +127,59 @@ la entrada ~[i][i]~
       System.out.println(matriz[i][i]);
 #+end_src
 
-
+* Problemas
 ** Problema 1: Mayor elemento
 Dado el tamaño de una matriz $N\times M$ /por argumentos/, rellenar la
 matriz para luego encontrar el mayor elemento en la misma. Imprimir
 también la /fila/ y /columna/ donde se encuentra ese elemento.
 
 ** Problema 2: Matriz2x2
+Crea un /Objeto/ llamado /Matriz2x2/ el cual tenga como atributo
+privado una /matriz de 2x2/ de enteros. Define las operaciones de
+1. suma
+2. resta
+3. multiplicacion
+4. determinante
 
 
+para la matriz y /la otra matriz/. Por ejemplo
 
+#+begin_src java
+  public Matriz2x2 suma(Matriz2x2 otra){
+      // código
+  }
+#+end_src
+
+Recuerda que usar /this/ se refiere a la matriz que manda a llamar el
+método. Para poder invocarlas en un ~main~ como.
+
+#+begin_src java
+  public static void main (String[] args){
+      Matriz2x2 m1 = new Matriz(); // inicializar los valores de la matriz
+      Matriz2x2 m2 = new Matriz();
+      Matriz2x2 suma = m1.suma(m2);
+#+end_src
+
+*Ojo* La multiplicación de matrices no es conmutativa, es decir no es
+lo mismo $M \times N$ que $N \times M$
+
+** Problema 3: Matriz3x3
+Lo mismo de /Matriz2x2/ pero ahora de tamaño $3 \times 3$.
+Añade los métodos.
+1. Identidad: Regresa la matriz con 1 en la diagonal.
+2. traspuesta: Intercambia los indices /reflejados/ en la diagonal
+3. Inversa: Si $det \neq 0$ entonces sí tiene inverso. 
+
+¿Se podrá hacer una clase de tamaño $N \times N$?
 ** toString
 
 Replica el método ~Arrays.deepToString()~ para matrices con un método
-/estático/ que regrese el valor de la matriz.
+/estático/ que regrese la representación en cadena de la matriz con la
+pequeña modificacion de que se imprima en varias líneas como:
+
+#+begin_example
+[[1, 2, 3, 4],
+ [5, 6, 7, 8],
+ [9, 10, 11, 12],
+ [13, 14, 15, 16]]
+#+end_example

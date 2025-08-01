@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-17 Thu 14:52 -->
+<!-- 2025-07-30 Wed 13:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Más sobre ciclos</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -232,35 +232,37 @@
  |
  <a accesskey="H" href="../inicio.html"> HOME </a>
 </div><div id="content" class="content">
+<h1 class="title">Más sobre ciclos</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0b14329">1. Más sobre ciclos</a>
+<li><a href="#orgd3b89b1">1. Ciclos infinitos</a>
 <ul>
-<li><a href="#org647bb62">1.1. Ciclos infinitos</a></li>
-<li><a href="#org4c3c8c3">1.2. Problema 1: Yes en Java</a></li>
-<li><a href="#orgd5e081e">1.3. Problema 2: Generador de números aleatorios</a></li>
-<li><a href="#org10828ae">1.4. El problema del paro</a></li>
-<li><a href="#org3834fc0">1.5. Problema 3: Adivina adivinador.</a></li>
-<li><a href="#org179b894">1.6. Ciclos anidados</a></li>
-<li><a href="#orgc863a9c">1.7. Problema 4: Pascal</a></li>
-<li><a href="#org4b17649">1.8. Problema 5: Dibujo</a></li>
-<li><a href="#org23e0c06">1.9. Problema 6: Tablas de multiplicación</a></li>
-<li><a href="#orgc33e333">1.10. Problema 7: Criba de eratóstenes</a></li>
-<li><a href="#orgc9773b4">1.11. Recursión</a></li>
+<li><a href="#org1dd25ef">1.1. Problema 1: Yes en Java</a></li>
 </ul>
 </li>
+<li><a href="#org88114d0">2. Problema 2: Generador de números aleatorios</a></li>
+<li><a href="#org7766045">3. El problema del paro</a>
+<ul>
+<li><a href="#orgd22eea3">3.1. Problema 3: Adivina adivinador.</a></li>
+</ul>
+</li>
+<li><a href="#org66756ea">4. Ciclos anidados</a>
+<ul>
+<li><a href="#org650ca15">4.1. Problema 4: Pascal</a></li>
+<li><a href="#org2663ae0">4.2. Problema 5: Dibujo</a></li>
+<li><a href="#org4ee41b6">4.3. Problema 6: Tablas de multiplicación</a></li>
+<li><a href="#orgfbd72e1">4.4. Problema 7: Criba de eratóstenes</a></li>
+</ul>
+</li>
+<li><a href="#org6e318bb">5. Recursión</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0b14329" class="outline-2">
-<h2 id="org0b14329"><span class="section-number-2">1.</span> Más sobre ciclos</h2>
+<div id="outline-container-orgd3b89b1" class="outline-2">
+<h2 id="orgd3b89b1"><span class="section-number-2">1.</span> Ciclos infinitos</h2>
 <div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-org647bb62" class="outline-3">
-<h3 id="org647bb62"><span class="section-number-3">1.1.</span> Ciclos infinitos</h3>
-<div class="outline-text-3" id="text-1-1">
 <p>
 Como mencionamos anteriomente, existen ciclos infinitos dentro de la
 programación que pueden ser un <i>error</i> o una <i>funcionalidad</i> del
@@ -276,7 +278,7 @@ un ciclo infinito a su vez.
 </p>
 
 
-<div id="org4cba40e" class="figure">
+<div id="org43d24dd" class="figure">
 <p><img src="../img/icc/while_break.svg" alt="while_break.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Ciclo infinito con escape.</p>
@@ -328,18 +330,18 @@ o utilizando un <code>for</code>
 Normalmente se utiliza siempre la primera opción.
 </p>
 </div>
-</div>
-<div id="outline-container-org4c3c8c3" class="outline-3">
-<h3 id="org4c3c8c3"><span class="section-number-3">1.2.</span> Problema 1: Yes en Java</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org1dd25ef" class="outline-3">
+<h3 id="org1dd25ef"><span class="section-number-3">1.1.</span> Problema 1: Yes en Java</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 Crea una copia del programa de UNIX <code>yes</code> en <i>Java</i>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd5e081e" class="outline-3">
-<h3 id="orgd5e081e"><span class="section-number-3">1.3.</span> Problema 2: Generador de números aleatorios</h3>
-<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org88114d0" class="outline-2">
+<h2 id="org88114d0"><span class="section-number-2">2.</span> Problema 2: Generador de números aleatorios</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Dado un número entero positivo como cota superior <i>N</i>, generar números
 aleatorios entre 0 y <i>N</i>; salir del programa cuando se ingrese la
@@ -501,9 +503,9 @@ No olvidemos cerrar nuestra entrada
 </div>
 </div>
 </div>
-<div id="outline-container-org10828ae" class="outline-3">
-<h3 id="org10828ae"><span class="section-number-3">1.4.</span> El problema del paro</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org7766045" class="outline-2">
+<h2 id="org7766045"><span class="section-number-2">3.</span> El problema del paro</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 El problema del paro, (en inglés como <i>The halting problem</i>) no se refiere a los paros estudiantiles o del
 sindicato. Fue propuesto y resuelto por el primer computólogo del
@@ -561,10 +563,9 @@ problemas como <i>NP</i> los cuales son problemas que a día de hoy se
 siguen estudiando para encontrar soluciones más rápidas.
 </p>
 </div>
-</div>
-<div id="outline-container-org3834fc0" class="outline-3">
-<h3 id="org3834fc0"><span class="section-number-3">1.5.</span> Problema 3: Adivina adivinador.</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-orgd22eea3" class="outline-3">
+<h3 id="orgd22eea3"><span class="section-number-3">3.1.</span> Problema 3: Adivina adivinador.</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Crear un programa que genere un número aleatorio entre 1 y 1000, y
 pregunte a  lo más 10 veces al usuario que adivine el número que está
@@ -591,9 +592,10 @@ en \(log_2(N)\) intentos, si hacemos las preguntas correctas.
 </p>
 </div>
 </div>
-<div id="outline-container-org179b894" class="outline-3">
-<h3 id="org179b894"><span class="section-number-3">1.6.</span> Ciclos anidados</h3>
-<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-org66756ea" class="outline-2">
+<h2 id="org66756ea"><span class="section-number-2">4.</span> Ciclos anidados</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 Es muy común en programación que hagamos ciclos <i>dentro</i> de ciclos.
 Por ejemplo, queremos imprimir en la terminal la siguiente pantalla de
@@ -614,7 +616,7 @@ enfoque es utilizar ciclos anidados como se sigue; omitiremos inicio y fin.
 </p>
 
 
-<div id="org756d65b" class="figure">
+<div id="orgf11f9d0" class="figure">
 <p><img src="../img/icc/nested_loop.svg" alt="nested_loop.svg" class="org-svg" />
 </p>
 </div>
@@ -659,15 +661,14 @@ arbitrarios que pueden cambiar <i>en tiempo de ejecución</i>
 Usualmente se refiere a <code>i</code> como fila y <code>j</code> como columna.
 </p>
 </div>
-</div>
-<div id="outline-container-orgc863a9c" class="outline-3">
-<h3 id="orgc863a9c"><span class="section-number-3">1.7.</span> Problema 4: Pascal</h3>
-<div class="outline-text-3" id="text-1-7">
+<div id="outline-container-org650ca15" class="outline-3">
+<h3 id="org650ca15"><span class="section-number-3">4.1.</span> Problema 4: Pascal</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 Dada una entrada \(N\) por el usuario, dibujar un triángulo como el
 siguiente con \(N\) filas.
 </p>
-<pre class="example" id="orgcff5b13">
+<pre class="example" id="org9f0864e">
 *
 * * 
 * * * 
@@ -684,7 +685,7 @@ siguiente con \(N\) filas.
 se imprima:
 </p>
 
-<pre class="example" id="orgea4a333">
+<pre class="example" id="orga47eee4">
 * * * * *
 * * * *
 * * * 
@@ -692,7 +693,7 @@ se imprima:
 *
 </pre>
 
-<pre class="example" id="orgb9eaf40">
+<pre class="example" id="org827f1d7">
         *
       * * 
     * * * 
@@ -700,7 +701,7 @@ se imprima:
 * * * * *
 </pre>
 
-<pre class="example" id="org089462f">
+<pre class="example" id="orgbc7ecb9">
 * * * * *
   * * * *
     * * * 
@@ -712,7 +713,7 @@ se imprima:
 y finalmente un cuadrado como
 </p>
 
-<pre class="example" id="org521373f">
+<pre class="example" id="orgf8b8cd3">
         *
       * * *
     * * * * *
@@ -725,9 +726,9 @@ y finalmente un cuadrado como
 </pre>
 </div>
 </div>
-<div id="outline-container-org4b17649" class="outline-3">
-<h3 id="org4b17649"><span class="section-number-3">1.8.</span> Problema 5: Dibujo</h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-org2663ae0" class="outline-3">
+<h3 id="org2663ae0"><span class="section-number-3">4.2.</span> Problema 5: Dibujo</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 Crea un dibujo de \(NxN\) donde cada <i>pixel</i> se dibuja como
 </p>
@@ -738,9 +739,9 @@ Crea un dibujo de \(NxN\) donde cada <i>pixel</i> se dibuja como
 </ol>
 </div>
 </div>
-<div id="outline-container-org23e0c06" class="outline-3">
-<h3 id="org23e0c06"><span class="section-number-3">1.9.</span> Problema 6: Tablas de multiplicación</h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-org4ee41b6" class="outline-3">
+<h3 id="org4ee41b6"><span class="section-number-3">4.3.</span> Problema 6: Tablas de multiplicación</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 Crea la tabla de multiplicación de todos los valores entre \([1, N], 
 [1, M]\)  para \(N, M\) dados por el usuario.
@@ -855,9 +856,9 @@ Ej: \(N = 3\), \(M = 4\).
 </table>
 </div>
 </div>
-<div id="outline-container-orgc33e333" class="outline-3">
-<h3 id="orgc33e333"><span class="section-number-3">1.10.</span> Problema 7: Criba de eratóstenes</h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-orgfbd72e1" class="outline-3">
+<h3 id="orgfbd72e1"><span class="section-number-3">4.4.</span> Problema 7: Criba de eratóstenes</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 Dado una cota superior positivo \(N\), imprimir <b>todos</b> los números
 primos que existen entre \([0, N]\) incluyendo a N y el total de números
@@ -865,9 +866,10 @@ primos encontrados.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc9773b4" class="outline-3">
-<h3 id="orgc9773b4"><span class="section-number-3">1.11.</span> Recursión</h3>
-<div class="outline-text-3" id="text-1-11">
+</div>
+<div id="outline-container-org6e318bb" class="outline-2">
+<h2 id="org6e318bb"><span class="section-number-2">5.</span> Recursión</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Todavía nos falta ver una última estructura repetitiva, que más que
 estructura es un concepto matemático basado en el <i>cálculo
@@ -883,10 +885,9 @@ argumentos y parámetros.
 </div>
 </div>
 </div>
-</div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-17 Thu 14:52</p>
+<p class="date">Created: 2025-07-30 Wed 13:05</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

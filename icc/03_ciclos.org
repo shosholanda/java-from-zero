@@ -1,11 +1,11 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Estructuras repetitivas
+#+TITLE: Estructuras repetitivas
 
 Hasta ahora solo hemos utilizado estructuras /secuenciales/ y
 /condicionales/. Existe la última estructura de programación
 /esencial/ que son las estructuras /repetitivas/.
 
-** Problema 1: Primeros N naturales.
+* Problema 1: Primeros N naturales.
 Crear un programa que imprima los primeros /1000/ naturales.
 
 Utilizando programación secuencial, podemos solucionar el problema con
@@ -100,7 +100,7 @@ Podemos fácilmente cambiar el valor del límite a 2147483648, o mejor
 aún si el valor del límite /cambia en tiempo de ejecución/, como por
 ejemplo si es la entrada de usuario.
 
-** Estructura while
+* Estructura while
 
 Esta estructura ya la hemos visto en el problema anterior, su
 funcionamiento es identico al diagrama de flujo. Se necesita de una
@@ -118,7 +118,7 @@ funcionamiento es identico al diagrama de flujo. Se necesita de una
 Normalmente el /while/ se utiliza cuando no sabemos el límite de
 antemano en /tiempo de ejecución/.
 
-** Problema 2: Suma N naturales
+* Problema 2: Suma N naturales
 Dado un número por el usuario, sumar los primeros *N* números
 naturales. Ej: Si $N = 100$, entonces
 
@@ -205,7 +205,7 @@ el promedio. Ej: $N = 10$ el resultado es
 &= 5.5
 \end{align*}
 
-** Estructura for
+* Estructura for
 La estructura con ~for~ es identica lógicamente a la estructura
 ~while~, solo que tanto como inicialización, condición e incremento
 van sobre la misma línea. Así no /regamos/ variables en el código.
@@ -273,7 +273,7 @@ del 0 al 13. Por ejemplo la tabla del 1 sería
 |   1 |  13 |    13 |
 |-----+-----+-------|
 
-** Estructura do-while
+* Estructura do-while
 Finalmente, la última estructura de repetición no se utiliza mucho ya
 que puede simularse fácilmente cambiando el orden de la
 condicional.
@@ -291,9 +291,10 @@ operaciones que existen dentro del while, lo que implica que un
   } while (condición);
 #+end_src
 
+* Problemas
 ** Problema 7: Factorial
-En matemáticas el factorial de un número ($N!$) se define como la
-multiplicación desde 1 hasta ese número. Ej: $N = 10$
+En matemáticas el factorial de un número ($N!$) se define como el
+producto (+productoria+) desde 1 hasta ese número. Ej: $N = 10$
 
 \begin{equation}
 1 * 2 * 3 * \ldots * 8 * 9 * 10 = 362880
@@ -324,7 +325,7 @@ Por ejemplo, para $N=4$, la suma se separa en:
 \frac{1}{1} + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} = 1.9375
 \end{equation*}
 
-Por si te lo preguntas, cuando $x \implies \infty$, el resultado es 2.
+Por si te lo preguntas, cuando $i \implies \infty$, el resultado es 2.
 
 ** Problema 10: Contar dígitos
 Crea un programa donde dado /N/ del usuario, nos diga cuántos

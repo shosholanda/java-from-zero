@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-23 Wed 20:13 -->
+<!-- 2025-07-30 Wed 13:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Matrices</title>
 <meta name="author" content="Davidshiro Pichu" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
@@ -227,20 +227,28 @@
 </script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="../inicio.html"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">Matrices</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgabf511d">1. Matrices</a></li>
-<li><a href="#org0f7a92e">2. Programa 1: Identidad</a></li>
-<li><a href="#org51b3b67">3. toString</a></li>
+<li><a href="#org8967f43">1. Programa 1: Identidad</a></li>
+<li><a href="#orgb9b31d4">2. Problemas</a>
+<ul>
+<li><a href="#orga7d30fb">2.1. Problema 1: Mayor elemento</a></li>
+<li><a href="#orgd1ec7b1">2.2. Problema 2: Matriz2x2</a></li>
+<li><a href="#org8bfbb0f">2.3. Problema 3: Matriz3x3</a></li>
+<li><a href="#org18e3c6d">2.4. toString</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgabf511d" class="outline-2">
-<h2 id="orgabf511d"><span class="section-number-2">1.</span> Matrices</h2>
-<div class="outline-text-2" id="text-1">
 <p>
 Ya que un arreglo puede contener <i>lo que sea</i>, puede incluir también
 <i>más arreglos</i>, creando <i>dimensiones</i> de arreglos. La primera
@@ -248,7 +256,7 @@ dimensión es la que hemos visto que un arreglo tiene elementos.
 </p>
 
 
-<div id="orga5ed5da" class="figure">
+<div id="orgc87b3aa" class="figure">
 <p><img src="../img/icc/array.svg" alt="array.svg" class="org-svg" />
 </p>
 </div>
@@ -262,7 +270,7 @@ son del mismo tipo</b>
 </p>
 
 
-<div id="orgbb7d662" class="figure">
+<div id="orgc23aa5f" class="figure">
 <p><img src="../img/icc/matrix.svg" alt="matrix.svg" class="org-svg" />
 </p>
 </div>
@@ -273,7 +281,7 @@ Muchos programadores se refieren a una matriz por filas y columnas.
 </p>
 
 
-<div id="org54c57da" class="figure">
+<div id="org4035103" class="figure">
 <p><img src="../img/icc/matrix2.svg" alt="matrix2.svg" class="org-svg" />
 </p>
 </div>
@@ -300,11 +308,9 @@ El número de <code>[]</code> indica la dimensión; con 2 significa que estamos 
 un plano <i>2D</i>, con 3 <i>3D</i> y así sucesivamente. Es muy raro de hecho
 encontrar arreglos de dimension <i>mayor a 2</i>.
 </p>
-</div>
-</div>
-<div id="outline-container-org0f7a92e" class="outline-2">
-<h2 id="org0f7a92e"><span class="section-number-2">2.</span> Programa 1: Identidad</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org8967f43" class="outline-2">
+<h2 id="org8967f43"><span class="section-number-2">1.</span> Programa 1: Identidad</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Crear un programa que imprima la identidad de una matriz de tamaño
 \(5\times 7\)
@@ -397,28 +403,127 @@ imprime <i>matrices</i> como la representación de arreglo de arreglos.
 </div>
 
 <p>
-Y finalmente imprimir la <i>identidad</i>. La identidad de una matriz se
-define como las entradas
+Y finalmente imprimir la <i>multiplicación con la matriz identidad</i>. La
+identidad de una matriz se define como las entradas
 </p>
 
 \begin{equation}
 A_{ij} \text{, donde } i = j
 \end{equation}
+
+<p>
+Como \(i=j\) nos basta para solo recorrer en <i>i</i> con un solo <code>for</code>. Es
+claro que como la matriz no es cuadrada, la identidad saldrá
+<i>recortada</i> al tamaño mínimo de filas o columnas. Como sea, imprimimos
+la entrada <code>[i][i]</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">for</span> (<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span> = 0; i &lt; 5; i++)
+    System.out.println(matriz[i][i]);
+</pre>
 </div>
 </div>
-<div id="outline-container-org51b3b67" class="outline-2">
-<h2 id="org51b3b67"><span class="section-number-2">3.</span> toString</h2>
-<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgb9b31d4" class="outline-2">
+<h2 id="orgb9b31d4"><span class="section-number-2">2.</span> Problemas</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga7d30fb" class="outline-3">
+<h3 id="orga7d30fb"><span class="section-number-3">2.1.</span> Problema 1: Mayor elemento</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Dado el tamaño de una matriz \(N\times M\) <i>por argumentos</i>, rellenar la
+matriz para luego encontrar el mayor elemento en la misma. Imprimir
+también la <i>fila</i> y <i>columna</i> donde se encuentra ese elemento.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd1ec7b1" class="outline-3">
+<h3 id="orgd1ec7b1"><span class="section-number-3">2.2.</span> Problema 2: Matriz2x2</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Crea un <i>Objeto</i> llamado <i>Matriz2x2</i> el cual tenga como atributo
+privado una <i>matriz de 2x2</i> de enteros. Define las operaciones de
+</p>
+<ol class="org-ol">
+<li>suma</li>
+<li>resta</li>
+<li>multiplicacion</li>
+<li>determinante</li>
+</ol>
+
+
+<p>
+para la matriz y <i>la otra matriz</i>. Por ejemplo
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #98f5ff;">Matriz2x2</span> <span style="color: #daa520;">suma</span>(<span style="color: #98f5ff;">Matriz2x2</span> <span style="color: #4eee94;">otra</span>){
+    <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">c&#243;digo
+</span>}
+</pre>
+</div>
+
+<p>
+Recuerda que usar <i>this</i> se refiere a la matriz que manda a llamar el
+método. Para poder invocarlas en un <code>main</code> como.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
+    <span style="color: #98f5ff;">Matriz2x2</span> <span style="color: #4eee94;">m1</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Matriz</span>(); <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">inicializar los valores de la matriz
+</span>    <span style="color: #98f5ff;">Matriz2x2</span> <span style="color: #4eee94;">m2</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Matriz</span>();
+    <span style="color: #98f5ff;">Matriz2x2</span> <span style="color: #4eee94;">suma</span> = m1.suma(m2);
+</pre>
+</div>
+
+<p>
+<b>Ojo</b> La multiplicación de matrices no es conmutativa, es decir no es
+lo mismo \(M \times N\) que \(N \times M\)
+</p>
+</div>
+</div>
+<div id="outline-container-org8bfbb0f" class="outline-3">
+<h3 id="org8bfbb0f"><span class="section-number-3">2.3.</span> Problema 3: Matriz3x3</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Lo mismo de <i>Matriz2x2</i> pero ahora de tamaño \(3 \times 3\).
+Añade los métodos.
+</p>
+<ol class="org-ol">
+<li>Identidad: Regresa la matriz con 1 en la diagonal.</li>
+<li>traspuesta: Intercambia los indices <i>reflejados</i> en la diagonal</li>
+<li>Inversa: Si \(det \neq 0\) entonces sí tiene inverso.</li>
+</ol>
+
+<p>
+¿Se podrá hacer una clase de tamaño \(N \times N\)?
+</p>
+</div>
+</div>
+<div id="outline-container-org18e3c6d" class="outline-3">
+<h3 id="org18e3c6d"><span class="section-number-3">2.4.</span> toString</h3>
+<div class="outline-text-3" id="text-2-4">
 <p>
 Replica el método <code>Arrays.deepToString()</code> para matrices con un método
-<i>estático</i> que regrese el valor de la matriz.
+<i>estático</i> que regrese la representación en cadena de la matriz con la
+pequeña modificacion de que se imprima en varias líneas como:
 </p>
+
+<pre class="example" id="org6715549">
+[[1, 2, 3, 4],
+ [5, 6, 7, 8],
+ [9, 10, 11, 12],
+ [13, 14, 15, 16]]
+</pre>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-23 Wed 20:13</p>
+<p class="date">Created: 2025-07-30 Wed 13:48</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

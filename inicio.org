@@ -24,21 +24,18 @@ lo hice y lo aprendí.
 Cada tema contiene ejemplos de código los cuales *se exhorta a copiar
 línea por línea* si es que no se tiene /ninguna/ experiencia con la
 programación, siguiendo con la explicación. No se puede _copiar
-código_ (Ctrl c, Ctrl v), no se pueden saltar temas y se deben
+código_ (~Ctrl C, Ctrl V~), no se pueden saltar temas y se deben
 realizar *TODOS* los ejercicios en el orden propuesto. El estudiante
 *debe* de entender cada tema y poder realizar los ejercicios por su
 propia cuenta. Los ejercicios normalmente no tienen código escrito.
 
-
 Cuando ya se tenga un conocimiento de la /Programación orientada a
 objetos/, se pueden omitir ciertos ejercicios y/o temas. 
-
-#+OPTIONS: TOC:2
 
 * Linux
 + [[file:linux/00_introduccion.org][Introducción a Linux]]
 + [[file:linux/01_baby_penguin.org][Comandos básicos]]
-# #+INCLUDE: "./linux/00_introduccion.org" :minlevel 2
++ [[file:linux/02_emacs.org][Emacs]]
 
 * Java Basics
 + [[./java-basics/00_introduccion.org][Introducción a java]]
@@ -62,13 +59,9 @@ objetos/, se pueden omitir ciertos ejercicios y/o temas.
 + [[file:icc/11_arreglos.org][Arreglos]]
 + [[file:icc/12_argumentos.org][Argumentos]]
 + [[file:icc/13_matrices.org][Matrices]]
-# #+INCLUDE: "./icc/00_programacion_secuencial.org" :minlevel 
++ Recursion 
 
-* Estructuras de datos
-# #+INCLUDE: "./edd/00_arreglos.org" :minlevel 2
+* TODO Estructuras de datos
+* TODO Criptografía y Seguridad*
+* TODO Graficación por computadora
 
-* Criptografía y Seguridad
-# #+INCLUDE: "./cys/00_introduccion.org" :minlevel 2
-
-* Graficación por computadora
-# #+INCLUDE: "./graf/00_introduccion.org"

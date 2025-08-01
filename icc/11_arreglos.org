@@ -1,5 +1,5 @@
 #+HTML_LINK_HOME: ../inicio.html
-* Arreglos
+#+TITLE: Arreglos
 
 Todo en programación es /cantar y coser/ hasta que aparecen números
 mayores a 1000. Por ejemplo, imaginemos que tenemos una nómina con 250
@@ -31,7 +31,7 @@ que guarde /N/ cantidad de valores; solo existen estructuras de datos
 dinámicas (que cambian) y estructuras de datos estáticas que veremos
 en esta sección.
 
-** Definición
+* Definición
 Un arreglo (no, no es un arreglo floral), son espacios reservados en
 memora de tamaño fijo para poder almacenar datos /de un mismo tipo/ a
 través de un índice. En otras palabras, *son chorizos de memoria*.
@@ -130,8 +130,7 @@ referencia en memoria del objeto como ~arr@1233456fe~
   System.out.println(Arrays.toString(arr));
 #+end_src
 
-
-** Problema 1: Promedio sueldos
+* Problema 1: Promedio sueldos
 Dado una entrada /N/ del usuario, sacar el promedio de /N/ sueldos.
 Como no sabemos en tiempo de ejecución el tamaño de /N/ usaremos el
 atributo /length/ de arreglo para saber el tamaño final.
@@ -254,7 +253,7 @@ sola línea como
  Finalmente, el promedio es la /suma total/ entre el /total de
  elementos/.
 
- 
+* Problemas
 ** Problema 2: Estadistica
 Una encuesta de gobierno quere saber cuántas personas son /mayores y
 menores/ al promedio. Crea un programa que calcule el promedio de /N/

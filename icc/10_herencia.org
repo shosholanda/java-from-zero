@@ -1,6 +1,6 @@
 #+HTML_LINK_HOME: ../inicio.html
+#+TITLE: Herencia
 
-* Herencia
 Por más que no queramos aceptarlo, nosotros no somos /dueños/ de
 nuestro código. Más del 90% de código es código /reutilizado/ de otros
 programadores con licencia GNU. Incluso un mismo programador *debe* de
@@ -25,27 +25,27 @@ Todo esto es muy téorico, crearemos un ejemplo sencillo. Queremos
 crear un zoológico, donde habrán diferentes tipos de animales;
 usaremos la [[https://zootycoon.fandom.com/wiki/List_of_Animals_in_Zoo_Tycoon][siguiente tabla]] para no tener datos aleatorios.
 
-| Nombre                  | Bioma                 | Vegetacion Favorita    | Costo  | Lugar de origen    |
-|-------------------------+-----------------------+------------------------+--------+--------------------|
-| Beluga                  | Acuático              | Kelp                   | $850   | Oceanos árticos    |
-| Narval                  | Acuático              | Lechuga de mar         | $1,200 | Oceanos árticos    |
-| Orca                    | Acuático              | Hierba marina          | $2,500 | Todos los oceanos  |
-| Oso Grizzly             | Bosque de coníferas   | Cedro amarillo         | 1,000  | Norteamérica       |
-| Tigre siberiano         | Bosque de coníferas   | Ficus chino            | $1,000 | Siberia            |
-| Alce                    | Bosque de hoja caduca | Sauce llorón           | $700   | Norteamérica       |
-| Oso negro               | Bosque de hoja caduca | Álamo temblón          | $850   | Norteamérica       |
-| Órix                    | Desierto              | Arbusto espinoso       | $900   | Africa             |
-| Bisonte Americano       | Pradera               | Planifolio             | $1,500 | Norteamérica       |
-| Avesturz                | Sabana                | Hierba alta            | $1,100 | Africa             |
-| Elefante Africano       | Sabana                | Baobao                 | $2,500 | Africa             |
-| Jirafa                  | Sabana                | Acacia de copa plana   | $1,600 | Africa             |
-| León                    | Sabana                | Acacia de copa plana   | $700   | Africa             |
-| Gorila                  | Selva tropical        | Oreja de elefante      | $2,500 | Africa             |
-| Tigre de bengala        | Selva tropical        | Mangle                 | $1,500 | India              |
-| Panda gigante           | Tierras altas         | Bamboo                 | $5,000 | China              |
-| Puma                    | Tierras altas         | Arbusto sage           | $700   | Norteamérica       |
-| Oso polar               | Tundra                | Cueva de rocas nevadas | $1,500 | Artico             |
-| Pinguino emperador      | Tundra                | Cueva de hielo         | $1,100 | Antartida          |
+| Nombre             | Bioma                 | Vegetacion Favorita    | Costo  | Lugar de origen   |
+|--------------------+-----------------------+------------------------+--------+-------------------|
+| Beluga             | Acuático              | Kelp                   | $850   | Oceanos árticos   |
+| Narval             | Acuático              | Lechuga de mar         | $1,200 | Oceanos árticos   |
+| Orca               | Acuático              | Hierba marina          | $2,500 | Todos los oceanos |
+| Oso Grizzly        | Bosque de coníferas   | Cedro amarillo         | 1,000  | Norteamérica      |
+| Tigre siberiano    | Bosque de coníferas   | Ficus chino            | $1,000 | Siberia           |
+| Alce               | Bosque de hoja caduca | Sauce llorón           | $700   | Norteamérica      |
+| Oso negro          | Bosque de hoja caduca | Álamo temblón          | $850   | Norteamérica      |
+| Órix               | Desierto              | Arbusto espinoso       | $900   | Africa            |
+| Bisonte Americano  | Pradera               | Planifolio             | $1,500 | Norteamérica      |
+| Avesturz           | Sabana                | Hierba alta            | $1,100 | Africa            |
+| Elefante Africano  | Sabana                | Baobao                 | $2,500 | Africa            |
+| Jirafa             | Sabana                | Acacia de copa plana   | $1,600 | Africa            |
+| León               | Sabana                | Acacia de copa plana   | $700   | Africa            |
+| Gorila             | Selva tropical        | Oreja de elefante      | $2,500 | Africa            |
+| Tigre de bengala   | Selva tropical        | Mangle                 | $1,500 | India             |
+| Panda gigante      | Tierras altas         | Bamboo                 | $5,000 | China             |
+| Puma               | Tierras altas         | Arbusto sage           | $700   | Norteamérica      |
+| Oso polar          | Tundra                | Cueva de rocas nevadas | $1,500 | Artico            |
+| Pinguino emperador | Tundra                | Cueva de hielo         | $1,100 | Antartida         |
 
 Observamos que, todas las especies comparten atributos en común; las
 columnas. Podemos definir una /superclase/ con estos atributos y
@@ -215,7 +215,7 @@ Salida
 Este ejemplo contiene varios *conceptos clave* de la herencia que son
 bastante utilizados en /Java/, analizaremos el código a detalle.
 
-** Clases y métodos abstractos
+* Clases y métodos abstractos
 Lo primero que notamos es que tenemos la cláusula ~abstract~ en la
 firma de la clase /Animal/. 
 
@@ -287,7 +287,7 @@ las subclases que hereden de /Animal/.
 
 Los /getters y setters/ se omiten por cuestión de espacio.
 
-** super vs this
+* super vs this
 Esta parte tiene que ver con /Constructores/.  Tenemos un constructor
 general el cual inicializa el valor de las variables.
 
@@ -405,9 +405,7 @@ clase padre.
 
 ~toString()~ es un caso de /Object/ que veremos más adelante.
 
-
-
-** Object
+* Object
 /Object/, como su nombre indica, es un Objeto *padre de todos los
 objetos*. Cualquier clase que exista en /Java/ (sí, incluso las que
 creamos) heredan de /Object/. La [[https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html][documentación de /Java/]] indica que
@@ -462,7 +460,7 @@ pensar en /Bárbara Liskov/, ¿se cumple que todo el funcionamiento del
 padre pasa al hijo?  y no solo para nuestros programas en este
 momento; más importante a /futuro/.
 
-
+* Problemas
 ** Problema 1: Operacion
 Se necesita implementar una clase que resuelva operaciones
 /binarias/. Operaciones como ~suma(), multiplicacion(), resta(),
