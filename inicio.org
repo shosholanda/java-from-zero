@@ -6,7 +6,6 @@ Aprende /Java/ desde 0 es una guía desarrollada por una persona /que
 no sabía absolutamente nada de programación/, inspirado por la
 aplicación /Aprende java desde cero/ de ~tu.mentor.tutoz~
 
-
 La única forma de aprender a programar es /programando/, la forma de
 aprender a jugar /futbol/ es /jugando futbol/, aprender a /cocinar/ es
 /cocinando/; en general la forma de aprender /lo que sea/ es
@@ -20,48 +19,166 @@ lo hice y lo aprendí.
 --- Proverbio Chino
 #+end_quote
 
+La idea original de este manual era aprender /Java/ como primer
+lenguaje, pero opté por extenderlo a un manual más completo de todas
+las cosas que me gustan y que aprendí como estudiante y ayudante de
+/Ciencias de la computación/. He enseñado las materias de
+/Introducción a Ciencias de la Computación/, /Estructuras de Datos/,
+/Criptografía y Seguridad/, /Teoría de Códigos/, /Seminario de Cadenas
+de Bloques/, además de ser voluntario en el /Propedéutico/.
+
+Si eres alguien que /no sabe absolutamente nada de programación/ (como
+yo empezando la carrera), el orden propuesto es empezar con /Linux/,
+hasta /emacs/, al mismo tiempo que se hace /Java Basics/, claramente
+practicando todo al mismo tiempo (terminal, emacs, java), para despues
+seguir con /Introducción a ciencias de la computación/.
+
+Claro que debes /complementar/ con todas tus clases este material, ya
+que este manual se centra en /practicar/ y no tanto en /teoría/. A
+veces es necesario introducir cierta teoría para complementar.
 
 Cada tema contiene ejemplos de código los cuales *se exhorta a copiar
-línea por línea* si es que no se tiene /ninguna/ experiencia con la
-programación, siguiendo con la explicación. No se puede _copiar
-código_ (~Ctrl C, Ctrl V~), no se pueden saltar temas y se deben
-realizar *TODOS* los ejercicios en el orden propuesto. El estudiante
-*debe* de entender cada tema y poder realizar los ejercicios por su
-propia cuenta. Los ejercicios normalmente no tienen código escrito.
+línea por línea* si es que no se tiene /ninguna/ experiencia con el
+tema, siguiendo con la explicación. No se puede _copiar código_ (~Ctrl
+C, Ctrl V~), no se pueden saltar temas y se deben realizar *TODOS* los
+ejercicios en el orden propuesto. El estudiante *debe* de entender
+cada tema y poder realizar los ejercicios por su propia cuenta. Los
+ejercicios normalmente no tienen código escrito, pero si te atoras
+demasiado en un ejercicio no dudes en buscar en internet una pista de
+cómo poder resolver el problema.
 
-Cuando ya se tenga un conocimiento de la /Programación orientada a
-objetos/, se pueden omitir ciertos ejercicios y/o temas. 
 
-* Linux
-+ [[file:linux/00_introduccion.org][Introducción a Linux]]
-+ [[file:linux/01_baby_penguin.org][Comandos básicos]]
-+ [[file:linux/02_emacs.org][Emacs]]
+Si ya tienes experiencia con la programación y /puedes realizar/ el
+ejercicio más dificil puedes saltarte temas y buscar la información
+que necesites. También puedes husmear en temas que sean de tu interés.
 
-* Java Basics
-+ [[./java-basics/00_introduccion.org][Introducción a java]]
-+ [[./java-basics/01_instalacion.org][Instalación]]
-+ [[./java-basics/02_hello_world.org][Hola mundo!]]
-+ [[./java-basics/03_diagramas.org][Diagramas de flujo]]
-+ [[./java-basics/04_errores.org][Errores]]
 
-* Introducción a Ciencias de la computación
-+ [[./icc/00_programacion_secuencial.org][Programación secuencial]]
-+ [[./icc/01_condicionales.org][Condicionales]]
-+ [[file:icc/02_condicionales_switch.org][Condicionales++]]
-+ [[file:icc/03_ciclos.org][Ciclos]]
-+ [[file:icc/04_ciclos_infinitos.org][Ciclos++]]
-+ [[file:icc/05_string.org][Strings]]
-+ [[file:icc/06_clases_y_objetos.org][Clases y objetos]]
-+ [[file:icc/07_metodos.org][Métodos]]
-+ [[file:icc/08_encapsulamiento.org][Encapsulamiento]]
-+ [[file:icc/09_colaboracion_de_clases.org][Colaboración de clases]]
-+ [[file:icc/10_herencia.org][Herencia]]
-+ [[file:icc/11_arreglos.org][Arreglos]]
-+ [[file:icc/12_argumentos.org][Argumentos]]
-+ [[file:icc/13_matrices.org][Matrices]]
-+ Recursion 
+* TODO Linux [3/8] [37%]
++ [X] [[file:linux/00_introduccion.org][Introducción a Linux]]
++ [X] [[file:linux/01_baby_penguin.org][Comandos básicos]]
++ [X] [[file:linux/02_emacs.org][Emacs]]
++ [ ] Org mode
++ [ ] Comandos intermedios
++ [ ] GIT
++ [ ] LateX
++ [ ] Comandos avanzados
+
+* DONE Java Basics [5/5] [100%]
++ [X] [[./java-basics/00_introduccion.org][Introducción a java]]
++ [X] [[./java-basics/01_instalacion.org][Instalación]]
++ [X] [[./java-basics/02_hello_world.org][Hola mundo!]]
++ [X] [[./java-basics/03_diagramas.org][Diagramas de flujo]]
++ [X] [[./java-basics/04_errores.org][Errores]]
+
+* TODO Introducción a Ciencias de la computación [14/30] [46%]
++ [X] [[./icc/00_programacion_secuencial.org][Programación secuencial]]
++ [X] [[./icc/01_condicionales.org][Condicionales]]
++ [X] [[file:icc/02_condicionales_switch.org][Condicionales++]]
++ [X] [[file:icc/03_ciclos.org][Ciclos]]
++ [X] [[file:icc/04_ciclos_infinitos.org][Ciclos++]]
++ [X] [[file:icc/05_string.org][Strings]]
++ [X] [[file:icc/06_clases_y_objetos.org][Clases y objetos]]
++ [X] [[file:icc/07_metodos.org][Métodos]]
++ [X] [[file:icc/08_encapsulamiento.org][Encapsulamiento]]
++ [X] [[file:icc/09_colaboracion_de_clases.org][Colaboración de clases]]
++ [X] [[file:icc/10_herencia.org][Herencia]]
++ [X] [[file:icc/11_arreglos.org][Arreglos]]
++ [X] [[file:icc/12_argumentos.org][Argumentos]]
++ [X] [[file:icc/13_matrices.org][Matrices]]
++ [ ] Recursion
++ [ ] Excepciones
++ [ ] Listas
++ [ ] Ordenamientos
++ [ ] Busquedas
++ [ ] Interfaces
++ [ ] Iteradores
++ [ ] Genéricos
++ [ ] Entrada y salida
++ [ ] Sockets
++ [ ] Patrones de diseño
++ [ ] MVC
++ [ ] Java FX
++ [ ] Programacion concurrente
++ [ ] Sincronizacion
++ [ ] Proyecto
 
 * TODO Estructuras de datos
-* TODO Criptografía y Seguridad*
+
+
+* TODO Criptografía y Seguridad [0%]
++ [ ] Introducción
++ [ ] Fundamentos de seguridad
+  - [ ] CIA
+  - [ ] PAT
+  - [ ] PTP
+  - [ ] AAA
++ [ ] Vulnerabilidades
+  - [ ] Tráfico de red
++ [ ] Amenazas
+  - [ ] Interno / Externo
+    - [ ] DoS & DDoS
+    - [ ] SSH Multiverse
+  - [ ] Malware
+    - [ ] Keyloggers
+    - [ ] Android Hacking
+  - [ ] Bugs
+  - [ ] AmongUs
+    - [ ] MitM
+  - [ ] En la nube
+    - [ ] Cross-Site scripting
+    - [ ] SQL injection
++ [ ] Dominios de amenazas
++ [ ] Ingeniería Social
+  - [ ] Recopilación
+  - [ ] OSINT
+  - [ ] Phishing
++ [ ] Defensa
+  - [ ] Escaneo y reporte
+  - [ ] VPN
+  - [ ] Splunk
+  - [ ] Navegar por /deep web/
++ [ ] Otros temas
+  - [ ] Seguridad Wi-Fi
+  - [ ] Más herramientas
+  - [ ] Seguridad e IA
+  - [ ] Preguntas frecuentes
++ [ ] Criptografía
+  - [ ] Historia
+    - [ ] Cifrado Vernam
+    - [ ] ENIGMA
+    - [ ] PURPURA
+  - [ ] Llaves
+    - [ ] Llaves simétricas y asimetricas
+    - [ ] Llave pública y privada
+    - [ ] Protocolo de Diffie-Hellman
+  - [ ] Cifrados Clásicos
+    - [ ] Sistemas monoalfabéticos
+      - [ ] Cifrado César
+      - [ ] Cifrado Decimado
+      - [ ] Cifrado Afin
+    - [ ] Sistemas polialfabeticos
+      - [ ] Cifrado Vigenere
+    - [ ] Sistemas poligráficos
+      - [ ] Cifrado Playfair
+      - [ ] Cifrado Hill
+  - [ ] Algoritmos de seguridad
+    - [ ] DES
+    - [ ] RSA
+    - [ ] Logaritmo discreto
+    - [ ] AES
+    - [ ] SSL
+  - [ ] Otros temas
+    - [ ] Esteganografía
+    - [ ] Curvas elípticas
 * TODO Graficación por computadora
+
+* Bibliografía
+1. Lopéz R. [[https://apkpure.net/es/aprende-java-desde-cero/net.tumentor.tutoriales.java/download][/Aprende JAVA desde cero/]] Desarrollo aplicado. 2017.
+2. Peláez C.[[https://drive.google.com/file/d/1Cd1prr5OQ0-_LBS0_UJS_0ZkkkoYOjbU/view?usp=drive_link][/Introducción a Ciencias de la computación con Java
+   moderno/]], Facultad de Ciencias, UNAM. 2022.
+3. Peláez C. [[https://drive.google.com/file/d/1K9lqNfX43xTVhQkKZXUIwuaJ6YU-mttQ/view?usp=drive_link][/Estructuras de Datos con Java moderno/]] Facultad de
+   Ciencias UNAM. 2020.
+4. Galaviz J., Magidin A. [[https://drive.google.com/file/d/1FxSX0-ymteWoxSPeR_3w7Mxd2H11bIRe/view?usp=drive_link][/Introducción a la Criptología/]]. Facultad de
+   Ciencias UNAM, 2007.
+5. Hacker X, [[https://play.google.com/store/apps/details?id=hacking.learnhacking.learn.hack.ethicalhacking.programming.coding.hackerx.cybersecurity&pcampaignid=web_share][/Learn Ethical Hacking/.]] Online Institute of Hacking, 2025.
 

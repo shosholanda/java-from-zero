@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-31 Thu 23:05 -->
+<!-- 2025-08-03 Sun 16:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aprende JAVA desde 0</title>
@@ -201,25 +201,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgabc91c0">1. Introducción</a></li>
-<li><a href="#orgebfce61">2. Linux</a></li>
-<li><a href="#org87b448c">3. Java Basics</a></li>
-<li><a href="#orgb148198">4. Introducción a Ciencias de la computación</a></li>
-<li><a href="#orgb3aac46">5. <span class="todo TODO">TODO</span> Estructuras de datos</a></li>
-<li><a href="#org61c1f4b">6. <span class="todo TODO">TODO</span> Criptografía y Seguridad*</a></li>
-<li><a href="#org263500c">7. <span class="todo TODO">TODO</span> Graficación por computadora</a></li>
+<li><a href="#org49dd339">1. Introducción</a></li>
+<li><a href="#org227c078">2. <span class="todo TODO">TODO</span> Linux <code>[3/8]</code> <code>[37%]</code></a></li>
+<li><a href="#org4c62647">3. <span class="done DONE">DONE</span> Java Basics <code>[5/5]</code> <code>[100%]</code></a></li>
+<li><a href="#orgce81f49">4. <span class="todo TODO">TODO</span> Introducción a Ciencias de la computación <code>[14/30]</code> <code>[46%]</code></a></li>
+<li><a href="#orgca3af8c">5. <span class="todo TODO">TODO</span> Estructuras de datos</a></li>
+<li><a href="#orga541b89">6. <span class="todo TODO">TODO</span> Criptografía y Seguridad <code>[0%]</code></a></li>
+<li><a href="#org0683f99">7. <span class="todo TODO">TODO</span> Graficación por computadora</a></li>
+<li><a href="#org30a801c">8. Bibliografía</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgabc91c0" class="outline-2">
-<h2 id="orgabc91c0"><span class="section-number-2">1.</span> Introducción</h2>
+<div id="outline-container-org49dd339" class="outline-2">
+<h2 id="org49dd339"><span class="section-number-2">1.</span> Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Aprende <i>Java</i> desde 0 es una guía desarrollada por una persona <i>que
 no sabía absolutamente nada de programación</i>, inspirado por la
 aplicación <i>Aprende java desde cero</i> de <code>tu.mentor.tutoz</code>
 </p>
-
 
 <p>
 La única forma de aprender a programar es <i>programando</i>, la forma de
@@ -240,6 +240,29 @@ lo hice y lo aprendí.
 </p>
 </blockquote>
 
+<p>
+La idea original de este manual era aprender <i>Java</i> como primer
+lenguaje, pero opté por extenderlo a un manual más completo de todas
+las cosas que me gustan y que aprendí como estudiante y ayudante de
+<i>Ciencias de la computación</i>. He enseñado las materias de
+<i>Introducción a Ciencias de la Computación</i>, <i>Estructuras de Datos</i>,
+<i>Criptografía y Seguridad</i>, <i>Teoría de Códigos</i>, <i>Seminario de Cadenas
+de Bloques</i>, además de ser voluntario en el <i>Propedéutico</i>.
+</p>
+
+<p>
+Si eres alguien que <i>no sabe absolutamente nada de programación</i> (como
+yo empezando la carrera), el orden propuesto es empezar con <i>Linux</i>,
+hasta <i>emacs</i>, al mismo tiempo que se hace <i>Java Basics</i>, claramente
+practicando todo al mismo tiempo (terminal, emacs, java), para despues
+seguir con <i>Introducción a ciencias de la computación</i>.
+</p>
+
+<p>
+Claro que debes <i>complementar</i> con todas tus clases este material, ya
+que este manual se centra en <i>practicar</i> y no en <i>teoría</i>. A veces
+es necesario introducir cierta teoría para complementar.
+</p>
 
 <p>
 Cada tema contiene ejemplos de código los cuales <b>se exhorta a copiar
@@ -248,71 +271,218 @@ programación, siguiendo con la explicación. No se puede <span class="underline
 código</span> (<code>Ctrl C, Ctrl V</code>), no se pueden saltar temas y se deben
 realizar <b>TODOS</b> los ejercicios en el orden propuesto. El estudiante
 <b>debe</b> de entender cada tema y poder realizar los ejercicios por su
-propia cuenta. Los ejercicios normalmente no tienen código escrito.
+propia cuenta. Los ejercicios normalmente no tienen código escrito,
+pero si te atoras demasiado en un ejercicio no dudes en buscar en
+internet una pista de cómo poder resolver el problema.
 </p>
 
+
 <p>
-Cuando ya se tenga un conocimiento de la <i>Programación orientada a
-objetos</i>, se pueden omitir ciertos ejercicios y/o temas. 
+Si ya tienes experiencia con la programación y <i>puedes realizar</i> el
+ejercicio más dificil puedes saltarte temas y buscar la información
+que necesites. También puedes husmear en temas que sean de tu interés.
 </p>
 </div>
 </div>
-<div id="outline-container-orgebfce61" class="outline-2">
-<h2 id="orgebfce61"><span class="section-number-2">2.</span> Linux</h2>
+<div id="outline-container-org227c078" class="outline-2">
+<h2 id="org227c078"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> Linux <code>[3/8]</code> <code>[37%]</code></h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li><a href="linux/00_introduccion.html">Introducción a Linux</a></li>
-<li><a href="linux/01_baby_penguin.html">Comandos básicos</a></li>
-<li><a href="linux/02_emacs.html">Emacs</a></li>
+<li class="on"><code>[X]</code> <a href="linux/00_introduccion.html">Introducción a Linux</a></li>
+<li class="on"><code>[X]</code> <a href="linux/01_baby_penguin.html">Comandos básicos</a></li>
+<li class="on"><code>[X]</code> <a href="linux/02_emacs.html">Emacs</a></li>
+<li class="off"><code>[&#xa0;]</code> Org mode</li>
+<li class="off"><code>[&#xa0;]</code> Comandos intermedios</li>
+<li class="off"><code>[&#xa0;]</code> GIT</li>
+<li class="off"><code>[&#xa0;]</code> LateX</li>
+<li class="off"><code>[&#xa0;]</code> Comandos avanzados</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org87b448c" class="outline-2">
-<h2 id="org87b448c"><span class="section-number-2">3.</span> Java Basics</h2>
+<div id="outline-container-org4c62647" class="outline-2">
+<h2 id="org4c62647"><span class="section-number-2">3.</span> <span class="done DONE">DONE</span> Java Basics <code>[5/5]</code> <code>[100%]</code></h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li><a href="./java-basics/00_introduccion.html">Introducción a java</a></li>
-<li><a href="./java-basics/01_instalacion.html">Instalación</a></li>
-<li><a href="./java-basics/02_hello_world.html">Hola mundo!</a></li>
-<li><a href="./java-basics/03_diagramas.html">Diagramas de flujo</a></li>
-<li><a href="./java-basics/04_errores.html">Errores</a></li>
+<li class="on"><code>[X]</code> <a href="./java-basics/00_introduccion.html">Introducción a java</a></li>
+<li class="on"><code>[X]</code> <a href="./java-basics/01_instalacion.html">Instalación</a></li>
+<li class="on"><code>[X]</code> <a href="./java-basics/02_hello_world.html">Hola mundo!</a></li>
+<li class="on"><code>[X]</code> <a href="./java-basics/03_diagramas.html">Diagramas de flujo</a></li>
+<li class="on"><code>[X]</code> <a href="./java-basics/04_errores.html">Errores</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb148198" class="outline-2">
-<h2 id="orgb148198"><span class="section-number-2">4.</span> Introducción a Ciencias de la computación</h2>
+<div id="outline-container-orgce81f49" class="outline-2">
+<h2 id="orgce81f49"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Introducción a Ciencias de la computación <code>[14/30]</code> <code>[46%]</code></h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
-<li><a href="./icc/00_programacion_secuencial.html">Programación secuencial</a></li>
-<li><a href="./icc/01_condicionales.html">Condicionales</a></li>
-<li><a href="icc/02_condicionales_switch.html">Condicionales++</a></li>
-<li><a href="icc/03_ciclos.html">Ciclos</a></li>
-<li><a href="icc/04_ciclos_infinitos.html">Ciclos++</a></li>
-<li><a href="icc/05_string.html">Strings</a></li>
-<li><a href="icc/06_clases_y_objetos.html">Clases y objetos</a></li>
-<li><a href="icc/07_metodos.html">Métodos</a></li>
-<li><a href="icc/08_encapsulamiento.html">Encapsulamiento</a></li>
-<li><a href="icc/09_colaboracion_de_clases.html">Colaboración de clases</a></li>
-<li><a href="icc/10_herencia.html">Herencia</a></li>
-<li><a href="icc/11_arreglos.html">Arreglos</a></li>
-<li><a href="icc/12_argumentos.html">Argumentos</a></li>
-<li><a href="icc/13_matrices.html">Matrices</a></li>
+<li class="on"><code>[X]</code> <a href="./icc/00_programacion_secuencial.html">Programación secuencial</a></li>
+<li class="on"><code>[X]</code> <a href="./icc/01_condicionales.html">Condicionales</a></li>
+<li class="on"><code>[X]</code> <a href="icc/02_condicionales_switch.html">Condicionales++</a></li>
+<li class="on"><code>[X]</code> <a href="icc/03_ciclos.html">Ciclos</a></li>
+<li class="on"><code>[X]</code> <a href="icc/04_ciclos_infinitos.html">Ciclos++</a></li>
+<li class="on"><code>[X]</code> <a href="icc/05_string.html">Strings</a></li>
+<li class="on"><code>[X]</code> <a href="icc/06_clases_y_objetos.html">Clases y objetos</a></li>
+<li class="on"><code>[X]</code> <a href="icc/07_metodos.html">Métodos</a></li>
+<li class="on"><code>[X]</code> <a href="icc/08_encapsulamiento.html">Encapsulamiento</a></li>
+<li class="on"><code>[X]</code> <a href="icc/09_colaboracion_de_clases.html">Colaboración de clases</a></li>
+<li class="on"><code>[X]</code> <a href="icc/10_herencia.html">Herencia</a></li>
+<li class="on"><code>[X]</code> <a href="icc/11_arreglos.html">Arreglos</a></li>
+<li class="on"><code>[X]</code> <a href="icc/12_argumentos.html">Argumentos</a></li>
+<li class="on"><code>[X]</code> <a href="icc/13_matrices.html">Matrices</a></li>
+<li class="off"><code>[&#xa0;]</code> Recursion</li>
+<li class="off"><code>[&#xa0;]</code> Excepciones</li>
+<li class="off"><code>[&#xa0;]</code> Listas</li>
+<li class="off"><code>[&#xa0;]</code> Ordenamientos</li>
+<li class="off"><code>[&#xa0;]</code> Busquedas</li>
+<li class="off"><code>[&#xa0;]</code> Interfaces</li>
+<li class="off"><code>[&#xa0;]</code> Iteradores</li>
+<li class="off"><code>[&#xa0;]</code> Genéricos</li>
+<li class="off"><code>[&#xa0;]</code> Entrada y salida</li>
+<li class="off"><code>[&#xa0;]</code> Sockets</li>
+<li class="off"><code>[&#xa0;]</code> Patrones de diseño</li>
+<li class="off"><code>[&#xa0;]</code> MVC</li>
+<li class="off"><code>[&#xa0;]</code> Java FX</li>
+<li class="off"><code>[&#xa0;]</code> Programacion concurrente</li>
+<li class="off"><code>[&#xa0;]</code> Sincronizacion</li>
+<li class="off"><code>[&#xa0;]</code> Proyecto</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb3aac46" class="outline-2">
-<h2 id="orgb3aac46"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Estructuras de datos</h2>
+<div id="outline-container-orgca3af8c" class="outline-2">
+<h2 id="orgca3af8c"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Estructuras de datos</h2>
 </div>
-<div id="outline-container-org61c1f4b" class="outline-2">
-<h2 id="org61c1f4b"><span class="section-number-2">6.</span> <span class="todo TODO">TODO</span> Criptografía y Seguridad*</h2>
+<div id="outline-container-orga541b89" class="outline-2">
+<h2 id="orga541b89"><span class="section-number-2">6.</span> <span class="todo TODO">TODO</span> Criptografía y Seguridad <code>[0%]</code></h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Introducción</li>
+<li class="off"><code>[&#xa0;]</code> Fundamentos de seguridad
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> CIA</li>
+<li class="off"><code>[&#xa0;]</code> PAT</li>
+<li class="off"><code>[&#xa0;]</code> PTP</li>
+<li class="off"><code>[&#xa0;]</code> AAA</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Vulnerabilidades
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Tráfico de red</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Amenazas
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Interno / Externo
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> DoS &amp; DDoS</li>
+<li class="off"><code>[&#xa0;]</code> SSH Multiverse</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Malware
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Keyloggers</li>
+<li class="off"><code>[&#xa0;]</code> Android Hacking</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Bugs</li>
+<li class="off"><code>[&#xa0;]</code> AmongUs
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> MitM</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> En la nube
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Cross-Site scripting</li>
+<li class="off"><code>[&#xa0;]</code> SQL injection</li>
+</ul></li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Dominios de amenazas</li>
+<li class="off"><code>[&#xa0;]</code> Ingeniería Social
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Recopilación</li>
+<li class="off"><code>[&#xa0;]</code> OSINT</li>
+<li class="off"><code>[&#xa0;]</code> Phishing</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Defensa
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Escaneo y reporte</li>
+<li class="off"><code>[&#xa0;]</code> VPN</li>
+<li class="off"><code>[&#xa0;]</code> Splunk</li>
+<li class="off"><code>[&#xa0;]</code> Navegar por <i>deep web</i></li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Otros temas
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Seguridad Wi-Fi</li>
+<li class="off"><code>[&#xa0;]</code> Más herramientas</li>
+<li class="off"><code>[&#xa0;]</code> Seguridad e IA</li>
+<li class="off"><code>[&#xa0;]</code> Preguntas frecuentes</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Criptografía
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Historia
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Cifrado Vernam</li>
+<li class="off"><code>[&#xa0;]</code> ENIGMA</li>
+<li class="off"><code>[&#xa0;]</code> PURPURA</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Llaves
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Llaves simétricas y asimetricas</li>
+<li class="off"><code>[&#xa0;]</code> Llave pública y privada</li>
+<li class="off"><code>[&#xa0;]</code> Protocolo de Diffie-Hellman</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Cifrados Clásicos
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Sistemas monoalfabéticos
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Cifrado César</li>
+<li class="off"><code>[&#xa0;]</code> Cifrado Decimado</li>
+<li class="off"><code>[&#xa0;]</code> Cifrado Afin</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Sistemas polialfabeticos
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Cifrado Vigenere</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Sistemas poligráficos
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Cifrado Playfair</li>
+<li class="off"><code>[&#xa0;]</code> Cifrado Hill</li>
+</ul></li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Algoritmos de seguridad
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> DES</li>
+<li class="off"><code>[&#xa0;]</code> RSA</li>
+<li class="off"><code>[&#xa0;]</code> Logaritmo discreto</li>
+<li class="off"><code>[&#xa0;]</code> AES</li>
+<li class="off"><code>[&#xa0;]</code> SSL</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Otros temas
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Esteganografía</li>
+<li class="off"><code>[&#xa0;]</code> Curvas elípticas</li>
+</ul></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org263500c" class="outline-2">
-<h2 id="org263500c"><span class="section-number-2">7.</span> <span class="todo TODO">TODO</span> Graficación por computadora</h2>
+</div>
+<div id="outline-container-org0683f99" class="outline-2">
+<h2 id="org0683f99"><span class="section-number-2">7.</span> <span class="todo TODO">TODO</span> Graficación por computadora</h2>
+</div>
+
+<div id="outline-container-org30a801c" class="outline-2">
+<h2 id="org30a801c"><span class="section-number-2">8.</span> Bibliografía</h2>
+<div class="outline-text-2" id="text-8">
+<ol class="org-ol">
+<li>Lopéz R. <a href="https://apkpure.net/es/aprende-java-desde-cero/net.tumentor.tutoriales.java/download"><i>Aprende JAVA desde cero</i></a> Desarrollo aplicado. 2017.</li>
+<li>Peláez C.<a href="https://drive.google.com/file/d/1Cd1prr5OQ0-_LBS0_UJS_0ZkkkoYOjbU/view?usp=drive_link"><i>Introducción a Ciencias de la computación con Java
+moderno</i></a>, Facultad de Ciencias, UNAM. 2022.</li>
+<li>Peláez C. <a href="https://drive.google.com/file/d/1K9lqNfX43xTVhQkKZXUIwuaJ6YU-mttQ/view?usp=drive_link"><i>Estructuras de Datos con Java moderno</i></a> Facultad de
+Ciencias UNAM. 2020.</li>
+<li>Galaviz J., Magidin A. <a href="https://drive.google.com/file/d/1FxSX0-ymteWoxSPeR_3w7Mxd2H11bIRe/view?usp=drive_link"><i>Introducción a la Criptología</i></a>. Facultad de
+Ciencias UNAM, 2007.</li>
+<li>Hacker X, <a href="https://play.google.com/store/apps/details?id=hacking.learnhacking.learn.hack.ethicalhacking.programming.coding.hackerx.cybersecurity&amp;pcampaignid=web_share"><i>Learn Ethical Hacking</i>.</a> Online Institute of Hacking, 2025.</li>
+</ol>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-31 Thu 23:05</p>
+<p class="date">Created: 2025-08-03 Sun 16:46</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

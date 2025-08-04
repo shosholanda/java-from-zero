@@ -1,9 +1,6 @@
 * Temas para icc
-:ASASDAS:
-HOla
-:END:
  
-- Programación lineal
+- Programación lineal 
   - Estructura condicional
     - if
     - if-else
@@ -24,10 +21,10 @@ HOla
     - constructor
     - toString
   - main
-  - enumeraciones
 - Herencia
   - reutilizando código
   - clases abstractas
+  - enumeraciones
   - extends
   - Object
 - Estructuras de datos
@@ -52,7 +49,7 @@ HOla
   - JAVA FX
   - MVC
   - sockets
-- Programación concurrente
+- Programación concpurrente
   - synchronized
   - variables atomicas
 
