@@ -105,13 +105,9 @@ que necesites. También puedes husmear en temas que sean de tu interés.
 * TODO Estructuras de datos
 
 
-* TODO Criptografía y Seguridad [0%]
-+ [ ] Introducción
-+ [ ] Fundamentos de seguridad
-  - [ ] CIA
-  - [ ] PAT
-  - [ ] PTP
-  - [ ] AAA
+* TODO Criptografía y Seguridad [15%]
++ [X] [[file:cripto/00_introduccion.org][Introduccion]]
++ [X] [[./cripto/01_fundamentos.org][Fundamentos de seguridad]]
 + [ ] Vulnerabilidades
   - [ ] Tráfico de red
 + [ ] Amenazas
@@ -142,34 +138,34 @@ que necesites. También puedes husmear en temas que sean de tu interés.
   - [ ] Más herramientas
   - [ ] Seguridad e IA
   - [ ] Preguntas frecuentes
-+ [ ] Criptografía
-  - [ ] Historia
-    - [ ] Cifrado Vernam
-    - [ ] ENIGMA
-    - [ ] PURPURA
-  - [ ] Llaves
-    - [ ] Llaves simétricas y asimetricas
-    - [ ] Llave pública y privada
-    - [ ] Protocolo de Diffie-Hellman
-  - [ ] Cifrados Clásicos
-    - [ ] Sistemas monoalfabéticos
-      - [ ] Cifrado César
-      - [ ] Cifrado Decimado
-      - [ ] Cifrado Afin
-    - [ ] Sistemas polialfabeticos
-      - [ ] Cifrado Vigenere
-    - [ ] Sistemas poligráficos
-      - [ ] Cifrado Playfair
-      - [ ] Cifrado Hill
-  - [ ] Algoritmos de seguridad
-    - [ ] DES
-    - [ ] RSA
-    - [ ] Logaritmo discreto
-    - [ ] AES
-    - [ ] SSL
-  - [ ] Otros temas
-    - [ ] Esteganografía
-    - [ ] Curvas elípticas
+
++ [ ] Historia de la criptografía
+  - [ ] Cifrado Vernam
+  - [ ] ENIGMA
+  - [ ] PURPURA
++ [ ] Llaves
+  - [ ] Llaves simétricas y asimetricas
+  - [ ] Llave pública y privada
+  - [ ] Protocolo de Diffie-Hellman
++ [ ] Cifrados Clásicos
+  - [ ] Sistemas monoalfabéticos
+    - [ ] Cifrado César
+    - [ ] Cifrado Decimado
+    - [ ] Cifrado Afin
+  - [ ] Sistemas polialfabeticos
+    - [ ] Cifrado Vigenere
+  - [ ] Sistemas poligráficos
+    - [ ] Cifrado Playfair
+    - [ ] Cifrado Hill
++ [ ] Algoritmos de seguridad
+  - [ ] DES
+  - [ ] RSA
+  - [ ] Logaritmo discreto
+  - [ ] AES
+  - [ ] SSL
++ [ ] Otros temas
+  - [ ] Esteganografía
+  - [ ] Curvas elípticas
 * TODO Graficación por computadora
 
 * Bibliografía
