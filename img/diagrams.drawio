@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/132.0.6834.210 Electron/34.3.3 Safari/537.36" version="26.1.1" pages="4">
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/132.0.6834.210 Electron/34.3.3 Safari/537.36" version="26.1.1" pages="5">
   <diagram name="diagramas de flujo" id="DFKI30ZFaaYEe6GsATRv">
     <mxGraphModel dx="768" dy="1678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -778,6 +778,59 @@
         </mxCell>
         <mxCell id="JLUq7RWwhqwnc4jFbL1P-34" value="&lt;span style=&quot;font-size: 22px;&quot;&gt;Computadoras&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="-70" y="-260" width="205" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="gC9g5rgINI-w_C_kT8TL" name="Critp">
+    <mxGraphModel dx="1231" dy="745" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-1" value="Sistema" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-2" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="239.5" as="sourcePoint" />
+            <mxPoint x="390" y="239.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-3" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="200" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-4" value="Amenaza" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="390" y="130" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-16" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vaOXBxNcdiqWz2Ju37zh-8" target="vaOXBxNcdiqWz2Ju37zh-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vaOXBxNcdiqWz2Ju37zh-8" target="vaOXBxNcdiqWz2Ju37zh-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vaOXBxNcdiqWz2Ju37zh-8" target="vaOXBxNcdiqWz2Ju37zh-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-8" value="Sistema" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="430" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-13" value="Vulnerabilidad" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="380" y="340" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-15" value="Hueco aquí" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="410" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-17" value="Hueco acá" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="400" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startFill=1;startArrow=classic;" edge="1" parent="1" source="vaOXBxNcdiqWz2Ju37zh-19" target="vaOXBxNcdiqWz2Ju37zh-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-19" value="Descuidos" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="490" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vaOXBxNcdiqWz2Ju37zh-21" value="Malas prácticas" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="490" width="90" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

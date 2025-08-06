@@ -1,0 +1,73 @@
+#+TITLE: Amenazas vs Vulnerabilidades
+
+Cuando pensamos en /hackear/ debemos pensar en 2 cosas:
+
+1. Estamos /atacando/ un sistema.
+2. Estamos /explotando/ una vulnerabilidad del sistema.
+
+
+No debemos confundir las /amenazas/ con /vulnerabilidades/, puede ser
+que parezcan lo mismo ya que estan relacionadas. 
+
+* Amenaza
+Las amenazas son /ataques directos/ contra un sistema, y siempre
+estarán presentes. No se pueden evitar, pero sí se pueden prevenir o
+controlar, con anticipación claramente.
+
+
+Imaginemos por un momento un castillo. Una amenaza sería la presencia
+de otro reino queriendo derribarlo. No se puede /evitar/ que vengan a
+conquistar. Disparan flechas, cañones, suben por muros etc. El
+castillo puede /prevenir/ mejor los ataques si está construido en las
+montañas o si se construye una fosa alrededor. Otra amenaza sería que
+hubiera /espías/ dentro del castillo, y no puedes evitar que existan,
+pero podría controlarse en comunicaciones cifradas por ejemplo.
+
+
+Otro ejemplo sería la presencia de un /sismo/ o un /huracán/. La
+amenaza de destruir la /costa/ o /ciudad/ está presente; no podemos
+/eliminar/ al huracán si aparece (o el sismo), pero podemos /minimizar
+el riesgo/ si, al detectarlas seguimos los protocolos indicados para
+sobrellevar estas amenazas.
+
+
+* Vulnerabilidad
+
+Las vulnerabilidades son /puntos débiles/ en un sistema que si son
+dañados correctamente llegan a causar daños al sistema. A diferencia
+de las amenazas, las vulnerabilidades /sí pueden ser eliminadas/, o
+pueden /reducirse/ y están presentes del lado /defensor/.
+Normalmente una amenaza descubre vulnerabilidades, o se pueden
+descubrir /antes/ de una amenaza y la mayoría son causadas por malas
+prácticas, código defectuoso etc.
+
+
+Un ejemplo (hablando de castillos) sería tener la puerta del castillo
+abierta /siempre/ sin guardias. Cualquier persona puede entrar y salir
+sin verificación; la cosa es que /el castillo sí puede hacer algo al
+respecto/. Otro ejemplo sería tener una /casa de adobe/ (tal cual),
+que cuando se presenta un mini-huracán esta es destruida; debería
+reforzarse la estructura de la casa con varilla, concreto. Finalmente
+otro ejemplo es cuando /abrimos las puertas de nuestro corazoncito/ y
+somos vulnerables a ser /dañados/ como ser traicionados o engañados.
+
+
+[[../img/cripto/threats_vuln.svg]]
+
+
+Siempre hay que pensar qué se puede hacer para *fortalecer
+vulnerabilidades* y *evitar/controlar amenazas*. Amenazas hay muchas y
+se dividen en /dominios/ que veremos más adelante; cada agente externo
+es potencialemnte una amenaza. Vulnerabilidades es más sobre el lado
+interno y normalmente se refiere cuando el /código es defectuoso/ como
+/buffer overflow/ o usar /Telnet/. 
+
+
+Lo que siempre debemos tener en cuenta es que un sistema *nunca será
+seguro* al 100%, pero nuestro deber es tratar de minimizar los
+riesgos usando herramientas de análisis. También podemos ser los del
+otro bando y ser quienes atacan; obviamente es ilegal sin el permiso
+explicito de la compañia y así te conviertes en /hacker ético/.
+
+
+

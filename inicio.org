@@ -105,11 +105,10 @@ que necesites. También puedes husmear en temas que sean de tu interés.
 * TODO Estructuras de datos
 
 
-* TODO Criptografía y Seguridad [15%]
+* TODO Criptografía y Seguridad [21%]
 + [X] [[file:cripto/00_introduccion.org][Introduccion]]
 + [X] [[./cripto/01_fundamentos.org][Fundamentos de seguridad]]
-+ [ ] Vulnerabilidades
-  - [ ] Tráfico de red
++ [X] [[file:cripto/02_amenazas_y_vulnerabilidades.org][Amenazas y vulnerabilidades]]
 + [ ] Amenazas
   - [ ] Interno / Externo
     - [ ] DoS & DDoS
@@ -123,22 +122,21 @@ que necesites. También puedes husmear en temas que sean de tu interés.
   - [ ] En la nube
     - [ ] Cross-Site scripting
     - [ ] SQL injection
-+ [ ] Dominios de amenazas
 + [ ] Ingeniería Social
   - [ ] Recopilación
   - [ ] OSINT
   - [ ] Phishing
++ [ ] Dominios de amenazas
 + [ ] Defensa
   - [ ] Escaneo y reporte
+  - [ ] Inteligencia de amenazas
   - [ ] VPN
-  - [ ] Splunk
   - [ ] Navegar por /deep web/
-+ [ ] Otros temas
++ [ ] Otros temas de seguridad
   - [ ] Seguridad Wi-Fi
   - [ ] Más herramientas
   - [ ] Seguridad e IA
   - [ ] Preguntas frecuentes
-
 + [ ] Historia de la criptografía
   - [ ] Cifrado Vernam
   - [ ] ENIGMA
@@ -163,9 +161,13 @@ que necesites. También puedes husmear en temas que sean de tu interés.
   - [ ] Logaritmo discreto
   - [ ] AES
   - [ ] SSL
++ [ ] Algoritmos de integridad
+  + [ ] MD5
+  + [ ] SHA
 + [ ] Otros temas
   - [ ] Esteganografía
   - [ ] Curvas elípticas
+  - [ ] Cadenas de bloques (Blockchain)
 * TODO Graficación por computadora
 
 * Bibliografía
