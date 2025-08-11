@@ -105,31 +105,30 @@ que necesites. También puedes husmear en temas que sean de tu interés.
 * TODO Estructuras de datos
 
 
-* TODO Criptografía y Seguridad [21%]
+* TODO Criptografía y Seguridad [23%]
 + [X] [[file:cripto/00_introduccion.org][Introduccion]]
 + [X] [[./cripto/01_fundamentos.org][Fundamentos de seguridad]]
 + [X] [[file:cripto/02_amenazas_y_vulnerabilidades.org][Amenazas y vulnerabilidades]]
++ [ ] [[file:cripto/03_clasificacion.org][Clasificacion de amenazas]]
 + [ ] Amenazas
-  - [ ] Interno / Externo
-    - [ ] DoS & DDoS
-    - [ ] SSH Multiverse
+  - [ ] Ingeniería Social
+    - [ ] Recopilación
+    - [ ] Phishing
+    - [ ] OSINT
   - [ ] Malware
     - [ ] Keyloggers
+    - [ ] SSH Multiverse
+    - [ ] DoS & DDoS
     - [ ] Android Hacking
-  - [ ] Bugs
-  - [ ] AmongUs
+    - [ ] Buffer Overflow
     - [ ] MitM
+  - [ ] Bugs
   - [ ] En la nube
     - [ ] Cross-Site scripting
     - [ ] SQL injection
-+ [ ] Ingeniería Social
-  - [ ] Recopilación
-  - [ ] OSINT
-  - [ ] Phishing
-+ [ ] Dominios de amenazas
 + [ ] Defensa
   - [ ] Escaneo y reporte
-  - [ ] Inteligencia de amenazas
+  - [ ] Inteligencia de amenazasñ
   - [ ] VPN
   - [ ] Navegar por /deep web/
 + [ ] Otros temas de seguridad
