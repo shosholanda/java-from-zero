@@ -1,0 +1,295 @@
+#+TITLE: Cifrados clásicos
+
+Los primeros cifrados eran muy básicos ya que solo eran /corrimientos/
+del mismo alfabeto en una biyección a otro caracter. Dependiendo del
+tamaño del alfabeto se pueden hacer análisis básicos para romperlo.
+
+* Sistemas monoalfabéticos
+Estos cifrados desde un punto de vista matemático su función de
+cifrado es de un alfabeto al mismo alfabeto, y debe cumplir con
+biyección para poder decifrarse correctamente. Los más conocidos son
+
+
+** Cifrado César
+El más básico, se hace un corrimiento del mismo alfabeto. Su función
+de cifrado está dado por
+
+$$ f(x) = M_i + b \mod |A| $$
+
+Donde
+1. $M$ es el caracter actual, e $i$ es el índice en el alfabeto
+2. $b$ es el corrimiento.
+3. $\mod |A|$ módulo tamaño del /alfabeto/ $A$. El alfabeto
+   corresponde al grupo de letras ordenadas sin
+   repetir.
+
+
+Para un cifrado dado por $f(x) = M_i + 7 \mod 27$, tendríamos un corrimiento
+de $7$ caracteres hacia adelante sobre el alfabeto de Español.
+
+| $i$ | caracter | $f(x)$        | $M_i + 7 \mod 27$ |
+|-----+----------+---------------+-------------------|
+|   0 | A        | 7             | H                 |
+|   1 | B        | 8             | I                 |
+|   2 | C        | 9             | J                 |
+| ... | ...      | ...           | ...               |
+|  18 | R        | 25            | Y                 |
+|  19 | S        | 26            | Z                 |
+|  20 | T        | 27 $\equiv$ 0 | A                 |
+|  21 | U        | 28 $\equiv$ 1 | B                 |
+| ... | ...      | ...           | ...               |
+|  26 | Z        | 32 $\equiv$ 6 | G                 |
+
+
+
+Cuando llegamos al final $S= Z$, el módulo nos ayuda a /repetir el
+alfabeto/ desde el inicio. Claramente si se utilizan más caractéres,
+el alfabeto /forzosamente/ debe incluir estos caracteres.
+
+Rápidamente podemos crear un cifrado del siguiente texto con una
+función $f(x) = M_i + 22 \mod 27$ y un alfabeto
+~abcdefghijklmnopqrstuvwxyz .~ (el espacio y punto también cuentan como parte
+del alfabeto)
+
+#+begin_verse
+change your thoughts and you change your world.
+#+end_verse
+$\Rightarrow$
+#+begin_verse
+ybwha usiolunbioabnmuwhzusiouybwha usioluqilfzv
+#+end_verse
+
+*Notemos* que para regresar al carácter original /desde el texto
+cifrado/, debemos hacer un /anticorrimiento/ con $b = -22 \equiv -22
+\mod 28 \equiv 6$; es decir para /restar 22/ posiciones, debemos
+sumar $6$ posiciones y son equivalentes por el módulo. Normalmente no
+trabajamos con números negativos en /módulos/, y tienen el nombre de
+*inverso aditivo*, así 6 es el /inverso aditivo de/ 22 módulo 28.
+
+También utilizando álgebra podemos sacar el inverso como:
+\begin{align*}
+22 + b &\equiv 0 \mod 28\\
+22 + 6 &\equiv 0 \mod 28 \\
+28 &\equiv 0 \mod 28 \\
+0 &\equiv 0 \mod 28
+\end{align*}
+
+Usamos 0 porque es la /identidad/ del alfabeto en ese corrimiento.
+
+Así, la clave para descifrar el texto cifrado es *6*; el nuevo
+corrimiento que debemos usar para /descifrar/ al texto. /El módulo
+sigue siendo el mismo/ ya que solo ayuda a /repetir caracteres/.
+
+*** Combinatoria
+Notamos que el número de posibles cifrados que pueden hacerse con
+/cifrado César/ son:
+
+$$ 0 \leq b < |A| $$
+
+Donde $b = 0$ es la combinación /trivial/ ya que no modifica el texto
+a cifrar.
+
+Por lo que si el tamaño del alfabeto es relativamente pequeño,
+descifrarlo por fuerza bruta es relativamente fácil. Aunque también
+existe el análisis del idioma que veremos más adelante.
+
+*** Ejercicio
+Descifra el siguiente texto utilizando el siguiente alfabeto. Elimina
+los saltos de línea.
+
+#+begin_src java
+  String alfabeto = "abcdefghijklmnñopqrstuvwxyz., ";
+#+end_src
+
+
+#+begin_verse
+waru.waerceujkhceruecj.wcwrbsirwijhwaasirvwrasirgkwrfkwveruecjshqrsk
+cgkwrbwceirvwru.cuerb.ariecrl.i.tawirsri.bfawrl.ijsprwarkc.lwhiereti
+whlstawruecj.wcwrsahwvwvehrvwriwjwcjsrt.aaecwirvwrwijhwaasiprfwherwa
+rckbwhervwrwijhwaasirwirx.c.jeqrb.wcjhsirgkwraeirckbwheircsjkhsawiri
+ecr.cx.c.jeiprukwcjsrjevsirasirwijhwaasirñrskcrjwrgkwvshscrjscjeirck
+bwheircsjkhsawiruebersarfh.cu.f.ep
+#+end_verse
+
+
+** Cifrado Decimado
+Una pequeña modificación que podríamos hacer a /cifrado césar/ es que
+en lugar de *sumar* un número (restar es exactamente lo mismo),
+*multipliquemos* por alguna constante, es decir que la función sea:
+
+$$ f(x) = M_i* a \mod |A| $$
+
+Aquí $a$ es un corrimiento /escalado/ del caracter, así si el caracter
+en cuestión es $c = 2$, y $a = 10$, entonces la letra cifrada es $u =
+20$.
+
+
+Sin embargo, este cifrado /aunque parece más complejo/ ya que no son
+simples corrimientos y podría dar la vuelta al alfabeto más rápido, no
+es necesariamente /mejor/. La tabla de mapeo para $f(x) = M_i * 10
+\mod 26$ (para un alfabeto sin la ñ) sería como
+
+
+
+| *caracter* | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+| *f(x)*     | A | K | U | E | O | Y | I | S | C | M | W | G | Q | A | K | U | E | O | Y | I | S | C | M | W | G | Q |
+
+Rápidamente notamos que /se repiten los carácteres/ lo cual significa
+que *la función no es biyectiva*; ya que $E, R \Rightarrow O$, así si
+tenemos una $O$ cifrada, el destinatario no sabría si descifrarla a la
+/E/ o a la /R/ por lo que $10$ no sirve para cifrarlo.
+
+
+Lo que sucede aquí es que $mcd(10, 26)$ es 2, ya que $\frac{10}{2} =
+5$ y $\frac{26}{2} = 13$ por lo que existirán dos caracteres van a dar
+al mismo caracter. De hecho un peor número para cifrar sería $13$ ya
+que $mcd(13, 26) = 13$, habiendo 13 caracteres a un mismo caracter, es
+decir, cifrar todo el alfabeto a solo 2 caracteres.
+
+Así, debemos tener cuidado a la hora de /escoger/ nuestro $a$, en
+resumen debe ser que $mcd(a, n) = 1$ con $n = |A|$. Por lo que los
+números que cumplen esto son pocos, en particular son ~[1, 3, 5, 7, 9,
+11, 15, 17, 19, 21, 23, 25]~; también conocidos como *primos relativos
+de* n. Con $a = 11$ la tabla de biyección es
+
+| *caracter* | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+|------------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| *f(x)*     | A | L | W | H | S | D | O | Z | K | V | G | R | C | N | Y | J | U | F | Q | B | M | X | I | T | E | P |
+
+
+\begin{equation*}
+\text{youwillneverknowhunger} \Rightarrow \text{eymikrrnsxsfgnyizmnosf}
+\end{equation*}
+
+
+si ciframos el caracter $L = 11$ con $a = 11$ , obtenemos el caracter
+$C_2$ en la posición 17 (R).
+
+\begin{align*}
+C_1 * a &\equiv C_2 \mod N\\
+11 * 11 &\equiv ? \mod 26 \\
+121 &\equiv ? \mod 26\\
+17 &\equiv 17 \mod 26
+\end{align*}
+
+Entonces el proceso /inverso/ es encontrar el inverso de $a$ digamos
+$a^{-1}$ tal que multiplicado por el caracter /cifrado/ nos de el
+caracter original; en otras palabras 
+
+\begin{align*}
+C_1 * a &\equiv C_2 \mod N \hspace{1cm} \textit{original}\\
+C_1 * a * a^{-1} &\equiv C_2 * a^{-1} \mod N\\
+C_1 * 1 &\equiv C_2 * a^{-1} \mod N
+\end{align*}
+
+Observa como /despejamos/ el valor de $C_1$, *multiplicamos de ambos
+lados por inverso* ya que $a^{-1}$ y *no es el valor* $\frac{1}{a} =
+\frac{1}{11}$ sino que es la relación $a * a^{-1} \equiv 1 \mod N$;
+además que no tendría sentido hacer $\frac{17}{11} = 1.545454\dots$ en un
+campo entero finito.
+
+
+Claramente no sabemos el valor de $a^{-1}$ pero al igual que /César/
+podemos calcularlo con fuerza bruta, o utilizando el algoritmo de la
+división. Sabemos que $a = 11$, y módulo es 26. Como son /primos
+relativos/ y el $mcd(11, 26) = 1$ entonces existe una combinación
+lineal de $a, N$ tal que.
+
+$$ 11x + 26 y = 1$$
+
+$x$ corresponde al inverso multiplicativo claramente. Hacemos el
+algoritmo de la división como
+
+\begin{align}
+26 &=  11 * 2 + 4 \hspace{2cm} \rightarrow 4 = 26 - 11*2\\
+11 &= 4 * 2 + 3 \hspace{2cm} \rightarrow 3 = 11 - 4*2\\
+4 &= 3*1 + 1  \hspace{2cm}\rightarrow 1 = 4 - 3*1\\
+3 &= 1 * 3 + 0
+\end{align}
+
+Hacemos la reconstrucción de la combinación lineal despejando de las
+anteriores ecuaciones el residuo.
+\begin{align*}
+1 &= 4 - (3*1) \hspace{2cm} \dots (3)\\
+&= 4 - ((11-4*2)*1) \hspace{2cm} \dots (2)\\
+&= 4 - 11 + 4*2 \\
+&= -11 + 4*3 \\
+&= -11 + (26 - 11*2)*3  \hspace{2cm} \dots (1)\\
+&= -11 + (26*3 - 11*6)\\
+&= -11 + 26*3 - 11*6\\
+&= 26*3 + 11* (-7)
+\end{align*}
+
+Por lo que el /inverso multiplicativo/ de 11 es $-7$, el cual haciendo
+módulo (o restando al módulo 7) $-7 \mod 26 = 26 - 7 = 19$. Así el
+inverso de $a = 11$ es $a^{-1} = 19$ en $O(log(n))$
+
+
+
+Es claro que si /no conocemos la llave con la que fue cifrado el
+texto/ encontrar el inverso es más dificil ya que no poseemos
+información suficiente y debemos recurrir a la fuerza bruta.
+
+
+*** Combinatoria
+Dada la restricción de que $mcd(a, n) = 1$, el número de posibles
+combinaciones sería la cardinalidad del conjunto.
+
+$$ \{ a \in [0, n)\hspace{.5cm} |\hspace{.5cm} mcd(a, n) = 1\} $$
+
+O el número de *primos relativos con n*. Si el tamaño del alfabeto es
+/primo/ entonces $mcd(k, p)$ siempre será 1, con $p$ un primo y a lo
+más serán /n/ posibles combinaciones.
+
+*** Ejercicio:
+
+Descifra el siguiente texto decimado usando el alfabeto
+
+#+begin_src java
+  String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz .-"
+#+end_src
+
+#+begin_verse
+Yxrfx.HfyxnnH IrGcrUIro ocI. rcfrSxrJUHIxrGcSrfHRUHcI.cLrhhtZLrY qcnJxy.
+#+end_verse
+
+
+** Cifrado Afín
+Finalmente, podemos tener una combinación de /César/ y /Decimado/ en
+una sola ecuación como
+
+$$ f(x) = M_i * a + b \mod N$$
+
+Al igual que el cifrado /Decimado/ nuestro valor de $a$ debe cumplir
+con $mcd(a, N) = 1$.
+
+Utilizando los valores $a = 7$, $b = 3$ tendremos una biyección con
+nuestro mismo alfabeto /inglés/ gcomo
+
+| caracter | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+|----------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---|
+| f(x)     | D | K | R | Y | F | M | T | A | H | O | V | C | J | Q | X | E | L | S | Z | G | N | U | B | I | P | W |
+
+
+*** Combinatoria
+
+*** Ejercicio
+
+#+begin_quote
+Pensar es olvidar diferencias, es generalizar, es abstraer. -- Jorge Luis Borgas
+#+end_quote
+** Cifrado con palabras
+
+** Análisis
+
+
+* Sistemas polialfabéticos
+** Cifrado Vigenere
+
+* Sistemas poligráficos
+** Cifrado Playfair
+** Cifrado Hill
+
+
+
+

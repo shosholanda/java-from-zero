@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-08-07 Thu 22:58 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cifrados clásicos</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Cifrados clásicos</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7ce47a1">1. Sistemas monoalfabéticos</a>
+<ul>
+<li><a href="#org98c4301">1.1. Cifrado César</a>
+<ul>
+<li><a href="#orga198ecc">1.1.1. Combinatoria</a></li>
+<li><a href="#org6c21d8a">1.1.2. Ejercicio</a></li>
+</ul>
+</li>
+<li><a href="#orgdf83a9b">1.2. Cifrado Decimado</a>
+<ul>
+<li><a href="#org193fa01">1.2.1. Combinatoria</a></li>
+<li><a href="#org8a84ec8">1.2.2. Ejercicio:</a></li>
+</ul>
+</li>
+<li><a href="#orgd539d70">1.3. Cifrado Afín</a>
+<ul>
+<li><a href="#orgfcf7735">1.3.1. Combinatoria</a></li>
+<li><a href="#org6b4cd8a">1.3.2. Ejercicio</a></li>
+</ul>
+</li>
+<li><a href="#org3f4ed80">1.4. Cifrado con palabras</a></li>
+<li><a href="#org5da7359">1.5. Análisis</a></li>
+</ul>
+</li>
+<li><a href="#org93a5430">2. Sistemas polialfabéticos</a>
+<ul>
+<li><a href="#orgf826d56">2.1. Cifrado Vigenere</a></li>
+</ul>
+</li>
+<li><a href="#org667f4cd">3. Sistemas poligráficos</a>
+<ul>
+<li><a href="#orga33a283">3.1. Cifrado Playfair</a></li>
+<li><a href="#orgd4a0e68">3.2. Cifrado Hill</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Los primeros cifrados eran muy básicos ya que solo eran <i>corrimientos</i>
+del mismo alfabeto en una biyección a otro caracter. Dependiendo del
+tamaño del alfabeto se pueden hacer análisis básicos para romperlo.
+</p>
+<div id="outline-container-org7ce47a1" class="outline-2">
+<h2 id="org7ce47a1"><span class="section-number-2">1.</span> Sistemas monoalfabéticos</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Estos cifrados desde un punto de vista matemático su función de
+cifrado es de un alfabeto al mismo alfabeto, y debe cumplir con
+biyección para poder decifrarse correctamente. Los más conocidos son
+</p>
+</div>
+<div id="outline-container-org98c4301" class="outline-3">
+<h3 id="org98c4301"><span class="section-number-3">1.1.</span> Cifrado César</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+El más básico, se hace un corrimiento del mismo alfabeto. Su función
+de cifrado está dado por
+</p>
+
+<p>
+\[ f(x) = M_i + b \mod |A| \]
+</p>
+
+<p>
+Donde
+</p>
+<ol class="org-ol">
+<li>\(M\) es el caracter actual, e \(i\) es el índice en el alfabeto</li>
+<li>\(b\) es el corrimiento.</li>
+<li>\(\mod |A|\) módulo tamaño del <i>alfabeto</i> \(A\). El alfabeto
+corresponde al grupo de letras ordenadas sin
+repetir.</li>
+</ol>
+
+
+<p>
+Para un cifrado dado por \(f(x) = M_i + 7 \mod 27\), tendríamos un corrimiento
+de \(7\) caracteres hacia adelante sobre el alfabeto de Español.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(i\)</th>
+<th scope="col" class="org-left">caracter</th>
+<th scope="col" class="org-left">\(f(x)\)</th>
+<th scope="col" class="org-left">\(M_i + 7 \mod 27\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-left">A</td>
+<td class="org-left">7</td>
+<td class="org-left">H</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">B</td>
+<td class="org-left">8</td>
+<td class="org-left">I</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">C</td>
+<td class="org-left">9</td>
+<td class="org-left">J</td>
+</tr>
+
+<tr>
+<td class="org-right">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-right">18</td>
+<td class="org-left">R</td>
+<td class="org-left">25</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-right">19</td>
+<td class="org-left">S</td>
+<td class="org-left">26</td>
+<td class="org-left">Z</td>
+</tr>
+
+<tr>
+<td class="org-right">20</td>
+<td class="org-left">T</td>
+<td class="org-left">27 \(\equiv\) 0</td>
+<td class="org-left">A</td>
+</tr>
+
+<tr>
+<td class="org-right">21</td>
+<td class="org-left">U</td>
+<td class="org-left">28 \(\equiv\) 1</td>
+<td class="org-left">B</td>
+</tr>
+
+<tr>
+<td class="org-right">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-right">26</td>
+<td class="org-left">Z</td>
+<td class="org-left">32 \(\equiv\) 6</td>
+<td class="org-left">G</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p>
+Cuando llegamos al final \(S= Z\), el módulo nos ayuda a <i>repetir el
+alfabeto</i> desde el inicio. Claramente si se utilizan más caractéres,
+el alfabeto <i>forzosamente</i> debe incluir estos caracteres.
+</p>
+
+<p>
+Rápidamente podemos crear un cifrado del siguiente texto con una
+función \(f(x) = M_i + 22 \mod 27\) y un alfabeto
+<code>abcdefghijklmnopqrstuvwxyz .</code> (el espacio y punto también cuentan como parte
+del alfabeto)
+</p>
+
+<p class="verse">
+change your thoughts and you change your world.<br />
+</p>
+<p>
+\(\Rightarrow\)
+</p>
+<p class="verse">
+ybwha usiolunbioabnmuwhzusiouybwha usioluqilfzv<br />
+</p>
+
+<p>
+<b>Notemos</b> que para regresar al carácter original <i>desde el texto
+cifrado</i>, debemos hacer un <i>anticorrimiento</i> con \(b = -22 \equiv -22
+\mod 28 \equiv 6\); es decir para <i>restar 22</i> posiciones, debemos
+sumar \(6\) posiciones y son equivalentes por el módulo. Normalmente no
+trabajamos con números negativos en <i>módulos</i>, y tienen el nombre de
+<b>inverso aditivo</b>, así 6 es el <i>inverso aditivo de</i> 22 módulo 28.
+</p>
+
+<p>
+También utilizando álgebra podemos sacar el inverso como:
+</p>
+\begin{align*}
+22 + b &\equiv 0 \mod 28\\
+22 + 6 &\equiv 0 \mod 28 \\
+28 &\equiv 0 \mod 28 \\
+0 &\equiv 0 \mod 28
+\end{align*}
+
+<p>
+Usamos 0 porque es la <i>identidad</i> del alfabeto en ese corrimiento.
+</p>
+
+<p>
+Así, la clave para descifrar el texto cifrado es <b>6</b>; el nuevo
+corrimiento que debemos usar para <i>descifrar</i> al texto. <i>El módulo
+sigue siendo el mismo</i> ya que solo ayuda a <i>repetir caracteres</i>.
+</p>
+</div>
+<div id="outline-container-orga198ecc" class="outline-4">
+<h4 id="orga198ecc"><span class="section-number-4">1.1.1.</span> Combinatoria</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Notamos que el número de posibles cifrados que pueden hacerse con
+<i>cifrado César</i> son:
+</p>
+
+<p>
+\[ 0 \leq b < |A| \]
+</p>
+
+<p>
+Donde \(b = 0\) es la combinación <i>trivial</i> ya que no modifica el texto
+a cifrar.
+</p>
+
+<p>
+Por lo que si el tamaño del alfabeto es relativamente pequeño,
+descifrarlo por fuerza bruta es relativamente fácil. Aunque también
+existe el análisis del idioma que veremos más adelante.
+</p>
+</div>
+</div>
+<div id="outline-container-org6c21d8a" class="outline-4">
+<h4 id="org6c21d8a"><span class="section-number-4">1.1.2.</span> Ejercicio</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Descifra el siguiente texto utilizando el siguiente alfabeto. Elimina
+los saltos de línea.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">alfabeto</span> = <span style="color: #deb887;">"abcdefghijklmn&#241;opqrstuvwxyz., "</span>;
+</pre>
+</div>
+
+
+<p class="verse">
+waru.waerceujkhceruecj.wcwrbsirwijhwaasirvwrasirgkwrfkwveruecjshqrsk<br />
+cgkwrbwceirvwru.cuerb.ariecrl.i.tawirsri.bfawrl.ijsprwarkc.lwhiereti<br />
+whlstawruecj.wcwrsahwvwvehrvwriwjwcjsrt.aaecwirvwrwijhwaasiprfwherwa<br />
+rckbwhervwrwijhwaasirwirx.c.jeqrb.wcjhsirgkwraeirckbwheircsjkhsawiri<br />
+ecr.cx.c.jeiprukwcjsrjevsirasirwijhwaasirñrskcrjwrgkwvshscrjscjeirck<br />
+bwheircsjkhsawiruebersarfh.cu.f.ep<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdf83a9b" class="outline-3">
+<h3 id="orgdf83a9b"><span class="section-number-3">1.2.</span> Cifrado Decimado</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Una pequeña modificación que podríamos hacer a <i>cifrado césar</i> es que
+en lugar de <b>sumar</b> un número (restar es exactamente lo mismo),
+<b>multipliquemos</b> por alguna constante, es decir que la función sea:
+</p>
+
+<p>
+\[ f(x) = M_i* a \mod |A| \]
+</p>
+
+<p>
+Aquí \(a\) es un corrimiento <i>escalado</i> del caracter, así si el caracter
+en cuestión es \(c = 2\), y \(a = 10\), entonces la letra cifrada es \(u =
+20\).
+</p>
+
+
+<p>
+Sin embargo, este cifrado <i>aunque parece más complejo</i> ya que no son
+simples corrimientos y podría dar la vuelta al alfabeto más rápido, no
+es necesariamente <i>mejor</i>. La tabla de mapeo para \(f(x) = M_i * 10
+\mod 26\) (para un alfabeto sin la ñ) sería como
+</p>
+
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>caracter</b></td>
+<td class="org-left">A</td>
+<td class="org-left">B</td>
+<td class="org-left">C</td>
+<td class="org-left">D</td>
+<td class="org-left">E</td>
+<td class="org-left">F</td>
+<td class="org-left">G</td>
+<td class="org-left">H</td>
+<td class="org-left">I</td>
+<td class="org-left">J</td>
+<td class="org-left">K</td>
+<td class="org-left">L</td>
+<td class="org-left">M</td>
+<td class="org-left">N</td>
+<td class="org-left">O</td>
+<td class="org-left">P</td>
+<td class="org-left">Q</td>
+<td class="org-left">R</td>
+<td class="org-left">S</td>
+<td class="org-left">T</td>
+<td class="org-left">U</td>
+<td class="org-left">V</td>
+<td class="org-left">W</td>
+<td class="org-left">X</td>
+<td class="org-left">Y</td>
+<td class="org-left">Z</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>f(x)</b></td>
+<td class="org-left">A</td>
+<td class="org-left">K</td>
+<td class="org-left">U</td>
+<td class="org-left">E</td>
+<td class="org-left">O</td>
+<td class="org-left">Y</td>
+<td class="org-left">I</td>
+<td class="org-left">S</td>
+<td class="org-left">C</td>
+<td class="org-left">M</td>
+<td class="org-left">W</td>
+<td class="org-left">G</td>
+<td class="org-left">Q</td>
+<td class="org-left">A</td>
+<td class="org-left">K</td>
+<td class="org-left">U</td>
+<td class="org-left">E</td>
+<td class="org-left">O</td>
+<td class="org-left">Y</td>
+<td class="org-left">I</td>
+<td class="org-left">S</td>
+<td class="org-left">C</td>
+<td class="org-left">M</td>
+<td class="org-left">W</td>
+<td class="org-left">G</td>
+<td class="org-left">Q</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Rápidamente notamos que <i>se repiten los carácteres</i> lo cual significa
+que <b>la función no es biyectiva</b>; ya que \(E, R \Rightarrow O\), así si
+tenemos una \(O\) cifrada, el destinatario no sabría si descifrarla a la
+<i>E</i> o a la <i>R</i> por lo que \(10\) no sirve para cifrarlo.
+</p>
+
+
+<p>
+Lo que sucede aquí es que \(mcd(10, 26)\) es 2, ya que \(\frac{10}{2} =
+5\) y \(\frac{26}{2} = 13\) por lo que existirán dos caracteres van a dar
+al mismo caracter. De hecho un peor número para cifrar sería \(13\) ya
+que \(mcd(13, 26) = 13\), habiendo 13 caracteres a un mismo caracter, es
+decir, cifrar todo el alfabeto a solo 2 caracteres.
+</p>
+
+<p>
+Así, debemos tener cuidado a la hora de <i>escoger</i> nuestro \(a\), en
+resumen debe ser que \(mcd(a, n) = 1\) con \(n = |A|\). Por lo que los
+números que cumplen esto son pocos, en particular son <code>[1, 3, 5, 7, 9,
+11, 15, 17, 19, 21, 23, 25]</code>; también conocidos como <b>primos relativos
+de</b> n. Con \(a = 11\) la tabla de biyección es
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>caracter</b></th>
+<th scope="col" class="org-left">A</th>
+<th scope="col" class="org-left">B</th>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">D</th>
+<th scope="col" class="org-left">E</th>
+<th scope="col" class="org-left">F</th>
+<th scope="col" class="org-left">G</th>
+<th scope="col" class="org-left">H</th>
+<th scope="col" class="org-left">I</th>
+<th scope="col" class="org-left">J</th>
+<th scope="col" class="org-left">K</th>
+<th scope="col" class="org-left">L</th>
+<th scope="col" class="org-left">M</th>
+<th scope="col" class="org-left">N</th>
+<th scope="col" class="org-left">O</th>
+<th scope="col" class="org-left">P</th>
+<th scope="col" class="org-left">Q</th>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">S</th>
+<th scope="col" class="org-left">T</th>
+<th scope="col" class="org-left">U</th>
+<th scope="col" class="org-left">V</th>
+<th scope="col" class="org-left">W</th>
+<th scope="col" class="org-left">X</th>
+<th scope="col" class="org-left">Y</th>
+<th scope="col" class="org-left">Z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b>f(x)</b></td>
+<td class="org-left">A</td>
+<td class="org-left">L</td>
+<td class="org-left">W</td>
+<td class="org-left">H</td>
+<td class="org-left">S</td>
+<td class="org-left">D</td>
+<td class="org-left">O</td>
+<td class="org-left">Z</td>
+<td class="org-left">K</td>
+<td class="org-left">V</td>
+<td class="org-left">G</td>
+<td class="org-left">R</td>
+<td class="org-left">C</td>
+<td class="org-left">N</td>
+<td class="org-left">Y</td>
+<td class="org-left">J</td>
+<td class="org-left">U</td>
+<td class="org-left">F</td>
+<td class="org-left">Q</td>
+<td class="org-left">B</td>
+<td class="org-left">M</td>
+<td class="org-left">X</td>
+<td class="org-left">I</td>
+<td class="org-left">T</td>
+<td class="org-left">E</td>
+<td class="org-left">P</td>
+</tr>
+</tbody>
+</table>
+
+
+\begin{equation*}
+\text{youwillneverknowhunger} \Rightarrow \text{eymikrrnsxsfgnyizmnosf}
+\end{equation*}
+
+
+<p>
+si ciframos el caracter \(L = 11\) con \(a = 11\) , obtenemos el caracter
+\(C_2\) en la posición 17 (R).
+</p>
+
+\begin{align*}
+C_1 * a &\equiv C_2 \mod N\\
+11 * 11 &\equiv ? \mod 26 \\
+121 &\equiv ? \mod 26\\
+17 &\equiv 17 \mod 26
+\end{align*}
+
+<p>
+Entonces el proceso <i>inverso</i> es encontrar el inverso de \(a\) digamos
+\(a^{-1}\) tal que multiplicado por el caracter <i>cifrado</i> nos de el
+caracter original; en otras palabras 
+</p>
+
+\begin{align*}
+C_1 * a &\equiv C_2 \mod N \hspace{1cm} \textit{original}\\
+C_1 * a * a^{-1} &\equiv C_2 * a^{-1} \mod N\\
+C_1 * 1 &\equiv C_2 * a^{-1} \mod N
+\end{align*}
+
+<p>
+Observa como <i>despejamos</i> el valor de \(C_1\), <b>multiplicamos de ambos
+lados por inverso</b> ya que \(a^{-1}\) y <b>no es el valor</b> \(\frac{1}{a} =
+\frac{1}{11}\) sino que es la relación \(a * a^{-1} \equiv 1 \mod N\);
+además que no tendría sentido hacer \(\frac{17}{11} = 1.545454\dots\) en un
+campo entero finito.
+</p>
+
+
+<p>
+Claramente no sabemos el valor de \(a^{-1}\) pero al igual que <i>César</i>
+podemos calcularlo con fuerza bruta, o utilizando el algoritmo de la
+división. Sabemos que \(a = 11\), y módulo es 26. Como son <i>primos
+relativos</i> y el \(mcd(11, 26) = 1\) entonces existe una combinación
+lineal de \(a, N\) tal que.
+</p>
+
+<p>
+\[ 11x + 26 y = 1\]
+</p>
+
+<p>
+\(x\) corresponde al inverso multiplicativo claramente. Hacemos el
+algoritmo de la división como
+</p>
+
+\begin{align}
+26 &=  11 * 2 + 4 \hspace{2cm} \rightarrow 4 = 26 - 11*2\\
+11 &= 4 * 2 + 3 \hspace{2cm} \rightarrow 3 = 11 - 4*2\\
+4 &= 3*1 + 1  \hspace{2cm}\rightarrow 1 = 4 - 3*1\\
+3 &= 1 * 3 + 0
+\end{align}
+
+<p>
+Hacemos la reconstrucción de la combinación lineal despejando de las
+anteriores ecuaciones el residuo.
+</p>
+\begin{align*}
+1 &= 4 - (3*1) \hspace{2cm} \dots (3)\\
+&= 4 - ((11-4*2)*1) \hspace{2cm} \dots (2)\\
+&= 4 - 11 + 4*2 \\
+&= -11 + 4*3 \\
+&= -11 + (26 - 11*2)*3  \hspace{2cm} \dots (1)\\
+&= -11 + (26*3 - 11*6)\\
+&= -11 + 26*3 - 11*6\\
+&= 26*3 + 11* (-7)
+\end{align*}
+
+<p>
+Por lo que el <i>inverso multiplicativo</i> de 11 es \(-7\), el cual haciendo
+módulo (o restando al módulo 7) \(-7 \mod 26 = 26 - 7 = 19\). Así el
+inverso de \(a = 11\) es \(a^{-1} = 19\) en \(O(log(n))\)
+</p>
+
+
+
+<p>
+Es claro que si <i>no conocemos la llave con la que fue cifrado el
+texto</i> encontrar el inverso es más dificil ya que no poseemos
+información suficiente y debemos recurrir a la fuerza bruta.
+</p>
+</div>
+<div id="outline-container-org193fa01" class="outline-4">
+<h4 id="org193fa01"><span class="section-number-4">1.2.1.</span> Combinatoria</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Dada la restricción de que \(mcd(a, n) = 1\), el número de posibles
+combinaciones sería la cardinalidad del conjunto.
+</p>
+
+<p>
+\[ \{ a \in [0, n)\hspace{.5cm} |\hspace{.5cm} mcd(a, n) = 1\} \]
+</p>
+
+<p>
+O el número de <b>primos relativos con n</b>. Si el tamaño del alfabeto es
+<i>primo</i> entonces \(mcd(k, p)\) siempre será 1, con \(p\) un primo y a lo
+más serán <i>n</i> posibles combinaciones.
+</p>
+</div>
+</div>
+<div id="outline-container-org8a84ec8" class="outline-4">
+<h4 id="org8a84ec8"><span class="section-number-4">1.2.2.</span> Ejercicio:</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Descifra el siguiente texto decimado usando el alfabeto
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #98f5ff;">String</span> <span style="color: #4eee94;">alfabeto</span> = <span style="color: #deb887;">"ABCDEFGHIJKLMN&#209;OPQRSTUVWXYZabcdefghijklmn&#241;opqrstuvwxyz .-"</span>
+</pre>
+</div>
+
+<p class="verse">
+Yxrfx.HfyxnnH IrGcrUIro ocI. rcfrSxrJUHIxrGcSrfHRUHcI.cLrhhtZLrY qcnJxy.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd539d70" class="outline-3">
+<h3 id="orgd539d70"><span class="section-number-3">1.3.</span> Cifrado Afín</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Finalmente, podemos tener una combinación de <i>César</i> y <i>Decimado</i> en
+una sola ecuación como
+</p>
+
+<p>
+\[ f(x) = M_i * a + b \mod N\]
+</p>
+
+<p>
+Al igual que el cifrado <i>Decimado</i> nuestro valor de \(a\) debe cumplir
+con \(mcd(a, N) = 1\).
+</p>
+
+<p>
+Utilizando los valores \(a = 7\), \(b = 3\) tendremos una biyección con
+nuestro mismo alfabeto <i>inglés</i> como
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">caracter</th>
+<th scope="col" class="org-left">A</th>
+<th scope="col" class="org-left">B</th>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">D</th>
+<th scope="col" class="org-left">E</th>
+<th scope="col" class="org-left">F</th>
+<th scope="col" class="org-left">G</th>
+<th scope="col" class="org-left">H</th>
+<th scope="col" class="org-left">I</th>
+<th scope="col" class="org-left">J</th>
+<th scope="col" class="org-left">K</th>
+<th scope="col" class="org-left">L</th>
+<th scope="col" class="org-left">M</th>
+<th scope="col" class="org-left">N</th>
+<th scope="col" class="org-left">O</th>
+<th scope="col" class="org-left">P</th>
+<th scope="col" class="org-left">Q</th>
+<th scope="col" class="org-left">R</th>
+<th scope="col" class="org-left">S</th>
+<th scope="col" class="org-left">T</th>
+<th scope="col" class="org-left">U</th>
+<th scope="col" class="org-left">V</th>
+<th scope="col" class="org-left">W</th>
+<th scope="col" class="org-left">X</th>
+<th scope="col" class="org-left">Y</th>
+<th scope="col" class="org-left">Z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">f(x)</td>
+<td class="org-left">D</td>
+<td class="org-left">K</td>
+<td class="org-left">R</td>
+<td class="org-left">Y</td>
+<td class="org-left">F</td>
+<td class="org-left">M</td>
+<td class="org-left">T</td>
+<td class="org-left">A</td>
+<td class="org-left">H</td>
+<td class="org-left">O</td>
+<td class="org-left">V</td>
+<td class="org-left">C</td>
+<td class="org-left">J</td>
+<td class="org-left">Q</td>
+<td class="org-left">X</td>
+<td class="org-left">E</td>
+<td class="org-left">L</td>
+<td class="org-left">S</td>
+<td class="org-left">Z</td>
+<td class="org-left">G</td>
+<td class="org-left">N</td>
+<td class="org-left">U</td>
+<td class="org-left">B</td>
+<td class="org-left">I</td>
+<td class="org-left">P</td>
+<td class="org-left">W</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="outline-container-orgfcf7735" class="outline-4">
+<h4 id="orgfcf7735"><span class="section-number-4">1.3.1.</span> Combinatoria</h4>
+</div>
+
+<div id="outline-container-org6b4cd8a" class="outline-4">
+<h4 id="org6b4cd8a"><span class="section-number-4">1.3.2.</span> Ejercicio</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<blockquote>
+<p>
+Pensar es olvidar diferencias, es generalizar, es abstraer. &#x2013; Jorge Luis Borgas
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="outline-container-org3f4ed80" class="outline-3">
+<h3 id="org3f4ed80"><span class="section-number-3">1.4.</span> Cifrado con palabras</h3>
+</div>
+
+<div id="outline-container-org5da7359" class="outline-3">
+<h3 id="org5da7359"><span class="section-number-3">1.5.</span> Análisis</h3>
+</div>
+</div>
+<div id="outline-container-org93a5430" class="outline-2">
+<h2 id="org93a5430"><span class="section-number-2">2.</span> Sistemas polialfabéticos</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgf826d56" class="outline-3">
+<h3 id="orgf826d56"><span class="section-number-3">2.1.</span> Cifrado Vigenere</h3>
+</div>
+</div>
+<div id="outline-container-org667f4cd" class="outline-2">
+<h2 id="org667f4cd"><span class="section-number-2">3.</span> Sistemas poligráficos</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orga33a283" class="outline-3">
+<h3 id="orga33a283"><span class="section-number-3">3.1.</span> Cifrado Playfair</h3>
+</div>
+<div id="outline-container-orgd4a0e68" class="outline-3">
+<h3 id="orgd4a0e68"><span class="section-number-3">3.2.</span> Cifrado Hill</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-08-07 Thu 22:58</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

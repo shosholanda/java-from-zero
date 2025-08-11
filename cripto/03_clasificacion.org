@@ -1,0 +1,23 @@
+#+TITLE: Clasificacion de amenazas y vulnerabilidades
+
+
+
+* Por tipo de amenaza
+** Errores
+** Software
+** Sabotaje
+
+* Por Interno / Externo
+** Externo
+** Interno
+
+* Por dominio
+** Usuarios
+** Dispositivo
+** Area local
+** Nube privada
+** En cubierto (ocultas)
+*** APT
+*** Algoritmos
+*** Backdoor
+*** Rootkit
