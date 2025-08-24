@@ -1,0 +1,333 @@
+#+TITLE: Errores y Excepciones
+
+Seguramente te habrá salido más de una vez errores en tiempo de
+ejecución, como por ejemplo cuando tratamos de leer un argumento /que
+no se ha pasado/ como por ejemplo el siguiente código
+
+#+begin_src java
+  public class Lol {
+      public static void main (String[] args){
+  	String s = args[0];
+  	System.out.println(s);
+      }
+  }
+#+end_src
+
+Y ejecutarlo /sin argumentos/ como
+
+#+begin_src bash
+$ java Lol
+#+end_src
+
+Nos mostrará un mensaje de error como el siguiente
+
+#+begin_example
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+        at Lol.main(Lol.java:4)
+#+end_example
+Ya que *no estamos supliendo el argumento* pero sí estamos tratando de
+acceder a él, además que nos dice en qué línea exactamente ocurrió el
+error. ~Lol.java:4~ y lo que ocurrió ~Index 0 out of bounds for length
+0~. 
+
+Otro ejemplo por ejemplo es convertir una cadena a un entero. 
+
+#+begin_src java
+  public class Lol {
+    public static void main (String[] args){
+	int i = Integer.parseInt(args[0]);
+    }
+}
+#+end_src
+
+Pero si intentamos ejecutarlo como
+
+#+begin_src bash
+  $ java Lol "Hola crayola"
+#+end_src
+
+Fallará porque *no se puede convertir H a un número*, son tipos de
+información diferentes, aunque el programa /este correctamente
+escrito/.
+
+Estos errores en /tiempo de ejecución/ son conocidos como
+*Excepciones* /Exception/ en inglés. Hay infinidad de excepciones
+/clasificadas/ en java pero particularmente existen los /Errores/ de
+los cuales es muy dificil recuperar el programa y las /Excepciones/
+que sí podemos hacer algo para darle la vuelta al problema. Todos son
+/objetos/ también ya que extienden de la clase /Object/, con la
+característica que son creadas en tiempo de ejecución.
+
+* Estructura Try-catch
+Podemos /probar un código/ que potencialmente falle si lo encerramos
+dentro de una estructura /try-catch/ como sigue.
+
+#+begin_src java
+  public class Lol {
+      public static void main (String[] args){
+  	try {
+  	    // Código a intentar
+  	    String s = args[0];
+  	    System.out.println(s);
+  	} catch (Exception e) {
+  	    // Código que se ejecuta si falla el intento
+  	    System.out.println("Pasame un argumento LOL");
+  	    // e.printStackTrace(); es el mensaje que salía
+  	}
+      }
+  }
+#+end_src
+
+Es claro que si nuestro programa *no recibe argumentos*, mostrará el
+mensaje de /Pasame un argumento LOL/, en lugar de mostrarnos el texto
+
+#+begin_example
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+        at Lol.main(Lol.java:4)
+#+end_example
+
+Es una forma /más limpia/ y /más robusta/ de tapar errores en tiempo
+de ejecución ya que estamos conscientes que /puede pasar ese caso/ y
+lo estamos /parchando/.
+
+Más a profundidad, lo que sucede es que cada vez que /falla una
+instrucción/, /Java/ crea un objeto del tipo de error que sucedió. En
+este caso es de tipo ~ArrayIndexOutOfBoundException~.  que es
+*lanzado* hacia el método anterior, interrumpiendo el algoritmo
+/dentro del try-catch/. Este /objeto/ es *cachado* por el ~catch~, y
+continuará con el subcódigo que contiene éste. Para que sea *cachado*
+tanto el tipo de la excepción como el argumento de /catch/ deben
+coincidir al menos en herencia. Usamos /Exception/ porque es la clase
+padre de /todas/ las excepciones, pero un mejor código sería hacer el
+try catch como.
+
+#+begin_src java
+  public class Lol {
+      public static void main (String[] args){
+  	try {
+  	    // Código a intentar
+  	    String s = args[0];
+  	    System.out.println(s);
+  	} catch (ArrayIndexOutOfBoundsException aioofe) {
+  	    // Código que se ejecuta si falla el intento
+  	    System.out.println("Pasame un argumento LOL");
+  	    // e.printStackTrace(); es el mensaje que salía
+  	}
+      }
+  }
+#+end_src
+Ya que estamos particularmente diciendo qué tipo de error es, en lugar
+de generalizar a /cualquier error/.
+
+
+* throws
+Podemos crear métodos que al momento de fallar (una falla
+personalizada) lancen ciertos tipos de errores, errores
+personalizados. Crearemos un método que solo reciba números
+positivos, y en caso de que no sea positivo lanzar una excepción.
+
+#+begin_src java
+  public class Lol {
+      public static void main (String[] args){
+  	int n = soloPositivo(args[0]);
+  	System.out.println(n);	
+      }
+        
+      /* Solo regresa números positivos */  
+      public static int soloPositivo(String s) throws IllegalArgumentException {
+  	int i;
+  	try {
+  	    i = Integer.parseInt(s);
+  	} catch (NumberFormatException nfe){
+  	    throw new IllegalArgumentException("No es cadena");
+  	}
+  	// Error personalizado
+  	if (i < 0)
+  	    throw new IllegalArgumentException("El número es negativo");
+  	return i;
+      }
+  }
+#+end_src
+
+La palabra clave /throws/ significa que si falla este método *lanzará*
+una excepción del tipo que se especifica adelante, en este caso
+~IllegalArgumentException~ y que no puede ser /cachada/ por este método,
+sino que deberá ser cachada por algún /try-catch/ que encierre este código.
+
+Podemos ver que intentamos convertir la cadena /s/ a un entero. El
+método ~Integer.parseInt(String s)~ está definido en el [[https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/lang/Integer.java#L661][código de Java]]
+~Integer.java~ /exactamente/ como.
+
+#+begin_src java
+    public static int parseInt(String s) throws NumberFormatException {
+        return parseInt(s, 10);
+    }
+#+end_src
+
+Que al igual que nuestro método ~soloPositivo()~, si falla el método
+~parseInt(s, 10)~ lanzará una excepción del tipo
+~NumberFormatException~, el cual *cachamos* con nuestro ~catch
+(NumberFormatException nfe)~ y al cacharlo ejecuta el código del
+catch, que a su vez /lanza una nueva excepción/ ahora del tipo
+~IllegalArgumentException~ que no manejaremos en este método, *sino en
+el método main*, el método de /"arriba"/
+
+De igual forma, el ~if~ nos permite filtrar los números por todos los
+que sean menores a 0, y si cumple entonces /lanzamos/ excepción, como
+si fuera /un error si el número es negativo/.  Finalmente si el número
+es positivo, lo regresamos.
+
+Adicionalmente podemos personalizar el /mensaje de error/ pasando como
+argumento al constructor del objeto ~IllegalArgumentException~ el
+error como /String/; en general se puede para cualquier Excepción.
+
+* Excepciones comunes
+A continuación algunas excepciones que son del día a día al tratar de
+hacer casos imposibles. Algunas se necesitan importar al programa con
+~import~.
+
+** ArrayIndexOutOfBoundsException
+Cuando queremos acceder a una posición /fuera/ de un arreglo, ya sea
+antes o después.
+
+#+begin_src java
+  int [] arr = new int[10];
+  // arr[-1] no existe
+  System.out.println(arr[-1]);
+  // la posición arr[10] no existe, porque empieza en
+  // indice 0, hasta 9, haciendo 10 lugares en total
+  System.out.println(arr[10]);
+#+end_src
+
+** NumberFormatException
+Cuando no podemos crear correctamente un número a partir de una
+cadena.
+#+begin_src java
+  // aaa no es un número
+  int i = Integer.parseInt("aaaa");
+#+end_src
+
+** StackOverFlowError
+Cuando hemos hecho /demasiadas/ llamadas recursivas y la pila de
+ejecución se llena de tantos métodos apilados que no puede hacer más
+llamadas.
+
+#+begin_src java
+  public static void main (String[] args){
+      foo(20);
+  }
+
+  public void foo(int n){
+      return foo(n-1);
+  }
+#+end_src
+
+** OutOfMemoryException
+Cuando usamos más memoria de la que podemos usar en la JVM. Después de
+ ejecutar este código un rato obtendrás el error. Estamos agregando
+ /infinitamente/ números a una /Lista/ y eventualmente no habrá
+ espacio para contener al infinito.
+
+#+begin_src java
+  import java.util.ArrayList;
+
+  public class Lol {
+      public static void main (String[] args){
+  	ArrayList<Integer> l = new ArrayList<>();
+  	while (true)
+  	    l.add((int)(Math.random() * 10));
+      }
+  }
+#+end_src
+
+** ArithmeticException
+Cuando dividimos por cero
+
+#+begin_src java
+  System.out.println(10/0);
+#+end_src
+
+
+
+** ClassCastException
+Cuando /convertimos/ a través de polimorfismo (o casting) de un tipo a
+otro que no se pueda.
+#+begin_src java
+  // Todo objeto es object
+  Object o = new Integer(0);
+  // Pero no todo object es string
+  String s = (String)o;
+#+end_src
+
+
+** NullPointerException
+Cuando accedemos con el operador ~.~ (punto) a un objeto que tiene
+como valor la referencia /null/.
+
+#+begin_src java
+  public class Gato {
+      // Objeto gato tiene un atributo nombre
+      private String nombre;
+
+      public static void main (String[] args){
+  	// Se inicializa nombre con valor null por omisión
+  	Gato g = new Gato();
+  	// null.toUpperCase() = error
+  	System.out.println(g.nombre.toUpperCase());
+      }
+  }   
+#+end_src
+
+** FileNotFoundException
+No se pudo leer de cierta entrada, por ejemplo, no se puede leer de
+una ruta que no se tienen los permisos de lectura o que no
+existe. Particularmente si ocurre un error de salida/entrada se lanza
+~IOException~, y ~FileNotFoundException~ es una subclase.
+
+#+begin_src java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class Lol {
+    public static void main(String[] args) throws IOException{
+	BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("/root/lol.txt")));
+    }
+}
+#+end_src
+
+
+** IllegalArgumentException
+No permitimos manejar /todos los valores/.
+
+#+begin_src java
+  public int dias(int años){
+      if (años < 0)
+  	throw new IllegalArgumentException("No hay años negativas");
+      return 365*años;
+  }
+#+end_src
+
+** AssertionError
+Es utilizado normalmente para hacer /pruebas unitarias/. Expresa que
+el resultado de un método no es el esperado, y al ser /Error/ es
+irrecuperable el estado del programa. Como un
+~IllegalArgumentException~ pero más estricto.
+
+#+begin_src java
+  public String mes(int numero){
+      if (numero < 1 || numero > 12)
+  	throw new AssertionError("No hay mes en " + numero);
+      switch(numero){
+      case 1: return "Enero";
+  	...  	    
+  }
+#+end_src
+
+
+* Ejercicios
+
+Crea cada una de las excepciones descritas aquí y /cáchalas/ de manera
+/eficiente/ con la estructura /try-catch/ para terminar _con gracia_
+el programa.

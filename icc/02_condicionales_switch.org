@@ -248,4 +248,9 @@ ningun ~case~. Por temas históricos es necesario escribir el ~break;~
 al final del código en cada caso. Podemos tener tantos casos como queramos.
 
 ** Problema 6: Switch case
-Reescribe el problema del /Menú/ utilizando solamente la estructura ~switch case~
+Reescribe el problema del /Menú/ utilizando solamente la estructura
+~switch case~
+
+** Problema 7: Meses del año
+Dado un número /N/ en el rango $[1, 12]$, decir el nombre del mes que
+corresponde. Ej. 9 $\Rightarrow$ ~"Septiembre"~

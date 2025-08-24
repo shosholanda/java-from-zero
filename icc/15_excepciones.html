@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-08-24 dom 16:12 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Errores y Excepciones</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Errores y Excepciones</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org07ae8d4">1. Estructura Try-catch</a></li>
+<li><a href="#org638d850">2. throws</a></li>
+<li><a href="#org438fabd">3. Excepciones comunes</a>
+<ul>
+<li><a href="#orgd07796b">3.1. ArrayIndexOutOfBoundsException</a></li>
+<li><a href="#org10e28a6">3.2. NumberFormatException</a></li>
+<li><a href="#orgf5123b1">3.3. StackOverFlowError</a></li>
+<li><a href="#org91e2af1">3.4. OutOfMemoryException</a></li>
+<li><a href="#org9e3bfaf">3.5. ArithmeticException</a></li>
+<li><a href="#orge93bbf8">3.6. ClassCastException</a></li>
+<li><a href="#orgd70e39c">3.7. NullPointerException</a></li>
+<li><a href="#orgd6467e7">3.8. FileNotFoundException</a></li>
+<li><a href="#orgf99c6ae">3.9. IllegalArgumentException</a></li>
+<li><a href="#org37c8a2e">3.10. AssertionError</a></li>
+</ul>
+</li>
+<li><a href="#org9186979">4. Ejercicios</a></li>
+</ul>
+</div>
+</div>
+<p>
+Seguramente te habrá salido más de una vez errores en tiempo de
+ejecución, como por ejemplo cuando tratamos de leer un argumento <i>que
+no se ha pasado</i> como por ejemplo el siguiente código
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Lol</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span> = args[0];
+        System.out.println(s);
+    }
+}
+</pre>
+</div>
+
+<p>
+Y ejecutarlo <i>sin argumentos</i> como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ java Lol
+</pre>
+</div>
+
+<p>
+Nos mostrará un mensaje de error como el siguiente
+</p>
+
+<pre class="example" id="orgea4b08c">
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+        at Lol.main(Lol.java:4)
+</pre>
+<p>
+Ya que <b>no estamos supliendo el argumento</b> pero sí estamos tratando de
+acceder a él, además que nos dice en qué línea exactamente ocurrió el
+error. <code>Lol.java:4</code> y lo que ocurrió <code>Index 0 out of bounds for length
+0</code>. 
+</p>
+
+<p>
+Otro ejemplo por ejemplo es convertir una cadena a un entero. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">  <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Lol</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span> = Integer.parseInt(args[0]);
+    }
+}
+</pre>
+</div>
+
+<p>
+Pero si intentamos ejecutarlo como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">$ java Lol <span style="color: #4E9A06;">"Hola crayola"</span>
+</pre>
+</div>
+
+<p>
+Fallará porque <b>no se puede convertir H a un número</b>, son tipos de
+información diferentes, aunque el programa <i>este correctamente
+escrito</i>.
+</p>
+
+<p>
+Estos errores en <i>tiempo de ejecución</i> son conocidos como
+<b>Excepciones</b> <i>Exception</i> en inglés. Hay infinidad de excepciones
+<i>clasificadas</i> en java pero particularmente existen los <i>Errores</i> de
+los cuales es muy dificil recuperar el programa y las <i>Excepciones</i>
+que sí podemos hacer algo para darle la vuelta al problema. Todos son
+<i>objetos</i> también ya que extienden de la clase <i>Object</i>, con la
+característica que son creadas en tiempo de ejecución.
+</p>
+<div id="outline-container-org07ae8d4" class="outline-2">
+<h2 id="org07ae8d4"><span class="section-number-2">1.</span> Estructura Try-catch</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Podemos <i>probar un código</i> que potencialmente falle si lo encerramos
+dentro de una estructura <i>try-catch</i> como sigue.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Lol</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #A52A2A; font-weight: bold;">try</span> {
+            <span style="color: #204A87;">// </span><span style="color: #204A87;">C&#243;digo a intentar
+</span>            <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span> = args[0];
+            System.out.println(s);
+        } <span style="color: #A52A2A; font-weight: bold;">catch</span> (<span style="color: #2F8B58; font-weight: bold;">Exception</span> <span style="color: #0084C8; font-weight: bold;">e</span>) {
+            <span style="color: #204A87;">// </span><span style="color: #204A87;">C&#243;digo que se ejecuta si falla el intento
+</span>            System.out.println(<span style="color: #4E9A06;">"Pasame un argumento LOL"</span>);
+            <span style="color: #204A87;">// </span><span style="color: #204A87;">e.printStackTrace(); es el mensaje que sal&#237;a
+</span>        }
+    }
+}
+</pre>
+</div>
+
+<p>
+Es claro que si nuestro programa <b>no recibe argumentos</b>, mostrará el
+mensaje de <i>Pasame un argumento LOL</i>, en lugar de mostrarnos el texto
+</p>
+
+<pre class="example" id="org5eccc42">
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+        at Lol.main(Lol.java:4)
+</pre>
+
+<p>
+Es una forma <i>más limpia</i> y <i>más robusta</i> de tapar errores en tiempo
+de ejecución ya que estamos conscientes que <i>puede pasar ese caso</i> y
+lo estamos <i>parchando</i>.
+</p>
+
+<p>
+Más a profundidad, lo que sucede es que cada vez que <i>falla una
+instrucción</i>, <i>Java</i> crea un objeto del tipo de error que sucedió. En
+este caso es de tipo <code>ArrayIndexOutOfBoundException</code>.  que es
+<b>lanzado</b> hacia el método anterior, interrumpiendo el algoritmo
+<i>dentro del try-catch</i>. Este <i>objeto</i> es <b>cachado</b> por el <code>catch</code>, y
+continuará con el subcódigo que contiene éste. Para que sea <b>cachado</b>
+tanto el tipo de la excepción como el argumento de <i>catch</i> deben
+coincidir al menos en herencia. Usamos <i>Exception</i> porque es la clase
+padre de <i>todas</i> las excepciones, pero un mejor código sería hacer el
+try catch como.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Lol</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #A52A2A; font-weight: bold;">try</span> {
+            <span style="color: #204A87;">// </span><span style="color: #204A87;">C&#243;digo a intentar
+</span>            <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span> = args[0];
+            System.out.println(s);
+        } <span style="color: #A52A2A; font-weight: bold;">catch</span> (<span style="color: #2F8B58; font-weight: bold;">ArrayIndexOutOfBoundsException</span> <span style="color: #0084C8; font-weight: bold;">aioofe</span>) {
+            <span style="color: #204A87;">// </span><span style="color: #204A87;">C&#243;digo que se ejecuta si falla el intento
+</span>            System.out.println(<span style="color: #4E9A06;">"Pasame un argumento LOL"</span>);
+            <span style="color: #204A87;">// </span><span style="color: #204A87;">e.printStackTrace(); es el mensaje que sal&#237;a
+</span>        }
+    }
+}
+</pre>
+</div>
+<p>
+Ya que estamos particularmente diciendo qué tipo de error es, en lugar
+de generalizar a <i>cualquier error</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org638d850" class="outline-2">
+<h2 id="org638d850"><span class="section-number-2">2.</span> throws</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Podemos crear métodos que al momento de fallar (una falla
+personalizada) lancen ciertos tipos de errores, errores
+personalizados. Crearemos un método que solo reciba números
+positivos, y en caso de que no sea positivo lanzar una excepción.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Lol</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">n</span> = soloPositivo(args[0]);
+        System.out.println(n);  
+    }
+
+    <span style="color: #204A87;">/* </span><span style="color: #204A87;">Solo regresa n&#250;meros positivos</span><span style="color: #204A87;"> */</span>  
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">soloPositivo</span>(<span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span>) <span style="color: #A52A2A; font-weight: bold;">throws</span> <span style="color: #2F8B58; font-weight: bold;">IllegalArgumentException</span> {
+        <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span>;
+        <span style="color: #A52A2A; font-weight: bold;">try</span> {
+            i = Integer.parseInt(s);
+        } <span style="color: #A52A2A; font-weight: bold;">catch</span> (<span style="color: #2F8B58; font-weight: bold;">NumberFormatException</span> <span style="color: #0084C8; font-weight: bold;">nfe</span>){
+            <span style="color: #A52A2A; font-weight: bold;">throw</span> <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">IllegalArgumentException</span>(<span style="color: #4E9A06;">"No es cadena"</span>);
+        }
+        <span style="color: #204A87;">// </span><span style="color: #204A87;">Error personalizado
+</span>        <span style="color: #A52A2A; font-weight: bold;">if</span> (i &lt; 0)
+            <span style="color: #A52A2A; font-weight: bold;">throw</span> <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">IllegalArgumentException</span>(<span style="color: #4E9A06;">"El n&#250;mero es negativo"</span>);
+        <span style="color: #A52A2A; font-weight: bold;">return</span> i;
+    }
+}
+</pre>
+</div>
+
+<p>
+La palabra clave <i>throws</i> significa que si falla este método <b>lanzará</b>
+una excepción del tipo que se especifica adelante, en este caso
+<code>IllegalArgumentException</code> y que no puede ser <i>cachada</i> por este método,
+sino que deberá ser cachada por algún <i>try-catch</i> que encierre este código.
+</p>
+
+<p>
+Podemos ver que intentamos convertir la cadena <i>s</i> a un entero. El
+método <code>Integer.parseInt(String s)</code> está definido en el <a href="https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/lang/Integer.java#L661">código de Java</a>
+<code>Integer.java</code> <i>exactamente</i> como.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">parseInt</span>(<span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span>) <span style="color: #A52A2A; font-weight: bold;">throws</span> <span style="color: #2F8B58; font-weight: bold;">NumberFormatException</span> {
+    <span style="color: #A52A2A; font-weight: bold;">return</span> parseInt(s, 10);
+}
+</pre>
+</div>
+
+<p>
+Que al igual que nuestro método <code>soloPositivo()</code>, si falla el método
+<code>parseInt(s, 10)</code> lanzará una excepción del tipo
+<code>NumberFormatException</code>, el cual <b>cachamos</b> con nuestro <code>catch
+(NumberFormatException nfe)</code> y al cacharlo ejecuta el código del
+catch, que a su vez <i>lanza una nueva excepción</i> ahora del tipo
+<code>IllegalArgumentException</code> que no manejaremos en este método, <b>sino en
+el método main</b>, el método de <i>"arriba"</i>
+</p>
+
+<p>
+De igual forma, el <code>if</code> nos permite filtrar los números por todos los
+que sean menores a 0, y si cumple entonces <i>lanzamos</i> excepción, como
+si fuera <i>un error si el número es negativo</i>.  Finalmente si el número
+es positivo, lo regresamos.
+</p>
+
+<p>
+Adicionalmente podemos personalizar el <i>mensaje de error</i> pasando como
+argumento al constructor del objeto <code>IllegalArgumentException</code> el
+error como <i>String</i>; en general se puede para cualquier Excepción.
+</p>
+</div>
+</div>
+<div id="outline-container-org438fabd" class="outline-2">
+<h2 id="org438fabd"><span class="section-number-2">3.</span> Excepciones comunes</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+A continuación algunas excepciones que son del día a día al tratar de
+hacer casos imposibles. Algunas se necesitan importar al programa con
+<code>import</code>.
+</p>
+</div>
+<div id="outline-container-orgd07796b" class="outline-3">
+<h3 id="orgd07796b"><span class="section-number-3">3.1.</span> ArrayIndexOutOfBoundsException</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Cuando queremos acceder a una posición <i>fuera</i> de un arreglo, ya sea
+antes o después.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #2F8B58; font-weight: bold;">int</span> [] <span style="color: #0084C8; font-weight: bold;">arr</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">int</span>[10];
+<span style="color: #204A87;">// </span><span style="color: #204A87;">arr[-1] no existe
+</span>System.out.println(arr[-1]);
+<span style="color: #204A87;">// </span><span style="color: #204A87;">la posici&#243;n arr[10] no existe, porque empieza en
+</span><span style="color: #204A87;">// </span><span style="color: #204A87;">indice 0, hasta 9, haciendo 10 lugares en total
+</span>System.out.println(arr[10]);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org10e28a6" class="outline-3">
+<h3 id="org10e28a6"><span class="section-number-3">3.2.</span> NumberFormatException</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Cuando no podemos crear correctamente un número a partir de una
+cadena.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #204A87;">// </span><span style="color: #204A87;">aaa no es un n&#250;mero
+</span><span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span> = Integer.parseInt(<span style="color: #4E9A06;">"aaaa"</span>);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf5123b1" class="outline-3">
+<h3 id="orgf5123b1"><span class="section-number-3">3.3.</span> StackOverFlowError</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Cuando hemos hecho <i>demasiadas</i> llamadas recursivas y la pila de
+ejecución se llena de tantos métodos apilados que no puede hacer más
+llamadas.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+    foo(20);
+}
+
+<span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">foo</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">n</span>){
+    <span style="color: #A52A2A; font-weight: bold;">return</span> foo(n-1);
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org91e2af1" class="outline-3">
+<h3 id="org91e2af1"><span class="section-number-3">3.4.</span> OutOfMemoryException</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Cuando usamos más memoria de la que podemos usar en la JVM. Después de
+ ejecutar este código un rato obtendrás el error. Estamos agregando
+ <i>infinitamente</i> números a una <i>Lista</i> y eventualmente no habrá
+ espacio para contener al infinito.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">import</span> <span style="color: #F5666D;">java</span>.<span style="color: #F5666D;">util</span>.<span style="color: #2F8B58; font-weight: bold;">ArrayList</span>;
+
+<span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Lol</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #2F8B58; font-weight: bold;">ArrayList</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">l</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">ArrayList</span>&lt;&gt;();
+        <span style="color: #A52A2A; font-weight: bold;">while</span> (<span style="color: #F5666D;">true</span>)
+            l.add((<span style="color: #2F8B58; font-weight: bold;">int</span>)(Math.random() * 10));
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9e3bfaf" class="outline-3">
+<h3 id="org9e3bfaf"><span class="section-number-3">3.5.</span> ArithmeticException</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+Cuando dividimos por cero
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">System.out.println(10/0);
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge93bbf8" class="outline-3">
+<h3 id="orge93bbf8"><span class="section-number-3">3.6.</span> ClassCastException</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+Cuando <i>convertimos</i> a través de polimorfismo (o casting) de un tipo a
+otro que no se pueda.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #204A87;">// </span><span style="color: #204A87;">Todo objeto es object
+</span><span style="color: #2F8B58; font-weight: bold;">Object</span> <span style="color: #0084C8; font-weight: bold;">o</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Integer</span>(0);
+<span style="color: #204A87;">// </span><span style="color: #204A87;">Pero no todo object es string
+</span><span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span> = (<span style="color: #2F8B58; font-weight: bold;">String</span>)o;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd70e39c" class="outline-3">
+<h3 id="orgd70e39c"><span class="section-number-3">3.7.</span> NullPointerException</h3>
+<div class="outline-text-3" id="text-3-7">
+<p>
+Cuando accedemos con el operador <code>.</code> (punto) a un objeto que tiene
+como valor la referencia <i>null</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Gato</span> {
+    <span style="color: #204A87;">// </span><span style="color: #204A87;">Objeto gato tiene un atributo nombre
+</span>    <span style="color: #A52A2A; font-weight: bold;">private</span> <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">nombre</span>;
+
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #204A87;">// </span><span style="color: #204A87;">Se inicializa nombre con valor null por omisi&#243;n
+</span>        <span style="color: #2F8B58; font-weight: bold;">Gato</span> <span style="color: #0084C8; font-weight: bold;">g</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Gato</span>();
+        <span style="color: #204A87;">// </span><span style="color: #204A87;">null.toUpperCase() = error
+</span>        System.out.println(g.nombre.toUpperCase());
+    }
+}   
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6467e7" class="outline-3">
+<h3 id="orgd6467e7"><span class="section-number-3">3.8.</span> FileNotFoundException</h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+No se pudo leer de cierta entrada, por ejemplo, no se puede leer de
+una ruta que no se tienen los permisos de lectura o que no
+existe. Particularmente si ocurre un error de salida/entrada se lanza
+<code>IOException</code>, y <code>FileNotFoundException</code> es una subclase.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">import</span> <span style="color: #F5666D;">java</span>.<span style="color: #F5666D;">io</span>.<span style="color: #2F8B58; font-weight: bold;">BufferedReader</span>;
+<span style="color: #A52A2A; font-weight: bold;">import</span> <span style="color: #F5666D;">java</span>.<span style="color: #F5666D;">io</span>.<span style="color: #2F8B58; font-weight: bold;">InputStreamReader</span>;
+<span style="color: #A52A2A; font-weight: bold;">import</span> <span style="color: #F5666D;">java</span>.<span style="color: #F5666D;">io</span>.<span style="color: #2F8B58; font-weight: bold;">FileInputStream</span>;
+<span style="color: #A52A2A; font-weight: bold;">import</span> <span style="color: #F5666D;">java</span>.<span style="color: #F5666D;">io</span>.<span style="color: #2F8B58; font-weight: bold;">IOException</span>;
+
+<span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Lol</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span>(<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>) <span style="color: #A52A2A; font-weight: bold;">throws</span> <span style="color: #2F8B58; font-weight: bold;">IOException</span>{
+        <span style="color: #2F8B58; font-weight: bold;">BufferedReader</span> <span style="color: #0084C8; font-weight: bold;">br</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">BufferedReader</span>(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">InputStreamReader</span>(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">FileInputStream</span>(<span style="color: #4E9A06;">"/root/lol.txt"</span>)));
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf99c6ae" class="outline-3">
+<h3 id="orgf99c6ae"><span class="section-number-3">3.9.</span> IllegalArgumentException</h3>
+<div class="outline-text-3" id="text-3-9">
+<p>
+No permitimos manejar <i>todos los valores</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">dias</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">a&#241;os</span>){
+    <span style="color: #A52A2A; font-weight: bold;">if</span> (a&#241;os &lt; 0)
+        <span style="color: #A52A2A; font-weight: bold;">throw</span> <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">IllegalArgumentException</span>(<span style="color: #4E9A06;">"No hay a&#241;os negativas"</span>);
+    <span style="color: #A52A2A; font-weight: bold;">return</span> 365*a&#241;os;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org37c8a2e" class="outline-3">
+<h3 id="org37c8a2e"><span class="section-number-3">3.10.</span> AssertionError</h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+Es utilizado normalmente para hacer <i>pruebas unitarias</i>. Expresa que
+el resultado de un método no es el esperado, y al ser <i>Error</i> es
+irrecuperable el estado del programa. Como un
+<code>IllegalArgumentException</code> pero más estricto.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #00578E; font-weight: bold;">mes</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">numero</span>){
+    <span style="color: #A52A2A; font-weight: bold;">if</span> (numero &lt; 1 || numero &gt; 12)
+        <span style="color: #A52A2A; font-weight: bold;">throw</span> <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">AssertionError</span>(<span style="color: #4E9A06;">"No hay mes en "</span> + numero);
+    <span style="color: #A52A2A; font-weight: bold;">switch</span>(numero){
+    <span style="color: #A52A2A; font-weight: bold;">case</span> 1: <span style="color: #A52A2A; font-weight: bold;">return</span> <span style="color: #4E9A06;">"Enero"</span>;
+        ...         
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9186979" class="outline-2">
+<h2 id="org9186979"><span class="section-number-2">4.</span> Ejercicios</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Crea cada una de las excepciones descritas aquí y <i>cáchalas</i> de manera
+<i>eficiente</i> con la estructura <i>try-catch</i> para terminar <span class="underline">con gracia</span>
+el programa.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-08-24 dom 16:12</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-30 Wed 12:58 -->
+<!-- 2025-08-24 dom 16:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Más condicionales</title>
@@ -237,28 +237,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgeeb4c3f">1. Condicionales anidadas</a></li>
-<li><a href="#orga7a3623">2. Problema 1: Tricotomía</a></li>
-<li><a href="#org68f608b">3. Problema 2: Mayor entre 4 números.</a></li>
-<li><a href="#orgcc12ba5">4. Operadores lógicos</a></li>
-<li><a href="#orgdb650d7">5. Problemas</a>
+<li><a href="#orgbc431de">1. Condicionales anidadas</a></li>
+<li><a href="#orgcb93c75">2. Problema 1: Tricotomía</a></li>
+<li><a href="#org64b3b3c">3. Problema 2: Mayor entre 4 números.</a></li>
+<li><a href="#orgc1df5b7">4. Operadores lógicos</a></li>
+<li><a href="#org5732fee">5. Problemas</a>
 <ul>
-<li><a href="#org0b35525">5.1. Problema 3: Año bisiesto</a></li>
-<li><a href="#org75b3a67">5.2. Problema 4:</a></li>
-<li><a href="#orgabe9dec">5.3. Problema 5: PIN</a></li>
-<li><a href="#orgd4623a5">5.4. Problema 6: Menú</a></li>
+<li><a href="#org71f017d">5.1. Problema 3: Año bisiesto</a></li>
+<li><a href="#orgc9f0063">5.2. Problema 4:</a></li>
+<li><a href="#orge37986a">5.3. Problema 5: PIN</a></li>
+<li><a href="#org9f62f5f">5.4. Problema 6: Menú</a></li>
 </ul>
 </li>
-<li><a href="#org7c2e6e7">6. Switch Case</a>
+<li><a href="#orge3a9b82">6. Switch Case</a>
 <ul>
-<li><a href="#org2a44b72">6.1. Problema 6: Switch case</a></li>
+<li><a href="#org7f590f6">6.1. Problema 6: Switch case</a></li>
+<li><a href="#org035b9b2">6.2. Problema 7: Meses del año</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeeb4c3f" class="outline-2">
-<h2 id="orgeeb4c3f"><span class="section-number-2">1.</span> Condicionales anidadas</h2>
+<div id="outline-container-orgbc431de" class="outline-2">
+<h2 id="orgbc431de"><span class="section-number-2">1.</span> Condicionales anidadas</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A veces, es necesario dividir un camino todavía en otro camino. Una
@@ -268,7 +269,7 @@ siguiente:
 </p>
 
 
-<div id="org17f66e4" class="figure">
+<div id="org9cf9f81" class="figure">
 <p><img src="../img/icc/nested_cond.svg" alt="nested_cond.svg" class="org-svg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Condicion simple anidada</p>
@@ -286,8 +287,8 @@ camino seguir, así tenemos al menos 3 caminos diferentes y no solo 2.
 </p>
 </div>
 </div>
-<div id="outline-container-orga7a3623" class="outline-2">
-<h2 id="orga7a3623"><span class="section-number-2">2.</span> Problema 1: Tricotomía</h2>
+<div id="outline-container-orgcb93c75" class="outline-2">
+<h2 id="orgcb93c75"><span class="section-number-2">2.</span> Problema 1: Tricotomía</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 La <i>tricotomía</i> nos dice que para dos números cualquiera <b>a</b> y
@@ -305,36 +306,36 @@ posibles casos pasa entre estos 2 números.
 </p>
 
 
-<div id="orgff3c7ae" class="figure">
+<div id="org8b02a65" class="figure">
 <p><img src="../img/icc/tricotomy.svg" alt="tricotomy.svg" class="org-svg" />
 </p>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #00bfff;">import</span> <span style="color: #a2cd5a;">java</span>.<span style="color: #a2cd5a;">util</span>.<span style="color: #98f5ff;">Scanner</span>;
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">import</span> <span style="color: #F5666D;">java</span>.<span style="color: #F5666D;">util</span>.<span style="color: #2F8B58; font-weight: bold;">Scanner</span>;
 
-<span style="color: #00bfff;">public</span> <span style="color: #00bfff;">class</span> <span style="color: #98f5ff;">Problema1</span> {
-    <span style="color: #00bfff;">public</span> <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">main</span> (<span style="color: #98f5ff;">String</span>[] <span style="color: #4eee94;">args</span>){
-        <span style="color: #98f5ff;">Scanner</span> <span style="color: #4eee94;">input</span> = <span style="color: #00bfff;">new</span> <span style="color: #98f5ff;">Scanner</span>(System.in);
+<span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Problema1</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #2F8B58; font-weight: bold;">Scanner</span> <span style="color: #0084C8; font-weight: bold;">input</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Scanner</span>(System.in);
 
-        <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>, <span style="color: #4eee94;">b</span>;
-        System.out.print(<span style="color: #deb887;">"Ingresa el primer valor: "</span>);
+        <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">a</span>, <span style="color: #0084C8; font-weight: bold;">b</span>;
+        System.out.print(<span style="color: #4E9A06;">"Ingresa el primer valor: "</span>);
         a = input.nextInt();
 
-        System.out.print(<span style="color: #deb887;">"Ingresa el segundo valor: "</span>);
+        System.out.print(<span style="color: #4E9A06;">"Ingresa el segundo valor: "</span>);
         b = input.nextInt();
 
         input.close();
 
-        <span style="color: #00bfff;">if</span> (a &gt; b) {
+        <span style="color: #A52A2A; font-weight: bold;">if</span> (a &gt; b) {
             System.out.print(a);
-            System.out.print(<span style="color: #deb887;">" es mayor a "</span>);
+            System.out.print(<span style="color: #4E9A06;">" es mayor a "</span>);
             System.out.println(b);
-        } <span style="color: #00bfff;">else</span> {
-            <span style="color: #00bfff;">if</span> (b &gt; a) {
-                System.out.println(<span style="color: #deb887;">""</span> + b + <span style="color: #deb887;">" es mayor a "</span> + a);
-            } <span style="color: #00bfff;">else</span> {
-                System.out.printf(<span style="color: #deb887;">"%i es igual a %i"</span>, a, b);
+        } <span style="color: #A52A2A; font-weight: bold;">else</span> {
+            <span style="color: #A52A2A; font-weight: bold;">if</span> (b &gt; a) {
+                System.out.println(<span style="color: #4E9A06;">""</span> + b + <span style="color: #4E9A06;">" es mayor a "</span> + a);
+            } <span style="color: #A52A2A; font-weight: bold;">else</span> {
+                System.out.printf(<span style="color: #4E9A06;">"%i es igual a %i"</span>, a, b);
             }
         }
     }
@@ -348,7 +349,7 @@ sola línea
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">a</span>, <span style="color: #4eee94;">b</span>;
+<pre class="src src-java"><span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">a</span>, <span style="color: #0084C8; font-weight: bold;">b</span>;
 </pre>
 </div>
 
@@ -357,7 +358,7 @@ También que podemos ahorrarnos varios <code>System.out.print</code> si
 <i>concatenamos</i> el texto.
 </p>
 <div class="org-src-container">
-<pre class="src src-java">System.out.println(<span style="color: #deb887;">""</span> + b + <span style="color: #deb887;">" es mayor a "</span> + a);
+<pre class="src src-java">System.out.println(<span style="color: #4E9A06;">""</span> + b + <span style="color: #4E9A06;">" es mayor a "</span> + a);
 </pre>
 </div>
 
@@ -375,7 +376,7 @@ por los argumentos que le pasemos en orden.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java">System.out.printf(<span style="color: #deb887;">"%i es igual a %i"</span>, <span style="color: #98f5ff;">a</span>, <span style="color: #98f5ff;">b</span>);
+<pre class="src src-java">System.out.printf(<span style="color: #4E9A06;">"%i es igual a %i"</span>, <span style="color: #2F8B58; font-weight: bold;">a</span>, <span style="color: #2F8B58; font-weight: bold;">b</span>);
 </pre>
 </div>
 
@@ -392,16 +393,16 @@ Existen otros reemplazadores
 </ul>
 </div>
 </div>
-<div id="outline-container-org68f608b" class="outline-2">
-<h2 id="org68f608b"><span class="section-number-2">3.</span> Problema 2: Mayor entre 4 números.</h2>
+<div id="outline-container-org64b3b3c" class="outline-2">
+<h2 id="org64b3b3c"><span class="section-number-2">3.</span> Problema 2: Mayor entre 4 números.</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Dados 4 números enteros, decidir cuál es el mayor de ellos.
 </p>
 </div>
 </div>
-<div id="outline-container-orgcc12ba5" class="outline-2">
-<h2 id="orgcc12ba5"><span class="section-number-2">4.</span> Operadores lógicos</h2>
+<div id="outline-container-orgc1df5b7" class="outline-2">
+<h2 id="orgc1df5b7"><span class="section-number-2">4.</span> Operadores lógicos</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Cuando queremos evaluar una condición a verdadero o falso, debemos de
@@ -543,12 +544,12 @@ soy estudiante</i>.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdb650d7" class="outline-2">
-<h2 id="orgdb650d7"><span class="section-number-2">5.</span> Problemas</h2>
+<div id="outline-container-org5732fee" class="outline-2">
+<h2 id="org5732fee"><span class="section-number-2">5.</span> Problemas</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org0b35525" class="outline-3">
-<h3 id="org0b35525"><span class="section-number-3">5.1.</span> Problema 3: Año bisiesto</h3>
+<div id="outline-container-org71f017d" class="outline-3">
+<h3 id="org71f017d"><span class="section-number-3">5.1.</span> Problema 3: Año bisiesto</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Un año es bisiesto si tiene al 29 de febrero. Podemos saber
@@ -574,8 +575,8 @@ Crea un programa que dado un año <i>D.C</i> nos diga si es bisiesto o no.
 </p>
 </div>
 </div>
-<div id="outline-container-org75b3a67" class="outline-3">
-<h3 id="org75b3a67"><span class="section-number-3">5.2.</span> Problema 4:</h3>
+<div id="outline-container-orgc9f0063" class="outline-3">
+<h3 id="orgc9f0063"><span class="section-number-3">5.2.</span> Problema 4:</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Un programa de gobierno dará beneficios a ciertas personas de ciertas
@@ -656,8 +657,8 @@ los siguientes beneficios:
 </p>
 </div>
 </div>
-<div id="outline-container-orgabe9dec" class="outline-3">
-<h3 id="orgabe9dec"><span class="section-number-3">5.3.</span> Problema 5: PIN</h3>
+<div id="outline-container-orge37986a" class="outline-3">
+<h3 id="orge37986a"><span class="section-number-3">5.3.</span> Problema 5: PIN</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Crea un programa que reciba un identificador (entero) y un PIN
@@ -688,8 +689,8 @@ imprimir <i>Acceso concedido</i>, en caso contrario <i>ID o PIN incorrectos</i>
 </table>
 </div>
 </div>
-<div id="outline-container-orgd4623a5" class="outline-3">
-<h3 id="orgd4623a5"><span class="section-number-3">5.4.</span> Problema 6: Menú</h3>
+<div id="outline-container-org9f62f5f" class="outline-3">
+<h3 id="org9f62f5f"><span class="section-number-3">5.4.</span> Problema 6: Menú</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Un programa en <i>terminal</i> requiere de una accion a
@@ -760,8 +761,8 @@ Imprimir la funcion que realizará el programa y terminar.
 </div>
 </div>
 </div>
-<div id="outline-container-org7c2e6e7" class="outline-2">
-<h2 id="org7c2e6e7"><span class="section-number-2">6.</span> Switch Case</h2>
+<div id="outline-container-orge3a9b82" class="outline-2">
+<h2 id="orge3a9b82"><span class="section-number-2">6.</span> Switch Case</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Muchas veces tenemos un <i>subconjunto</i> de opciones, y queremos ver si
@@ -770,13 +771,13 @@ un valor dado coincide con alguna de esas opciones. Podríamos utilizar
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">Calificacion de servicio de 1 al 5
-</span><span style="color: #00bfff;">if</span> (a == 1) { ... }
-<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 2) { ... }
-<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 3) { ... }
-<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 4) { ... }
-<span style="color: #00bfff;">else</span> <span style="color: #00bfff;">if</span> (a == 5) { ... }
-<span style="color: #00bfff;">else</span> { ... }
+<pre class="src src-java"><span style="color: #204A87;">// </span><span style="color: #204A87;">Calificacion de servicio de 1 al 5
+</span><span style="color: #A52A2A; font-weight: bold;">if</span> (a == 1) { ... }
+<span style="color: #A52A2A; font-weight: bold;">else</span> <span style="color: #A52A2A; font-weight: bold;">if</span> (a == 2) { ... }
+<span style="color: #A52A2A; font-weight: bold;">else</span> <span style="color: #A52A2A; font-weight: bold;">if</span> (a == 3) { ... }
+<span style="color: #A52A2A; font-weight: bold;">else</span> <span style="color: #A52A2A; font-weight: bold;">if</span> (a == 4) { ... }
+<span style="color: #A52A2A; font-weight: bold;">else</span> <span style="color: #A52A2A; font-weight: bold;">if</span> (a == 5) { ... }
+<span style="color: #A52A2A; font-weight: bold;">else</span> { ... }
 </pre>
 </div>
 
@@ -787,25 +788,25 @@ opciones definidas, es como tener una ramificación de varios caminos
 </p>
 
 
-<div id="orgddc1623" class="figure">
+<div id="org9a3aef4" class="figure">
 <p><img src="../img/icc/switch.svg" alt="switch.svg" class="org-svg" />
 </p>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #00bfff;">switch</span>(a) {
-<span style="color: #00bfff;">case</span> 1: ...
-    <span style="color: #00bfff;">break</span>;
-<span style="color: #00bfff;">case</span> 2: ...
-    <span style="color: #00bfff;">break</span>;
-<span style="color: #00bfff;">case</span> 3: ...
-    <span style="color: #00bfff;">break</span>;
-<span style="color: #00bfff;">case</span> 4: ...
-    <span style="color: #00bfff;">break</span>;
-<span style="color: #00bfff;">case</span> 5: ...
-    <span style="color: #00bfff;">break</span>;
-<span style="color: #00bfff;">default</span>: ...
-    <span style="color: #00bfff;">break</span>;
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">switch</span>(a) {
+<span style="color: #A52A2A; font-weight: bold;">case</span> 1: ...
+    <span style="color: #A52A2A; font-weight: bold;">break</span>;
+<span style="color: #A52A2A; font-weight: bold;">case</span> 2: ...
+    <span style="color: #A52A2A; font-weight: bold;">break</span>;
+<span style="color: #A52A2A; font-weight: bold;">case</span> 3: ...
+    <span style="color: #A52A2A; font-weight: bold;">break</span>;
+<span style="color: #A52A2A; font-weight: bold;">case</span> 4: ...
+    <span style="color: #A52A2A; font-weight: bold;">break</span>;
+<span style="color: #A52A2A; font-weight: bold;">case</span> 5: ...
+    <span style="color: #A52A2A; font-weight: bold;">break</span>;
+<span style="color: #A52A2A; font-weight: bold;">default</span>: ...
+    <span style="color: #A52A2A; font-weight: bold;">break</span>;
 }                   
 </pre>
 </div>
@@ -816,11 +817,21 @@ ningun <code>case</code>. Por temas históricos es necesario escribir el <code>b
 al final del código en cada caso. Podemos tener tantos casos como queramos.
 </p>
 </div>
-<div id="outline-container-org2a44b72" class="outline-3">
-<h3 id="org2a44b72"><span class="section-number-3">6.1.</span> Problema 6: Switch case</h3>
+<div id="outline-container-org7f590f6" class="outline-3">
+<h3 id="org7f590f6"><span class="section-number-3">6.1.</span> Problema 6: Switch case</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
-Reescribe el problema del <i>Menú</i> utilizando solamente la estructura <code>switch case</code>
+Reescribe el problema del <i>Menú</i> utilizando solamente la estructura
+<code>switch case</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org035b9b2" class="outline-3">
+<h3 id="org035b9b2"><span class="section-number-3">6.2.</span> Problema 7: Meses del año</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Dado un número <i>N</i> en el rango \([1, 12]\), decir el nombre del mes que
+corresponde. Ej. 9 \(\Rightarrow\) <code>"Septiembre"</code>
 </p>
 </div>
 </div>
@@ -828,7 +839,7 @@ Reescribe el problema del <i>Menú</i> utilizando solamente la estructura <code>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Davidshiro Pichu</p>
-<p class="date">Created: 2025-07-30 Wed 12:58</p>
+<p class="date">Created: 2025-08-24 dom 16:10</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

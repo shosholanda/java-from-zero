@@ -1,0 +1,246 @@
+#+TITLE: Recursión
+
+#+begin_quote
+Para saber recursion, hay que saber recursión.
+
+-- Victor Zamora
+#+end_quote
+
+Recursión es un concepto matemático el cual define una función /en
+términos de sí misma/. Una función en matemáticas es una /caja mágica/
+que da resultados.
+
+$$ f(x) = x! $$
+
+Así si quiero saber que hace $f(11)$, la función regresará el valor
+/factorial/, es decir ~39916800~.También hay funciones como el valor
+absoluto que se definen por /casos/
+
+$$ abs(x) = \begin{cases} x & \text{si } x \geq 0 \\
+-x \text{ en otro caso} \end{cases}$$
+
+Particulamente podríamos crear una función $f(x)$ que se llame a sí
+misma, como
+
+$$f(x) = x * f(x-1)$$
+
+Para calcular $f(x)$ *debemos primero calcular* $f(x-1)$, y si
+quisieramos calcular $f(x-1)$, hay que calcular $f(x-2)$ y así
+sucesivamente; básicamente haríamos algo como
+
+\begin{align*}
+f(11) &= 11 *  f(10) \hspace{2 cm} \text{ y expandimos } f(10)\\
+&= 11 * (10 * f(9)) \\
+&= 11 * (10 * (9 * f(8))) \\
+&= 11 * (10 * (9 * (8 * f(7)))) \hspace{2cm} \text{ y así sucesivamente...}
+\end{align*}
+
+Seguramente ya has visto el problema que /nunca terminaríamos/ de
+calcular; incluso pasamos a valores negativos con $f(1) = 1 * f(0)
+\Rightarrow f(0) = 0 * f(-1) \ldots$
+Desde el punto de vista /computacional/ estamos haciendo un *ciclo
+infinito* ya que /no tenemos una condición que nos termine el
+ciclo/. Podemos fácilmente detener esta /infinitud/ si, agregamos
+dentro de la definición de la función un *caso base* para que no
+calculemos hasta el infinito
+
+\begin{align}
+f(x) = \begin{cases}
+1 \text{ si } x = 0 \\
+x * f(x-1) \text{ en otro caso}
+\end{cases}
+\end{align}
+
+El primer caso nos /detiene/ cuando llegamos a 0, así  al calcular
+$f(0)$ ya no hacemos más /expansiones/ sino  que lo sustituimos por 1
+porque así lo dice la definición.
+
+\begin{align*}
+f(3) &= 3 *  f(2) \\
+&= 3 * (2 * f(1)) \\
+&= 3 * (2 * (1 * f(0))) \\
+&= 3 * (2 * (1 * (1))) \hspace{2cm} \text{ fin de la recursión}\\
+&= 3 * (2 * (1 * 1)) \hspace{2cm} \text{ regresamos la recursión}\\
+&= 3 * (2 * (1)) \\
+&= 3 * (2)\\
+&= 6
+\end{align*}
+
+Claramente tenemos una /ecuación/ con valores fijos que podemos
+calcular. Computacionalmente vamos calculando /desde lo más adentro/
+hasta afuera, es decir empezamos por $(1*(1))$ y esto nos da como
+resultado $1$, luego $(2 * (1)$ que nos da $2$ y así sucesivamente.
+
+Como puedes notar, $f(x)$ es la función de factorial. Es equivalente a
+su versión /iterativa/ como
+
+#+begin_src java
+  public int facIt(int n){
+      int r = 1;
+      while (n > 0){
+  	r = r * n;
+  	n--;
+      }
+      return r;
+  }
+#+end_src
+
+En cuanto a /programar recursivamente/ se pone un poco interesante, ya
+que *debemos llamar al mismo método* hasta cumplir con el caso
+base. Aplicando la definición (1) tenemos el siguiente código.
+
+#+begin_src java
+  public int facRec(int n){
+      if (n == 0) //Caso base
+  	return 1;
+      else // En otro caso (caso recursivo)
+  	return n * facRec(n -1);
+  }      
+#+end_src
+
+Cuando hacemos un ciclo ya sea iterativo o /recursivo/ debemos cumplir
+con:
+
++ Tener un valor inicial :: El valor ~n~ que se manda a llamar ~facRec(n)~
++ Tener una condición para /finalizar/ ::  El caso base, cuando ~n == 0~
++ En cada iteración hacer un cambio /para llegar a la condición/. ::
+  El caso recursivo, y decrementamos ~n~ en 1 para la siguiente
+  llamada recursiva.
+
+
+Lo que sucede internamente dentro de /Java/ es que como se va llamando
+el método *a sí mismo* estas llamadas se van /apilando/ internamente,
+como una pila de libros donde la última llamada será la primera en ser
+calculada, si es que puede ser calculada, y si no creara la próxima
+llamada. 
+
+
+| APILADO | Calcular | valor a devolver | ~ | sustitución  | Orden calculo |
+|---------+----------+------------------+---+--------------+---------------|
+| END     | f(0)     | 1                | ~ | 1 = _1_      | START         |
+|         | f(1)     | 1 * f(0)         | ~ | 1 * _1_ = 1  | .             |
+|         | f(2)     | 2 * f(1)         | ~ | 2 * _1_ = 2  | .             |
+|         | f(3)     | 3 * f(2)         | ~ | 3 * _2_ = 6  | v             |
+| START   | f(4)     | 4 * f(3)         | ~ | 4 * _6_ = 24 | END           |
+
+
+
+
+La pila empieza cuando queremos calcular $f(4)$ y esta se va llenando
+hacia arriba, es decir $f(4) = 4 * f(3)$, entonces manda a llamar a
+esta misma función pero ahora con el valor de 3 $f(3)$ el cual se
+apila y se calcula como $f(3) = 3 * f(2)$; nuevamente vuelve a llamar
+a este mismo método con el valor 2 $f(2)$ pero para poderlo calcular
+necesita calcular $2 * f(1)$ y vuelve a *apliar* la llamada $f(1)$, el
+cual regresará lo que resulte de $1 * f(0)$. Finalmente llama a $f()$
+con 0 y por definición de caso base, $f(0) = 1$ por lo que ya no tiene
+que apilar más llamadas y va /desapilando/ en el mismo orden que fue
+apilado, regresando el resultado o sustituyendolo en donde tenia la
+función pendiente a calcular.
+
+* Recursión vs iteración
+Hay problemas donde es mejor utilizar /recursión/ que /iteraciones/, y
+otros problemas donde es mejor /viceversa/. Cada uno tiene sus
+ventajas y desventajas.
+
+|         | Recursión                                         | Iteración                              |
+|---------+---------------------------------------------------+----------------------------------------|
+| Pros    | Menos código                                      | Más rápido (milisegundos)              |
+|         | Fácil de entender y demostrar                     | Mínimo uso de memoria                  |
+|         | Ideal para estructuras recursivas                 | Fácil anidar ciclos                    |
+|---------+---------------------------------------------------+----------------------------------------|
+| contras | Uso de más memoria (pila de ejcución)             | código spaguetti                       |
+|         | ciclos infinitos son complicados (lazy vs greedy) | Un cohete en estructuras no recursivas |
+
+Dependiendo de las necesidades del negocio, se debe decidir entre
+alguna de las dos. No se puede tener todo en esta vida.
+
+* Operador ternario
+Nuestro único método se ve como
+
+#+begin_src java
+  public int facRec(int n){
+      if (n == 0) //Caso base
+  	return 1;
+      else // En otro caso (caso recursivo)
+  	return n * facRec(n -1);
+  }      
+#+end_src
+
+En /Java/ podemos reducirlo a 1 línea utilizando la sintaxis del
+*operador ternario* (también conocido como /azúcar sintáctica/), el
+cual como su nombre lo indica, tiene 3 campos a rellenar. El anterior
+código es equivalente a
+
+#+begin_src java
+  public int facRec(int n){
+      return n == 0 ? 1 : n * facRec(n -1);
+  }
+#+end_src
+
+Donde
+- ~n == 0 ?~ equivale a preguntar la condición del ~if~
+- ~1~ es el resultado a devolver si se cumple la condición anterior.
+- ~: n * facRec(n -1)~ es el caso /else/ cuando no se cumple el ~if~
+  
+* Problemas
+Para estos problemas *no puedes usar* ~for~,  ~while~ ni ~do-while~.
+
+** Suma Gaussiana
+
+Anteriormente calculamos la suma de los primeros /N/ naturales como
+$$\sum_{i=0}^{N}i = 0 + 1 + 2 + 3 + 4 + \ldots + N$$
+
+Con un código iterativo como
+
+#+begin_src java
+  public class Gaussiana {
+      public static void main(String[] args){
+  	int n = Integer.parseInt(args[0]);
+  	int suma = gaussiana(n);
+  	System.out.println("La suma gaussiana es " + suma);
+      }
+
+      public static int gaussiana(int n){
+  	int s = 0;
+  	for (int i = 0; i <= n; i++)
+  	    s += i;
+  	return s;
+      }
+  }
+#+end_src
+
+Convierte este código a su forma /recursiva/. *Hint* Fijate en la
+definición de factorial.
+** Problema 2: Fibonacci
+
+La sucesión de [[https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci][Fibonacci]] es una sucesión muy presente en la naturaleza
+como reproducción de conejos, su forma de calcular el /N-ésimo/ dígito
+en la sucesión $f(n)$ se define para número naturales como:
+
+\begin{equation}
+f(n) = \begin{cases}
+f(0) = 0 \\
+f(1) = 1 \\
+f(n-1) + f(n-2) \text{ en otro caso.}
+\end{cases}
+\end{equation}
+Crea un método que calcule el /N-ésimo/ número en la sucesión de
+fibonacci /recursivamente/.
+
+** Problema 3: Arreglo
+Crea un arreglo de tamaño /N/ dado por el usuario. Llena el arreglo
+/recursivamente/ con valores de 0  a /N-1/ en orden.
+
+** Problema 4: Primalidad
+
+Dado un número /N/ positivo, decidir si es primo o no. Recuerda la
+definición de número primo. 
+
+** Problema 5: PalindromoRec
+Dada una cadena /S/, decidir recursivamente si /S/ es un
+palíndromo. Recordemos que una cadena es palíndromo si se puede leer
+de inicio a final de la misma manera. Debes ignorar espacios en
+blanco y considerar mayúsculas y minúsculas igual.
+
+
