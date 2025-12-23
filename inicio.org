@@ -70,7 +70,7 @@ que necesites. También puedes husmear en temas que sean de tu interés.
 + [X] [[./java-basics/03_diagramas.org][Diagramas de flujo]]
 + [X] [[./java-basics/04_errores.org][Errores]]
 
-* TODO Introducción a Ciencias de la computación [16/30] [53%]
+* TODO Introducción a Ciencias de la computación [18/32] [56%]
 + [X] [[./icc/00_programacion_secuencial.org][Programación secuencial]]
 + [X] [[./icc/01_condicionales.org][Condicionales]]
 + [X] [[file:icc/02_condicionales_switch.org][Condicionales++]]
@@ -87,7 +87,9 @@ que necesites. También puedes husmear en temas que sean de tu interés.
 + [X] [[file:icc/13_matrices.org][Matrices]]
 + [X] [[file:icc/14_recursion.org][Recursion]]
 + [X] [[file:icc/15_excepciones.org][Excepciones]]
-+ [ ] Listas
++ [X] [[file:icc/16_estructuras_recursivas.org][Estructuras recursivas]]
++ [X] [[file:icc/17_listas_simplemente_ligadas.org][Lista simplemente ligada]]
++ [ ] Lista doblemente ligada
 + [ ] Ordenamientos
 + [ ] Busquedas
 + [ ] Interfaces
