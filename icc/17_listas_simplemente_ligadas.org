@@ -1,0 +1,51 @@
+#+Title: Listas simplemente ligadas
+
+En el capítulo anterior vimos que podemos crear /cajas dentro de
+cajas/, y este comportamiento /recursivo/ nos da como resultado una
+lista.
+
+
+Una lista es /dinámica/ lo que quiere decir que puede agregar y
+eliminar elementos como se necesite. A diferencia de los arreglos, un
+arreglo siempre tiene tamaño fijo (/no dinámica/) y desperdiciamos
+espacio (o nos faltará) si queremos agregar dinámicamente.
+
+
+Hay momentos donde es mejor usar una /lista/, hay otros momentos donde
+es mejor usar un /arreglo/. Ambas estructuras nos ayudan a guardar
+información /en tiempo de ejecución del programa/.
+
+
+Una lista puede ser una /wishlist/ de Amazon, también puede ser /lista
+de reproducción de Spotify/. En ambos casos ambas listas cumplen con
+las operaciones de listas. Abstractamente, una lista es una colección
+de /cosas/. Esta colección puede:
+
+
++ AGREGAR :: Agregar un elemento X a la lista. Puede ser de 3 maneras
+  diferentes:
+  - inicio :: antes del primero
+  - final  :: después del último
+  - en medio :: insertar en una posición /i/.
++ ELIMINAR :: Remover un elemento X de la lista. El elemento X debe
+  estar en la lista para poder removerse, de lo contrario no tiene
+  sentido la operación. Al igual que agregar, tenemos 3 maneras de
+  eliminar.
+  - inicio :: remover el primer elemento.
+  - final :: remover el último elemento.
+  - en medio :: eliminar un elemento /contenido/ en la lista. Debemos
+    buscar primero en dónde está, y luego sacarlo.
++ BUSCAR :: En toda la lista por un elemento contenido. Solo hay de 2
+  sopas, está o no.
++ COPIAR :: Copiar esta lista en otra lista.
++ LONGITUD :: Saber cuántos elementos tiene la lista.
++ ESTÁ VACÍA :: Saber si está vacía la lista o no.
++ OBTENER ELEMENTO :: Podemos obtener un elemento específico de la
+  lista, dado un índice /i/, en particular obtener:
+  - primero :: El que está en la posición 0
+  - último ::  El que está en la posoición n-1
+  - en medio :: El que está en la posición /i/, con $0 < i < n-1$
++ ÍNDICE DE :: Obtener en qué posición /i/ está un elemento contenido
+  en la lista. La operación inversa de /obtener elemento/.
++ IGUAL :: Saber si 2 listas son iguales.
++ REPRESENTACIÓN :: en toString

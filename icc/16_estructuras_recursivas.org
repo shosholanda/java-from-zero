@@ -1,0 +1,279 @@
+#+TITLE: Estructuras recursivas
+
+Hemos visto que la [[file:14_recursion.org][recursion]] es definir métodos sobre sí mismo. Las
+estructuras recursivas es definir objetos /dentro de esos mismos
+objetos/, creando nuevas formas de guardar información, mejor
+conocidas como /Estructuras de datos/. Las más conocidas son
+
++ Lista :: Las listas son estructuras que a medida que van añadiendo
+  elementos van creciendo, a diferencia de los arreglos que son de
+  tamaño fijo. Tal cual como una lista de /súper/. Siempre hay un
+  primer elemento y un último elemento y tiene un /orden/ aunque no
+  necesariamente esté /ordenado/. Que lleve un orden significa que hay
+  una línea de elementos, como los arreglos con sus índices y ordenado
+  es que estén sus elementos ordenados por orden alfabético por
+  ejemplo.
+
++ Arbol :: Los árboles son estructuras más complejas, pero se asemejan
+  a la jerarquía de ficheros en linux. Existe literalmente un comando
+  ~tree~ para ver en estructura de árbol las carpetas, y /no hay un
+  orden/ pero sí pueden estar ordenados. De hecho hay una gran
+  variedad de árboles para poder optimizar lecturas de masivas
+  cantidades de datos por sus propiedades de /logaritmos/ que son
+  extremadamente eficientes. Estos no los veremos aquí sino hasta el
+  curso de /Estructuras de Datos/ y serán solo /binarios/.
+
+
+Al ser /recursivos/ es necesario definir un *caso base* y un *caso
+recursivo* para que puedan parar y seguir creciendo
+/recursivamente/. Es muy fácil notar el /caso base/ porque siempre
+tiene relacionado algo muy /vacío/.
+
+* Definición Lista
+La definición formal recursiva de una lista recursivamente es
+
+1. *La lista vacía es una lista* ~[]~
+2. *Si* ~x~ *es un elemento y* ~xs~ *una lista entonces el elemento
+   concatenado con una lista* ~x:xs~ *es una lista*
+3. Son todas.
+
+En lenguajes de programación como /Haskell/ es trivial usar estas
+definiciones ya que son lenguajes /funcionales/. Se dice ~xs~ solo por
+convencion para /sublistas/ y ya están implementadas de base en
+/Haskell/ con ~[]~. Por ejemplo contar cuántos elementos tiene una lista
+cualquiera ~[a]~
+
+#+begin_src haskell
+  -- cuenta cuantos elementos hay en la lista [a]
+  longitud :: [a] -> Int
+  longitud [] = 0
+  longitud (x:xs) = 1 + longitud(xs)
+  
+  -- Lista de la figura
+  l1 = ['A' : ['B': []]]
+
+  -- regresa 2
+  longitud l1
+ 
+#+end_src
+
+[[file:~/Documentos/proyectos/java-from-zero/img/icc/list_haskell.svg]]
+
+Como /Java/ es orientado a objetos, esta definición no nos ayuda mucho
+para poder implementar listas; debemos usar objetos para poder
+representar una lista y podemos hacer recursión /metiendo un objeto
+del mismo tipo/ dentro de el mismo. Lo veremos en un momento.
+
+* Definición Arbol
+La definición formal recursiva de un árbol /binario/ es
+
+1. *El árbol vacío es un árbol.* Lo representamos con el símbolo $\emptyset$
+2. *Si* ~a~ *es un elemento y* $T_i, T_d$ *árboles entonces el
+   elemento con subárbol izquierdo* $T_i$ *y con subárbol derecho*
+   $T_d$ *es un árbol*.
+3. Son todas
+
+De nuevo en /Haskell/ podemos definir árboles de manera trivial. Hay
+que hacer un poco más de cosas para que el árbol sea consciso.
+
+#+begin_src haskell
+  ArbolBinario a = Void
+                 | Nodo a (ArbolBinario ti) (ArbolBinario td)
+      deriving (Eq, Show)
+
+  -- Arbol de la figura  
+  arbol1 = Nodo 'A' (Nodo 'B' (Void) (Void)) (Void)
+#+end_src
+
+[[file:~/Documentos/proyectos/java-from-zero/img/icc/arbol_haskell.svg]]
+
+En /Java/ se traduce a definir los casos recursivos como atributos del
+mismo objeto. 
+
+* Cajas
+Vamos a hacer un objeto que sea de /Caja/. Una caja imaginariamente
+puede guardar lo que sea. Supongamos que no tenemos restricciones
+físicas para crear cajas. Nuestro objeto /Caja/ quedaría como
+
+#+begin_src java
+  public class Caja {
+
+      public Object contenido;
+
+      public Caja(Object o){
+  	contenido = o;
+      }
+
+      /** Caja bonita para ver en terminal */
+      @Override
+      public String toString(){
+  	String s = "+";
+  	for (int i = 0; i < contenido.toString().length(); i++)
+  	    s+= "-";
+  	s += "+\n";
+  	s += "|" + contenido.toString() + "|\n+";
+  	for (int i = 0; i < contenido.toString().length(); i++)
+  	    s += "-";
+  	s += "+";
+  	return s;
+      }
+  }
+#+end_src
+
+Crearemos un /Main/ para poder operar cajas.
+
+#+begin_src java
+  public class Main {
+      public static void main(String[] args){
+  	Caja c1 = new Caja("Pinguinos");
+  	Caja c2 = new Caja(Math.PI);
+  	Caja c3 = new Caja(null);
+
+  	System.out.println(c1);
+  	System.out.println(c2);
+  	System.out.println(c3);
+      }
+  }
+#+end_src
+
+Tendremos 3 cajas /sueltas/ cada una con su respectivo contenido. El
+/toString()/ nos ayuda a ver más bonitas estas cajas. Esto es lo que
+pasa en la vida real; una caja con un contenido dentro. (igual y puede
+no tener nada, cuyo caso es /null/) y es fácil visualizarlo.
+
+Sin embargo, imaginemos por /un momento, solo un momento/ que dentro
+de cada caja /existiera/ otra caja, exactamente igual a /esta caja/.De
+un momento a otro, hemos creado una infinitud de cajas con solamente
+/colocar una caja/ dentro de cada Caja. En /Java/ sencillamente sería
+definir un atributo de tipo /Caja/.
+
+
+#+begin_src java
+  public class Caja {
+
+      /* El contenido de esta caja */
+      private Object contenido;
+      /* Las cajas tienen una caja dentro */
+      private Caja cajaInterna;
+      ...n
+#+end_src
+
+Entonces, podríamos definir un método que /meta una caja/ dentro de
+esta caja como
+
+#+begin_src java
+  public void meteCaja(Caja interna){
+      this.cajaInterna = interna;
+  }
+#+end_src
+
+Y para meter una caja dentro de otra caja, deberíamos crear primero la
+primera caja para después meterla como.
+
+#+begin_src java
+  public static void main (String[] args){
+      Caja c1 = new Caja("Caja primera");
+      Caja c2 = new Caja("Soy la segunda caja");
+
+      c1.meteCaja(c2);
+      System.out.println(c1);
+  }
+#+end_src
+
+Mejor aún, podemos crear desde el argumento como:
+
+#+begin_src java
+  c1.meteCaja(new Caja("Soy la segunda caja");
+#+end_src
+
+
+Imaginariamente tenemos una caja que dentro tiene otra caja, que
+dentro ya no tiene caja, algo como.
+
+[[../img/icc/caja.svg]]
+
+/NULL/ refiere a que /no existe/ ese objeto, pero lo ponemos como caja
+para representar la variable de clase /cajaInterna/.
+
+Visualizar físicamente /200+/ cajas una dentro de otra puede ser
+complicado, pero podemos pensarlo también como si la caja interna nos
+llevara /mágicamente/ a la siguiente caja representado con una
+$\Rightarrow$.
+
+[[file:~/Documentos/proyectos/java-from-zero/img/icc/linked_boxes.svg]]
+
+
+La caja /C2/ su caja interna nos lleva a una /caja que no existe/
+porque /C2/ no ha metido caja, y por /omisión/ java rellena el valor
+del objeto /cajaInterna/ a *NULL*.
+
+
+Enhorabuena! Hemos creado *listas en Java* utilizando /recursión/ en
+la definición del objeto!. Formalmente esta /estructura de datos/ se
+llama /listas *simplemente* ligadas/ ya que solo hay una /referencia/
+entre cada 2 cajas. Entonces podemos hacer operaciones básicas de
+/listas/ como /imprimir una lista/, obtener el tamaño de la lista,
+agregar elementos a la lista (ya lo hicimos) o eliminar de una
+/lista/.
+
+
+Para tener todo este comportamiento (agregar, eliminar, buscar etc) en
+una lista es necesario juntarlo todo en /otra clase/ más grande que
+contenga estas operaciones y las cajas. Además, en esta lista
+tendremos 1 referencia más; el inicio de la /lista/. Una vez teniendo
+el primer elemento podemos ir recorriendo /una por una/ las cajas que
+se conectan entre ellas.
+
+
+** Ejercicios
+*** Meter cajas
+Mete al menos 10 cajas diferentes con diferentes contenidos, una
+dentro de otra e imprímelas utilizando el siguiente método para
+representar el /toString/.
+
+#+begin_src java
+  @Override
+  public String toString(){
+      String s = "+";
+      for (int i = 0; i < contenido.toString().length(); i++)
+  	s+= "-";
+      s += "+\n";
+      s += "|" + contenido.toString() + "|\n+";
+      for (int i = 0; i < contenido.toString().length(); i++)
+  	s += "-";
+      s += "+\n";
+      s += "  | cajaInterna\n";
+      s += "  v\n";
+
+      if (cajaInterna != null)
+  	s += cajaInterna.toString();
+      else
+  	s += " NULL\n";
+      return s;
+  }
+#+end_src
+
+*** Caja dentro de sí misma?
+
+Crea una caja, y mete dentro de sí misma a ella misma. Intenta
+imprimir el resultado. ¿Qué sucede y por qué sucede? Explica con tus
+palabras.
+
+
+*** ToString divertido
+Crea la siguiente representación para /toString()/ tal que las listas
+se muestren como
+
+#+begin_example
++---------+
+|Pinguinos|
++---------+
+   |
+   +-> +-----------------+
+       |3.141592653589793|
+       +-----------------+
+          |
+          +-> NULL
+#+end_example
+
+

@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-09-04 jue 08:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Estructuras recursivas</title>
+<meta name="author" content="Davidshiro Pichu" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Estructuras recursivas</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga119753">1. Definición Lista</a></li>
+<li><a href="#orgaced88e">2. Definición Arbol</a></li>
+<li><a href="#org9882df6">3. Cajas</a>
+<ul>
+<li><a href="#org1ecca10">3.1. Ejercicios</a>
+<ul>
+<li><a href="#org75ed032">3.1.1. Meter cajas</a></li>
+<li><a href="#orgd882a6b">3.1.2. Caja dentro de sí misma?</a></li>
+<li><a href="#org365c074">3.1.3. ToString divertido</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Hemos visto que la <a href="14_recursion.html">recursion</a> es definir métodos sobre sí mismo. Las
+estructuras recursivas es definir objetos <i>dentro de esos mismos
+objetos</i>, creando nuevas formas de guardar información, mejor
+conocidas como <i>Estructuras de datos</i>. Las más conocidas son
+</p>
+
+<dl class="org-dl">
+<dt>Lista</dt><dd>Las listas son estructuras que a medida que van añadiendo
+elementos van creciendo, a diferencia de los arreglos que son de
+tamaño fijo. Tal cual como una lista de <i>súper</i>. Siempre hay un
+primer elemento y un último elemento y tiene un <i>orden</i> aunque no
+necesariamente esté <i>ordenado</i>. Que lleve un orden significa que hay
+una línea de elementos, como los arreglos con sus índices y ordenado
+es que estén sus elementos ordenados por orden alfabético por
+ejemplo.</dd>
+
+<dt>Arbol</dt><dd>Los árboles son estructuras más complejas, pero se asemejan
+a la jerarquía de ficheros en linux. Existe literalmente un comando
+<code>tree</code> para ver en estructura de árbol las carpetas, y <i>no hay un
+orden</i> pero sí pueden estar ordenados. De hecho hay una gran
+variedad de árboles para poder optimizar lecturas de masivas
+cantidades de datos por sus propiedades de <i>logaritmos</i> que son
+extremadamente eficientes. Estos no los veremos aquí sino hasta el
+curso de <i>Estructuras de Datos</i> y serán solo <i>binarios</i>.</dd>
+</dl>
+
+
+<p>
+Al ser <i>recursivos</i> es necesario definir un <b>caso base</b> y un <b>caso
+recursivo</b> para que puedan parar y seguir creciendo
+<i>recursivamente</i>. Es muy fácil notar el <i>caso base</i> porque siempre
+tiene relacionado algo muy <i>vacío</i>.
+</p>
+<div id="outline-container-orga119753" class="outline-2">
+<h2 id="orga119753"><span class="section-number-2">1.</span> Definición Lista</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+La definición formal recursiva de una lista recursivamente es
+</p>
+
+<ol class="org-ol">
+<li><b>La lista vacía es una lista</b> <code>[]</code></li>
+<li><b>Si</b> <code>x</code> <b>es un elemento y</b> <code>xs</code> <b>una lista entonces el elemento
+concatenado con una lista</b> <code>x:xs</code> <b>es una lista</b></li>
+<li>Son todas.</li>
+</ol>
+
+<p>
+En lenguajes de programación como <i>Haskell</i> es trivial usar estas
+definiciones ya que son lenguajes <i>funcionales</i>. Se dice <code>xs</code> solo por
+convencion para <i>sublistas</i> y ya están implementadas de base en
+<i>Haskell</i> con <code>[]</code>. Por ejemplo contar cuántos elementos tiene una lista
+cualquiera <code>[a]</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell">-- cuenta cuantos elementos hay en la lista [a]
+longitud :: [a] -&gt; Int
+longitud [] = 0
+longitud (x:xs) = 1 + longitud(xs)
+
+-- Lista de la figura
+l1 = ['A' : ['B': []]]
+
+-- regresa 2
+longitud l1
+
+</pre>
+</div>
+
+
+<div id="orgdb303f3" class="figure">
+<p><img src="file:///home/pichu/Documentos/proyectos/java-from-zero/img/icc/list_haskell.svg" alt="list_haskell.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Como <i>Java</i> es orientado a objetos, esta definición no nos ayuda mucho
+para poder implementar listas; debemos usar objetos para poder
+representar una lista y podemos hacer recursión <i>metiendo un objeto
+del mismo tipo</i> dentro de el mismo. Lo veremos en un momento.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaced88e" class="outline-2">
+<h2 id="orgaced88e"><span class="section-number-2">2.</span> Definición Arbol</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+La definición formal recursiva de un árbol <i>binario</i> es
+</p>
+
+<ol class="org-ol">
+<li><b>El árbol vacío es un árbol.</b> Lo representamos con el símbolo \(\emptyset\)</li>
+<li><b>Si</b> <code>a</code> <b>es un elemento y</b> \(T_i, T_d\) <b>árboles entonces el
+elemento con subárbol izquierdo</b> \(T_i\) <b>y con subárbol derecho</b>
+\(T_d\) <b>es un árbol</b>.</li>
+<li>Son todas</li>
+</ol>
+
+<p>
+De nuevo en <i>Haskell</i> podemos definir árboles de manera trivial. Hay
+que hacer un poco más de cosas para que el árbol sea consciso.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell">ArbolBinario a = Void
+               | Nodo a (ArbolBinario ti) (ArbolBinario td)
+    deriving (Eq, Show)
+
+-- Arbol de la figura  
+arbol1 = Nodo 'A' (Nodo 'B' (Void) (Void)) (Void)
+</pre>
+</div>
+
+
+<div id="orgc88fcdd" class="figure">
+<p><img src="file:///home/pichu/Documentos/proyectos/java-from-zero/img/icc/arbol_haskell.svg" alt="arbol_haskell.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+En <i>Java</i> se traduce a definir los casos recursivos como atributos del
+mismo objeto. 
+</p>
+</div>
+</div>
+<div id="outline-container-org9882df6" class="outline-2">
+<h2 id="org9882df6"><span class="section-number-2">3.</span> Cajas</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Vamos a hacer un objeto que sea de <i>Caja</i>. Una caja imaginariamente
+puede guardar lo que sea. Supongamos que no tenemos restricciones
+físicas para crear cajas. Nuestro objeto <i>Caja</i> quedaría como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span> {
+
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">Object</span> <span style="color: #0084C8; font-weight: bold;">contenido</span>;
+
+    <span style="color: #A52A2A; font-weight: bold;">public</span> Caja(<span style="color: #2F8B58; font-weight: bold;">Object</span> <span style="color: #0084C8; font-weight: bold;">o</span>){
+        contenido = o;
+    }
+
+    <span style="color: #4E9A06;">/** Caja bonita para ver en terminal */</span>
+    <span style="color: #F5666D;">@Override</span>
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #00578E; font-weight: bold;">toString</span>(){
+        <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span> = <span style="color: #4E9A06;">"+"</span>;
+        <span style="color: #A52A2A; font-weight: bold;">for</span> (<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span> = 0; i &lt; contenido.<span style="color: #2F8B58; font-weight: bold;">toString</span>().length(); i++)
+            s+= <span style="color: #4E9A06;">"-"</span>;
+        s += <span style="color: #4E9A06;">"+\n"</span>;
+        s += <span style="color: #4E9A06;">"|"</span> + contenido.toString() + <span style="color: #4E9A06;">"|\n+"</span>;
+        <span style="color: #A52A2A; font-weight: bold;">for</span> (<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span> = 0; i &lt; contenido.<span style="color: #2F8B58; font-weight: bold;">toString</span>().length(); i++)
+            s += <span style="color: #4E9A06;">"-"</span>;
+        s += <span style="color: #4E9A06;">"+"</span>;
+        <span style="color: #A52A2A; font-weight: bold;">return</span> s;
+    }
+}
+</pre>
+</div>
+
+<p>
+Crearemos un <i>Main</i> para poder operar cajas.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Main</span> {
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span>(<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+        <span style="color: #2F8B58; font-weight: bold;">Caja</span> <span style="color: #0084C8; font-weight: bold;">c1</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span>(<span style="color: #4E9A06;">"Pinguinos"</span>);
+        <span style="color: #2F8B58; font-weight: bold;">Caja</span> <span style="color: #0084C8; font-weight: bold;">c2</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span>(<span style="color: #F5666D;">Math</span>.PI);
+        <span style="color: #2F8B58; font-weight: bold;">Caja</span> <span style="color: #0084C8; font-weight: bold;">c3</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span>(<span style="color: #F5666D;">null</span>);
+
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+    }
+}
+</pre>
+</div>
+
+<p>
+Tendremos 3 cajas <i>sueltas</i> cada una con su respectivo contenido. El
+<i>toString()</i> nos ayuda a ver más bonitas estas cajas. Esto es lo que
+pasa en la vida real; una caja con un contenido dentro. (igual y puede
+no tener nada, cuyo caso es <i>null</i>) y es fácil visualizarlo.
+</p>
+
+<p>
+Sin embargo, imaginemos por <i>un momento, solo un momento</i> que dentro
+de cada caja <i>existiera</i> otra caja, exactamente igual a <i>esta caja</i>.De
+un momento a otro, hemos creado una infinitud de cajas con solamente
+<i>colocar una caja</i> dentro de cada Caja. En <i>Java</i> sencillamente sería
+definir un atributo de tipo <i>Caja</i>.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span> {
+
+    <span style="color: #204A87;">/* </span><span style="color: #204A87;">El contenido de esta caja</span><span style="color: #204A87;"> */</span>
+    <span style="color: #A52A2A; font-weight: bold;">private</span> <span style="color: #2F8B58; font-weight: bold;">Object</span> <span style="color: #0084C8; font-weight: bold;">contenido</span>;
+    <span style="color: #204A87;">/* </span><span style="color: #204A87;">Las cajas tienen una caja dentro</span><span style="color: #204A87;"> */</span>
+    <span style="color: #A52A2A; font-weight: bold;">private</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span> <span style="color: #0084C8; font-weight: bold;">cajaInterna</span>;
+    ...n
+</pre>
+</div>
+
+<p>
+Entonces, podríamos definir un método que <i>meta una caja</i> dentro de
+esta caja como
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">meteCaja</span>(<span style="color: #2F8B58; font-weight: bold;">Caja</span> <span style="color: #0084C8; font-weight: bold;">interna</span>){
+    <span style="color: #A52A2A; font-weight: bold;">this</span>.cajaInterna = interna;
+}
+</pre>
+</div>
+
+<p>
+Y para meter una caja dentro de otra caja, deberíamos crear primero la
+primera caja para después meterla como.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">main</span> (<span style="color: #2F8B58; font-weight: bold;">String</span>[] <span style="color: #0084C8; font-weight: bold;">args</span>){
+    <span style="color: #2F8B58; font-weight: bold;">Caja</span> <span style="color: #0084C8; font-weight: bold;">c1</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span>(<span style="color: #4E9A06;">"Caja primera"</span>);
+    <span style="color: #2F8B58; font-weight: bold;">Caja</span> <span style="color: #0084C8; font-weight: bold;">c2</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span>(<span style="color: #4E9A06;">"Soy la segunda caja"</span>);
+
+    c1.meteCaja(c2);
+    System.out.println(c1);
+}
+</pre>
+</div>
+
+<p>
+Mejor aún, podemos crear desde el argumento como:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java">c1.meteCaja(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Caja</span>(<span style="color: #4E9A06;">"Soy la segunda caja"</span>);
+</pre>
+</div>
+
+
+<p>
+Imaginariamente tenemos una caja que dentro tiene otra caja, que
+dentro ya no tiene caja, algo como.
+</p>
+
+
+<div id="org32ff3da" class="figure">
+<p><img src="../img/icc/caja.svg" alt="caja.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+<i>NULL</i> refiere a que <i>no existe</i> ese objeto, pero lo ponemos como caja
+para representar la variable de clase <i>cajaInterna</i>.
+</p>
+
+<p>
+Visualizar físicamente <i>200+</i> cajas una dentro de otra puede ser
+complicado, pero podemos pensarlo también como si la caja interna nos
+llevara <i>mágicamente</i> a la siguiente caja representado con una
+\(\Rightarrow\).
+</p>
+
+
+<div id="org0a1fe8b" class="figure">
+<p><img src="file:///home/pichu/Documentos/proyectos/java-from-zero/img/icc/linked_boxes.svg" alt="linked_boxes.svg" class="org-svg" />
+</p>
+</div>
+
+
+<p>
+La caja <i>C2</i> su caja interna nos lleva a una <i>caja que no existe</i>
+porque <i>C2</i> no ha metido caja, y por <i>omisión</i> java rellena el valor
+del objeto <i>cajaInterna</i> a <b>NULL</b>.
+</p>
+
+
+<p>
+Enhorabuena! Hemos creado <b>listas en Java</b> utilizando <i>recursión</i> en
+la definición del objeto!. Formalmente esta <i>estructura de datos</i> se
+llama <i>listas <b>simplemente</b> ligadas</i> ya que solo hay una <i>referencia</i>
+entre cada 2 cajas. Entonces podemos hacer operaciones básicas de
+<i>listas</i> como <i>imprimir una lista</i>, obtener el tamaño de la lista,
+agregar elementos a la lista (ya lo hicimos) o eliminar de una
+<i>lista</i>.
+</p>
+
+
+<p>
+Para tener todo este comportamiento (agregar, eliminar, buscar etc) en
+una lista es necesario juntarlo todo en <i>otra clase</i> más grande que
+contenga estas operaciones y las cajas. Además, en esta lista
+tendremos 1 referencia más; el inicio de la <i>lista</i>. Una vez teniendo
+el primer elemento podemos ir recorriendo <i>una por una</i> las cajas que
+se conectan entre ellas.
+</p>
+</div>
+<div id="outline-container-org1ecca10" class="outline-3">
+<h3 id="org1ecca10"><span class="section-number-3">3.1.</span> Ejercicios</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-org75ed032" class="outline-4">
+<h4 id="org75ed032"><span class="section-number-4">3.1.1.</span> Meter cajas</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+Mete al menos 10 cajas diferentes con diferentes contenidos, una
+dentro de otra e imprímelas utilizando el siguiente método para
+representar el <i>toString</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #F5666D;">@Override</span>
+<span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #00578E; font-weight: bold;">toString</span>(){
+    <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">s</span> = <span style="color: #4E9A06;">"+"</span>;
+    <span style="color: #A52A2A; font-weight: bold;">for</span> (<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span> = 0; i &lt; contenido.<span style="color: #2F8B58; font-weight: bold;">toString</span>().length(); i++)
+        s+= <span style="color: #4E9A06;">"-"</span>;
+    s += <span style="color: #4E9A06;">"+\n"</span>;
+    s += <span style="color: #4E9A06;">"|"</span> + contenido.toString() + <span style="color: #4E9A06;">"|\n+"</span>;
+    <span style="color: #A52A2A; font-weight: bold;">for</span> (<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span> = 0; i &lt; contenido.<span style="color: #2F8B58; font-weight: bold;">toString</span>().length(); i++)
+        s += <span style="color: #4E9A06;">"-"</span>;
+    s += <span style="color: #4E9A06;">"+\n"</span>;
+    s += <span style="color: #4E9A06;">"  | cajaInterna\n"</span>;
+    s += <span style="color: #4E9A06;">"  v\n"</span>;
+
+    <span style="color: #A52A2A; font-weight: bold;">if</span> (cajaInterna != <span style="color: #F5666D;">null</span>)
+        s += cajaInterna.toString();
+    <span style="color: #A52A2A; font-weight: bold;">else</span>
+        s += <span style="color: #4E9A06;">" NULL\n"</span>;
+    <span style="color: #A52A2A; font-weight: bold;">return</span> s;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd882a6b" class="outline-4">
+<h4 id="orgd882a6b"><span class="section-number-4">3.1.2.</span> Caja dentro de sí misma?</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+Crea una caja, y mete dentro de sí misma a ella misma. Intenta
+imprimir el resultado. ¿Qué sucede y por qué sucede? Explica con tus
+palabras.
+</p>
+</div>
+</div>
+<div id="outline-container-org365c074" class="outline-4">
+<h4 id="org365c074"><span class="section-number-4">3.1.3.</span> ToString divertido</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+Crea la siguiente representación para <i>toString()</i> tal que las listas
+se muestren como
+</p>
+
+<pre class="example" id="orge7fd598">
++---------+
+|Pinguinos|
++---------+
+   |
+   +-&gt; +-----------------+
+       |3.141592653589793|
+       +-----------------+
+          |
+          +-&gt; NULL
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Davidshiro Pichu</p>
+<p class="date">Created: 2025-09-04 jue 08:53</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
